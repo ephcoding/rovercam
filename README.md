@@ -6,11 +6,15 @@
 2. learn React Native project setup best-practices & design patterns
 3. earn _cool_ points with my kids for "working with robots" ( they're 5 & 3. I'm not correcting them.. )
 
+![rovercam run-it section](./assets/readme/readme_run-it.png)
+
+**_...just a sec..._**
+
 ![rovercam project status section](./assets/readme/readme_status.png)
 
 This isn't _everything_...
 
-### **_Research_**
+### **Research**
 
 - [ ] Mars Rover Photos API
 - [ ] UX design for image-heavy apps
@@ -18,7 +22,7 @@ This isn't _everything_...
 - [ ] React Native image optimization best-practices
 - [x] Mars img resources
 
-### **_Development_**
+### **Development**
 
 - [ ] display images for all 4 rovers
 - [ ] fetch images for all 4 rovers
