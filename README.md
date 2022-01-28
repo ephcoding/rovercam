@@ -10,7 +10,7 @@
 
 This isn't _everything_...
 
-### **_Research_**
+### **Research**
 
 - [ ] Mars Rover Photos API
 - [ ] UX design for image-heavy apps
@@ -18,7 +18,7 @@ This isn't _everything_...
 - [ ] React Native image optimization best-practices
 - [x] Mars img resources
 
-### **_Development_**
+### **Development**
 
 - [ ] display images for all 4 rovers
 - [ ] fetch images for all 4 rovers
