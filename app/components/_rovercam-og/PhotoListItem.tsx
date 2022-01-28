@@ -1,12 +1,12 @@
 import React from "react"
 
 const PhotoListItem = ({ photo }) => {
-  const { img_src } = photo;
+  const { imgSrc } = photo
   return (
     <li className="photos_li">
-      <img src={img_src} />
+      <img src={imgSrc} />
     </li>
-  );
-};
+  )
+}
 
-export default PhotoListItem;
+export default PhotoListItem
