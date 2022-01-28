@@ -1,145 +1,101 @@
-# Welcome to your new ignited app!
+![project's section banner](./assets/readme_title.png)
 
-[![CircleCI](https://circleci.com/gh/infinitered/ignite.svg?style=svg)](https://circleci.com/gh/infinitered/ignite)
+## **OBJECTIVE**
 
-## The latest and greatest boilerplate for Infinite Red opinions
+Leverage NASA's Mars Rover Photos API to give user's the ability to explore the Red Planet through images on their mobile device.
 
-This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.
+## **MVP FUNCTIONALITY**
 
-Currently includes:
+- display latest images from each of the 4 Rovers
+- search photos by Rover
+- search photos by camera
+- search photos by data/Mars sol
 
-- React Native
-- React Navigation
-- MobX State Tree
-- TypeScript
-- And more!
+![rovercam project status section](./assets/readme_status.png)
 
-## Quick Start
+### **_Research_**
 
-The Ignite boilerplate project's structure will look similar to this:
+- [ ] deep-dive Mars Rover Photos API
+- [ ] UX design for image-based apps
+- [ ] architectural requirements / cost estimates
 
-```
-ignite-project
-├── app
-│   ├── components
-│   ├── i18n
-│   ├── utils
-│   ├── models
-│   ├── navigators
-│   ├── screens
-│   ├── services
-│   ├── theme
-│   ├── app.tsx
-├── storybook
-│   ├── views
-│   ├── index.ts
-│   ├── storybook-registry.ts
-│   ├── storybook.ts
-│   ├── toggle-storybook.tsx
-├── test
-│   ├── __snapshots__
-│   ├── storyshots.test.ts.snap
-│   ├── mock-i18n.ts
-│   ├── mock-reactotron.ts
-│   ├── setup.ts
-│   ├── storyshots.test.ts
-├── README.md
-├── android
-│   ├── app
-│   ├── build.gradle
-│   ├── gradle
-│   ├── gradle.properties
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── keystores
-│   └── settings.gradle
-├── ignite
-│   ├── ignite.json
-│   └── plugins
-├── index.js
-├── ios
-│   ├── IgniteProject
-│   ├── IgniteProject-tvOS
-│   ├── IgniteProject-tvOSTests
-│   ├── IgniteProject.xcodeproj
-│   └── IgniteProjectTests
-├── .env
-└── package.json
+### **_Development_**
 
+- [ ] setup NASA API creds
+- [ ] wire up initial API calls (get data moving)
+- [ ] establish navigation
+
+![rovercam issues section](./assets/readme_issues.png)
+
+<details>
+<summary><code>dotenv</code> | unable to resolve module <code>'fs'</code></summary>
+
+### **_PROBLEM_**
+
+```reactnative
+Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
 ```
 
-### ./app directory
+### **_CAUSE_**
 
-Included in an Ignite boilerplate project is the `app` directory. This is a directory you would normally have to create when using vanilla React Native.
+- _`fs` doesn't exist in React Native ( deep-dive )_
 
-The inside of the src directory looks similar to the following:
+### **_SOUTION_**
 
-```
-app
-│── components
-│── i18n
-├── models
-├── navigators
-├── screens
-├── services
-├── theme
-├── utils
-└── app.tsx
-```
+- route 3rd-party API calls through server where keys/secrets are stored (prevents sensitive info getting jacked in transit)
 
-**components**
-This is where your React components will live. Each component will have a directory containing the `.tsx` file, along with a story file, and optionally `.presets`, and `.props` files for larger components. The app will come with some commonly used components like Button.
+- React Native pgks for handling config/environment variables:
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
 
-**i18n**
-This is where your translations will live if you are using `react-native-i18n`.
+</details>
 
-**models**
-This is where your app's models will live. Each model has a directory which will contain the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
+![rovercam resources section](./assets/readme_resources.png)
 
-**navigators**
-This is where your `react-navigation` navigators will live.
+## **APIs**
 
-**screens**
-This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+- NASA's [API Portal](https://api.nasa.gov/)
+  > "objective of this site is to make NASA data, including imagery, eminently accessible to application developers. This catalog focuses on broadly useful and user friendly APIs and does not hold every NASA API."
 
-**services**
-Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
+## **NASA**
 
-**theme**
-Here lives the theme for your application, including spacing, colors, and typography.
+- [mars.nasa.gov](https://mars.nasa.gov/)
 
-**utils**
-This is a great place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truely shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
+## **NETWORK REQUESTS**
 
-**app.tsx** This is the entry point to your app. This is where you will find the main App component which renders the rest of the application.
+### **_[AXIOS](https://github.com/axios/axios#axios)_**
 
-### ./ignite directory
+- request method [aliases](https://github.com/axios/axios#request-method-aliases)
+- request [config](https://github.com/axios/axios#request-method-aliases)
+- response [schema](https://github.com/axios/axios#response-schema)
+- Axios [`get()`](https://github.com/axios/axios#axiosgeturl-config-1) --> modify URL
+- Axios [`request()`](https://github.com/axios/axios#axiosrequestconfig-1) --> modify configs
 
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
+## **REACT NATIVE**
 
-### ./storybook directory
+- React Navigation | [stack navigator](https://reactnavigation.org/docs/4.x/hello-react-navigation#creating-a-stack-navigator)
+- React Navigation | [navigation prop](https://reactnavigation.org/docs/4.x/navigation-prop)
+- [vector icons](https://icons.expo.fyi/)
+- Shopify'S React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
+- React Native-specific [styling](https://reactnative.dev/docs/style)
+- React [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+  - [react-native-config](https://github.com/luggit/react-native-config)
+- \<Image/\> [source]() prop
 
-This is where your stories will be registered and where the Storybook configs will live.
+</details>
 
-### ./test directory
+## **TOOLING**
 
-This directory will hold your Jest configs and mocks, as well as your [storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) test file. This is a file that contains the snapshots of all your component storybooks.
+### **_Package Management_**
 
-## Running Storybook
+- [npm cli vs. yarn cli](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
 
-From the command line in your generated app's root directory, enter `yarn run storybook`
-This starts up the storybook server and opens a story navigator in your browser. With your app
-running, choose Toggle Storybook from the developer menu to switch to Storybook; you can then
-use the story navigator in your browser to change stories.
+![rovercam shout-outs section](./assets/readme_shout-outs.png)
 
-For Visual Studio Code users, there is a handy extension that makes it easy to load Storybook use cases into a running emulator via tapping on items in the editor sidebar. Install the `React Native Storybook` extension by `Orta`, hit `cmd + shift + P` and select "Reconnect Storybook to VSCode". Expand the STORYBOOK section in the sidebar to see all use cases for components that have `.story.tsx` files in their directories.
+## **Chris Cerami**
 
-## Running e2e tests
+_Maintains the [Mars Rover Photo API](https://github.com/chrisccerami/mars-photo-api)_
 
-Read [e2e setup instructions](./e2e/README.md).
-
-## Previous Boilerplates
-
-- [2018 aka Bowser](https://github.com/infinitered/ignite-bowser)
-- [2017 aka Andross](https://github.com/infinitered/ignite-andross)
-- [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
+[![GitHub followers](https://img.shields.io/github/followers/chrisccerami?label=Follow&style=social)](https://github.com/chrisccerami)
+[![Twitter Follow](https://img.shields.io/twitter/follow/chrisccerami?label=Follow&style=social)](https://twitter.com/chrisccerami)
