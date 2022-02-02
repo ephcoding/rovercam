@@ -1,6 +1,40 @@
+<div align='center'>
+
 ![rovercam readme graphic](./assets/readme/build-notes-title.png)
 
+</div>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
+
+## **ROADMAP**
+
+- [ ] Mars Rover Photos API
+- [ ] UX design for image-heavy apps
+- [ ] UI design for image-heavy apps
+- [ ] React Native image optimization best-practices
+- [x] Mars img resources
+
+- [ ] display images for all 4 rovers
+- [ ] fetch images for all 4 rovers
+- [ ] create splash screen
+- [ ] set up [NASA](https://api.nasa.gov/#mars-rover-photos) Mars Rover Photos [API](https://github.com/chrisccerami/mars-photo-api) services
+- [x] set up project using [Ignite](https://github.com/infinitered/ignite)
+
+<h3 id='resources' align='center'>
+
 ![rovercam readme graphic](./assets/readme/resources.png)
+
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
 
 <details>
 <summary>Data Fetching</summary>
@@ -46,9 +80,29 @@
 
 </details>
 
+<h3 id='notes' align='center'>
+
 ![rovercam readme graphic](./assets/readme/notes.png)
 
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
+
+<h3 id='issues' align='center'>
+
 ![rovercam readme graphic](./assets/readme/issues.png)
+
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
 
 <details>
 <summary><code>dotenv</code> | unable to resolve module <code>'fs'</code></summary>
@@ -72,8 +126,38 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 
 </details>
 
+<h3 id='lessons' align='center'>
+
 ![rovercam readme graphic](./assets/readme/lessons.png)
+
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
+
+<h3 id='questions' align='center'>
 
 ![rovercam readme graphic](./assets/readme/questions.png)
 
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
+
+<h3 id='connect' align='center'>
+
 ![rovercam readme graphic](./assets/readme/connect.png)
+
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
