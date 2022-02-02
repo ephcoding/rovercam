@@ -1,4 +1,4 @@
-![project's section banner](./assets/readme/readme_title.png)
+![rovercam readme graphic](./assets/readme/title.png)
 
 ## **OBJECTIVE**
 
@@ -6,11 +6,11 @@
 2. learn React Native project setup best-practices & design patterns
 3. earn _cool_ points with my kids for "working with robots" ( they're 5 & 3. I'm not correcting them.. )
 
-![rovercam run-it section](./assets/readme/readme_run-it.png)
+![rovercam readme graphic](./assets/readme/install.png)
 
 **_...just a sec..._**
 
-![rovercam project status section](./assets/readme/readme_status.png)
+![rovercam readme graphic](./assets/readme/use.png)
 
 This isn't _everything_...
 
@@ -30,77 +30,11 @@ This isn't _everything_...
 - [ ] set up [NASA](https://api.nasa.gov/#mars-rover-photos) Mars Rover Photos [API](https://github.com/chrisccerami/mars-photo-api) services
 - [x] set up project using [Ignite](https://github.com/infinitered/ignite)
 
-![rovercam issues section](./assets/readme/readme_issues.png)
+![rovercam readme graphic](./assets/readme/shout-outs.png)
 
-<details>
-<summary><code>dotenv</code> | unable to resolve module <code>'fs'</code></summary>
+![rovercam readme graphic](./assets/readme/license.png)
 
-### **_PROBLEM_**
-
-```reactnative
-Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
-```
-
-### **_CAUSE_**
-
-- _`fs` doesn't exist in React Native ( deep-dive )_
-
-### **_SOUTION_**
-
-- route 3rd-party API calls through server where keys/secrets are stored (prevents sensitive info getting jacked in transit)
-
-- React Native pgks for handling config/environment variables:
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
-
-</details>
-
-![rovercam resources section](./assets/readme/readme_resources.png)
-
-<details>
-<summary>Data Fetching</summary>
-
-- [AXIOS](https://github.com/axios/axios#axios)
-
-</details>
-
-<details>
-<summary>Design Patterns</summary>
-
-- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
-
-</details>
-
-<details>
-<summary>NASA / Space</summary>
-
-- NASA [API Portal](https://api.nasa.gov/)
-
-- [mars.nasa.gov](https://mars.nasa.gov/)
-
-</details>
-
-<details>
-<summary>React / React Native</summary>
-
-- [stack navigator](https://reactnavigation.org/docs/4.x/hello-react-navigation#creating-a-stack-navigator)
-- [vector icons](https://icons.expo.fyi/)
-- [styling](https://reactnative.dev/docs/style)
-- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-  - [react-native-config](https://github.com/luggit/react-native-config)
-
-</details>
-
-<details>
-<summary>Tooling</summary>
-
-- Infinite Red | [Ignite](https://github.com/infinitered/ignite) React Native boilerplate
-- [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
-
-</details>
-
-![rovercam shout-outs section](./assets/readme/readme_shout-outs.png)
+![rovercam readme graphic](./assets/readme/contribute.png)
 
 ## **Chris Cerami**
 
@@ -109,7 +43,7 @@ _Maintains the [Mars Rover Photo API](https://github.com/chrisccerami/mars-photo
 [![GitHub followers](https://img.shields.io/github/followers/chrisccerami?label=Follow&style=social)](https://github.com/chrisccerami)
 [![Twitter Follow](https://img.shields.io/twitter/follow/chrisccerami?label=Follow&style=social)](https://twitter.com/chrisccerami)
 
-![connect with ephraim smith graphic](./assets/readme/readme_connect.png)
+![rovercam readme graphic](./assets/readme/connect.png)
 
 - [Email](mailto:github@modevx.com)
 - [ephraimsmith.dev](https://ephraimsmith.dev)
