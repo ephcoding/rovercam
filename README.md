@@ -12,6 +12,19 @@
 
 **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/alstr/blob/prod/BUILD_NOTES.md) for project timeline, progress, resources, notes, issues, & more!_**
 
+## **_FEATURES_**
+
+### **MVP**
+
+- [ ] search by SOL
+- [ ] search by EARTH DATE
+- [ ] search by ROVER/CAM
+- [ ] see latest photos for each Rover
+
+### **Future**
+
+- [ ] rate images (create fan-favorite collections)
+
 <h3 id='install' align='center'>
 
 ![rovercam readme graphic](./assets/readme/install.png)
