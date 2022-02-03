@@ -73,6 +73,7 @@
     - [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
     - [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
     - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
+  - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
 - Shopify's [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 
 <!-- #endregion /resources -->
