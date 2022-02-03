@@ -60,8 +60,10 @@ const MissionsScreen = () => {
 						// source={img}
 						style={S.img}
 					>
-						<View>
-							<Text style={S.text}>Rover: {manifests[roverManifest].name}</Text>
+						<View style={S.textWrapper}>
+							<Text style={S.sectionTitle}>
+								{manifests[roverManifest].name}
+							</Text>
 							<Text style={S.text}>
 								Launched: {manifests[roverManifest].launch_date}
 							</Text>
@@ -98,11 +100,19 @@ const S = StyleSheet.create({
 	},
 	screenTitle: {
 		fontSize: 20,
+	},
+	sectionTitle: {
+		color: "white",
+		fontSize: 30,
 		fontWeight: "bold",
+		textTransform: "uppercase",
 	},
 	text: {
-		backgroundColor: "#000000c0",
 		color: "white",
 		fontWeight: "bold",
+	},
+	textWrapper: {
+		backgroundColor: "#000000c0",
+		height: "100%",
 	},
 });
