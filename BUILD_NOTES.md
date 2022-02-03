@@ -1,3 +1,5 @@
+<!-- #region title -->
+
 <div align='center'>
 
 ![rovercam readme graphic](./assets/readme/build-notes-title.png)
@@ -10,7 +12,13 @@
 
 </div>
 
+<!-- #endregion /title -->
+
+<!-- #region roadmap -->
+
 ## **ROADMAP**
+
+### **Research**
 
 - [ ] Mars Rover Photos API
 - [ ] UX design for image-heavy apps
@@ -18,11 +26,17 @@
 - [ ] React Native image optimization best-practices
 - [x] Mars img resources
 
+### **Development**
+
 - [ ] display images for all 4 rovers
 - [ ] fetch images for all 4 rovers
 - [ ] create splash screen
 - [ ] set up [NASA](https://api.nasa.gov/#mars-rover-photos) Mars Rover Photos [API](https://github.com/chrisccerami/mars-photo-api) services
 - [x] set up project using [Ignite](https://github.com/infinitered/ignite)
+
+<!-- #endregion /roadmap -->
+
+<!-- #region resources -->
 
 <h3 id='resources' align='center'>
 
@@ -36,49 +50,35 @@
 
 </div>
 
-<details>
-<summary>Data Fetching</summary>
-
 - [AXIOS](https://github.com/axios/axios#axios)
-
-</details>
-
-<details>
-<summary>Design Patterns</summary>
-
-- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
-
-</details>
-
-<details>
-<summary>NASA / Space</summary>
-
+- Expo [docs](https://docs.expo.dev)
+  - [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
+- Expo [vector icons](https://icons.expo.fyi/)
+- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- NASA [Mars projects](https://mars.nasa.gov/)
 - NASA [API Portal](https://api.nasa.gov/)
-
-- [mars.nasa.gov](https://mars.nasa.gov/)
-
-</details>
-
-<details>
-<summary>React / React Native</summary>
-
-- [stack navigator](https://reactnavigation.org/docs/4.x/hello-react-navigation#creating-a-stack-navigator)
-- [vector icons](https://icons.expo.fyi/)
-- [styling](https://reactnative.dev/docs/style)
-- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-  - [react-native-config](https://github.com/luggit/react-native-config)
-
-</details>
-
-<details>
-<summary>Tooling</summary>
-
-- Infinite Red | [Ignite](https://github.com/infinitered/ignite) React Native boilerplate
 - [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
+- React Native docs: [styling](https://reactnative.dev/docs/style)
+- React: [docs](reactjs.org)
+  - [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- React Native: [docs](reactnative.dev)
+  - [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+    - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+    - [react-native-config](https://github.com/luggit/react-native-config)
+- React Navigation: [docs](https://reactnavigation.org/docs/4.x/getting-started)
+  - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
+  - [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
+  - ['Getting Started'](https://reactnavigation.org/docs/4.x/getting-started) packages (with `expo install`):
+    - [`react-navigation`](https://www.npmjs.com/package/react-navigation)
+    - [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
+    - [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
+    - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
+  - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
+- Shopify's [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 
-</details>
+<!-- #endregion /resources -->
+
+<!-- #region notes -->
 
 <h3 id='notes' align='center'>
 
@@ -92,6 +92,10 @@
 
 </div>
 
+<!-- #endregion /notes -->
+
+<!-- #region issues -->
+
 <h3 id='issues' align='center'>
 
 ![rovercam readme graphic](./assets/readme/issues.png)
@@ -104,27 +108,26 @@
 
 </div>
 
-<details>
-<summary><code>dotenv</code> | unable to resolve module <code>'fs'</code></summary>
-
-### **_PROBLEM_**
+## **_PROBLEM_**
 
 ```reactnative
 Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
 ```
 
-### **_CAUSE_**
+## **_CAUSE_**
 
 - _`fs` doesn't exist in React Native ( deep-dive )_
 
-### **_SOUTION_**
+## **_SOUTION_**
 
 - route 3rd-party API calls through server where keys/secrets are stored (prevents sensitive info getting jacked in transit)
 
 - React Native pgks for handling config/environment variables:
   - [rovercam readme graphic](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
 
-</details>
+<!-- #endregion /issues -->
+
+<!-- #region lessons learned -->
 
 <h3 id='lessons' align='center'>
 
@@ -138,6 +141,10 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 
 </div>
 
+<!-- #endregion /lessons learned -->
+
+<!-- #region questions -->
+
 <h3 id='questions' align='center'>
 
 ![rovercam readme graphic](./assets/readme/questions.png)
@@ -150,6 +157,10 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 
 </div>
 
+<!-- #endregion /questions -->
+
+<!-- #region connect -->
+
 <h3 id='connect' align='center'>
 
 ![rovercam readme graphic](./assets/readme/connect.png)
@@ -161,3 +172,5 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 [Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
 
 </div>
+
+<!-- #endregion /connect -->
