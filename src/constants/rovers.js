@@ -1,4 +1,4 @@
-export const ROVER_CAMERAS = [
+export const CAMERAS = [
 	{
 		name: "Curiosity",
 		cameras: ["FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM"],
@@ -32,3 +32,8 @@ export const ROVER_CAMERAS = [
 		cameras: ["FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"],
 	},
 ];
+
+export const CURIOSITY = "Curiosity";
+export const OPPORTUNITY = "Opportunity";
+export const PERSEVERANCE = "Perseverance";
+export const SPIRIT = "Spirit";
