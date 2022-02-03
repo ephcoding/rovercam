@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+	ImageBackground,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
 import Axios from "../services/marsRoverApi/axios-config";
 import {
 	CURIOSITY,
@@ -7,6 +13,7 @@ import {
 	PERSEVERANCE,
 	SPIRIT,
 } from "../constants/rovers";
+import { img } from "../../assets/img/curiosity.jpg";
 
 const MissionsScreen = () => {
 	const [manifests, setManifests] = useState({});
@@ -34,7 +41,7 @@ const MissionsScreen = () => {
 					});
 				}
 
-				// -- cache/re-cache manifest response if returned value is new OR updated
+				// -- TODO: cache/re-cache manifest response if returned value is new OR updated
 			} catch (error) {
 				console.log(error);
 			}
@@ -44,34 +51,58 @@ const MissionsScreen = () => {
 	}, []);
 
 	return (
-		<View style={S.screen}>
-			<View>
+		<SafeAreaView style={{ flex: 1 }}>
+			<View style={S.screen}>
 				{Object.keys(manifests).map(roverManifest => (
-					<View key={manifests[roverManifest].name}>
-						<Text>Rover: {manifests[roverManifest].name}</Text>
-						<Text>Launched: {manifests[roverManifest].launch_date}</Text>
-						<Text>Landed: {manifests[roverManifest].landing_date}</Text>
-						<Text>
-							Last Photo (earth date): {manifests[roverManifest].max_date}
-						</Text>
-						<Text>Last Photo (SOL): {manifests[roverManifest].max_sol}</Text>
-					</View>
+					<ImageBackground
+						source={require("../../assets/img/curiosity.jpg")}
+						key={manifests[roverManifest].name}
+						// source={img}
+						style={S.img}
+					>
+						<View>
+							<Text style={S.text}>Rover: {manifests[roverManifest].name}</Text>
+							<Text style={S.text}>
+								Launched: {manifests[roverManifest].launch_date}
+							</Text>
+							<Text style={S.text}>
+								Landed: {manifests[roverManifest].landing_date}
+							</Text>
+							<Text style={S.text}>
+								Last Photo (earth date): {manifests[roverManifest].max_date}
+							</Text>
+							<Text style={S.text}>
+								Last Photo (SOL): {manifests[roverManifest].max_sol}
+							</Text>
+						</View>
+					</ImageBackground>
 				))}
 			</View>
-		</View>
+		</SafeAreaView>
 	);
 };
 
 export default MissionsScreen;
 
 const S = StyleSheet.create({
+	img: {
+		flex: 1,
+		height: "100%",
+		width: "100%",
+		// resizeMode: "center",
+	},
 	screen: {
+		flex: 1,
 		height: "100%",
 		justifyContent: "space-between",
-		padding: 20,
 	},
 	screenTitle: {
 		fontSize: 20,
+		fontWeight: "bold",
+	},
+	text: {
+		backgroundColor: "#000000c0",
+		color: "white",
 		fontWeight: "bold",
 	},
 });
