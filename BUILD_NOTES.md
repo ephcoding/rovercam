@@ -51,6 +51,7 @@
 </div>
 
 - [AXIOS](https://github.com/axios/axios#axios)
+- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
 - Expo [docs](https://docs.expo.dev)
   - [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
 - Expo [vector icons](https://icons.expo.fyi/)
