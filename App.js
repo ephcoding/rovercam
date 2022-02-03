@@ -7,8 +7,18 @@ import PhotoOptionsScreen from "./src/screens/PhotoOptionsScreen";
 const AppStackNavigator = createStackNavigator(
 	{
 		Home: HomeScreen,
-		Missions: MissionsScreen,
-		Options: PhotoOptionsScreen,
+		Missions: {
+			screen: MissionsScreen,
+			navigationOptions: {
+				title: "ROVER MISSION STATS",
+			},
+		},
+		Options: {
+			screen: PhotoOptionsScreen,
+			navigationOptions: {
+				title: "ROVER PHOTO OPTIONS",
+			},
+		},
 	},
 	{
 		initialRouteName: "Home",

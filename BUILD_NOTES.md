@@ -75,6 +75,7 @@
     - [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
     - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
+  - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
 - Shopify's [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 
 <!-- #endregion /resources -->
