@@ -1,71 +1,39 @@
-import React from "react";
-import {
-	Image,
-	Pressable,
-	SafeAreaView,
-	StyleSheet,
-	Text,
-	View,
-} from "react-native";
+import { Image, SafeAreaView, StyleSheet, Text } from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
+import NavBtnList from "../components/NavBtnList";
+import ScreenTitle from "../components/ScreenTitle";
+import { ROVER_NAMES } from "../constants/rovers";
 
 /**
  * TODO: cleaner way to import imgs
- * TODO: how to reposition bgImg
+ * TODO: how to rePOSITION bgImg
  */
 
 const HomeScreen = ({ navigation }) => {
-	const handleOnPressNav = screen => navigation.navigate(screen);
+	const handleOnPressNav = rover =>
+		navigation.navigate("RoverScreen", { roverName: rover });
+
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<BackgroundImage
 				opacity={0.5}
 				imgSrc={require("../../assets/mars-glowing.jpg")}
 			>
-				<Text
-					style={{
-						color: "#fff",
-						padding: 15,
-						fontWeight: "bold",
-						fontSize: 40,
-					}}
-				>
-					ROVERCAM
-				</Text>
+				<ScreenTitle text='ROVERCAM' />
+
 				<Text style={{ color: "#fff" }}>
 					Lorem Ipsum is simply dummy text of the printing and typesetting
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s.
 				</Text>
-				<View style={S.btns}>
-					<Pressable
-						style={S.btn}
-						onPress={() => handleOnPressNav("Curiosity")}
-					>
-						<Text style={{ color: "#fff", alignSelf: "center" }}>
-							Curiosity
-						</Text>
-					</Pressable>
-					<Pressable
-						style={S.btn}
-						onPress={() => handleOnPressNav("Opportunity")}
-					>
-						<Text style={{ color: "#fff", alignSelf: "center" }}>
-							Opportunity
-						</Text>
-					</Pressable>
-					<Pressable
-						style={S.btn}
-						onPress={() => handleOnPressNav("Perseverance")}
-					>
-						<Text style={{ color: "#fff", alignSelf: "center" }}>
-							Perseverance
-						</Text>
-					</Pressable>
-					<Pressable style={S.btn} onPress={() => handleOnPressNav("Spirit")}>
-						<Text style={{ color: "#fff", alignSelf: "center" }}>Spirit</Text>
-					</Pressable>
-				</View>
+
+				<NavBtnList
+					btnLabels={ROVER_NAMES}
+					btnStyles={S.navBtn}
+					labelStyles={S.navBtnLabel}
+					listStyles={S.navBtns}
+					screen='RoverScreen'
+				/>
 			</BackgroundImage>
 		</SafeAreaView>
 	);
@@ -74,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
-	btn: {
+	navBtn: {
 		borderColor: "#fff",
 		borderRadius: 10,
 		borderWidth: 2,
@@ -82,7 +50,11 @@ const S = StyleSheet.create({
 		paddingVertical: 10,
 		width: 150,
 	},
-	btns: {
+	navBtnLabel: {
+		color: "#fff",
+		alignSelf: "center",
+	},
+	navBtns: {
 		alignItems: "center",
 		flex: 1,
 		justifyContent: "space-evenly",
