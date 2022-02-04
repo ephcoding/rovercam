@@ -1,5 +1,5 @@
 import {
-	ImageBackground,
+	Image,
 	Pressable,
 	SafeAreaView,
 	StyleSheet,
@@ -17,10 +17,34 @@ const HomeScreen = ({ navigation }) => {
 	const handleOnPressNav = screen => navigation.navigate(screen);
 	return (
 		<SafeAreaView style={S.safeArea}>
-			<ImageBackground
+			{/* NOTE: <ImageBackground> styles get applied to kids - wtf 
+			replacing with View/Image components
+			TODO: make this a xcomp later
+			*/}
+			{/* <ImageBackground
 				source={require("../../assets/mars-glowing.jpg")}
 				style={S.bgImg}
-			>
+			> */}
+			<View style={{ flex: 1 }}>
+				<Image
+					source={require("../../assets/mars-glowing.jpg")}
+					style={{
+						height: "100%",
+						width: "100%",
+						position: "absolute",
+						opacity: 0.5,
+					}}
+				/>
+				<Text
+					style={{
+						color: "#fff",
+						padding: 15,
+						fontWeight: "bold",
+						fontSize: 40,
+					}}
+				>
+					ROVERCAM
+				</Text>
 				<View style={S.screen}>
 					<Pressable style={S.btn} onPress={() => handleOnPressNav("Missions")}>
 						<Text>Rover Missions</Text>
@@ -29,7 +53,8 @@ const HomeScreen = ({ navigation }) => {
 						<Text>Photos</Text>
 					</Pressable>
 				</View>
-			</ImageBackground>
+			</View>
+			{/* </ImageBackground> */}
 		</SafeAreaView>
 	);
 };
@@ -47,7 +72,7 @@ const S = StyleSheet.create({
 		flex: 1,
 		height: "100%",
 		width: "100%",
-		opacity: 0.7,
+		opacity: 0.5,
 	},
 	safeArea: {
 		backgroundColor: "#000",
