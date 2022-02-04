@@ -6,7 +6,7 @@ import { useFetchManifest } from "../hooks/use-manifest";
 import CamerasList from "../components/CamerasList";
 import RoverStats from "../components/RoverStats";
 
-const RoverScreen = () => {
+const RoverScreen = ({ navigation }) => {
 	// const { manifest } = useFetchManifest(CURIOSITY);
 
 	// let { name, launch_date, landing_date, max_date, total_photos } = manifest;

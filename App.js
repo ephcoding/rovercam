@@ -1,13 +1,16 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./app/screens/HomeScreen";
-import TestScreen from "./app/screens/TestScreen";
+import RoverScreen from "./app/screens/RoverScreen";
 /**
  * TODO: remove HomeScreen header
  */
 
 const AppStackNavigator = createStackNavigator(
-	{ Home: HomeScreen, Test: TestScreen },
+	{
+		Home: { screen: HomeScreen },
+		Rover: { screen: RoverScreen },
+	},
 	{
 		initialRouteName: "Home",
 		defaultNavigationOptions: {

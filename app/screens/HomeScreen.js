@@ -17,11 +17,6 @@ import { ROVER_NAMES } from "../constants/rovers";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const handleOnPress = screen => {
-		// console.log(">> HOME SCREEN >>", navigation);
-		navigation.navigate("MissionsScreen");
-	};
-
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<BackgroundImage
@@ -36,7 +31,7 @@ const HomeScreen = ({ navigation }) => {
 					since the 1500s.
 				</Text>
 
-				<Pressable onPress={() => handleOnPress("RoverScreen")}>
+				<Pressable onPress={() => navigation.navigate("Rover")}>
 					<Text style={{ color: "#fff" }}>press</Text>
 				</Pressable>
 
