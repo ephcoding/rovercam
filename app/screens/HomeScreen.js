@@ -11,16 +11,17 @@ import React from "react";
 /**
  * TODO:
  * 1. cleaner way to import imgs
+ * 2. how to reposition bgImg
  */
 
 const HomeScreen = ({ navigation }) => {
 	const handleOnPressNav = screen => navigation.navigate(screen);
 	return (
-		<ImageBackground
-			source={require("../../assets/mars-glowing.jpg")}
-			style={S.imgBg}
-		>
-			<SafeAreaView style={S.safeArea}>
+		<SafeAreaView style={S.safeArea}>
+			<ImageBackground
+				source={require("../../assets/mars-glowing.jpg")}
+				style={S.bgImg}
+			>
 				<View style={S.screen}>
 					<Pressable style={S.btn} onPress={() => handleOnPressNav("Missions")}>
 						<Text>Rover Missions</Text>
@@ -29,8 +30,8 @@ const HomeScreen = ({ navigation }) => {
 						<Text>Photos</Text>
 					</Pressable>
 				</View>
-			</SafeAreaView>
-		</ImageBackground>
+			</ImageBackground>
+		</SafeAreaView>
 	);
 };
 
@@ -43,10 +44,16 @@ const S = StyleSheet.create({
 		paddingHorizontal: 20,
 		paddingVertical: 10,
 	},
-	imgBg: {
+	bgImg: {
 		flex: 1,
+		height: "100%",
+		width: "100%",
+		opacity: 0.7,
+		position: "absolute",
+		right: 15,
 	},
 	safeArea: {
+		backgroundColor: "#000",
 		flex: 1,
 	},
 	screen: {

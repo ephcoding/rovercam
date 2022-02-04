@@ -63,11 +63,13 @@
 - React: [docs](reactjs.org)
   - [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 - React Native: [docs](reactnative.dev)
+  - [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
   - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
   - [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
     - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
     - [react-native-config](https://github.com/luggit/react-native-config)
   - [styling](https://reactnative.dev/docs/style)
+    - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 - React Navigation: [docs](https://reactnavigation.org/docs/4.x/getting-started)
   - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
   - [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
@@ -78,7 +80,6 @@
     - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
   - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
-- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 
 <!-- #endregion /resources -->
 
