@@ -1,10 +1,10 @@
-import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 const NavBtn = ({ btnStyles, label, labelStyles, screen }) => {
 	return (
-		<TouchableOpacity key={label} style={[S.touchOpac, btnStyles]}>
+		<Pressable key={label} style={[S.touchOpac, btnStyles]}>
 			<Text style={[S.text, labelStyles]}>{label}</Text>
-		</TouchableOpacity>
+		</Pressable>
 	);
 };
 

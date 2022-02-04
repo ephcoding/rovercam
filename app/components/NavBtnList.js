@@ -6,13 +6,11 @@ const NavBtnList = ({
 	btnStyles,
 	labelStyles,
 	listStyles,
-	navigation,
 	screen,
 }) => {
-	const handleOnPress = pressedLabel => {
-		// navigation.navigate(screen, { btnLabel: pressedLabel });
-		navigation.navigate("RoverScreen");
-		console.log(">> NAV BTN >>", navigation);
+	const handleOnPress = () => {
+		console.log(navigation.state);
+		console.log(">> NAV BTN onPress() >>", navigation.navigate("RoverScreen"));
 	};
 
 	if (!btnLabels) return;
@@ -25,9 +23,7 @@ const NavBtnList = ({
 					key={label}
 					label={label}
 					labelStyles={labelStyles}
-					onPress={() => {
-						navigation.navigate("RoverScreen");
-					}}
+					onPress={() => handleOnPress()}
 				/>
 			))}
 		</View>

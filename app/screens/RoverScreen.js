@@ -28,22 +28,22 @@ const RoverScreen = () => {
 				>
 					{name}
 				</Text>
-				{/* <RoverStats /> */}
-			{/* <View style={S.roverStats}>
+				<RoverStats />
+				<View style={S.roverStats}>
 					<Text style={{ color: "#fff" }}>Launched: {launch_date}</Text>
 					<Text style={{ color: "#fff" }}>Landed: {landing_date}</Text>
 					<Text style={{ color: "#fff" }}>Last Transmission: {max_date}</Text>
 					<Text style={{ color: "#fff" }}>Photo Count: {total_photos}</Text>
-				</View> */}
-			{/* <CamerasList /> */}
-			{/* <View style={S.cameras}>
+				</View>
+				<CamerasList />
+				<View style={S.cameras}>
 					{CAMERAS.Curiosity.map(camera => (
 						<View key={camera[1]} style={S.camera}>
 							<Text style={{ color: "#fff" }}>{camera[0]}</Text>
 						</View>
 					))}
-				</View> */}
-			{/* </View> */} */}
+				</View>
+			</View> */}
 		</BackgroundImage>
 	);
 };

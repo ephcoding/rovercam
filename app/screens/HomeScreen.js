@@ -1,4 +1,11 @@
-import { Button, Image, SafeAreaView, StyleSheet, Text } from "react-native";
+import {
+	Button,
+	Image,
+	Pressable,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+} from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
 import NavBtnList from "../components/NavBtnList";
 import ScreenTitle from "../components/ScreenTitle";
@@ -10,6 +17,11 @@ import { ROVER_NAMES } from "../constants/rovers";
  */
 
 const HomeScreen = ({ navigation }) => {
+	const handleOnPress = screen => {
+		// console.log(">> HOME SCREEN >>", navigation);
+		navigation.navigate("MissionsScreen");
+	};
+
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<BackgroundImage
@@ -24,19 +36,17 @@ const HomeScreen = ({ navigation }) => {
 					since the 1500s.
 				</Text>
 
-				<Button
-					onPress={() => navigation.navigate("RoverScreen")}
-					title='Nav 4 me..'
-				/>
+				<Pressable onPress={() => handleOnPress("RoverScreen")}>
+					<Text style={{ color: "#fff" }}>press</Text>
+				</Pressable>
 
-				<NavBtnList
+				{/* <NavBtnList
 					btnLabels={ROVER_NAMES}
 					btnStyles={S.navBtn}
 					labelStyles={S.navBtnLabel}
 					listStyles={S.navBtns}
-					navigation={navigation}
 					screen='RoverScreen'
-				/>
+				/> */}
 			</BackgroundImage>
 		</SafeAreaView>
 	);
