@@ -1,6 +1,10 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./app/screens/HomeScreen";
+import CuriosityScreen from "./app/screens/CuriosityScreen";
+import OpportunityScreen from "./app/screens/OpportunityScreen";
+import PerseveranceScreen from "./app/screens/PerseveranceScreen";
+import SpiritScreen from "./app/screens/SpiritScreen";
 import MissionsScreen from "./app/screens/MissionsScreen";
 import PhotoOptionsScreen from "./app/screens/PhotoOptionsScreen";
 
@@ -11,6 +15,10 @@ import PhotoOptionsScreen from "./app/screens/PhotoOptionsScreen";
 const AppStackNavigator = createStackNavigator(
 	{
 		Home: HomeScreen,
+		Curiosity: CuriosityScreen,
+		Opportunity: OpportunityScreen,
+		Perseverance: PerseveranceScreen,
+		Spirit: SpiritScreen,
 		Missions: {
 			screen: MissionsScreen,
 			navigationOptions: {
