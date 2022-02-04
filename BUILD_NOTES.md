@@ -112,6 +112,8 @@
 
 </div>
 
+<!-- #region [unable to resolve module (fs)] -->
+
 ## **_PROBLEM_**
 
 ```reactnative
@@ -128,6 +130,38 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 
 - React Native pgks for handling config/environment variables:
   - [rovercam readme graphic](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
+
+<!-- #endregion /*unable to resolve module (fs)* -->
+<!-- #region [unable to resolve module (removed comment top of file)] -->
+
+<details>
+<summary>Unable to resolve (deleted comment top of file) in <code>node_modules</code></summary>
+
+## **_PROBLEM:_**
+
+```reactnative
+Unable to resolve module from <path>: could not be found within the project or in these directories: node_modules
+```
+
+## **_CAUSE:_**
+
+I added a comment at top of file. Attempted:
+
+[ ] deleting comment
+[ ] restarting app
+[ ] reset Metro cache via `yarn start --reset-cach` per error message \* returns `error: unknown option --reset-cache`
+
+**_Actual Cause:_**
+
+incomplete `<ImageBackground>` source path. awesome.
+
+## **_SOLUTION:_**
+
+add img file name to `<ImageBackground source={require('')}>`. awesome.
+
+</details>
+
+<!-- #endregion /[unable to resolve module (removed comment top of file)] -->
 
 <!-- #endregion /issues -->
 
