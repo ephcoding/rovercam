@@ -3,6 +3,13 @@ export const OPPORTUNITY = "Opportunity";
 export const PERSEVERANCE = "Perseverance";
 export const SPIRIT = "Spirit";
 
+export const ROVER_NAMES = [
+	"Curiosity",
+	"Opportunity",
+	"Perseverance",
+	"Spirit",
+];
+
 export const CAMERAS = {
 	Curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
