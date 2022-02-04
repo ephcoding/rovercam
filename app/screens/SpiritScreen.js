@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
+import { SPIRIT, CAMERAS } from "../constants/rovers";
 
 const SpiritScreen = () => {
 	return (

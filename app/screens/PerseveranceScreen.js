@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
+import { PERSEVERANCE, CAMERAS } from "../constants/rovers";
 
 const PerseveranceScreen = () => {
 	return (

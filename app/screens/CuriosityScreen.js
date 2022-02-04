@@ -1,6 +1,6 @@
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
+import { CURIOSITY, CAMERAS } from "../constants/rovers";
 
 const CuriosityScreen = () => {
 	return (

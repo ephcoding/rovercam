@@ -1,6 +1,6 @@
-import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import BackgroundImage from "../components/BackgroundImage";
+import { OPPORTUNITY, CAMERAS } from "../constants/rovers";
 
 const OpportunityScreen = () => {
 	return (
