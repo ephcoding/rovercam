@@ -1,9 +1,18 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import {
+	ImageBackground,
+	Pressable,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
 import React from "react";
 
 const HomeScreen = ({ navigation }) => {
 	const handleOnPressNav = screen => navigation.navigate(screen);
 	return (
+		// <SafeAreaView style={S.safeArea}>
+		// <ImageBackground>
 		<View style={S.screen}>
 			<Pressable style={S.btn} onPress={() => handleOnPressNav("Missions")}>
 				<Text>Rover Missions</Text>
@@ -12,6 +21,8 @@ const HomeScreen = ({ navigation }) => {
 				<Text>Photos</Text>
 			</Pressable>
 		</View>
+		// </ImageBackground>
+		// </SafeAreaView>
 	);
 };
 

@@ -13,7 +13,6 @@ import {
 	PERSEVERANCE,
 	SPIRIT,
 } from "../constants/rovers";
-import { img } from "../../assets/img/curiosity.jpg";
 
 const MissionsScreen = () => {
 	const [manifests, setManifests] = useState({});
@@ -54,30 +53,28 @@ const MissionsScreen = () => {
 		<SafeAreaView style={{ flex: 1 }}>
 			<View style={S.screen}>
 				{Object.keys(manifests).map(roverManifest => (
-					<ImageBackground
-						source={require("../../assets/img/curiosity.jpg")}
-						key={manifests[roverManifest].name}
-						// source={img}
-						style={S.img}
-					>
-						<View style={S.textWrapper}>
-							<Text style={S.sectionTitle}>
-								{manifests[roverManifest].name}
-							</Text>
-							<Text style={S.text}>
-								Launched: {manifests[roverManifest].launch_date}
-							</Text>
-							<Text style={S.text}>
-								Landed: {manifests[roverManifest].landing_date}
-							</Text>
-							<Text style={S.text}>
-								Last Photo (earth date): {manifests[roverManifest].max_date}
-							</Text>
-							<Text style={S.text}>
-								Last Photo (SOL): {manifests[roverManifest].max_sol}
-							</Text>
-						</View>
-					</ImageBackground>
+					// <ImageBackground
+					// 	source={require("../../assets/img/curiosity-01.jpg")}
+					// 	key={manifests[roverManifest].name}
+					// 	// source={img}
+					// 	style={S.img}
+					// >
+					<View style={S.textWrapper}>
+						<Text style={S.sectionTitle}>{manifests[roverManifest].name}</Text>
+						<Text style={S.text}>
+							Launched: {manifests[roverManifest].launch_date}
+						</Text>
+						<Text style={S.text}>
+							Landed: {manifests[roverManifest].landing_date}
+						</Text>
+						<Text style={S.text}>
+							Last Photo (earth date): {manifests[roverManifest].max_date}
+						</Text>
+						<Text style={S.text}>
+							Last Photo (SOL): {manifests[roverManifest].max_sol}
+						</Text>
+					</View>
+					// </ImageBackground>
 				))}
 			</View>
 		</SafeAreaView>
