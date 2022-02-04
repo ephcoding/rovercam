@@ -1,3 +1,4 @@
+import React from "react";
 import {
 	Image,
 	Pressable,
@@ -6,7 +7,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import React from "react";
+import BackgroundImage from "../components/BackgroundImage";
 
 /**
  * TODO: cleaner way to import imgs
@@ -17,24 +18,10 @@ const HomeScreen = ({ navigation }) => {
 	const handleOnPressNav = screen => navigation.navigate(screen);
 	return (
 		<SafeAreaView style={S.safeArea}>
-			{/* NOTE: <ImageBackground> styles get applied to kids - wtf 
-			replacing with View/Image components
-			TODO: make this a xcomp later
-			*/}
-			{/* <ImageBackground
-				source={require("../../assets/mars-glowing.jpg")}
-				style={S.bgImg}
-			> */}
-			<View style={{ flex: 1 }}>
-				<Image
-					source={require("../../assets/mars-glowing.jpg")}
-					style={{
-						height: "100%",
-						width: "100%",
-						position: "absolute",
-						opacity: 0.5,
-					}}
-				/>
+			<BackgroundImage
+				opacity={0.5}
+				imgSrc={require("../../assets/mars-glowing.jpg")}
+			>
 				<Text
 					style={{
 						color: "#fff",
@@ -45,16 +32,41 @@ const HomeScreen = ({ navigation }) => {
 				>
 					ROVERCAM
 				</Text>
-				<View style={S.screen}>
-					<Pressable style={S.btn} onPress={() => handleOnPressNav("Missions")}>
-						<Text>Rover Missions</Text>
+				<Text style={{ color: "#fff" }}>
+					Lorem Ipsum is simply dummy text of the printing and typesetting
+					industry. Lorem Ipsum has been the industry's standard dummy text ever
+					since the 1500s.
+				</Text>
+				<View style={S.btns}>
+					<Pressable
+						style={S.btn}
+						onPress={() => handleOnPressNav("Curiosity")}
+					>
+						<Text style={{ color: "#fff", alignSelf: "center" }}>
+							Curiosity
+						</Text>
 					</Pressable>
-					<Pressable style={S.btn} onPress={() => handleOnPressNav("Options")}>
-						<Text>Photos</Text>
+					<Pressable
+						style={S.btn}
+						onPress={() => handleOnPressNav("Opportunity")}
+					>
+						<Text style={{ color: "#fff", alignSelf: "center" }}>
+							Opportunity
+						</Text>
+					</Pressable>
+					<Pressable
+						style={S.btn}
+						onPress={() => handleOnPressNav("Perseverance")}
+					>
+						<Text style={{ color: "#fff", alignSelf: "center" }}>
+							Perseverance
+						</Text>
+					</Pressable>
+					<Pressable style={S.btn} onPress={() => handleOnPressNav("Spirit")}>
+						<Text style={{ color: "#fff", alignSelf: "center" }}>Spirit</Text>
 					</Pressable>
 				</View>
-			</View>
-			{/* </ImageBackground> */}
+			</BackgroundImage>
 		</SafeAreaView>
 	);
 };
@@ -63,24 +75,20 @@ export default HomeScreen;
 
 const S = StyleSheet.create({
 	btn: {
-		borderColor: "black",
+		borderColor: "#fff",
+		borderRadius: 10,
 		borderWidth: 2,
 		paddingHorizontal: 20,
 		paddingVertical: 10,
+		width: 150,
 	},
-	bgImg: {
+	btns: {
+		alignItems: "center",
 		flex: 1,
-		height: "100%",
-		width: "100%",
-		opacity: 0.5,
+		justifyContent: "space-evenly",
 	},
 	safeArea: {
 		backgroundColor: "#000",
 		flex: 1,
-	},
-	screen: {
-		alignItems: "center",
-		height: "100%",
-		justifyContent: "space-evenly",
 	},
 });
