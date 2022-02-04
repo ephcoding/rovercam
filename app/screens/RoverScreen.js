@@ -7,16 +7,16 @@ import CamerasList from "../components/CamerasList";
 import RoverStats from "../components/RoverStats";
 
 const RoverScreen = () => {
-	const { manifest } = useFetchManifest(CURIOSITY);
+	// const { manifest } = useFetchManifest(CURIOSITY);
 
-	let { name, launch_date, landing_date, max_date, total_photos } = manifest;
+	// let { name, launch_date, landing_date, max_date, total_photos } = manifest;
 
 	return (
 		<BackgroundImage
 			imgSrc={require("../../assets/img/curiosity-02.jpg")}
 			opacity={0.5}
 		>
-			<View style={S.screen}>
+			{/* <View style={S.screen}>
 				<Text
 					style={{
 						color: "#fff",
@@ -29,21 +29,21 @@ const RoverScreen = () => {
 					{name}
 				</Text>
 				{/* <RoverStats /> */}
-				<View style={S.roverStats}>
+			{/* <View style={S.roverStats}>
 					<Text style={{ color: "#fff" }}>Launched: {launch_date}</Text>
 					<Text style={{ color: "#fff" }}>Landed: {landing_date}</Text>
 					<Text style={{ color: "#fff" }}>Last Transmission: {max_date}</Text>
 					<Text style={{ color: "#fff" }}>Photo Count: {total_photos}</Text>
-				</View>
-				{/* <CamerasList /> */}
-				<View style={S.cameras}>
+				</View> */}
+			{/* <CamerasList /> */}
+			{/* <View style={S.cameras}>
 					{CAMERAS.Curiosity.map(camera => (
 						<View key={camera[1]} style={S.camera}>
 							<Text style={{ color: "#fff" }}>{camera[0]}</Text>
 						</View>
 					))}
-				</View>
-			</View>
+				</View> */}
+			{/* </View> */} */}
 		</BackgroundImage>
 	);
 };

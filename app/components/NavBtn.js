@@ -1,27 +1,17 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { withNavigation } from "react-navigation";
+import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 
-const NavBtn = ({ btnStyles, label, labelStyles, navigation, screen }) => {
-	const handleOnPress = pressedLabel => {
-		navigation.navigate(screen, { btnLabel: pressedLabel });
-		console.log(">> NAV BTN >>", pressedLabel);
-	};
-
+const NavBtn = ({ btnStyles, label, labelStyles, screen }) => {
 	return (
-		<Pressable
-			key={label}
-			onPress={() => handleOnPress(label)}
-			style={[S.pressable, btnStyles]}
-		>
+		<TouchableOpacity key={label} style={[S.touchOpac, btnStyles]}>
 			<Text style={[S.text, labelStyles]}>{label}</Text>
-		</Pressable>
+		</TouchableOpacity>
 	);
 };
 
-export default withNavigation(NavBtn);
+export default NavBtn;
 
 const S = StyleSheet.create({
-	pressable: {
+	touchOpac: {
 		borderColor: "#fff",
 		borderRadius: 10,
 		borderWidth: 2,
