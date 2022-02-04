@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const ListCard = ({ roverInfo }) => {
+const RoverStats = ({ roverInfo }) => {
 	const { name, launch_date, landing_date, max_date, total_photos } = roverInfo;
 
 	return (
@@ -15,7 +15,7 @@ const ListCard = ({ roverInfo }) => {
 	);
 };
 
-export default ListCard;
+export default RoverStats;
 
 const S = StyleSheet.create({
 	container: {
