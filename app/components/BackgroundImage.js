@@ -1,9 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import React from "react";
 
-const BackgroundImage = ({ children, opacity, imgSrc }) => {
+const BackgroundImage = ({
+	bgColor = "#000",
+	children,
+	imgSrc,
+	opacity = 0.5,
+}) => {
 	return (
-		<View style={{ flex: 1 }}>
+		<View style={{ backgroundColor: bgColor, flex: 1 }}>
 			<Image
 				source={imgSrc}
 				style={{
@@ -20,5 +25,3 @@ const BackgroundImage = ({ children, opacity, imgSrc }) => {
 };
 
 export default BackgroundImage;
-
-const styles = StyleSheet.create({});
