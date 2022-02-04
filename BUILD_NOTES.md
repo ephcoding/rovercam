@@ -83,6 +83,7 @@
     - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
   - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
+  - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
 
 <!-- #endregion /resources -->
 
