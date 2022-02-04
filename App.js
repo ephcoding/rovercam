@@ -4,6 +4,10 @@ import HomeScreen from "./app/screens/HomeScreen";
 import MissionsScreen from "./app/screens/MissionsScreen";
 import PhotoOptionsScreen from "./app/screens/PhotoOptionsScreen";
 
+/**
+ * TODO: remove HomeScreen header
+ */
+
 const AppStackNavigator = createStackNavigator(
 	{
 		Home: HomeScreen,

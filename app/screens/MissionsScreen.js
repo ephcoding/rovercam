@@ -40,7 +40,7 @@ const MissionsScreen = () => {
 					});
 				}
 
-				// -- TODO: cache/re-cache manifest response if returned value is new OR updated
+				// TODO: cache/re-cache manifest response if returned value is new OR updated
 			} catch (error) {
 				console.log(error);
 			}

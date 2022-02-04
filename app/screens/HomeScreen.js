@@ -9,9 +9,8 @@ import {
 import React from "react";
 
 /**
- * TODO:
- * 1. cleaner way to import imgs
- * 2. how to reposition bgImg
+ * TODO: cleaner way to import imgs
+ * TODO: how to reposition bgImg
  */
 
 const HomeScreen = ({ navigation }) => {
@@ -49,8 +48,6 @@ const S = StyleSheet.create({
 		height: "100%",
 		width: "100%",
 		opacity: 0.7,
-		position: "absolute",
-		right: 15,
 	},
 	safeArea: {
 		backgroundColor: "#000",
