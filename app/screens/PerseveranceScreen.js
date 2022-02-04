@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const PerseverenceScreen = () => {
+const PerseveranceScreen = () => {
 	return (
 		<View>
 			<Text></Text>
@@ -9,6 +9,6 @@ const PerseverenceScreen = () => {
 	);
 };
 
-export default PerseverenceScreen;
+export default PerseveranceScreen;
 
 const styles = StyleSheet.create({});
