@@ -1,39 +1,47 @@
-export const CAMERAS = [
-	{
-		name: "Curiosity",
-		cameras: ["FHAZ", "RHAZ", "MAST", "CHEMCAM", "MAHLI", "MARDI", "NAVCAM"],
-	},
-	{
-		name: "Opportunity",
-		cameras: ["FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"],
-	},
-	{
-		name: "Perseverance",
-		cameras: [
-			"EDL_RUCAM",
-			"EDL_RDCAM",
-			"EDL_DDCAM",
-			"EDL_PUCAM1",
-			"EDL_PUCAM2",
-			"NAVCAM_LEFT",
-			"NAVCAM_RIGHT",
-			"MCZ_RIGHT",
-			"MCZ_LEFT",
-			"FRONT_HAZCAM_LEFT_A",
-			"FRONT_HAZCAM_RIGHT_A",
-			"REAR_HAZCAM_LEFT",
-			"REAR_HAZCAM_RIGHT",
-			"SKYCAM",
-			"SHERLOC_WATSON",
-		],
-	},
-	{
-		name: "Spirit",
-		cameras: ["FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"],
-	},
-];
-
 export const CURIOSITY = "Curiosity";
 export const OPPORTUNITY = "Opportunity";
 export const PERSEVERANCE = "Perseverance";
 export const SPIRIT = "Spirit";
+
+export const CAMERAS = {
+	Curiosity: [
+		["Front Hazard Avoidance Camera", "FHAZ"],
+		["Rear Hazard Avoidance Camera", "RHAZ"],
+		["Mast Camera", "MAST"],
+		["Chemistry & Camera Complex", "CHEMCAM"],
+		["Mars Hand Lens Imager", "MAHLI"],
+		["Mars Decent Imager", "MARDI"],
+		["Navigation Camera", "NAVCAM"],
+	],
+	Opportunity: [
+		["Front Hazard Avoidance Camera", "FHAZ"],
+		["Rear Hazard Avoidance Camera", "RHAZ"],
+		["Navigation Camera", "NAVCAM"],
+		["Panoramic Camera", "PANCAM"],
+		["Miniature Thermal Emission Spectrometer", "MINITES"],
+	],
+	Perseverance: [
+		["Rover Up-Look Camera", "EDL_RUCAM"],
+		["Rover Down-Look Camera", "EDL_RDCAM"],
+		["Decent Stage Down-Look Camera", "EDL_DDCAM"],
+		["Parachute Up-Look Camera A", "EDL_PUCAM1"],
+		["Parachute Up-Look Camera B", "EDL_PUCAM2"],
+		["Navigation Camera - Left", "NAVCAM_LEFT"],
+		["Navigation Camera - Right", "NAVCAM_RIGHT"],
+		["Mast Camera Zoom - Right", "MCZ_RIGHT"],
+		["Mast Camera Zoom - Left", "MCZ_LEFT"],
+		["Front Hazard Avoidance Camera - Left", "FRONT_HAZCAM_LEFT_A"],
+		["Front Hazard Avoidance Camera - Right", "FRONT_HAZCAM_RIGHT_A"],
+		["Rear Hazard Avoidance Camera - Left", "REAR_HAZCAM_LEFT"],
+		["Rear Hazard Avoidance Camera - Right", "REAR_HAZCAM_RIGHT"],
+		["MEDA Skycam", "SKYCAM"],
+		["SHERLOC WATSON Camera", "SHERLOC_WATSON"],
+	],
+	Spirit: [
+		["Front Hazard Avoidance Camera", "FHAZ"],
+		["Rear Hazard Avoidance Camera", "RHAZ"],
+		["Navigation Camera", "NAVCAM"],
+		["Panoramic Camera", "PANCAM"],
+		["Miniature Thermal Emission Spectrometer", "MINITES"],
+	],
+};
