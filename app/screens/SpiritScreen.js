@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import BackgroundImage from "../components/BackgroundImage";
 
 const SpiritScreen = () => {
 	return (
-		<View>
-			<Text></Text>
-		</View>
+		<BackgroundImage
+			imgSrc={require("../../assets/img/spirit.jpg")}
+		></BackgroundImage>
 	);
 };
 
