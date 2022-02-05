@@ -1,5 +1,5 @@
 import React from "react";
-import PhotosListItem from "./PhotosListItem";
+import PhotosListItem from "./ListItem_Photos";
 
 const PhotosList = ({ photos }) => {
 	return (

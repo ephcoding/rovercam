@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import BackgroundImage from "../components/mdx-core/Img_Background";
+import BackgroundImage from "../components/mdx-core/ImgBackground";
 import { CURIOSITY, CAMERAS } from "../constants/rovers";
-import { useFetchRoverManifest } from "../hooks/use-manifest";
-import CamerasList from "../components/List_Cameras";
+import { useFetchManifest } from "../hooks/use-manifest";
+import CamerasList from "../components/CamerasList";
 import RoverStats from "../components/RoverStats";
 
 const RoverScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
 	console.log(">> ROVER SCREEN >>", rover);
-	const { manifest } = useFetchRoverManifest(rover);
+	const { manifest } = useFetchManifest(rover);
 
 	if (!manifest) return;
 

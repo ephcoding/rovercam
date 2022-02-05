@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Axios from "../services/marsRoverApi/axios-config";
+import Axios from "../services/mars-photo-api/axios-config";
 
-export const useFetchManifest = roverName => {
+export const useFetchRoverManifest = roverName => {
 	const [manifest, setManifest] = useState({});
 
 	useEffect(() => {
