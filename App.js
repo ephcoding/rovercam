@@ -7,16 +7,16 @@ import RoverScreen from "./app/screens/RoverScreen";
  */
 
 const AppStackNavigator = createStackNavigator(
-	{
-		Home: { screen: HomeScreen },
-		Rover: { screen: RoverScreen },
-	},
-	{
-		initialRouteName: "Home",
-		defaultNavigationOptions: {
-			title: "ROVERCAM",
-		},
-	}
+  {
+    Home: { screen: HomeScreen },
+    Rover: { screen: RoverScreen },
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      title: "ROVERCAM",
+    },
+  }
 );
 
 export default createAppContainer(AppStackNavigator);
