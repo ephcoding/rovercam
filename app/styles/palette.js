@@ -1,4 +1,7 @@
-// TODO: add DK & LT variants to PRIMARY & SECONDARY palette colors
+// PALETTE colors do NOT get used in app
+// use semantic COLORS & variants from color-map.js
+// modify these from app to app
+
 export const PALETTE = {
 	black: "rgb(0,0,0)",
 	blue: "rgb(0,102,255)",
