@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const MissionsScreen = () => {
+const CamerasList = () => {
 	return (
 		<View>
-			<Text>Missions Screen</Text>
+			<Text></Text>
 		</View>
 	);
 };
 
-export default MissionsScreen;
+export default CamerasList;
 
 const styles = StyleSheet.create({});

@@ -51,20 +51,28 @@
 </div>
 
 - [AXIOS](https://github.com/axios/axios#axios)
+- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
 - Expo [docs](https://docs.expo.dev)
   - [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
-- Expo [vector icons](https://icons.expo.fyi/)
+  - [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
+  - [vector icons](https://icons.expo.fyi/)
 - [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- ### JavaScript
+  - use `??` for [optional chaining & nullish coalescing](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
 - NASA [Mars projects](https://mars.nasa.gov/)
 - NASA [API Portal](https://api.nasa.gov/)
 - [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
-- React Native docs: [styling](https://reactnative.dev/docs/style)
 - React: [docs](reactjs.org)
   - [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  - [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
 - React Native: [docs](reactnative.dev)
+  - [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
+  - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
   - [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
     - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
     - [react-native-config](https://github.com/luggit/react-native-config)
+  - [styling](https://reactnative.dev/docs/style)
+    - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 - React Navigation: [docs](https://reactnavigation.org/docs/4.x/getting-started)
   - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
   - [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
@@ -74,7 +82,8 @@
     - [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
     - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
-- Shopify's [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
+  - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
+  - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
 
 <!-- #endregion /resources -->
 
@@ -108,6 +117,8 @@
 
 </div>
 
+<!-- #region [unable to resolve module (fs)] -->
+
 ## **_PROBLEM_**
 
 ```reactnative
@@ -124,6 +135,38 @@ Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/
 
 - React Native pgks for handling config/environment variables:
   - [rovercam readme graphic](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
+
+<!-- #endregion /*unable to resolve module (fs)* -->
+<!-- #region [unable to resolve module (removed comment top of file)] -->
+
+<details>
+<summary>Unable to resolve (deleted comment top of file) in <code>node_modules</code></summary>
+
+## **_PROBLEM:_**
+
+```reactnative
+Unable to resolve module from <path>: could not be found within the project or in these directories: node_modules
+```
+
+## **_CAUSE:_**
+
+I added a comment at top of file. Attempted:
+
+[ ] deleting comment
+[ ] restarting app
+[ ] reset Metro cache via `yarn start --reset-cach` per error message \* returns `error: unknown option --reset-cache`
+
+**_Actual Cause:_**
+
+incomplete `<ImageBackground>` source path. awesome.
+
+## **_SOLUTION:_**
+
+add img file name to `<ImageBackground source={require('')}>`. awesome.
+
+</details>
+
+<!-- #endregion /[unable to resolve module (removed comment top of file)] -->
 
 <!-- #endregion /issues -->
 
