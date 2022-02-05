@@ -57,8 +57,8 @@
   - [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
   - [vector icons](https://icons.expo.fyi/)
 - [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
-- ### JavaScript
-  - use `??` for [optional chaining & nullish coalescing](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
+- JavaScript
+  - using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
 - NASA [Mars projects](https://mars.nasa.gov/)
 - NASA [API Portal](https://api.nasa.gov/)
 - [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
@@ -67,6 +67,7 @@
   - [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
 - React Native: [docs](reactnative.dev)
   - [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
+  - dynamic [image source paths](https://stackoverflow.com/a/41432660)
   - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
   - [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
     - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
