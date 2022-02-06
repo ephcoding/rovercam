@@ -1,10 +1,13 @@
+// >> CORE Components
 import { Button, Pressable, SafeAreaView, StyleSheet } from "react-native";
+// >> MDX Components
 import Img_Background from "../components/mdx-core/Img_Background";
-import List_NavigationBtns from "../components/List_NavigationBtns";
+import List_NavigationBtns from "../components/mdx-core/List_NavigationBtns";
 import Text_Body from "../components/mdx-core/Text_Body";
 import Text_Title from "../components/mdx-core/Text_Title";
 import Text_SubTitle from "../components/mdx-core/Text_SubTitle";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
+// >> Site Data
 import { ROVER_NAMES } from "../site-data";
 
 /**
@@ -14,7 +17,6 @@ import { ROVER_NAMES } from "../site-data";
 
 const Screen_Home = ({ navigation }) => {
 	const handleOnPress = rover => {
-		// console.log(navigation.navigate("Rover", { rover: "Curiosity" }));
 		navigation.navigate("Rover", { rover: rover });
 	};
 
@@ -36,10 +38,8 @@ const Screen_Home = ({ navigation }) => {
 
 					<List_NavigationBtns
 						btnLabels={ROVER_NAMES}
-						btnStyles={S.navBtn}
-						labelStyles={S.navBtnLabel}
-						listStyles={S.navBtns}
-						navFunc={handleOnPress}
+						screen='Rover'
+						styleMods={S.listMods}
 					/>
 				</View_ContentWrapper>
 			</Img_Background>
@@ -50,21 +50,7 @@ const Screen_Home = ({ navigation }) => {
 export default Screen_Home;
 
 const S = StyleSheet.create({
-	navBtn: {
-		borderColor: "#fff",
-		borderRadius: 10,
-		borderWidth: 2,
-		paddingHorizontal: 20,
-		paddingVertical: 10,
-		width: 150,
-	},
-	navBtnLabel: {
-		color: "#fff",
-		alignSelf: "center",
-	},
-	navBtns: {
-		alignItems: "center",
-		flex: 1,
+	listMods: {
 		justifyContent: "space-evenly",
 	},
 	safeArea: {

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Img_Background from "../components/mdx-core/Img_Background";
-import { CURIOSITY, CAMERAS } from "../site-data/rover-names";
+import { CURIOSITY, CAMERAS } from "../site-data";
 import { useFetchRoverManifest } from "../hooks/use-manifest";
 import List_Cameras from "../components/List_Cameras";
 import RoverStats from "../components/RoverStats";
+import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
 
 const RoverScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
@@ -20,7 +21,7 @@ const RoverScreen = ({ navigation }) => {
 			imgSrc={require("../../assets/img/curiosity-up-close.jpg")}
 			opacity={0.5}
 		>
-			<View style={S.screen}>
+			<View_ContentWrapper>
 				<Text
 					style={{
 						color: "#fff",
@@ -49,7 +50,7 @@ const RoverScreen = ({ navigation }) => {
 						</View>
 					))}
 				</View>
-			</View>
+			</View_ContentWrapper>
 		</Img_Background>
 	);
 };
