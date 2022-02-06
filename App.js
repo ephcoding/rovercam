@@ -1,21 +1,24 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "./src/screens/HomeScreen";
-import MissionsScreen from "./src/screens/MissionsScreen";
-import PhotoOptionsScreen from "./src/screens/PhotoOptionsScreen";
+import Screen_CameraPhotos from "./app/screens/Screen_CameraPhotos";
+import Screen_Home from "./app/screens/Screen_Home";
+import Screen_Rover from "./app/screens/Screen_Rover";
+/**
+ * TODO: remove HomeScreen header
+ */
 
 const AppStackNavigator = createStackNavigator(
-	{
-		Home: HomeScreen,
-		Missions: MissionsScreen,
-		Options: PhotoOptionsScreen,
-	},
-	{
-		initialRouteName: "Home",
-		defaultNavigationOptions: {
-			title: "ROVERCAM",
-		},
-	}
+  {
+    Home: { screen: Screen_Home },
+    Rover: { screen: Screen_Rover },
+    CameraPhotos: { screen: Screen_CameraPhotos },
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      title: "ROVERCAM",
+    },
+  }
 );
 
 export default createAppContainer(AppStackNavigator);
