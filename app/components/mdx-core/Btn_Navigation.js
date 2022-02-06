@@ -1,18 +1,17 @@
-// >> CORE Components
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
-// >> MDX Components
+import { useContext } from "react";
+import { RoverContext } from "../../context/rover-context";
 import Text_Body from "./Text_Body";
-// >> Utils
 import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
-const Btn_Navigation = (
-	{ label, navPayload = {}, navigation, screen },
-	{ ...props }
-) => {
-	navPayload.label = label;
+const ctx = useContext(RoverContext);
 
-	const handleOnPress = () => navigation.navigate(screen, navPayload);
+const Btn_Navigation = ({ label, navigation, screen }) => {
+	const handleOnPress = () => {
+		ctx.setRover(label.toUpperCase());
+		navigation.navigate(screen);
+	};
 
 	return (
 		<TouchableOpacity onPress={() => handleOnPress()} style={S.touchOpac}>

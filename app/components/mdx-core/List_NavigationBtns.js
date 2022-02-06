@@ -3,26 +3,17 @@ import { StyleSheet, View } from "react-native";
 // >> MDX Components
 import Btn_Navigation from "./Btn_Navigation";
 
-// TODO: change btnLabels from Object[] to String[]
+// TODO: change labels from Object[] to String[]
 
-const List_NavigationBtns = ({
-	btnLabels,
-	navPayload = {},
-	screen,
-	styleMods,
-}) => {
-	if (!btnLabels) return;
+const List_NavigationBtns = ({ labelsArr, screen, styleMods }) => {
+	console.log(labelsArr);
+	if (!labelsArr) return;
 
 	return (
 		<View style={[S.base, styleMods]}>
-			{btnLabels &&
-				Object.entries(btnLabels).map(([key, value]) => (
-					<Btn_Navigation
-						key={value}
-						label={value}
-						navPayload={navPayload}
-						screen={screen}
-					/>
+			{labelsArr &&
+				labelsArr.map(label => (
+					<Btn_Navigation key={label} label={label} screen={screen} />
 				))}
 		</View>
 	);
