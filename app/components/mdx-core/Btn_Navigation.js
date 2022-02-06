@@ -8,7 +8,6 @@ import { SIZES } from "../../styles";
 
 const Btn_Navigation = ({ label, navigation, screen }) => {
 	const handleOnPress = rover => navigation.navigate(screen, { rover: rover });
-	console.log(">> NAV BTN LABEL >>", label);
 
 	return (
 		<TouchableOpacity

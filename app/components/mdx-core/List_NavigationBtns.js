@@ -4,8 +4,6 @@ import { StyleSheet, View } from "react-native";
 import Btn_Navigation from "./Btn_Navigation";
 
 const List_NavigationBtns = ({ btnLabels, screen, styleMods }) => {
-	console.log(Object.values(btnLabels));
-
 	if (!btnLabels) return;
 
 	return (

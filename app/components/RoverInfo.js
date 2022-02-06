@@ -1,7 +1,9 @@
 import Text_Body from "./mdx-core/Text_Body";
 
-const RoverStats = ({ roverInfo }) => {
-	const { name, launch_date, landing_date, max_date, total_photos } = roverInfo;
+const RoverInfo = ({ manifest }) => {
+	const { name, launch_date, landing_date, max_date, total_photos } = manifest;
+
+	if (!manifest) return;
 
 	return (
 		<>
@@ -13,4 +15,4 @@ const RoverStats = ({ roverInfo }) => {
 	);
 };
 
-export default RoverStats;
+export default RoverInfo;

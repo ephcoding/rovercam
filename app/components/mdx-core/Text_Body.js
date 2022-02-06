@@ -13,6 +13,6 @@ const S = StyleSheet.create({
 		fontFamily: FONTS.primary,
 		fontSize: SIZES[4],
 		lineHeight: SIZES[5],
-		marginVertical: SIZES[5],
+		// marginVertical: SIZES[5],
 	},
 });
