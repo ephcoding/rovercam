@@ -14,7 +14,7 @@ import { IMG_PATHS } from "../site-data";
 import { useFetchRoverManifest } from "../hooks/use-manifest";
 
 const RoverScreen = ({ navigation }) => {
-	const rover = navigation.getParam("payload");
+	const rover = navigation.getParam("label");
 
 	const { manifest } = useFetchRoverManifest(rover);
 

@@ -9,13 +9,14 @@ import { CAMERAS } from "../site-data";
 const List_Cameras = ({ rover }) => {
 	return (
 		<>
-			{CAMERAS[rover].map(camera => (
+			{/* {CAMERAS[rover].map(camera => (
 				<Btn_Navigation
 					key={camera[1]}
 					label={camera[0]}
+					navPayload={}
 					screen='CameraPhotos'
 				/>
-			))}
+			))} */}
 		</>
 	);
 };

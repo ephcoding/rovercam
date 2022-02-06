@@ -6,12 +6,16 @@ import Text_Body from "./Text_Body";
 import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
-const Btn_Navigation = ({ label, navigation, screen }) => {
-	const handleOnPress = label =>
-		navigation.navigate(screen, { payload: label });
+const Btn_Navigation = (
+	{ label, navPayload = {}, navigation, screen },
+	{ ...props }
+) => {
+	navPayload.label = label;
+
+	const handleOnPress = () => navigation.navigate(screen, navPayload);
 
 	return (
-		<TouchableOpacity onPress={() => handleOnPress(label)} style={S.touchOpac}>
+		<TouchableOpacity onPress={() => handleOnPress()} style={S.touchOpac}>
 			<Text_Body styleMods={S.label}>{label}</Text_Body>
 		</TouchableOpacity>
 	);

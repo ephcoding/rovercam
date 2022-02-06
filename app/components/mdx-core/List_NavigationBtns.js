@@ -5,14 +5,24 @@ import Btn_Navigation from "./Btn_Navigation";
 
 // TODO: change btnLabels from Object[] to String[]
 
-const List_NavigationBtns = ({ btnLabels, screen, styleMods }) => {
+const List_NavigationBtns = ({
+	btnLabels,
+	navPayload = {},
+	screen,
+	styleMods,
+}) => {
 	if (!btnLabels) return;
 
 	return (
 		<View style={[S.base, styleMods]}>
 			{btnLabels &&
 				Object.entries(btnLabels).map(([key, value]) => (
-					<Btn_Navigation key={value} label={value} screen={screen} />
+					<Btn_Navigation
+						key={value}
+						label={value}
+						navPayload={navPayload}
+						screen={screen}
+					/>
 				))}
 		</View>
 	);

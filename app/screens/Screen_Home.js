@@ -18,10 +18,6 @@ import { COLORS } from "../styles";
  */
 
 const Screen_Home = ({ navigation }) => {
-	const handleOnPress = rover => {
-		navigation.navigate("Rover", { payload: rover });
-	};
-
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<Img_Background
