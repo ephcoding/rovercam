@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Img_Background from "../components/mdx-core/Img_Background";
 import Text_Title from "../components/mdx-core/Text_Title";
+import { COLORS } from "../styles";
 
-const Screen_CameraPhotos = () => {
+const Screen_CameraPhotos = ({ navigation }) => {
+	const camera = navigation.getParam("payload");
+
+	console.log(">> PHOTOS SCREEN >>", camera);
+
 	return (
-		<SafeAreaView>
+		<SafeAreaView style={S.safeArea}>
 			<Img_Background
 				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
 			>
@@ -17,4 +21,9 @@ const Screen_CameraPhotos = () => {
 
 export default Screen_CameraPhotos;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({
+	safeArea: {
+		backgroundColor: COLORS.backgroundDK,
+		flex: 1,
+	},
+});

@@ -8,17 +8,27 @@ import Screen_Rover from "./app/screens/Screen_Rover";
  */
 
 const AppStackNavigator = createStackNavigator(
-  {
-    Home: { screen: Screen_Home },
-    Rover: { screen: Screen_Rover },
-    CameraPhotos: { screen: Screen_CameraPhotos },
-  },
-  {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {
-      title: "ROVERCAM",
-    },
-  }
+	{
+		Home: { screen: Screen_Home },
+		Rover: {
+			screen: Screen_Rover,
+			navigationOptions: {
+				title: "ROVER INFO",
+			},
+		},
+		CameraPhotos: {
+			screen: Screen_CameraPhotos,
+			navigationOptions: {
+				title: "CAMERA PHOTOS",
+			},
+		},
+	},
+	{
+		initialRouteName: "Home",
+		defaultNavigationOptions: {
+			title: "ROVERCAM",
+		},
+	}
 );
 
 export default createAppContainer(AppStackNavigator);

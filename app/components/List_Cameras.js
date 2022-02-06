@@ -1,17 +1,25 @@
+// >> CORE Components
 import { StyleSheet, Text, View } from "react-native";
+// >> MDX Components
+import Btn_Navigation from "./mdx-core/Btn_Navigation";
+import List_NavigationBtns from "../components/mdx-core/List_NavigationBtns";
+// >> Utils
+import { CAMERAS } from "../site-data";
 
-const List_Cameras = ({ cameras, styleMods }) => {
+const List_Cameras = ({ rover }) => {
 	return (
-		<View style={S.cameras}>
-			{CAMERAS.Curiosity.map(camera => (
-				<View key={camera[1]} style={S.camera}>
-					<Text style={{ color: "#fff" }}>{camera[0]}</Text>
-				</View>
+		<>
+			{CAMERAS[rover].map(camera => (
+				<Btn_Navigation
+					key={camera[1]}
+					label={camera[0]}
+					screen='CameraPhotos'
+				/>
 			))}
-		</View>
+		</>
 	);
 };
 
 export default List_Cameras;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({});

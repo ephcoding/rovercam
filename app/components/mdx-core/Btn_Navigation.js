@@ -7,14 +7,11 @@ import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
 const Btn_Navigation = ({ label, navigation, screen }) => {
-	const handleOnPress = rover => navigation.navigate(screen, { rover: rover });
+	const handleOnPress = label =>
+		navigation.navigate(screen, { payload: label });
 
 	return (
-		<TouchableOpacity
-			key={label}
-			onPress={() => handleOnPress(label)}
-			style={S.touchOpac}
-		>
+		<TouchableOpacity onPress={() => handleOnPress(label)} style={S.touchOpac}>
 			<Text_Body styleMods={S.label}>{label}</Text_Body>
 		</TouchableOpacity>
 	);
