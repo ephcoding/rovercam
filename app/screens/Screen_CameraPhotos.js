@@ -6,13 +6,13 @@ import { COLORS } from "../styles";
 import Axios from "../services/mars-photo-api/axios-config";
 
 const Screen_CameraPhotos = ({ navigation }) => {
-	const camera = navigation.getParam("payload");
+	const camera = navigation.getParam("label");
 
-	console.log(">> PHOTOS SCREEN >>", camera);
 
-	// const getCameraPhotos = () => {
-	// 	const res = Axios.get(`/rovers/${}/photos?camera=${}`)
-	// }
+
+	const getCameraPhotos = async () => {
+		const res = await Axios.get(`/rovers/${}/photos?camera=${camera}`)
+	}
 
 	// useEffect(() => {
 
@@ -23,7 +23,8 @@ const Screen_CameraPhotos = ({ navigation }) => {
 			<Img_Background
 				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
 			>
-				<Text_Title>CAMERA NAME GOES HERE</Text_Title>
+				<Text_Title>{camera}</Text_Title>
+				{}
 			</Img_Background>
 		</SafeAreaView>
 	);

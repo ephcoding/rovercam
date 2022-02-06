@@ -1,12 +1,7 @@
-// >> CORE Components
 import { StyleSheet, View } from "react-native";
-// >> MDX Components
 import Btn_Navigation from "./Btn_Navigation";
 
-// TODO: change labels from Object[] to String[]
-
 const List_NavigationBtns = ({ labelsArr, screen, styleMods }) => {
-	console.log(labelsArr);
 	if (!labelsArr) return;
 
 	return (

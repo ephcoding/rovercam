@@ -8,13 +8,14 @@ import Text_Title from "../components/mdx-core/Text_Title";
 import Text_SubTitle from "../components/mdx-core/Text_SubTitle";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
 // >> Utils
-import { ROVER_NAMES } from "../site-data";
+import { NAMES } from "../constants";
 // >> Styles
 import { COLORS } from "../styles";
 
 /**
  * TODO: cleaner way to import imgs
  * TODO: how to rePOSITION bgImg
+ * TODO: create outline logo for each rover
  */
 
 const Screen_Home = ({ navigation }) => {
@@ -35,7 +36,7 @@ const Screen_Home = ({ navigation }) => {
 					</Text_Body>
 
 					<List_NavigationBtns
-						btnLabels={ROVER_NAMES}
+						labelsArr={Object.values(NAMES)}
 						screen='Rover'
 						styleMods={S.listMods}
 					/>

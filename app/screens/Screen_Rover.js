@@ -1,32 +1,23 @@
-// >> Hooks
-// import { useEffect, useState } from "react";
-// >> CORE Components
+import { useContext, useEffect, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-// >> MDX Components
+import { COLORS } from "../styles";
+import { CAMERAS, IMG_PATHS } from "../constants";
+import { useFetchRoverManifest } from "../hooks/use-manifest";
+import RoverContext from "../context/rover-context";
 import Img_Background from "../components/mdx-core/Img_Background";
 import List_Cameras from "../components/List_Cameras";
 import RoverInfo from "../components/RoverInfo";
 import Text_Title from "../components/mdx-core/Text_Title";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
-// >> Utils
-import { COLORS } from "../styles";
-import { IMG_PATHS } from "../site-data";
-import { useFetchRoverManifest } from "../hooks/use-manifest";
 
-const RoverScreen = ({ navigation }) => {
+const Screen_Rover = ({ navigation }) => {
 	const rover = navigation.getParam("label");
-
 	const { manifest } = useFetchRoverManifest(rover);
-
-	if (!manifest) return;
-
-	let { name, launch_date, landing_date, max_date, total_photos } = manifest;
 
 	return (
 		<SafeAreaView style={S.safeArea}>
-			<Img_Background imgSrc={IMG_PATHS[rover]} opacity={0.5}>
+			<Img_Background imgSrc={IMG_PATHS[rover.toLowerCase()]} opacity={0.5}>
 				<View_ContentWrapper>
-					<Text_Title>{name}</Text_Title>
 					<RoverInfo manifest={manifest} />
 					<List_Cameras rover={rover} />
 				</View_ContentWrapper>
@@ -35,7 +26,7 @@ const RoverScreen = ({ navigation }) => {
 	);
 };
 
-export default RoverScreen;
+export default Screen_Rover;
 
 const S = StyleSheet.create({
 	camera: {

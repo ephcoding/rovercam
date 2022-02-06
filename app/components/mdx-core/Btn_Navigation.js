@@ -1,16 +1,11 @@
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
-import { useContext } from "react";
-import { RoverContext } from "../../context/rover-context";
 import Text_Body from "./Text_Body";
 import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
-const ctx = useContext(RoverContext);
-
-const Btn_Navigation = ({ label, navigation, screen }) => {
+const Btn_Navigation = ({ label, navParams, navigation, screen }) => {
 	const handleOnPress = () => {
-		ctx.setRover(label.toUpperCase());
-		navigation.navigate(screen);
+		navigation.navigate(screen, { label: label });
 	};
 
 	return (

@@ -1,16 +1,20 @@
 import { createContext, useReducer } from "react";
 import { RoverReducer } from "./rover-reducer";
-import { NAMES } from "../constants";
 
-const RoverContext = createContext();
+export default RoverContext = createContext();
 
 export const RoverProvider = ({ children }) => {
-	const [roverState, dispatch] = useReducer(RoverReducer, {});
+	const [state, dispatch] = useReducer(RoverReducer, {});
 
-	const setRover = () => {};
+	const setRover = rover => {
+		dispatch({
+			payload: rover,
+			type: rover.toUpperCase(),
+		});
+	};
 
 	return (
-		<RoverContext.Provider value={(roverState, setRover)}>
+		<RoverContext.Provider value={{ state, setRover }}>
 			{children}
 		</RoverContext.Provider>
 	);
