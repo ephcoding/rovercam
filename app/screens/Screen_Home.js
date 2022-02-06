@@ -7,8 +7,10 @@ import Text_Body from "../components/mdx-core/Text_Body";
 import Text_Title from "../components/mdx-core/Text_Title";
 import Text_SubTitle from "../components/mdx-core/Text_SubTitle";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
-// >> Site Data
+// >> Utils
 import { ROVER_NAMES } from "../site-data";
+// >> Styles
+import { COLORS } from "../styles";
 
 /**
  * TODO: cleaner way to import imgs
@@ -54,7 +56,7 @@ const S = StyleSheet.create({
 		justifyContent: "space-evenly",
 	},
 	safeArea: {
-		backgroundColor: "#000",
+		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
 });

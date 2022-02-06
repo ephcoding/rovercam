@@ -1,28 +1,29 @@
-import { useEffect, useState } from "react";
+// >> Hooks
+// import { useEffect, useState } from "react";
+// >> CORE Components
 import { StyleSheet, Text, View } from "react-native";
+// >> MDX Components
 import Img_Background from "../components/mdx-core/Img_Background";
-import { CURIOSITY, CAMERAS } from "../site-data";
-import { useFetchRoverManifest } from "../hooks/use-manifest";
 import List_Cameras from "../components/List_Cameras";
 import RoverStats from "../components/RoverStats";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
+// >> Utils
+import { CAMERAS, IMG_PATHS } from "../site-data";
+import { useFetchRoverManifest } from "../hooks/use-manifest";
 
 const RoverScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
 	console.log(">> ROVER SCREEN >>", rover);
-	const { manifest } = useFetchRoverManifest(rover);
+	// const {manifest } = useFetchRoverManifest(rover);
 
-	if (!manifest) return;
+	// if (!manifest) return;
 
-	let { name, launch_date, landing_date, max_date, total_photos } = manifest;
+	// let { name, launch_date, landing_date, max_date, total_photos } = manifest;
 
 	return (
-		<Img_Background
-			imgSrc={require("../../assets/img/curiosity-up-close.jpg")}
-			opacity={0.5}
-		>
+		<Img_Background imgSrc={IMG_PATHS[rover]} opacity={0.5}>
 			<View_ContentWrapper>
-				<Text
+				{/* <Text
 					style={{
 						color: "#fff",
 						fontSize: 40,
@@ -32,8 +33,8 @@ const RoverScreen = ({ navigation }) => {
 					}}
 				>
 					{name}
-				</Text>
-				<RoverStats
+				</Text> */}
+				{/* <RoverStats
 					roverInfo={{
 						name,
 						launch_date,
@@ -41,15 +42,8 @@ const RoverScreen = ({ navigation }) => {
 						max_date,
 						total_photos,
 					}}
-				/>
-				<List_Cameras />
-				<View style={S.cameras}>
-					{CAMERAS.Curiosity.map(camera => (
-						<View key={camera[1]} style={S.camera}>
-							<Text style={{ color: "#fff" }}>{camera[0]}</Text>
-						</View>
-					))}
-				</View>
+				/> */}
+				{/* <List_Cameras cameras={CAMERAS[rover]} /> */}
 			</View_ContentWrapper>
 		</Img_Background>
 	);

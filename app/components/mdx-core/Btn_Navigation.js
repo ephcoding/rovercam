@@ -2,12 +2,13 @@
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 // >> MDX Components
 import Text_Body from "./Text_Body";
-// >> UTIL Components
+// >> Utils
 import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
-const Btn_Navigation = ({ label, screen }) => {
-	const handleOnPress = rover => navigation.navigate(screen, rover);
+const Btn_Navigation = ({ label, navigation, screen }) => {
+	const handleOnPress = rover => navigation.navigate(screen, { rover: rover });
+	console.log(">> NAV BTN LABEL >>", label);
 
 	return (
 		<TouchableOpacity
