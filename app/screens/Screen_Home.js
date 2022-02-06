@@ -4,7 +4,8 @@ import List_NavigationBtns from "../components/List_NavigationBtns";
 import Text_Body from "../components/mdx-core/Text_Body";
 import Text_Title from "../components/mdx-core/Text_Title";
 import Text_SubTitle from "../components/mdx-core/Text_SubTitle";
-import { ROVER_NAMES } from "../constants/rovers";
+import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
+import { ROVER_NAMES } from "../site-data";
 
 /**
  * TODO: cleaner way to import imgs
@@ -12,60 +13,62 @@ import { ROVER_NAMES } from "../constants/rovers";
  */
 
 const Screen_Home = ({ navigation }) => {
-  const handleOnPress = (rover) => {
-    // console.log(navigation.navigate("Rover", { rover: "Curiosity" }));
-    navigation.navigate("Rover", { rover: rover });
-  };
+	const handleOnPress = rover => {
+		// console.log(navigation.navigate("Rover", { rover: "Curiosity" }));
+		navigation.navigate("Rover", { rover: rover });
+	};
 
-  return (
-    <SafeAreaView style={S.safeArea}>
-      <Img_Background
-        opacity={0.5}
-        imgSrc={require("../../assets/mars-glowing.jpg")}
-      >
-        <Text_Title>ROVERCAM</Text_Title>
-        <Text_SubTitle>Sub Title</Text_SubTitle>
+	return (
+		<SafeAreaView style={S.safeArea}>
+			<Img_Background
+				opacity={0.5}
+				imgSrc={require("../../assets/img/mars-glowing.jpg")}
+			>
+				<View_ContentWrapper>
+					<Text_Title>ROVERCAM</Text_Title>
+					<Text_SubTitle>Sub Title</Text_SubTitle>
 
-        <Text_Body>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s.
-        </Text_Body>
+					<Text_Body>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s.
+					</Text_Body>
 
-        <List_NavigationBtns
-          btnLabels={ROVER_NAMES}
-          btnStyles={S.navBtn}
-          labelStyles={S.navBtnLabel}
-          listStyles={S.navBtns}
-          navFunc={handleOnPress}
-        />
-      </Img_Background>
-    </SafeAreaView>
-  );
+					<List_NavigationBtns
+						btnLabels={ROVER_NAMES}
+						btnStyles={S.navBtn}
+						labelStyles={S.navBtnLabel}
+						listStyles={S.navBtns}
+						navFunc={handleOnPress}
+					/>
+				</View_ContentWrapper>
+			</Img_Background>
+		</SafeAreaView>
+	);
 };
 
 export default Screen_Home;
 
 const S = StyleSheet.create({
-  navBtn: {
-    borderColor: "#fff",
-    borderRadius: 10,
-    borderWidth: 2,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    width: 150,
-  },
-  navBtnLabel: {
-    color: "#fff",
-    alignSelf: "center",
-  },
-  navBtns: {
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "space-evenly",
-  },
-  safeArea: {
-    backgroundColor: "#000",
-    flex: 1,
-  },
+	navBtn: {
+		borderColor: "#fff",
+		borderRadius: 10,
+		borderWidth: 2,
+		paddingHorizontal: 20,
+		paddingVertical: 10,
+		width: 150,
+	},
+	navBtnLabel: {
+		color: "#fff",
+		alignSelf: "center",
+	},
+	navBtns: {
+		alignItems: "center",
+		flex: 1,
+		justifyContent: "space-evenly",
+	},
+	safeArea: {
+		backgroundColor: "#000",
+		flex: 1,
+	},
 });
