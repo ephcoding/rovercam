@@ -1,3 +1,5 @@
+# info
+
 <div align='center'>
 
 ![rovercam readme graphic](./assets/readme/title.png)
@@ -25,6 +27,8 @@
 
 - [ ] rate images (create fan-favorite collections)
 
+# install
+
 <h3 id='install' align='center'>
 
 ![rovercam readme graphic](./assets/readme/install.png)
@@ -39,6 +43,8 @@
 
 **_...just a sec..._**
 
+# use
+
 <h3 id='use' align='center'>
 
 ![rovercam readme graphic](./assets/readme/use.png)
@@ -50,6 +56,8 @@
 [Install & Run](#install) | [How To Use](#use) | [Shout-Outs](#shout-outs) | [License](#license) | [Contribute](#contribute) | [Connect](#connect)
 
 </div>
+
+# shout-outs
 
 <h3 id='shout-outs' align='center'>
 
@@ -63,12 +71,20 @@
 
 </div>
 
-## **_Chris Cerami_**
+### **_Chris Cerami_**
 
 _Maintains the [Mars Rover Photo API](https://github.com/chrisccerami/mars-photo-api)_
 
 [![GitHub followers](https://img.shields.io/github/followers/chrisccerami?label=Follow&style=social)](https://github.com/chrisccerami)
 [![Twitter Follow](https://img.shields.io/twitter/follow/chrisccerami?label=Follow&style=social)](https://twitter.com/chrisccerami)
+
+### **_Logos By Nick_**
+
+_Platform with "tutorials for learning about Open Source design software, such as Inkscape and GIMP"_
+
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCEQXp_fcqwPcqrzNtWJ1w9w?style=social)
+
+# license
 
 <h3 id='license' align='center'>
 
@@ -82,6 +98,8 @@ _Maintains the [Mars Rover Photo API](https://github.com/chrisccerami/mars-photo
 
 </div>
 
+# contribute
+
 <h3 id='contribute' align='center'>
 
 ![rovercam readme graphic](./assets/readme/contribute.png)
@@ -93,6 +111,8 @@ _Maintains the [Mars Rover Photo API](https://github.com/chrisccerami/mars-photo
 [Install & Run](#install) | [How To Use](#use) | [Shout-Outs](#shout-outs) | [License](#license) | [Contribute](#contribute) | [Connect](#connect)
 
 </div>
+
+# connect
 
 <h3 id='connect' align='center'>
 

@@ -57,6 +57,9 @@
   - [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
   - [vector icons](https://icons.expo.fyi/)
 - [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- [Inkscape](https://inkscape.org/) - vector graphic tool
+  - [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
+  - [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
 - JavaScript
   - using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
 - NASA [Mars projects](https://mars.nasa.gov/)
@@ -85,8 +88,9 @@
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
   - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
   - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
-
-<!-- #endregion /resources -->
+- README
+  - [shields](https://shields.io/)
+  <!-- #endregion /resources -->
 
 <!-- #region notes -->
 
