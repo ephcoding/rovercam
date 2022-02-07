@@ -1,20 +1,47 @@
-import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useEffect, useState } from "react";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Img_Background from "../components/mdx-core/Img_Background";
 import Text_Title from "../components/mdx-core/Text_Title";
+import { COLORS } from "../styles";
+import Axios from "../services/mars-photo-api/axios-config";
 
-const Screen_CameraPhotos = () => {
-	return (
-		<SafeAreaView>
-			<Img_Background
-				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
-			>
-				<Text_Title>CAMERA NAME GOES HERE</Text_Title>
-			</Img_Background>
-		</SafeAreaView>
-	);
+const Screen_CameraPhotos = ({ navigation }) => {
+  const [photos, setPhotos] = useState();
+  const camName = navigation.getParam("name");
+  const camAbbr = navigation.getParam("abbr");
+  const rover = navigation.getParam("roverName");
+
+  const getCameraPhotos = async () => {
+    try {
+      const res = await Axios.get(`/rovers/${rover}/photos?camera=${camAbbr}`);
+      const photos = await res.data;
+      setPhotos(photos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getCameraPhotos();
+  });
+
+  return (
+    <SafeAreaView style={S.safeArea}>
+      <Img_Background
+        imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
+      >
+        <Text_Title>{camera}</Text_Title>
+        {photos}
+      </Img_Background>
+    </SafeAreaView>
+  );
 };
 
 export default Screen_CameraPhotos;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({
+  safeArea: {
+    backgroundColor: COLORS.backgroundDK,
+    flex: 1,
+  },
+});

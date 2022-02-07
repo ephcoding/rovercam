@@ -1,5 +1,5 @@
 export const CAMERAS = {
-	Curiosity: [
+	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
 		["Mast Camera", "MAST"],
@@ -8,14 +8,14 @@ export const CAMERAS = {
 		["Mars Decent Imager", "MARDI"],
 		["Navigation Camera", "NAVCAM"],
 	],
-	Opportunity: [
+	opportunity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
 		["Navigation Camera", "NAVCAM"],
 		["Panoramic Camera", "PANCAM"],
 		["Miniature Thermal Emission Spectrometer", "MINITES"],
 	],
-	Perseverance: [
+	perseverance: [
 		["Rover Up-Look Camera", "EDL_RUCAM"],
 		["Rover Down-Look Camera", "EDL_RDCAM"],
 		["Decent Stage Down-Look Camera", "EDL_DDCAM"],
@@ -32,7 +32,7 @@ export const CAMERAS = {
 		["MEDA Skycam", "SKYCAM"],
 		["SHERLOC WATSON Camera", "SHERLOC_WATSON"],
 	],
-	Spirit: [
+	spirit: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
 		["Navigation Camera", "NAVCAM"],

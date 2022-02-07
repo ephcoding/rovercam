@@ -1,61 +1,32 @@
-import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Img_Background from "../components/mdx-core/Img_Background";
-import { CURIOSITY, CAMERAS } from "../site-data";
+import { useContext, useEffect, useState } from "react";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { COLORS } from "../styles";
+import { CAMERAS, IMG_PATHS } from "../constants";
 import { useFetchRoverManifest } from "../hooks/use-manifest";
+import RoverContext from "../context/rover-context";
+import Img_Background from "../components/mdx-core/Img_Background";
 import List_Cameras from "../components/List_Cameras";
-import RoverStats from "../components/RoverStats";
+import RoverInfo from "../components/RoverInfo";
+import Text_Title from "../components/mdx-core/Text_Title";
 import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
 
-const RoverScreen = ({ navigation }) => {
-	const rover = navigation.getParam("rover");
-	console.log(">> ROVER SCREEN >>", rover);
+const Screen_Rover = ({ navigation }) => {
+	const rover = navigation.getParam("label");
 	const { manifest } = useFetchRoverManifest(rover);
 
-	if (!manifest) return;
-
-	let { name, launch_date, landing_date, max_date, total_photos } = manifest;
-
 	return (
-		<Img_Background
-			imgSrc={require("../../assets/img/curiosity-up-close.jpg")}
-			opacity={0.5}
-		>
-			<View_ContentWrapper>
-				<Text
-					style={{
-						color: "#fff",
-						fontSize: 40,
-						textTransform: "uppercase",
-						fontWeight: "bold",
-						paddingBottom: 20,
-					}}
-				>
-					{name}
-				</Text>
-				<RoverStats
-					roverInfo={{
-						name,
-						launch_date,
-						landing_date,
-						max_date,
-						total_photos,
-					}}
-				/>
-				<List_Cameras />
-				<View style={S.cameras}>
-					{CAMERAS.Curiosity.map(camera => (
-						<View key={camera[1]} style={S.camera}>
-							<Text style={{ color: "#fff" }}>{camera[0]}</Text>
-						</View>
-					))}
-				</View>
-			</View_ContentWrapper>
-		</Img_Background>
+		<SafeAreaView style={S.safeArea}>
+			<Img_Background imgSrc={IMG_PATHS[rover.toLowerCase()]} opacity={0.5}>
+				<View_ContentWrapper>
+					<RoverInfo manifest={manifest} />
+					<List_Cameras rover={rover} />
+				</View_ContentWrapper>
+			</Img_Background>
+		</SafeAreaView>
 	);
 };
 
-export default RoverScreen;
+export default Screen_Rover;
 
 const S = StyleSheet.create({
 	camera: {
@@ -67,11 +38,15 @@ const S = StyleSheet.create({
 	cameras: {
 		alignItems: "center",
 	},
+	safeArea: {
+		backgroundColor: COLORS.backgroundDK,
+		flex: 1,
+	},
 	screen: {
 		flex: 1,
 		padding: 15,
 	},
-	roverStats: {
+	RoverInfo: {
 		paddingBottom: 15,
 	},
 });

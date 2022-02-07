@@ -1,14 +1,25 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { useState } from "react";
+import { CAMERAS } from "../constants";
+import RoverContext from "../context/rover-context";
+import Btn_Navigation from "./mdx-core/Btn_Navigation";
+import List_NavigationBtns from "../components/mdx-core/List_NavigationBtns";
 
-const List_Cameras = () => {
+const List_Cameras = ({ rover }) => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <>
+      {CAMERAS[rover.toLowerCase()].map((camera) => (
+        <Btn_Navigation
+          key={camera[1]}
+          label={camera[0]}
+          navParams={{ name: camera[0], abbr: camera[1], roverName: rover }}
+          screen="CameraPhotos"
+        />
+      ))}
+    </>
   );
 };
 
 export default List_Cameras;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({});
