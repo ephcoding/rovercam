@@ -15,7 +15,6 @@ import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 const RoverScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
 	const roverLC = rover.toLowerCase();
-	console.log(rover);
 	const { manifest } = useFetchRoverManifest(rover);
 
 	if (!manifest) return;

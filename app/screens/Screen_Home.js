@@ -23,12 +23,11 @@ const HomeScreen = ({ navigation }) => {
 			>
 				<View_ContentWrapper>
 					<Text_Title>ROVERCAM</Text_Title>
-					<Text_SubTitle>Sub Title</Text_SubTitle>
+					<Text_SubTitle>Mars Photos. Rover Style.</Text_SubTitle>
 
 					<Text_Body>
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s.
+						Explore photos of the Red Planet through the eyes of the Mars
+						Rovers: Curiosity, Opportunity, Perseverance and Spirit.
 					</Text_Body>
 
 					<FlatList
