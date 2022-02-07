@@ -19,41 +19,42 @@ import { COLORS } from "../styles";
  */
 
 const Screen_Home = ({ navigation }) => {
-	return (
-		<SafeAreaView style={S.safeArea}>
-			<Img_Background
-				opacity={0.5}
-				imgSrc={require("../../assets/img/mars-glowing.jpg")}
-			>
-				<View_ContentWrapper>
-					<Text_Title>ROVERCAM</Text_Title>
-					<Text_SubTitle>Sub Title</Text_SubTitle>
+  return (
+    <SafeAreaView style={S.safeArea}>
+      <Img_Background
+        opacity={0.5}
+        imgSrc={require("../../assets/img/mars-glowing.jpg")}
+      >
+        <View_ContentWrapper>
+          <Text_Title>ROVERCAM</Text_Title>
+          <Text_SubTitle>Sub Title</Text_SubTitle>
 
-					<Text_Body>
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s.
-					</Text_Body>
+          <Text_Body>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s.
+          </Text_Body>
 
-					<List_NavigationBtns
-						labelsArr={Object.values(NAMES)}
-						screen='Rover'
-						styleMods={S.listMods}
-					/>
-				</View_ContentWrapper>
-			</Img_Background>
-		</SafeAreaView>
-	);
+          <List_NavigationBtns
+            labelsArr={Object.values(NAMES)}
+            navParams={{}}
+            screen="Rover"
+            styleMods={S.listMods}
+          />
+        </View_ContentWrapper>
+      </Img_Background>
+    </SafeAreaView>
+  );
 };
 
 export default Screen_Home;
 
 const S = StyleSheet.create({
-	listMods: {
-		justifyContent: "space-evenly",
-	},
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
-		flex: 1,
-	},
+  listMods: {
+    justifyContent: "space-evenly",
+  },
+  safeArea: {
+    backgroundColor: COLORS.backgroundDK,
+    flex: 1,
+  },
 });

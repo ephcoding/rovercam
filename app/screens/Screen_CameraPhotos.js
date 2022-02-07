@@ -6,35 +6,42 @@ import { COLORS } from "../styles";
 import Axios from "../services/mars-photo-api/axios-config";
 
 const Screen_CameraPhotos = ({ navigation }) => {
-	const camera = navigation.getParam("label");
+  const [photos, setPhotos] = useState();
+  const camName = navigation.getParam("name");
+  const camAbbr = navigation.getParam("abbr");
+  const rover = navigation.getParam("roverName");
 
+  const getCameraPhotos = async () => {
+    try {
+      const res = await Axios.get(`/rovers/${rover}/photos?camera=${camAbbr}`);
+      const photos = await res.data;
+      setPhotos(photos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  useEffect(() => {
+    getCameraPhotos();
+  });
 
-	const getCameraPhotos = async () => {
-		const res = await Axios.get(`/rovers/${}/photos?camera=${camera}`)
-	}
-
-	// useEffect(() => {
-
-	// })
-
-	return (
-		<SafeAreaView style={S.safeArea}>
-			<Img_Background
-				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
-			>
-				<Text_Title>{camera}</Text_Title>
-				{}
-			</Img_Background>
-		</SafeAreaView>
-	);
+  return (
+    <SafeAreaView style={S.safeArea}>
+      <Img_Background
+        imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
+      >
+        <Text_Title>{camera}</Text_Title>
+        {photos}
+      </Img_Background>
+    </SafeAreaView>
+  );
 };
 
 export default Screen_CameraPhotos;
 
 const S = StyleSheet.create({
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
-		flex: 1,
-	},
+  safeArea: {
+    backgroundColor: COLORS.backgroundDK,
+    flex: 1,
+  },
 });
