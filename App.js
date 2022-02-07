@@ -1,9 +1,9 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { RoverProvider } from "./app/context/rover-context";
-import Screen_CameraPhotos from "./app/screens/Screen_CameraPhotos";
-import Screen_Home from "./app/screens/Screen_Home";
-import Screen_Rover from "./app/screens/Screen_Rover";
+import PhotosScreen from "./app/screens/Screen_CameraPhotos";
+import HomeScreen from "./app/screens/Screen_Home";
+import RoverScreen from "./app/screens/Screen_Rover";
 
 /**
  * TODO: remove HomeScreen header
@@ -11,15 +11,15 @@ import Screen_Rover from "./app/screens/Screen_Rover";
 
 const appStackNavigator = createStackNavigator(
 	{
-		Home: { screen: Screen_Home },
+		Home: { screen: HomeScreen },
 		Rover: {
-			screen: Screen_Rover,
+			screen: RoverScreen,
 			navigationOptions: {
 				title: "ROVER INFO",
 			},
 		},
-		CameraPhotos: {
-			screen: Screen_CameraPhotos,
+		Photos: {
+			screen: PhotosScreen,
 			navigationOptions: {
 				title: "CAMERA PHOTOS",
 			},

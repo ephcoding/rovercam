@@ -1,5 +1,5 @@
-import Text_Body from "./mdx-core/Text_Body";
-import Text_Title from "./mdx-core/Text_Title";
+import Text_Body from "./shared/Text_Body";
+import Text_Title from "./shared/Text_Title";
 
 const RoverInfo = ({ manifest }) => {
 	const { name, launch_date, landing_date, max_date, total_photos } = manifest;

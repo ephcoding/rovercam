@@ -1,21 +1,25 @@
 import { useContext, useEffect, useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { COLORS } from "../styles";
 import { CAMERAS, IMG_PATHS } from "../constants";
 import { useFetchRoverManifest } from "../hooks/use-manifest";
-import RoverContext from "../context/rover-context";
-import Img_Background from "../components/mdx-core/Img_Background";
+import Img_Background from "../components/shared/Img_Background";
 import List_Cameras from "../components/List_Cameras";
+import RoverContext from "../context/rover-context";
 import RoverInfo from "../components/RoverInfo";
-import Text_Title from "../components/mdx-core/Text_Title";
-import View_ContentWrapper from "../components/mdx-core/View_ContentWrapper";
+import SafeAreaView from "../components/shared/SafeAreaView";
+import Text_Title from "../components/shared/Text_Title";
+import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
-const Screen_Rover = ({ navigation }) => {
-	const rover = navigation.getParam("label");
+const RoverScreen = ({ navigation }) => {
+	const rover = navigation.getParam("rover");
+	console.log(rover);
 	const { manifest } = useFetchRoverManifest(rover);
 
+	if (!manifest) return;
+
 	return (
-		<SafeAreaView style={S.safeArea}>
+		<SafeAreaView>
 			<Img_Background imgSrc={IMG_PATHS[rover.toLowerCase()]} opacity={0.5}>
 				<View_ContentWrapper>
 					<RoverInfo manifest={manifest} />
@@ -26,7 +30,7 @@ const Screen_Rover = ({ navigation }) => {
 	);
 };
 
-export default Screen_Rover;
+export default RoverScreen;
 
 const S = StyleSheet.create({
 	camera: {
@@ -37,10 +41,6 @@ const S = StyleSheet.create({
 	},
 	cameras: {
 		alignItems: "center",
-	},
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
-		flex: 1,
 	},
 	screen: {
 		flex: 1,
