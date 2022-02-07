@@ -49,8 +49,10 @@ export default LatestPhotosScreen;
 const S = StyleSheet.create({
 	flatList: {
 		display: "flex",
-		flex: 1,
+		// flex: 1,
 		flexDirection: "row",
+		flexWrap: "wrap",
+		width: "100%",
 	},
 	img: {
 		borderWidth: 5,
