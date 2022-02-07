@@ -7,15 +7,14 @@ import Axios from "../services/mars-photo-api/axios-config";
 
 const PhotosScreen = ({ navigation }) => {
 	const [photos, setPhotos] = useState();
-	const camName = navigation.getParam("name");
-	const camAbbr = navigation.getParam("abbr");
-	const rover = navigation.getParam("roverName");
+	const searchType = navigation.getParam("type");
 
 	const getCameraPhotos = async () => {
 		try {
-			const res = await Axios.get(`/rovers/${rover}/photos?camera=${camAbbr}`);
-			const photos = await res.data;
-			setPhotos(photos);
+			const res = await Axios.get(`/rovers/${rover}/photos?camera=${cameraSH}`);
+			const photos = await res.data.photos;
+			console.clear();
+			console.log(res);
 		} catch (error) {
 			console.log(error);
 		}
@@ -30,8 +29,8 @@ const PhotosScreen = ({ navigation }) => {
 			<Img_Background
 				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
 			>
-				<Text_Title>{camera}</Text_Title>
-				{photos}
+				<Text_Title>{cameraName}</Text_Title>
+				{/* {photos} */}
 			</Img_Background>
 		</SafeAreaView>
 	);

@@ -4,6 +4,7 @@ import { withNavigation } from "react-navigation";
 import { SIZES } from "../../styles";
 
 const NavButton = ({ label, navParams, navigation, screen }) => {
+	console.log(">> NAV BTN SCREEN >>", screen);
 	return (
 		<TouchableOpacity
 			onPress={() => navigation.navigate(screen, { ...navParams })}

@@ -34,13 +34,8 @@ const HomeScreen = ({ navigation }) => {
 					<FlatList
 						data={Object.values(ROVERS)}
 						keyExtractor={rover => rover}
-						renderItem={({ item }) => (
-							<NavButton
-								key={item}
-								label={item}
-								navParams={{ rover: item }}
-								screen='Rover'
-							/>
+						renderItem={({ item: rover }) => (
+							<NavButton label={rover} navParams={{ rover }} screen='Rover' />
 						)}
 						style={S.flatList}
 					/>

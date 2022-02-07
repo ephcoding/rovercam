@@ -1,8 +1,9 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { RoverProvider } from "./app/context/rover-context";
-import PhotosScreen from "./app/screens/Screen_CameraPhotos";
 import HomeScreen from "./app/screens/Screen_Home";
+import LatestPhotosScreen from "./app/screens/Screen_LatestPhotos";
+import PhotosScreen from "./app/screens/Screen_CameraPhotos";
 import RoverScreen from "./app/screens/Screen_Rover";
 
 /**
@@ -16,6 +17,12 @@ const appStackNavigator = createStackNavigator(
 			screen: RoverScreen,
 			navigationOptions: {
 				title: "ROVER INFO",
+			},
+		},
+		LatestPhotos: {
+			screen: LatestPhotosScreen,
+			navigationOptions: {
+				title: "LATEST PHOTOS",
 			},
 		},
 		Photos: {
