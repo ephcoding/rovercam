@@ -12,7 +12,7 @@
 
 </div>
 
-**_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/alstr/blob/prod/BUILD_NOTES.md) for project timeline, progress, resources, notes, issues, & more!_**
+**_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project timeline, progress, resources, notes, issues, & more!_**
 
 ## **_FEATURES_**
 

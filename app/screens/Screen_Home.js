@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView>
 			<Img_Background
-				opacity={0.5}
+				opacity={0.9}
 				imgSrc={require("../../assets/img/mars-glowing.jpg")}
 			>
 				<View_ContentWrapper>
