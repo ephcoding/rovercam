@@ -1,7 +1,7 @@
 import Text_Body from "./shared/Text_Body";
 import Text_Title from "./shared/Text_Title";
 
-const RoverInfo = ({ manifest }) => {
+const RoverCard = ({ manifest }) => {
 	const {
 		name,
 		launch_date,
@@ -27,4 +27,4 @@ const RoverInfo = ({ manifest }) => {
 	);
 };
 
-export default RoverInfo;
+export default RoverCard;

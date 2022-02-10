@@ -48,8 +48,6 @@ export const IMG_PATHS = {
 	spirit: require("../../assets/img/spirit.jpg"),
 };
 
-export const API_QUERY_PARAMS = ["Martian SOL", "Earth Date", "Latest Photos"];
-
 export const ROVER_NAMES = {
 	curiosity: "Curiosity",
 	opportunity: "Opportunity",

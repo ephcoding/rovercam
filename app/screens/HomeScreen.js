@@ -1,11 +1,12 @@
-import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import NavButton from "../components/shared/Btn_Navigation";
 import Img_Background from "../components/shared/Img_Background";
 import SafeAreaView from "../components/shared/SafeAreaView";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
+import { useManifests } from "../hooks/use-manifests";
 import { ROVER_NAMES } from "../constants/rovers";
 // -- REACT NATIVE ELEMENTS
-import { Button, Header, Text } from "react-native-elements";
+import { Card, Header, Text } from "react-native-elements";
 
 /**
  * TODO: cleaner way to import imgs
@@ -14,6 +15,17 @@ import { Button, Header, Text } from "react-native-elements";
  */
 
 const HomeScreen = ({ navigation }) => {
+	const res = useManifests();
+	console.log(">> MANIFESTS >>", res);
+
+	// const roverCards = Object.values(ROVER_NAMES).map(roverName => (
+	// 	<Button
+	// 		key={roverName}
+	// 		title={roverName}
+	// 		onPress={() => navigation.navigate("Rover", { rover: roverName })}
+	// 	/>
+	// ));
+
 	return (
 		<SafeAreaView>
 			<Img_Background
@@ -21,26 +33,7 @@ const HomeScreen = ({ navigation }) => {
 				imgSrc={require("../../assets/img/mars-glowing.jpg")}
 			>
 				<View_ContentWrapper>
-					{/* <Text h1>ROVERCAM</Text>
-					<Text h3>Mars Photos. Rover Style.</Text>
-
-					<Text>
-						Explore photos of the Red Planet through the eyes of the Mars
-						Rovers: Curiosity, Opportunity, Perseverance and Spirit.
-					</Text> */}
-
-					<FlatList
-						data={Object.values(ROVER_NAMES)}
-						keyExtractor={roverName => roverName}
-						renderItem={({ item: roverName }) => (
-							// <NavButton label={roverName} navParams={{ roverName }} screen='Rover' />
-							<Button
-								onPress={() => navigation.navigate("Rover")}
-								title={roverName}
-							/>
-						)}
-						style={S.flatList}
-					/>
+					{/* <View style={S.roverCards}>{roverCards}</View> */}
 				</View_ContentWrapper>
 			</Img_Background>
 		</SafeAreaView>
@@ -50,7 +43,8 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
-	flatList: {
+	roverCards: {
 		flex: 1,
+		justifyContent: "space-evenly",
 	},
 });

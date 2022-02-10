@@ -8,22 +8,22 @@ import { PALETTE } from "./palette";
 const makeColorVariant = (rgbColorAsString, variant) => {};
 
 export const COLORS = {
-  // core
-  primary: PALETTE.orange,
-  secondary: PALETTE.blue,
-  accent: PALETTE.blue,
-  // typography
-  backgroundDK: PALETTE.black,
-  backgroundLT: PALETTE.white,
-  textDIM: PALETTE.grey,
-  textDK: PALETTE.black,
-  textLT: PALETTE.white,
-  // utilities
-  clear: "rgba(0,0,0,0)",
-  line: PALETTE.greyLT,
-  msgDanger: PALETTE.red,
-  msgError: PALETTE.red,
-  msgInfo: PALETTE.green,
-  msgSuccess: PALETTE.green,
-  msgWarning: PALETTE.orange,
+	// core
+	primary: PALETTE.orange,
+	secondary: PALETTE.blue,
+	accent: PALETTE.blue,
+	// typography
+	backgroundDK: PALETTE.black,
+	backgroundLT: PALETTE.white,
+	textDIM: PALETTE.grey,
+	textDK: PALETTE.black,
+	textLT: PALETTE.white,
+	// utilities
+	clear: "rgba(0,0,0,0)",
+	line: PALETTE.grey,
+	msgDanger: PALETTE.red,
+	msgError: PALETTE.red,
+	msgInfo: PALETTE.green,
+	msgSuccess: PALETTE.green,
+	msgWarning: PALETTE.orange,
 };

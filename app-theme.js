@@ -1,4 +1,4 @@
-import { COLORS } from "./app/styles/color-map";
+import { COLORS, SIZES } from "./app/styles";
 
 const MDX_THEME = {
 	Text: {
@@ -14,8 +14,13 @@ const MDX_THEME = {
 		},
 	},
 	Button: {
-		disabledTitleStyle: {
-			color: "red",
+		buttonStyle: {
+			backgroundColor: COLORS.backgroundDK,
+			borderColor: COLORS.line,
+			borderWidth: SIZES[0],
+		},
+		containerStyle: {
+			height: "15%",
 		},
 	},
 };

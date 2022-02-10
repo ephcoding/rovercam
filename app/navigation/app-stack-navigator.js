@@ -1,6 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "../screens/Screen_Home";
+import HomeScreen from "../screens/HomeScreen";
 import LatestPhotosScreen from "../screens/Screen_LatestPhotos";
 import PhotosScreen from "../screens/Screen_CameraPhotos";
 import RoverScreen from "../screens/Screen_Rover";
