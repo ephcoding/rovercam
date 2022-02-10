@@ -3,7 +3,7 @@ import NavButton from "../components/shared/Btn_Navigation";
 import Img_Background from "../components/shared/Img_Background";
 import SafeAreaView from "../components/shared/SafeAreaView";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
-import { NAMES as ROVERS } from "../constants";
+import { ROVER_NAMES } from "../constants/rovers";
 // -- REACT NATIVE ELEMENTS
 import { Button, Header, Text } from "react-native-elements";
 
@@ -21,22 +21,23 @@ const HomeScreen = ({ navigation }) => {
 				imgSrc={require("../../assets/img/mars-glowing.jpg")}
 			>
 				<View_ContentWrapper>
-					<Text h1>ROVERCAM</Text>
+					{/* <Text h1>ROVERCAM</Text>
 					<Text h3>Mars Photos. Rover Style.</Text>
 
 					<Text>
 						Explore photos of the Red Planet through the eyes of the Mars
 						Rovers: Curiosity, Opportunity, Perseverance and Spirit.
-					</Text>
-
-					<Button title='RAISED' />
-					<Button disabled title='DISABLED' />
+					</Text> */}
 
 					<FlatList
-						data={Object.values(ROVERS)}
-						keyExtractor={rover => rover}
-						renderItem={({ item: rover }) => (
-							<NavButton label={rover} navParams={{ rover }} screen='Rover' />
+						data={Object.values(ROVER_NAMES)}
+						keyExtractor={roverName => roverName}
+						renderItem={({ item: roverName }) => (
+							// <NavButton label={roverName} navParams={{ roverName }} screen='Rover' />
+							<Button
+								onPress={() => navigation.navigate("Rover")}
+								title={roverName}
+							/>
 						)}
 						style={S.flatList}
 					/>
