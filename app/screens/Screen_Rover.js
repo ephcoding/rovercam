@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { COLORS } from "../styles";
-import { CAMERAS, QUERIES, IMG_PATHS } from "../constants";
+import { CAMERAS, QUERIES, IMG_PATHS } from "../constants/rovers";
 import { useFetchRoverManifest } from "../hooks/use-manifest";
 import Img_Background from "../components/shared/Img_Background";
 import List_Cameras from "../components/List_Cameras";
