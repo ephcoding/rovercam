@@ -1,4 +1,4 @@
-export const CAMERAS = {
+export const CAMERAS_BY_ROVER = {
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
@@ -39,4 +39,20 @@ export const CAMERAS = {
 		["Panoramic Camera", "PANCAM"],
 		["Miniature Thermal Emission Spectrometer", "MINITES"],
 	],
+};
+
+export const IMG_PATHS = {
+	curiosity: require("../../assets/img/curiosity-up-close.jpg"),
+	opportunity: require("../../assets/img/opportunity.jpg"),
+	perseverance: require("../../assets/img/perseverance.jpg"),
+	spirit: require("../../assets/img/spirit.jpg"),
+};
+
+export const API_QUERY_PARAMS = ["Martian SOL", "Earth Date", "Latest Photos"];
+
+export const ROVER_NAMES = {
+	curiosity: "Curiosity",
+	opportunity: "Opportunity",
+	perseverance: "Perseverance",
+	spirit: "Spirit",
 };
