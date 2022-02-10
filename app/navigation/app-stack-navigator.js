@@ -35,4 +35,4 @@ const stackNavigator = createStackNavigator(
 	}
 );
 
-export default AppStackNavigator = createAppContainer(stackNavigator);
+export default AppStackNavigatorContainer = createAppContainer(stackNavigator);

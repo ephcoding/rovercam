@@ -92,7 +92,10 @@
   - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
 - README
   - [shields](https://shields.io/)
-  <!-- #endregion /resources -->
+- Styling
+  - [`react-native-elements`](https://reactnativeelements.com/)
+    - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+    <!-- #endregion /resources -->
 
 <!-- #region notes -->
 

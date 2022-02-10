@@ -1,10 +1,14 @@
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import AppStackNavigator from "./app/navigation/app-stack-navigator";
+import { ThemeProvider } from "react-native-elements";
+import AppStackNavigatorContainer from "./app/navigation/app-stack-navigator";
+import MDX_THEME from "./app-theme";
 
 export default App = () => {
 	return (
-		<SafeAreaProvider>
-			<AppStackNavigator />
-		</SafeAreaProvider>
+		<ThemeProvider theme={MDX_THEME}>
+			<SafeAreaProvider>
+				<AppStackNavigatorContainer />
+			</SafeAreaProvider>
+		</ThemeProvider>
 	);
 };

@@ -1,12 +1,11 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import NavButton from "../components/shared/Btn_Navigation";
 import Img_Background from "../components/shared/Img_Background";
 import SafeAreaView from "../components/shared/SafeAreaView";
-import Text_Body from "../components/shared/Text_Body";
-import Text_Title from "../components/shared/Text_Title";
-import Text_SubTitle from "../components/shared/Text_SubTitle";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 import { NAMES as ROVERS } from "../constants";
+// -- REACT NATIVE ELEMENTS
+import { Button, Header, Text } from "react-native-elements";
 
 /**
  * TODO: cleaner way to import imgs
@@ -22,13 +21,16 @@ const HomeScreen = ({ navigation }) => {
 				imgSrc={require("../../assets/img/mars-glowing.jpg")}
 			>
 				<View_ContentWrapper>
-					<Text_Title>ROVERCAM</Text_Title>
-					<Text_SubTitle>Mars Photos. Rover Style.</Text_SubTitle>
+					<Text h1>ROVERCAM</Text>
+					<Text h3>Mars Photos. Rover Style.</Text>
 
-					<Text_Body>
+					<Text>
 						Explore photos of the Red Planet through the eyes of the Mars
 						Rovers: Curiosity, Opportunity, Perseverance and Spirit.
-					</Text_Body>
+					</Text>
+
+					<Button title='RAISED' />
+					<Button disabled title='DISABLED' />
 
 					<FlatList
 						data={Object.values(ROVERS)}
