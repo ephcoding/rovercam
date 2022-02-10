@@ -50,6 +50,8 @@
 
 </div>
 
+- APIs / Services
+  - [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
 - [AXIOS](https://github.com/axios/axios#axios)
 - debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
 - Expo [docs](https://docs.expo.dev)
@@ -105,6 +107,31 @@
 [Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
 
 </div>
+
+[ 22FEB10 ]
+
+## API SERVICE DESIGN PATTERNS
+
+- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
+- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
+- Kent Dodds
+  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
+  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
+  - [general colocation](https://kentcdodds.com/blog/colocation)
+  - [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
+- Better Dev | [make a stellar React + NASA API app](https://www.youtube.com/watch?v=UtRNVNkCBq8)
+
+CHECK OUT LATER
+( VORTX API ) [NestJS](https://nestjs.com/) | Node.js framework for building server-side apps & apis
+Brad’s NestJS [crash course](https://www.youtube.com/watch?v=wqhNoDE6pb4)
+used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome)
+[`react-native-elements`](https://reactnativeelements.com/docs/overview)
+
+MISC
+[undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
+[WHATWG](https://whatwg.org/) | web hypertext application technology working group
 
 <!-- #endregion /notes -->
 
