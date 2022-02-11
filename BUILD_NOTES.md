@@ -138,11 +138,11 @@ MISC
 
 <!-- #endregion /notes -->
 
-<!-- #region issues -->
+<!-- #region lessons learned -->
 
-<h3 id='issues' align='center'>
+<h3 id='lessons' align='center'>
 
-![rovercam readme graphic](./assets/readme/issues.png)
+![rovercam readme graphic](./assets/readme/lessons.png)
 
 </h3>
 
@@ -202,22 +202,6 @@ add img file name to `<ImageBackground source={require('')}>`. awesome.
 </details>
 
 <!-- #endregion /[unable to resolve module (removed comment top of file)] -->
-
-<!-- #endregion /issues -->
-
-<!-- #region lessons learned -->
-
-<h3 id='lessons' align='center'>
-
-![rovercam readme graphic](./assets/readme/lessons.png)
-
-</h3>
-
-<div align='center'>
-
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
-
-</div>
 
 <!-- #endregion /lessons learned -->
 
