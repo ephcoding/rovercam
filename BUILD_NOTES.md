@@ -48,46 +48,52 @@
 
 - [AXIOS](https://github.com/axios/axios#axios)
 - [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
+- NASA [Mars projects](https://mars.nasa.gov/)
+- NASA [API Portal](https://api.nasa.gov/)
 
 ## CODE MANAGEMENT
 
 - latest Expo SDK / React Native [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
 - upgrading React Native to [new versions](https://reactnative.dev/docs/upgrading)
-
-## DEBUGGING & TESTING
-
-## IMAGES / UI / VISUALS
-
-- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
-
-## NAVIGATION
-
-- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
 - Expo [docs](https://docs.expo.dev)
   - [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
-  - [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
-  - [vector icons](https://icons.expo.fyi/)
 - [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
-- [Inkscape](https://inkscape.org/) - vector graphic tool
-  - [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
-  - [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
-- JavaScript
-  - using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
-- NASA [Mars projects](https://mars.nasa.gov/)
-- NASA [API Portal](https://api.nasa.gov/)
 - [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
 - React: [docs](reactjs.org)
   - [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
   - [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
+- JavaScript
+  - using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
+- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+  - [react-native-config](https://github.com/luggit/react-native-config)
+
+## DEBUGGING & TESTING
+
+- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+
+## IMAGES / UI / VISUALS
+
+- Expo [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
+- Expo [vector icons](https://icons.expo.fyi/)
+- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
+- [Inkscape](https://inkscape.org/) - vector graphic tool
+  - [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
+  - [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
+- README
+  - [shields](https://shields.io/)
+- Styling
+  - [`react-native-elements`](https://reactnativeelements.com/)
+    - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+- [styling](https://reactnative.dev/docs/style)
+  - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
 - React Native: [docs](reactnative.dev)
   - [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
   - dynamic [image source paths](https://stackoverflow.com/a/41432660)
   - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
-  - [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-    - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-    - [react-native-config](https://github.com/luggit/react-native-config)
-  - [styling](https://reactnative.dev/docs/style)
-    - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
+
+## NAVIGATION
+
 - React Navigation: [docs](https://reactnavigation.org/docs/4.x/getting-started)
   - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
   - [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
@@ -99,11 +105,9 @@
   - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
   - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
   - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
-- README
-  - [shields](https://shields.io/)
-- Styling
-  - [`react-native-elements`](https://reactnativeelements.com/)
-    - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+- React Navigation | subscribing to navigation events
+  - [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
+  - [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
 
 <h3 id='lessons' align='center'>
 
