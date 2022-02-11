@@ -187,6 +187,42 @@ Setting a timer for a long period of time, i.e. multiple minutes, is a performan
 
 ### **Root Cause**
 
+```javascript
+var _proto = Query.prototype;
+
+_proto.setOptions = function setOptions(options) {
+	var _this$options$cacheTi;
+
+	this.options = (0, _extends2.default)({}, this.defaultOptions, options);
+	this.meta = options == null ? void 0 : options.meta; // Default to 5 minutes if not cache time is set
+
+	// this is where the 300 seconds (^^^ 5 minutes ^^^) is coming from in the warning
+	this.cacheTime = Math.max(
+		this.cacheTime || 0,
+		(_this$options$cacheTi = this.options.cacheTime) != null
+			? _this$options$cacheTi
+			: 5 * 60 * 1000
+	);
+};
+
+_proto.setDefaultOptions = function setDefaultOptions(options) {
+	this.defaultOptions = options;
+};
+
+_proto.scheduleGc = function scheduleGc() {
+	var _this = this;
+
+	this.clearGcTimeout();
+
+	// cacheTime implementation
+	if ((0, _utils.isValidTimeout)(this.cacheTime)) {
+		this.gcTimeout = setTimeout(function () {
+			_this.optionalRemove();
+		}, this.cacheTime);
+	}
+};
+```
+
 </details>
 
 <hr>
