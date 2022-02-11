@@ -7,6 +7,7 @@ import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 import { useManifests } from "../hooks/use-manifests";
 import { IMG_PATHS, ROVER_NAMES } from "../constants/rovers";
 import { getManifests } from "../services/mars-photo-api/get-manifests";
+import { useQuery } from "react-query";
 // -- REACT NATIVE ELEMENTS
 import { Card, Header, Text } from "react-native-elements";
 
@@ -17,31 +18,38 @@ import { Card, Header, Text } from "react-native-elements";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const [manifests, setManifests] = useState([]);
+	const { isLoading, error, data, isFetching } = useQuery(
+		"tManifests",
+		getManifests
+	);
+	if (isLoading) return <Text>Loading...</Text>;
+	if (error) return <Text>{`Something broke: ${error}`}</Text>;
+
+	// const [manifests, setManifests] = useState([]);
 	// const res = useManifests();
 
-	useEffect(async () => {
-		const manifests = await getManifests();
-		setManifests([...manifests]);
-	}, []);
+	// useEffect(async () => {
+	// 	const manifests = await getManifests();
+	// 	setManifests([...manifests]);
+	// }, []);
 
-	const roverCards = manifests
-		? manifests.map(manifest => {
-				const { name, launch_date, landing_date, max_sol, max_date } =
-					manifest.data.photo_manifest;
-				// const roverPath = IMG_PATHS[name.toLowerCase()];
-				// console.log(roverPath);
-				return (
-					<Card key={name}>
-						<Card.Title>{name}</Card.Title>
-						<Card.Image
-							source={{ uri: IMG_PATHS[name] }}
-							onPress={() => navigation.navigate("Rover", { rover: name })}
-						/>
-					</Card>
-				);
-		  })
-		: null;
+	// const roverCards = manifests
+	// 	? manifests.map(manifest => {
+	// 			const { name, launch_date, landing_date, max_sol, max_date } =
+	// 				manifest.data.photo_manifest;
+	// 			// const roverPath = IMG_PATHS[name.toLowerCase()];
+	// 			// console.log(roverPath);
+	// 			return (
+	// 				<Card key={name}>
+	// 					<Card.Title>{name}</Card.Title>
+	// 					<Card.Image
+	// 						source={{ uri: IMG_PATHS[name] }}
+	// 						onPress={() => navigation.navigate("Rover", { rover: name })}
+	// 					/>
+	// 				</Card>
+	// 			);
+	// 	  })
+	// 	: null;
 
 	return (
 		<SafeAreaView>
@@ -50,7 +58,9 @@ const HomeScreen = ({ navigation }) => {
 				imgSrc={require("../../assets/img/mars-glowing.jpg")}
 			>
 				<View_ContentWrapper>
-					<View style={S.roverCards}>{roverCards}</View>
+					{/* <View style={S.roverCards}>{roverCards}</View> */}
+					<Text>{JSON.stringify(data)}</Text>
+					<Text>{isFetching ? "Fetching..." : ""}</Text>
 				</View_ContentWrapper>
 			</Img_Background>
 		</SafeAreaView>

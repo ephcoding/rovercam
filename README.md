@@ -14,11 +14,11 @@
 
 # [ FEATURES ]
 
-**_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
+> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
 
-## **_FEATURES_**
+## **FEATURES**
 
-### **Version: MVP**
+### **_Version: MVP_**
 
 - [ ] display rover manifest (mission) information
 - [ ] user can see latest photos for each rover
@@ -26,12 +26,12 @@
 - [ ] user can search rover photos by EARTH DATE
 - [ ] user can filter by repsective rover's photos by camera
 
-### **Idea's Cookin'**
+### **_Idea's Cookin'_**
 
 - [ ] user's can rate/rank their favorite images
   - _for creating \"fan-favorite\" collections_
 
-**_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
+> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
 
 <h3 id='install' align='center'>
 

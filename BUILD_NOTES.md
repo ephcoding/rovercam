@@ -46,8 +46,13 @@
 
 ## APIS & SERVICES
 
-- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
 - [AXIOS](https://github.com/axios/axios#axios)
+- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
+
+## CODE MANAGEMENT
+
+- latest Expo SDK / React Native [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
+- upgrading React Native to [new versions](https://reactnative.dev/docs/upgrading)
 
 ## DEBUGGING & TESTING
 
@@ -98,6 +103,80 @@
   - [`react-native-elements`](https://reactnativeelements.com/)
     - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
 
+<h3 id='lessons' align='center'>
+
+![rovercam readme graphic](./assets/readme/lessons.png)
+
+</h3>
+
+<div align='center'>
+
+[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+
+</div>
+
+# [ LESSONS LEARNED ]
+
+<details>
+<summary><strong>LESSON: </strong> <code>fs could not be found within the project or in these directories</code></summary>
+
+## **_ISSUE_**
+
+```reactnative
+Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
+```
+
+### **Environment**
+
+### **Attempted**
+
+### **Solution**
+
+### **Root Cause**
+
+- _`fs` doesn't exist in React Native ( deep-dive )_
+
+</details>
+
+<hr>
+
+<details>
+<summary><strong>LESSON: </strong> Android natively manages JavaScript timers</summary>
+
+## **_ISSUE_**
+
+```reactnative
+Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
+(Saw setTimeout with duration 300000ms)
+```
+
+### **Evironment**
+
+- `"react-query": "^3.34.14"`
+- `"react-native": "0.64.3"`
+
+### **Attempted**
+
+- [x] check out [issue link](https://github.com/facebook/react-native/issues/12981) provided in warning message
+  - _\* issue was locked 20JUL01 \*_
+  - JS timers get tracked natively on Android - ie. dictates timer triggers. React Native monitors the triggered timers in relation to app lifecycle / rendering
+  - IF: long timer is set - app open while timer active === all good
+    - ELSE IF: app bg'd BEFORE timer finishes === timer wont activate until next app open
+    - EXCEPTION: headless JS timers run when app is bg'd
+  - IF: on-app-open timer activation doesn't matter === ignore the warning
+    - ELSE IF: timer needs to live for life of session w/out foreground trigger === find your own fix for ignoring the timer on foreground (aka. a different pkg than the one causing the warning)
+  - `Alarm Manager` not to be used to wake app - waking up apps with `setTimeout` = "bad idea" (from the core team)
+  - warning remains for awareness
+- [ ] explore `react-query` docs for a way to shorten/adjust the timer
+
+### **Solution**
+
+### **Root Cause**
+
+</details>
+
+<hr>
+
 <h3 id='notes' align='center'>
 
 ![rovercam readme graphic](./assets/readme/notes.png)
@@ -110,68 +189,21 @@
 
 </div>
 
-# [ LESSONS LEARNED ]
-
-## **_PROBLEM_**
-
-```reactnative
-Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
-```
-
-## **_CAUSE_**
-
-- _`fs` doesn't exist in React Native ( deep-dive )_
-
-## **_SOUTION_**
-
-- route 3rd-party API calls through server where keys/secrets are stored (prevents sensitive info getting jacked in transit)
-
-- React Native pgks for handling config/environment variables:
-  - [rovercam readme graphic](https://github.com/goatandsheep/react-native-dotenv) | [react-native-config](https://github.com/luggit/react-native-config)
-
-<details>
-<summary>Unable to resolve (deleted comment top of file) in <code>node_modules</code></summary>
-
-## **_PROBLEM:_**
-
-```reactnative
-Unable to resolve module from <path>: could not be found within the project or in these directories: node_modules
-```
-
-## **_CAUSE:_**
-
-I added a comment at top of file. Attempted:
-
-[ ] deleting comment
-[ ] restarting app
-[ ] reset Metro cache via `yarn start --reset-cach` per error message \* returns `error: unknown option --reset-cache`
-
-**_Actual Cause:_**
-
-incomplete `<ImageBackground>` source path. awesome.
-
-## **_SOLUTION:_**
-
-add img file name to `<ImageBackground source={require('')}>`. awesome.
-
-</details>
-
-<h3 id='questions' align='center'>
-
-![rovercam readme graphic](./assets/readme/questions.png)
-
-</h3>
-
-<div align='center'>
-
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
-
-</div>
-
 # [ NOTES ]
 
 <details>
-<summary>[ 22FEB10 ] API SERVICE DESIGN PATTERNS</summary>
+<summary>[ 22FEB11 ]</summary>
+
+## **FOCUS:** FETCHING & SYNCING DATA W/ `react-query`
+
+- worked through Android timer warning when using `react-query`
+
+</details>
+
+<details>
+<summary>[ 22FEB10 ]</summary>
+
+## **FOCUS:** API SERVICE DESIGN PATTERNS
 
 - Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
 - Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
@@ -196,9 +228,9 @@ MISC
 
 </details>
 
-<h3 id='lessons' align='center'>
+<h3 id='questions' align='center'>
 
-![rovercam readme graphic](./assets/readme/lessons.png)
+![rovercam readme graphic](./assets/readme/questions.png)
 
 </h3>
 
