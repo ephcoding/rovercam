@@ -120,7 +120,7 @@
 ## **LESSON:** most Node.js modules aren't naturally available in React Native
 
 <details>
-<summary><strong><em>details >></em></strong> </summary>
+<summary>details >></summary>
 
 ```reactnative
 Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
@@ -154,7 +154,7 @@ Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js:
 ## **LESSON:** Android natively manages JavaScript timers
 
 <details>
-<summary><strong><em>details >></em></strong> </summary>
+<summary>details >></summary>
 
 ```reactnative
 Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
@@ -241,19 +241,10 @@ _proto.scheduleGc = function scheduleGc() {
 
 # [ NOTES ]
 
-<details>
-<summary>[ 22FEB11 ]</summary>
-
-## **FOCUS:** FETCHING & SYNCING DATA W/ `react-query`
-
-- worked through Android timer warning when using `react-query`
-
-</details>
+## **API SERVICE DESIGN PATTERNS**
 
 <details>
-<summary>[ 22FEB10 ]</summary>
-
-## **FOCUS:** API SERVICE DESIGN PATTERNS
+<summary>details >></summary>
 
 - Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
 - Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
@@ -275,6 +266,51 @@ used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcom
 MISC
 [undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
 [WHATWG](https://whatwg.org/) | web hypertext application technology working group
+
+</details>
+
+## **CUSTOMIZING `react-native-element` COMPONENTS**
+
+```JavaScript
+// style RNE element that have specific style props
+
+Card: {
+  containerStyle: {
+    backgroundColor: '#f00'
+  }
+}
+
+// style RNE elments that don't have specific style props
+// <Card.Title> becomes CardTitle
+
+CardTitle: {
+  style: {
+    color: '#0f0'
+  }
+}
+```
+
+## **FETCHING & SYNCING DATA W/ `react-query`**
+
+<details>
+<summary>details >></summary>
+
+- worked through Android timer warning when using `react-query`
+
+</details>
+
+## **REACT NATIVE \<Image\> SOURCES**
+
+<details>
+<summary>details >></summary>
+
+_why is something as simple as using local project images such a PITA.._
+
+> _React Native docs: [ImageSource](https://reactnative.dev/docs/image#imagesource)_
+>
+> `number` - opaque type returned by something like `require('./image.jpg')`.
+
+- [displaying images with React Native](https://blog.logrocket.com/>displaying-images-with-the-react-native-image-component/)
 
 </details>
 

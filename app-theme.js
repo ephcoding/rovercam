@@ -1,26 +1,43 @@
 import { COLORS, SIZES } from "./app/styles";
 
 const MDX_THEME = {
+	Card: {
+		containerStyle: {
+			backgroundColor: "#f00",
+			flex: 1,
+			padding: 4,
+		},
+	},
+	CardTitle: {
+		style: {
+			color: "#0f0",
+		},
+	},
+	CardFeaturedTitle: {
+		style: {
+			color: "#0ff",
+		},
+	},
+	CardFeaturedSubtitle: {
+		style: {
+			color: "#f0f",
+		},
+	},
 	Text: {
 		style: {
 			color: "#fff",
 			fontSize: 16,
 		},
-		h1Style: {
-			color: "red",
-		},
-		h3Style: {
-			color: "yellow",
-		},
 	},
 	Button: {
 		buttonStyle: {
-			backgroundColor: COLORS.backgroundDK,
-			borderColor: COLORS.line,
-			borderWidth: SIZES[0],
+			backgroundColor: "tan",
 		},
 		containerStyle: {
-			height: "15%",
+			backgroundColor: "yellow",
+			padding: 1,
+			alignSelf: "center",
+			width: "75%",
 		},
 	},
 };
