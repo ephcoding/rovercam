@@ -12,7 +12,7 @@ import SafeAreaView from "../components/shared/SafeAreaView";
 import Text_Title from "../components/shared/Text_Title";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
-const RoverScreen = ({ navigation }) => {
+const RoverInfoScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
 	const roverLC = rover.toLowerCase();
 	// const { manifest } = useFetchRoverManifest(rover);
@@ -54,7 +54,7 @@ const RoverScreen = ({ navigation }) => {
 	);
 };
 
-export default RoverScreen;
+export default RoverInfoScreen;
 
 const S = StyleSheet.create({
 	flatList: {

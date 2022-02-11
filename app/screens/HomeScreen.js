@@ -19,18 +19,29 @@ const HomeScreen = ({ navigation }) => {
 				source={require("../../assets/img/mars-glowing.jpg")}
 				style={S.imgBg}
 			>
-				<RoverCard imgPath={imgs["curiosity"]} xTitle='Curiosity' />
+				<RoverCard
+					imgPath={imgs["curiosity"]}
+					xTitle='Curiosity'
+					nav={navigation}
+					rover='curiosity'
+				/>
 				<RoverCard
 					imgPath={require("../../assets/img/opportunity.jpg")}
 					xTitle='Opportunity'
+					nav={navigation}
+					rover='opportunity'
 				/>
 				<RoverCard
 					imgPath={require("../../assets/img/perseverance.jpg")}
 					xTitle='Perseverance'
+					nav={navigation}
+					rover='perseverance'
 				/>
 				<RoverCard
 					imgPath={require("../../assets/img/spirit.jpg")}
 					xTitle='Spirit'
+					nav={navigation}
+					rover='spirit'
 				/>
 			</ImageBackground>
 		</SafeAreaView>

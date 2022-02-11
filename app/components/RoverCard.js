@@ -1,8 +1,12 @@
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 
-const RoverCard = ({ imgPath, xTitle }) => {
-	const title = xTitle.toUpperCase();
+const RoverCard = ({ imgPath, nav, rover, xTitle }) => {
+	const handleOnPress = isLatest => {
+		isLatest
+			? nav.navigate("DisplayPhotos")
+			: nav.navigate("SearchPhotos", { rover: rover });
+	};
 
 	return (
 		<Card>
@@ -13,15 +17,23 @@ const RoverCard = ({ imgPath, xTitle }) => {
 				source={imgPath}
 			>
 				<View style={[S.square, S.statsSquare]}>
-					<Card.FeaturedTitle>{title}</Card.FeaturedTitle>
+					<Card.FeaturedTitle>{xTitle}</Card.FeaturedTitle>
 					<Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle>
 					<Text>Left Earth:</Text>
 					<Text>Landed:</Text>
 					<Text>Photos:</Text>
 				</View>
 				<View style={[S.square, S.btnSquare]}>
-					<Button title='latest photos' type='outline' />
-					<Button title='search photos' type='outline' />
+					<Button
+						title='latest photos'
+						type='outline'
+						onPress={() => handleOnPress(true)}
+					/>
+					<Button
+						title='search photos'
+						type='outline'
+						onPress={() => handleOnPress(false, { rover: rover })}
+					/>
 				</View>
 			</ImageBackground>
 		</Card>

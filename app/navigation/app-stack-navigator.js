@@ -1,29 +1,29 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "../screens/HomeScreen";
-import LatestPhotosScreen from "../screens/Screen_LatestPhotos";
-import PhotosScreen from "../screens/Screen_CameraPhotos";
-import RoverScreen from "../screens/Screen_Rover";
+import SearchPhotosScreen from "../screens/SearchPhotosScreen";
+import DisplayPhotosScreen from "../screens/DisplayPhotosScreen";
+import RoverInfoScreen from "../screens/RoverInfoScreen";
 
 const stackNavigator = createStackNavigator(
 	{
 		Home: { screen: HomeScreen },
-		Rover: {
-			screen: RoverScreen,
+		SearchPhotos: {
+			screen: SearchPhotosScreen,
+			navigationOptions: {
+				title: "SEARCH PHOTOS",
+			},
+		},
+		DisplayPhotos: {
+			screen: DisplayPhotosScreen,
+			navigationOptions: {
+				title: "MARS PHOTOS",
+			},
+		},
+		RoverInfo: {
+			screen: RoverInfoScreen,
 			navigationOptions: {
 				title: "ROVER INFO",
-			},
-		},
-		LatestPhotos: {
-			screen: LatestPhotosScreen,
-			navigationOptions: {
-				title: "LATEST PHOTOS",
-			},
-		},
-		Photos: {
-			screen: PhotosScreen,
-			navigationOptions: {
-				title: "CAMERA PHOTOS",
 			},
 		},
 	},
