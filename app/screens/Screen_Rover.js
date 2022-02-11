@@ -15,7 +15,7 @@ import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 const RoverScreen = ({ navigation }) => {
 	const rover = navigation.getParam("rover");
 	const roverLC = rover.toLowerCase();
-	const { manifest } = useFetchRoverManifest(rover);
+	// const { manifest } = useFetchRoverManifest(rover);
 
 	if (!manifest) return;
 
@@ -23,7 +23,7 @@ const RoverScreen = ({ navigation }) => {
 		<SafeAreaView>
 			<Img_Background imgSrc={IMG_PATHS[roverLC]} opacity={0.5}>
 				<View_ContentWrapper>
-					<RoverCard manifest={manifest} />
+					{/* <RoverCard manifest={manifest} /> */}
 					{/* <FlatList
 						data={Object.values(CAMERAS[roverLC])}
 						keyExtractor={camera => camera[0]}

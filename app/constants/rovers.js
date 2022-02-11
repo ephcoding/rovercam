@@ -42,7 +42,7 @@ export const CAMERAS_BY_ROVER = {
 };
 
 export const IMG_PATHS = {
-	curiosity: require("../../assets/img/curiosity-up-close.jpg"),
+	curiosity: require("../../assets/img/curiosity.jpg"),
 	opportunity: require("../../assets/img/opportunity.jpg"),
 	perseverance: require("../../assets/img/perseverance.jpg"),
 	spirit: require("../../assets/img/spirit.jpg"),

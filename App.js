@@ -4,11 +4,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "react-native-elements";
 import THEME from "./app-theme";
 
-const queryClient = new QueryClient();
+const reactQuery = new QueryClient();
 
 export default App = () => {
 	return (
-		<QueryClientProvider client={queryClient}>
+		<QueryClientProvider client={reactQuery}>
 			<ThemeProvider theme={THEME}>
 				<SafeAreaProvider>
 					<AppStackNavigatorContainer />
