@@ -9,20 +9,30 @@ import { IMG_PATHS } from "../constants/rovers";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const imgRef = IMG_PATHS[0];
+	const imgs = IMG_PATHS;
 
 	return (
 		<SafeAreaView style={S.screen}>
-			{/* <ImageBackground
+			<ImageBackground
+				imageStyle={S.imgStyle}
 				resizeMode='cover'
 				source={require("../../assets/img/mars-glowing.jpg")}
-				style={{ backgroundColor: "red", flex: 1 }}
-			> */}
-			<RoverCard />
-			<RoverCard />
-			<RoverCard />
-			<RoverCard />
-			{/* </ImageBackground> */}
+				style={S.imgBg}
+			>
+				<RoverCard imgPath={imgs["curiosity"]} xTitle='Curiosity' />
+				<RoverCard
+					imgPath={require("../../assets/img/opportunity.jpg")}
+					xTitle='Opportunity'
+				/>
+				<RoverCard
+					imgPath={require("../../assets/img/perseverance.jpg")}
+					xTitle='Perseverance'
+				/>
+				<RoverCard
+					imgPath={require("../../assets/img/spirit.jpg")}
+					xTitle='Spirit'
+				/>
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };
@@ -30,8 +40,14 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
+	imgBg: {
+		flex: 1,
+	},
+	imgStyle: {
+		opacity: 0.5,
+	},
 	screen: {
-		backgroundColor: "#0f0",
+		backgroundColor: "#000",
 		flex: 1,
 		justifyContent: "space-evenly",
 	},

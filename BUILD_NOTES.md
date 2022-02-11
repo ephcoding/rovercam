@@ -58,6 +58,8 @@
 
 ## IMAGES / UI / VISUALS
 
+- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
+
 ## NAVIGATION
 
 - debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
