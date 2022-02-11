@@ -117,33 +117,44 @@
 
 # [ LESSONS LEARNED ]
 
-<details>
-<summary><strong>LESSON: </strong> <code>fs could not be found within the project or in these directories</code></summary>
+## **LESSON:** most Node.js modules aren't naturally available in React Native
 
-## **_ISSUE_**
+<details>
+<summary><strong><em>details >></em></strong> </summary>
 
 ```reactnative
-Unable to resolve module fs from /Users/eph/_repos/m-spacer/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
+Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
 ```
 
 ### **Environment**
 
+- `"react-query": "^3.34.14"`
+- `"react-native": "0.64.3"`
+
 ### **Attempted**
+
+- checked out these:
+  - [using core node.js modules in react native apps](https://javascript.plainenglish.io/using-core-node-js-modules-in-react-native-apps-e6002a33b6ff)
+  - issue [1871](https://github.com/facebook/react-native/issues/1871?ref=hackernoon.com)
+  - issue [6253](https://github.com/facebook/react-native/issues/6253?ref=hackernoon.com)
+  - `browserify` [handbook](https://github.com/browserify/browserify-handbook?ref=hackernoon.com#builtins)
 
 ### **Solution**
 
+- [`browserify`](https://browserify.org/?ref=hackernoon.com) | bundles all of your deps so you can `require` them in the browser
+
 ### **Root Cause**
 
-- _`fs` doesn't exist in React Native ( deep-dive )_
+- Node.js is written in C++ so it can't get bundled with React Native's JavaScript bundle
 
 </details>
 
 <hr>
 
-<details>
-<summary><strong>LESSON: </strong> Android natively manages JavaScript timers</summary>
+## **LESSON:** Android natively manages JavaScript timers
 
-## **_ISSUE_**
+<details>
+<summary><strong><em>details >></em></strong> </summary>
 
 ```reactnative
 Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
@@ -170,6 +181,9 @@ Setting a timer for a long period of time, i.e. multiple minutes, is a performan
 - [ ] explore `react-query` docs for a way to shorten/adjust the timer
 
 ### **Solution**
+
+- find package that doesn't throw the warning
+- quiet the warning
 
 ### **Root Cause**
 

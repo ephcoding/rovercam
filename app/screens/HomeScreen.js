@@ -59,7 +59,7 @@ const HomeScreen = ({ navigation }) => {
 			>
 				<View_ContentWrapper>
 					{/* <View style={S.roverCards}>{roverCards}</View> */}
-					<Text>{JSON.stringify(data)}</Text>
+					<Text>{JSON.stringify(data[0].data.photo_manifest.launch_date)}</Text>
 					<Text>{isFetching ? "Fetching..." : ""}</Text>
 				</View_ContentWrapper>
 			</Img_Background>
@@ -71,6 +71,7 @@ export default HomeScreen;
 
 const S = StyleSheet.create({
 	roverCards: {
+		backgroundColor: "#777",
 		flex: 1,
 		justifyContent: "space-evenly",
 	},
