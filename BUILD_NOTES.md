@@ -74,6 +74,7 @@
 
 ## IMAGES / UI / VISUALS
 
+- [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
 - Expo [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
 - Expo [vector icons](https://icons.expo.fyi/)
 - [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
