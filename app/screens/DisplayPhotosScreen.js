@@ -4,6 +4,8 @@ import Axios from "../services/mars-photo-api/axios-config";
 import Img_Background from "../components/shared/Img_Background";
 import { NavigationEvents } from "react-navigation";
 
+// TODO: use [manifest] & [photos] to dyno-gen camera labels & names
+
 const DisplayPhotosScreen = ({ route, navigation }) => {
 	console.log(">> NAVIGATION >>\n", navigation);
 	console.log(">> ROUTE >>\n", route);

@@ -17,6 +17,11 @@ const MDX_THEME = {
 			color: "#fff",
 		},
 	},
+	ButtonGroup: {
+		textStyle: {
+			color: COLORS.textDK,
+		},
+	},
 	Card: {
 		containerStyle: {
 			backgroundColor: "#000",
