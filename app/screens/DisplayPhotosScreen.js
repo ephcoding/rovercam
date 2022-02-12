@@ -4,7 +4,7 @@ import Axios from "../services/mars-photo-api/axios-config";
 import Img_Background from "../components/shared/Img_Background";
 import { NavigationEvents } from "react-navigation";
 
-const DisplayPhotosScreen = ({ navigation, route }) => {
+const DisplayPhotosScreen = ({ route, navigation }) => {
 	console.log(">> NAVIGATION >>\n", navigation);
 	console.log(">> ROUTE >>\n", route);
 	// const willFocus = navigation.addListener("willFocus", payload => {

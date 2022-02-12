@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import Img_Background from "../components/shared/Img_Background";
 import Text_Title from "../components/shared/Text_Title";
 import SafeAreaView from "../components/shared/SafeAreaView";
@@ -12,11 +12,14 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<Img_Background
-				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
+			<ImageBackground
+				imageStyle={S.imgStyle}
+				resizeMode='cover'
+				style={S.imgContainer}
+				source={route.params.img_url}
 			>
 				<Text>{JSON.stringify(route.params)}</Text>
-			</Img_Background>
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };
@@ -24,18 +27,15 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 export default SearchPhotosScreen;
 
 const S = StyleSheet.create({
+	imgContainer: { flex: 1 },
+	imgStyle: {
+		// flex: 1,
+	},
 	flatList: {
 		display: "flex",
 		// flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
 		width: "100%",
-	},
-	img: {
-		borderWidth: 5,
-		borderColor: "red",
-		height: 150,
-		margin: 10,
-		width: 150,
 	},
 });

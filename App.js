@@ -27,6 +27,7 @@ export default App = () => {
 							headerStyle: {
 								backgroundColor: "#000",
 							},
+							headerTintColor: "#fff",
 							headerTitleStyle: {
 								color: "#fff",
 								fontSize: 20,

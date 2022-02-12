@@ -1,5 +1,6 @@
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
+import { IMG_PATHS } from "../constants/rovers";
 
 const RoverCard = ({ imgPath, nav, rover, xTitle }) => {
 	const handleOnPress = isLatest => {
@@ -9,6 +10,7 @@ const RoverCard = ({ imgPath, nav, rover, xTitle }) => {
 			});
 		} else {
 			nav.navigate("SearchPhotos", {
+				img_url: IMG_PATHS[rover],
 				title: `SEARCH ${rover.toUpperCase()} PHOTOS`,
 			});
 		}
