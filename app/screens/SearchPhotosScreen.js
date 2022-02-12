@@ -1,29 +1,31 @@
 import { useState } from "react";
-import { ImageBackground, SafeAreaView, StyleSheet } from "react-native";
+import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import { ButtonGroup, Switch, Text } from "react-native-elements";
+import { COLORS, FONTS, SIZES } from "../styles";
 
 const SearchPhotosScreen = ({ navigation, route }) => {
-	console.log(">> NAVIGATION >>\n", navigation);
-	console.log(">> ROUTE >>\n", route);
+	// console.log(">> NAVIGATION >>\n", navigation);
+	// console.log(">> ROUTE >>\n", route);
 
 	const [isSwitched, setIsSwitched] = useState(false);
 
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<ImageBackground
-				imageStyle={S.imgStyle}
+				imageStyle={S.imgBgImgStyle}
 				resizeMode='cover'
-				style={S.imgContainer}
 				source={route.params.img_url}
+				style={S.imgBgStyle}
 			>
-				<Switch
-					onValueChange={() => setIsSwitched(!isSwitched)}
-					color={"#ff0"}
-					ios_backgroundColor={"#777"}
-					thumbColor={"#f60"}
-					trackColor={{ false: "#777", true: "#0f0" }}
-					value={isSwitched}
-				/>
+				<View style={S.pickerView}></View>
+				<View style={S.switchRowStyle}>
+					<Text h4>Martian SOL</Text>
+					<Switch
+						onValueChange={() => setIsSwitched(!isSwitched)}
+						value={isSwitched}
+					/>
+					<Text h4>Earth Date</Text>
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -32,16 +34,24 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 export default SearchPhotosScreen;
 
 const S = StyleSheet.create({
-	imgContainer: {
+	imgBgStyle: {
 		alignItems: "center",
 		flex: 1,
-		justifyContent: "center",
 	},
-	imgStyle: {
+	imgBgImgStyle: {
+		flex: 1,
+		opacity: 0.5,
+	},
+	pickerView: {
 		flex: 1,
 	},
 	safeArea: {
-		backgroundColor: "#000",
+		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
+	},
+	switchLabel: {},
+	switchRowStyle: {
+		flexDirection: "row",
+		marginBottom: SIZES[6],
 	},
 });
