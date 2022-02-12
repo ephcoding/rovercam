@@ -1,30 +1,7 @@
-import { COLORS, SIZES } from "./app/styles";
+import { Platform } from "react-native";
+import { COLORS, FONTS, SIZES } from "./app/styles";
 
 const MDX_THEME = {
-	Card: {
-		containerStyle: {
-			backgroundColor: "#000",
-			borderWidth: 3,
-			flex: 1,
-			padding: 0,
-		},
-	},
-	CardFeaturedTitle: {
-		style: {
-			color: "#fff",
-		},
-	},
-	CardFeaturedSubtitle: {
-		style: {
-			color: "#f60",
-		},
-	},
-	Text: {
-		style: {
-			color: "#ff0",
-			fontSize: 16,
-		},
-	},
 	Button: {
 		buttonStyle: {
 			borderColor: "#fff",
@@ -38,6 +15,44 @@ const MDX_THEME = {
 		},
 		titleStyle: {
 			color: "#fff",
+		},
+	},
+	Card: {
+		containerStyle: {
+			backgroundColor: "#000",
+			borderWidth: 3,
+			flex: 1,
+			padding: 0,
+		},
+	},
+	CardFeaturedSubtitle: {
+		style: {
+			color: "#f60",
+		},
+	},
+	CardFeaturedTitle: {
+		style: {
+			color: "#fff",
+		},
+	},
+	Switch: {
+		ios_backgroundColor: "#777",
+		thumbColor: COLORS.backgroundLT,
+		trackColor: {
+			false: "#777",
+			true: "#f60",
+		},
+	},
+	Text: {
+		style: {
+			color: "#fff",
+			fontSize: 16,
+		},
+		h1Style: {},
+		h2Style: {},
+		h3Style: {},
+		h4Style: {
+			color: "#f0f",
 		},
 	},
 };
