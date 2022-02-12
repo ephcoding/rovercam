@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Img_Background from "../components/shared/Img_Background";
-import Text_Title from "../components/shared/Text_Title";
 import { COLORS } from "../styles";
 import Axios from "../services/mars-photo-api/axios-config";
+import Img_Background from "../components/shared/Img_Background";
+import { NavigationEvents } from "react-navigation";
 
-const DisplayPhotosScreen = ({ navigation }) => {
-	console.log(">> DISPLAY PHOTOS SCREEN >>", navigation);
+const DisplayPhotosScreen = ({ navigation, route }) => {
+	console.log(">> NAVIGATION >>\n", navigation);
+	console.log(">> ROUTE >>\n", route);
+	// const willFocus = navigation.addListener("willFocus", payload => {
+	// 	console.log("willFocus", payload.lastState.routeName);
+	// });
+
 	// const [photos, setPhotos] = useState();
 
 	// const getCameraPhotos = async () => {

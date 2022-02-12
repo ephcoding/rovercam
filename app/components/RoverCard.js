@@ -3,9 +3,15 @@ import { Button, Card, Text } from "react-native-elements";
 
 const RoverCard = ({ imgPath, nav, rover, xTitle }) => {
 	const handleOnPress = isLatest => {
-		isLatest
-			? nav.navigate("DisplayPhotos")
-			: nav.navigate("SearchPhotos", { rover: rover });
+		if (isLatest) {
+			nav.navigate("DisplayPhotos", {
+				title: `LATEST ${rover.toUpperCase()} PHOTOS`,
+			});
+		} else {
+			nav.navigate("SearchPhotos", {
+				title: `SEARCH ${rover.toUpperCase()} PHOTOS`,
+			});
+		}
 	};
 
 	return (

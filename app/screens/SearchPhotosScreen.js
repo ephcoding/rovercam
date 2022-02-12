@@ -6,13 +6,16 @@ import SafeAreaView from "../components/shared/SafeAreaView";
 import { COLORS } from "../styles";
 import Axios from "../services/mars-photo-api/axios-config";
 
-const SearchPhotosScreen = ({ navigation }) => {
+const SearchPhotosScreen = ({ navigation, route }) => {
+	console.log(">> NAVIGATION >>\n", navigation);
+	console.log(">> ROUTE >>\n", route);
+
 	return (
 		<SafeAreaView>
 			<Img_Background
 				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
 			>
-				<Text>Search Photos Screen</Text>
+				<Text>{JSON.stringify(route.params)}</Text>
 			</Img_Background>
 		</SafeAreaView>
 	);
