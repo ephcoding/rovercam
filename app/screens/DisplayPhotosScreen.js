@@ -29,7 +29,7 @@ const DisplayPhotosScreen = ({ route, navigation }) => {
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>`>> ERROR >>: ${error}`</Text>;
 
-	console.log(response.data.latest_photos[0]);
+	// console.log(response.data.latest_photos[0]);
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
