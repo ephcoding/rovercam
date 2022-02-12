@@ -5,11 +5,14 @@ import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import { ButtonGroup, Switch, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 
+// NOTES:
+// Switch onChange => (event)
+// Switch onValueChange => returns (passed value)
+
 const SearchPhotosScreen = ({ navigation, route }) => {
 	const [isSwitched, setIsSwitched] = useState(false);
-	// whats the diff...
+
 	const handleSwitchOnChange = () => setIsSwitched(!isSwitched);
-	// const handleSwitchOnValueChange = curVal => console.log(curVal);
 
 	return (
 		<SafeAreaView style={S.safeArea}>
@@ -24,11 +27,7 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				</View>
 				<View style={S.switchRowStyle}>
 					<Text h4>Martian SOL</Text>
-					<Switch
-						onChange={() => handleSwitchOnChange()}
-						// onValueChange={curVal => handleSwitchOnValueChange(curVal)}
-						value={isSwitched}
-					/>
+					<Switch onChange={() => handleSwitchOnChange()} value={isSwitched} />
 					<Text h4>Earth Date</Text>
 				</View>
 			</ImageBackground>
@@ -40,7 +39,6 @@ export default SearchPhotosScreen;
 
 const S = StyleSheet.create({
 	imgBgStyle: {
-		// alignItems: "center",
 		flex: 1,
 	},
 	imgBgImgStyle: {

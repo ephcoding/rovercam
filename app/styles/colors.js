@@ -12,6 +12,7 @@ export const COLORS = {
 	primary: PALETTE.orange,
 	secondary: PALETTE.blue,
 	accent: PALETTE.blue,
+	clear: PALETTE.clear,
 	// typography
 	backgroundDK: PALETTE.black,
 	backgroundLT: PALETTE.white,

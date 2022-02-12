@@ -278,6 +278,9 @@ MISC
 
 ## **CUSTOMIZING `react-native-element` COMPONENTS**
 
+- \<ButtonGroup\> buttons
+  -
+
 ```JavaScript
 // style RNE element that have specific style props
 

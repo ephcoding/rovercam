@@ -7,8 +7,8 @@ import { NavigationEvents } from "react-navigation";
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
 const DisplayPhotosScreen = ({ route, navigation }) => {
-	console.log(">> NAVIGATION >>\n", navigation);
-	console.log(">> ROUTE >>\n", route);
+	// console.log(">> NAVIGATION >>\n", navigation);
+	// console.log(">> ROUTE >>\n", route);
 	// const willFocus = navigation.addListener("willFocus", payload => {
 	// 	console.log("willFocus", payload.lastState.routeName);
 	// });

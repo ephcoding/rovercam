@@ -1,24 +1,47 @@
 import { useState } from "react";
-import { ButtonGroup } from "react-native-elements";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { FlatList, StyleSheet } from "react-native";
+import { Button } from "react-native-elements";
+import { COLORS, FONTS, SIZES } from "../styles";
 
 // !HEADS UP! --> SOLs start at '0'
 
 const SOLPicker = () => {
 	const [btnIndex, setBtnIndex] = useState(0);
+	const TEST_SOLS = [];
 
-	const handleBtnOnPress = index => {
-		setBtnIndex(index);
-		console.log(">> BTN INDEX >>\n", index);
-	};
+	for (let i = 0; i < 50; i++) {
+		TEST_SOLS.push(`${i}`);
+	}
+
+	const handleBtnOnPress = index => setBtnIndex(index);
 
 	return (
-		<ButtonGroup
-			buttons={["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]}
-			onPress={btnIndex => handleBtnOnPress(btnIndex)}
-			selectedIndex={btnIndex}
+		<FlatList
+			data={TEST_SOLS}
+			keyExtractor={ke => ke}
+			renderItem={({ item, index, separators }) => (
+				<Button
+					buttonStyle={S.btnBtnStyle}
+					containerStyle={S.btnContainerStyle}
+					onPress={() => console.log(index, separators)}
+					title={item}
+				/>
+			)}
+			numColumns={2}
 		/>
 	);
 };
 
 export default SOLPicker;
+
+const S = StyleSheet.create({
+	btnBtnStyle: {
+		backgroundColor: COLORS.backgroundDK,
+	},
+	btnContainerStyle: {
+		flex: 1,
+		margin: 10,
+		opacity: 0.5,
+	},
+	flColWrapStyle: {},
+});
