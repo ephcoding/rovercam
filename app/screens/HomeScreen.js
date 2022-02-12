@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
 	const imgs = IMG_PATHS;
 
 	return (
-		<SafeAreaView style={S.screen}>
+		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
 				imageStyle={S.imgStyle}
 				resizeMode='cover'
@@ -22,25 +22,25 @@ const HomeScreen = ({ navigation }) => {
 				<RoverCard
 					imgPath={imgs["curiosity"]}
 					xTitle='Curiosity'
-					nav={navigation}
+					navigation={navigation}
 					rover='curiosity'
 				/>
 				<RoverCard
 					imgPath={require("../../assets/img/opportunity.jpg")}
 					xTitle='Opportunity'
-					nav={navigation}
+					navigation={navigation}
 					rover='opportunity'
 				/>
 				<RoverCard
 					imgPath={require("../../assets/img/perseverance.jpg")}
 					xTitle='Perseverance'
-					nav={navigation}
+					navigation={navigation}
 					rover='perseverance'
 				/>
 				<RoverCard
 					imgPath={require("../../assets/img/spirit.jpg")}
 					xTitle='Spirit'
-					nav={navigation}
+					navigation={navigation}
 					rover='spirit'
 				/>
 			</ImageBackground>
@@ -57,7 +57,7 @@ const S = StyleSheet.create({
 	imgStyle: {
 		opacity: 0.3,
 	},
-	screen: {
+	safeAreaView: {
 		backgroundColor: "#000",
 		flex: 1,
 		justifyContent: "space-evenly",

@@ -192,7 +192,7 @@ Setting a timer for a long period of time, i.e. multiple minutes, is a performan
 ### **Solution**
 
 - find package that doesn't throw the warning
-- quiet the warning
+- [quiet the warning](https://github.com/tannerlinsley/react-query/discussions/356)
 
 ### **Root Cause**
 
