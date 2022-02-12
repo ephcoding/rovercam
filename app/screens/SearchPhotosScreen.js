@@ -26,7 +26,10 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				<View style={S.pickerView}>
 					{isSwitched ? <DatePicker /> : <SOLPicker />}
 				</View>
-				<SearchSwitch onSwitch={handleSwitchOnChange} value={isSwitched} />
+				<SearchSwitch
+					onChangeHandler={handleSwitchOnChange}
+					value={isSwitched}
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);

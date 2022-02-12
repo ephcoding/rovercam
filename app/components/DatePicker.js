@@ -1,9 +1,8 @@
-// WHAT: calendar date picker (react-native-calendars)
-// USED WHERE: SearchPhotosScreen
+import { CalendarList } from "react-native-calendars";
 import { Text } from "react-native-elements";
 
 const DatePicker = () => {
-	return <Text>Date Picker</Text>;
+	return <CalendarList />;
 };
 
 export default DatePicker;
