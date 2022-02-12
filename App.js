@@ -1,51 +1,70 @@
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import { RoverProvider } from "./app/context/rover-context";
-import HomeScreen from "./app/screens/Screen_Home";
-import LatestPhotosScreen from "./app/screens/Screen_LatestPhotos";
-import PhotosScreen from "./app/screens/Screen_CameraPhotos";
-import RoverScreen from "./app/screens/Screen_Rover";
+// NAVIGATION
+import { NavigationContainer } from "@react-navigation/native";
+import { Stack } from "./app/navigation/app-stack-navigator";
+// REACT QUERY
+import { QueryClient, QueryClientProvider } from "react-query";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+// SCREENS
+import HomeScreen from "./app/screens/HomeScreen";
+import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
+import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
+import RoverInfoScreen from "./app/screens/RoverInfoScreen";
+// THEME
+import { ThemeProvider } from "react-native-elements";
+import MDX_THEME from "./app-theme";
 
-/**
- * TODO: remove HomeScreen header
- */
+const reactQuery = new QueryClient();
 
-const appStackNavigator = createStackNavigator(
-	{
-		Home: { screen: HomeScreen },
-		Rover: {
-			screen: RoverScreen,
-			navigationOptions: {
-				title: "ROVER INFO",
-			},
-		},
-		LatestPhotos: {
-			screen: LatestPhotosScreen,
-			navigationOptions: {
-				title: "LATEST PHOTOS",
-			},
-		},
-		Photos: {
-			screen: PhotosScreen,
-			navigationOptions: {
-				title: "CAMERA PHOTOS",
-			},
-		},
-	},
-	{
-		initialRouteName: "Home",
-		defaultNavigationOptions: {
-			title: "ROVERCAM",
-		},
-	}
-);
-
-const AppStackNavContainer = createAppContainer(appStackNavigator);
-
-export default () => {
+export default App = () => {
 	return (
-		<RoverProvider>
-			<AppStackNavContainer />
-		</RoverProvider>
+		<QueryClientProvider client={reactQuery}>
+			<ThemeProvider theme={MDX_THEME}>
+				<SafeAreaProvider>
+					<NavigationContainer>
+						<Stack.Navigator
+							initialRouteName='Home'
+							screenOptions={{
+								headerStyle: {
+									backgroundColor: "#000",
+								},
+								headerTintColor: "#fff",
+								headerTitleStyle: {
+									color: "#fff",
+									fontSize: 20,
+									fontWeight: "bold",
+								},
+							}}
+						>
+							<Stack.Screen
+								name='Home'
+								component={HomeScreen}
+								options={{ title: "ROVERCAM" }}
+							/>
+							<Stack.Screen
+								name='DisplayPhotos'
+								component={DisplayPhotosScreen}
+								options={({ route }) => ({
+									title: route.params.title,
+								})}
+							/>
+							<Stack.Screen
+								name='SearchPhotos'
+								component={SearchPhotosScreen}
+								options={({ route }) => ({
+									title: route.params.title,
+								})}
+							/>
+							<Stack.Screen
+								name='RoverInfo'
+								component={RoverInfoScreen}
+								options={({ route }) => ({
+									title: `${route.params.title} SPECS`,
+								})}
+							/>
+						</Stack.Navigator>
+					</NavigationContainer>
+				</SafeAreaProvider>
+			</ThemeProvider>
+		</QueryClientProvider>
 	);
 };

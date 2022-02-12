@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
-import { CAMERAS } from "../constants";
+import { CAMERAS } from "../constants/rovers";
 import RoverContext from "../context/rover-context";
 import NavButton from "./shared/Btn_Navigation";
 import List_NavigationBtns from "./shared/List_NavigationBtns";
