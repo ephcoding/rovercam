@@ -1,4 +1,5 @@
 import DatePicker from "../components/DatePicker";
+import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 import { useState } from "react";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
@@ -25,11 +26,7 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				<View style={S.pickerView}>
 					{isSwitched ? <DatePicker /> : <SOLPicker />}
 				</View>
-				<View style={S.switchRowStyle}>
-					<Text h4>Martian SOL</Text>
-					<Switch onChange={() => handleSwitchOnChange()} value={isSwitched} />
-					<Text h4>Earth Date</Text>
-				</View>
+				<SearchSwitch onSwitch={handleSwitchOnChange} value={isSwitched} />
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -51,11 +48,5 @@ const S = StyleSheet.create({
 	safeArea: {
 		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
-	},
-	switchLabel: {},
-	switchRowStyle: {
-		flexDirection: "row",
-		marginBottom: SIZES[6],
-		justifyContent: "center",
 	},
 });
