@@ -55,7 +55,7 @@ const S = StyleSheet.create({
 		flex: 1,
 	},
 	imgStyle: {
-		opacity: 0.5,
+		opacity: 0.3,
 	},
 	screen: {
 		backgroundColor: "#000",

@@ -26,7 +26,10 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				<View style={S.pickerView}>
 					{isSwitched ? <DatePicker /> : <SOLPicker />}
 				</View>
-				<SearchSwitch onSwitch={handleSwitchOnChange} value={isSwitched} />
+				<SearchSwitch
+					onChangeHandler={handleSwitchOnChange}
+					value={isSwitched}
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -40,7 +43,7 @@ const S = StyleSheet.create({
 	},
 	imgBgImgStyle: {
 		flex: 1,
-		opacity: 0.5,
+		opacity: 0.3,
 	},
 	pickerView: {
 		flex: 1,
