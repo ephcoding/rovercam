@@ -1,7 +1,7 @@
 import { Platform } from "react-native";
-import { COLORS, FONTS, SIZES } from "./app/styles";
+import { COLORS, FONTS, SIZES } from "../../styles";
 
-const MDX_THEME = {
+export const RNE_THEME = {
 	Button: {
 		buttonStyle: {
 			borderColor: "#fff",
@@ -40,7 +40,7 @@ const MDX_THEME = {
 		thumbColor: COLORS.backgroundLT,
 		trackColor: {
 			false: "#777",
-			true: "#f60",
+			true: COLORS.secondary,
 		},
 	},
 	Text: {
@@ -52,9 +52,8 @@ const MDX_THEME = {
 		h2Style: {},
 		h3Style: {},
 		h4Style: {
-			color: "#f0f",
+			color: COLORS.textLT,
+			marginHorizontal: 15,
 		},
 	},
 };
-
-export default MDX_THEME;

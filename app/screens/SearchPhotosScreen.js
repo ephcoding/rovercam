@@ -43,7 +43,7 @@ const S = StyleSheet.create({
 	},
 	imgBgImgStyle: {
 		flex: 1,
-		opacity: 0.5,
+		opacity: 0.3,
 	},
 	pickerView: {
 		flex: 1,

@@ -75,6 +75,8 @@
 ## IMAGES / UI / VISUALS
 
 - [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
+  - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
+  - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
 - Expo [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
 - Expo [vector icons](https://icons.expo.fyi/)
 - [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
@@ -278,8 +280,7 @@ MISC
 
 ## **CUSTOMIZING `react-native-element` COMPONENTS**
 
-- \<ButtonGroup\> buttons
-  -
+- ## \<ButtonGroup\> buttons
 
 ```JavaScript
 // style RNE element that have specific style props

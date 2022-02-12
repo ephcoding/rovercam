@@ -11,14 +11,14 @@ import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
 import RoverInfoScreen from "./app/screens/RoverInfoScreen";
 // THEME
 import { ThemeProvider } from "react-native-elements";
-import MDX_THEME from "./app-theme";
+import { RNE_THEME } from "./app/styles/themes";
 
 const reactQuery = new QueryClient();
 
 export default App = () => {
 	return (
 		<QueryClientProvider client={reactQuery}>
-			<ThemeProvider theme={MDX_THEME}>
+			<ThemeProvider theme={RNE_THEME}>
 				<SafeAreaProvider>
 					<NavigationContainer>
 						<Stack.Navigator
