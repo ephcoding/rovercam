@@ -17,7 +17,7 @@ import PhotosList from "../components/PhotosList";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
-const DisplayPhotosScreen = ({ route, navigation }) => {
+const DisplayPhotosScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
 	const prevScreen = navigation.getState().routes[0].name;
 	let propName = prevScreen === "Home" ? "latest_photos" : "photos";

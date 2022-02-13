@@ -1,4 +1,4 @@
-import { getLatestPhotos } from "../services/mars-photo-api/getLatestPhotos";
+import { getLatestPhotos } from "../services";
 import { useQuery } from "react-query";
 
 export const useLatestPhotos = rover => {
