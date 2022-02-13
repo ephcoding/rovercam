@@ -362,6 +362,8 @@ _why is something as simple as using local project images such a PITA.._
 
 # [ QUESTIONS ]
 
+- `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
+
 <h3 id='connect' align='center'>
 
 ![rovercam readme graphic](./assets/readme/connect.png)

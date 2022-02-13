@@ -19,6 +19,7 @@ const SOLPicker = () => {
 		<FlatList
 			data={TEST_SOLS}
 			keyExtractor={ke => ke}
+			numColumns={2}
 			renderItem={({ item, index, separators }) => (
 				<Button
 					buttonStyle={S.btnBtnStyle}
@@ -27,7 +28,6 @@ const SOLPicker = () => {
 					title={item}
 				/>
 			)}
-			numColumns={2}
 		/>
 	);
 };

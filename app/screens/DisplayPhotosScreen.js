@@ -19,6 +19,8 @@ import PhotosList from "../components/PhotosList";
 
 const DisplayPhotosScreen = ({ route, navigation }) => {
 	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
+	const prevScreen = navigation.getState().routes[0].name;
+	let propName = prevScreen === "Home" ? "latest_photos" : "photos";
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
@@ -35,7 +37,7 @@ const DisplayPhotosScreen = ({ route, navigation }) => {
 				source={require("../../assets/img/mars-rover-tracks.jpg")}
 				style={S.imgStyle}
 			>
-				{data && <PhotosList photos={data.latest_photos} />}
+				{data && <PhotosList photos={data[propName]} />}
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -45,6 +47,7 @@ export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
 	componentStyle: {
+		flex: 1,
 		opacity: 0.4,
 	},
 	imgStyle: {

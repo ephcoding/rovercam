@@ -1,22 +1,25 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { QueryCache } from "react-query";
 
-const PhotosList = photos => {
-	console.log(">> photos >>\n", photos);
-
+const PhotosList = ({ photos }) => {
 	return (
 		<FlatList
 			data={photos}
 			keyExtractor={photo => photo.id}
+			numColumns={2}
 			PlaceholderContext={<Text>FlatList Loading...</Text>}
+			renderItem={({ item, index }) => {
+				// console.log(">> item.img_src >>\n", item.img_src);
+
+				return (
+					<Image
+						resizeMode='cover'
+						source={{ uri: item.img_src }}
+						style={S.imgStyle}
+					/>
+				);
+			}}
 			style={S.flatListStyle}
-			renderItem={({ item, index }) => (
-				<Image
-					resizeMode='cover'
-					source={{ uri: item.img_src }}
-					style={S.listImgStyle}
-				/>
-			)}
 		/>
 	);
 };
@@ -27,9 +30,10 @@ const S = StyleSheet.create({
 	flatListStyle: {
 		flex: 1,
 	},
-	listImgStyle: {
+	imgStyle: {
 		aspectRatio: 1,
-		width: "100%",
+		borderRadius: 50,
 		flex: 1,
+		margin: 10,
 	},
 });
