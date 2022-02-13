@@ -1,30 +1,20 @@
-import { useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 
 // !HEADS UP! --> SOLs start at '0'
 
-const SOLPicker = () => {
-	const [btnIndex, setBtnIndex] = useState(0);
-	const TEST_SOLS = [];
-
-	for (let i = 0; i < 50; i++) {
-		TEST_SOLS.push(`${i}`);
-	}
-
-	const handleBtnOnPress = index => setBtnIndex(index);
-
+const SOLPicker = (handler, sols) => {
 	return (
 		<FlatList
-			data={TEST_SOLS}
+			data={sols}
 			keyExtractor={ke => ke}
 			numColumns={2}
 			renderItem={({ item, index, separators }) => (
 				<Button
 					buttonStyle={S.btnBtnStyle}
 					containerStyle={S.btnContainerStyle}
-					onPress={() => console.log(index, separators)}
+					onPress={() => handler(index)}
 					title={item}
 				/>
 			)}
@@ -40,7 +30,7 @@ const S = StyleSheet.create({
 	},
 	btnContainerStyle: {
 		flex: 1,
-		margin: 10,
+		margin: SIZES[3],
 		opacity: 0.5,
 	},
 	flColWrapStyle: {},
