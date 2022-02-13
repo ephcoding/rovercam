@@ -2,15 +2,17 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS } from "../constants/rovers";
 
-const RoverCard = ({ imgPath, nav, rover, xTitle }) => {
+const RoverCard = ({ imgPath, navigation, rover, xTitle }) => {
 	const handleOnPress = isLatest => {
 		if (isLatest) {
-			nav.navigate("DisplayPhotos", {
+			navigation.navigate("DisplayPhotos", {
+				rover: rover,
 				title: `LATEST ${rover.toUpperCase()} PHOTOS`,
 			});
 		} else {
-			nav.navigate("SearchPhotos", {
+			navigation.navigate("SearchPhotos", {
 				img_url: IMG_PATHS[rover],
+				rover: rover,
 				title: `SEARCH ${rover.toUpperCase()} PHOTOS`,
 			});
 		}

@@ -126,7 +126,17 @@
 
 # [ LESSONS LEARNED ]
 
-## **LESSON:** most Node.js modules aren't naturally available in React Native
+## **LESSON:** Android natively manages JavaScript timers
+
+<details>
+<summary>details >></summary>
+
+```reactnative
+Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
+(Saw setTimeout with duration 300000ms)
+```
+
+## **LESSON:** most Node.js modules aren't natively available in React Native
 
 <details>
 <summary>details >></summary>
@@ -160,15 +170,28 @@ Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js:
 
 <hr>
 
-## **LESSON:** Android natively manages JavaScript timers
+## **LESSON:** (React Query: rendered more hooks than during previous render)
 
 <details>
 <summary>details >></summary>
 
-```reactnative
-Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
-(Saw setTimeout with duration 300000ms)
-```
+### **Evironment**
+
+attempting to render latest photos using new `useLatestPhotos` hook
+
+### **Steps**
+
+- S.O. [](https://stackoverflow.com/q/59339287)
+
+### **Solution**
+
+### **Root Cause**
+
+I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display values.
+
+</details>
+
+<hr>
 
 ### **Evironment**
 
@@ -192,7 +215,7 @@ Setting a timer for a long period of time, i.e. multiple minutes, is a performan
 ### **Solution**
 
 - find package that doesn't throw the warning
-- quiet the warning
+- [quiet the warning](https://github.com/tannerlinsley/react-query/discussions/356)
 
 ### **Root Cause**
 
@@ -338,6 +361,8 @@ _why is something as simple as using local project images such a PITA.._
 </div>
 
 # [ QUESTIONS ]
+
+- `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
 
 <h3 id='connect' align='center'>
 

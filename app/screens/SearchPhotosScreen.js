@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
-import { ButtonGroup, Switch, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import DatePicker from "../components/DatePicker";
 import SearchSwitch from "../components/SearchSwitch";

@@ -1,42 +1,44 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { COLORS } from "../styles";
-import Axios from "../services/mars-photo-api/axios-config";
-import Img_Background from "../components/shared/Img_Background";
+import { useEffect, use } from "react";
+import { useQuery } from "react-query";
+import {
+	FlatList,
+	ImageBackground,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+	LogBox,
+} from "react-native";
+import { Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
+import { COLORS } from "../styles";
+import { useLatestPhotos } from "../hooks/useLatestPhotos";
+import PhotosList from "../components/PhotosList";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
 const DisplayPhotosScreen = ({ route, navigation }) => {
-	// console.log(">> NAVIGATION >>\n", navigation);
-	// console.log(">> ROUTE >>\n", route);
-	// const willFocus = navigation.addListener("willFocus", payload => {
-	// 	console.log("willFocus", payload.lastState.routeName);
-	// });
+	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
+	const prevScreen = navigation.getState().routes[0].name;
+	let propName = prevScreen === "Home" ? "latest_photos" : "photos";
 
-	// const [photos, setPhotos] = useState();
+	useEffect(() => {
+		LogBox.ignoreLogs(["Setting a timer"]);
+	}, []);
 
-	// const getCameraPhotos = async () => {
-	// 	try {
-	// 		const res = await Axios.get(`/rovers/${rover}/photos?camera=${cameraSH}`);
-	// 		const photos = await res.data.photos;
-	// 		console.clear();
-	// 		console.log(res);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
-
-	// useEffect(() => {
-	// 	getCameraPhotos();
-	// });
+	if (isLoading) return <Text>Loading...</Text>;
+	if (error) return <Text>ERROR: {error.messge}</Text>;
 
 	return (
-		<SafeAreaView style={S.safeArea}>
-			<Img_Background
-				imgSrc={require("../../assets/img/mars-rover-tracks.jpg")}
+		<SafeAreaView style={S.safeAreaView}>
+			<ImageBackground
+				imageStyle={S.componentStyle}
+				resizeMode='cover'
+				source={require("../../assets/img/mars-rover-tracks.jpg")}
+				style={S.imgStyle}
 			>
-				<Text>Display Photos Screen</Text>
-			</Img_Background>
+				{data && <PhotosList photos={data[propName]} />}
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };
@@ -44,7 +46,14 @@ const DisplayPhotosScreen = ({ route, navigation }) => {
 export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
-	safeArea: {
+	componentStyle: {
+		flex: 1,
+		opacity: 0.4,
+	},
+	imgStyle: {
+		flex: 1,
+	},
+	safeAreaView: {
 		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
