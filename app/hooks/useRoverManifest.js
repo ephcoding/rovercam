@@ -1,4 +1,4 @@
-import { getManifests } from "../services/mars-photo-api/getRoverManifest";
+import { getRoverManifest } from "../services/mars-photo-api/getRoverManifest";
 import { useQuery } from "react-query";
 
-export const useManifests = () => useQuery("manifests", getManifests);
+export const useManifests = () => useQuery("manifests", getRoverManifest);

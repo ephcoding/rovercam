@@ -11,8 +11,8 @@ import SOLPicker from "../components/SOLPicker";
 // Switch onValueChange => returns (passed value)
 
 const SearchPhotosScreen = ({ navigation, route }) => {
-	// toggle between SOLS or calendar
 	const [isSwitched, setIsSwitched] = useState(false);
+	const [screen, setScreen] = useState();
 	// SOL
 	// 1. get number of SOLs from Rover's manifest
 	// 2. pass SOL count to SOLPicker to display btns
@@ -36,7 +36,8 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 		// send 
 	// handle date picked
 
-const handleSOLSelection = () => {};
+	const handleSOLPick = () => {};
+	const handleEarthDatePick = () => {};
 	const handleSwitchOnChange = () => setIsSwitched(!isSwitched);
 
 	return (
