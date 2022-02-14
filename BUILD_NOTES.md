@@ -166,6 +166,7 @@ MISC
 <!-- #region REACT QUERY -->
 
 - [npm package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
+- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
 
 <!-- #endregion /REACT QUERY -->
 

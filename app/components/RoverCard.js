@@ -2,7 +2,7 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS } from "../constants/rovers";
 
-const RoverCard = ({ imgPath, navigation, rover, xTitle }) => {
+const RoverCard = ({ imgPath, landed, launched, navigation, photo, rover }) => {
 	const handleOnPress = isLatest => {
 		if (isLatest) {
 			navigation.navigate("DisplayPhotos", {
@@ -27,11 +27,10 @@ const RoverCard = ({ imgPath, navigation, rover, xTitle }) => {
 				source={imgPath}
 			>
 				<View style={[S.square, S.statsSquare]}>
-					<Card.FeaturedTitle>{xTitle}</Card.FeaturedTitle>
-					<Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle>
-					<Text>Left Earth:</Text>
-					<Text>Landed:</Text>
-					<Text>Photos:</Text>
+					<Card.FeaturedTitle>{rover.toUpperCase()}</Card.FeaturedTitle>
+					{/* <Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle> */}
+					<Text>Launched: {launched}</Text>
+					<Text>Landed: {landed}</Text>
 				</View>
 				<View style={[S.square, S.btnSquare]}>
 					<Button
