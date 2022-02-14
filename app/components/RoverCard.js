@@ -8,7 +8,7 @@ const RoverCard = ({ landed, launched, navigation, photos, rover }) => {
 
 	const handleOnPress = isLatest => {
 		if (isLatest) {
-			navigation.navigate("DisplayPhotos", {
+			navigation.navigate("DisplayLatestPhotos", {
 				rover: rover,
 				title: `LATEST ${capName} PHOTOS`,
 			});

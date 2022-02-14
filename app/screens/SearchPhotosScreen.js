@@ -13,7 +13,9 @@ import SOLPicker from "../components/SOLPicker";
 const SearchPhotosScreen = ({ navigation, route }) => {
 	const [isSwitched, setIsSwitched] = useState(false);
 	const [screen, setScreen] = useState();
+
 	const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
+	const rover = route.params.rover;
 	const solsArr = route.params.photos.map(photo => photo.sol);
 
 	// SOL
@@ -39,8 +41,6 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 	// send
 	// handle date picked
 
-	const handleSOLPick = () => {};
-	const handleEarthDatePick = () => {};
 	const handleSwitchOnChange = () => setIsSwitched(!isSwitched);
 
 	return (
@@ -53,9 +53,13 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 			>
 				<View style={S.pickerView}>
 					{isSwitched ? (
-						<DatePicker earthDatesArr={earthDatesArr} />
+						<DatePicker
+							earthDatesArr={earthDatesArr}
+							navigation={navigation}
+							rover={rover}
+						/>
 					) : (
-						<SOLPicker handler={handleSOLPick} sols={solsArr} />
+						<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
 					)}
 					{/* {isSwitched ? <DatePicker /> : <SOLPicker handler={handleSOLSelection} sols={}/>} */}
 				</View>

@@ -4,7 +4,11 @@ import { COLORS, FONTS, SIZES } from "../styles";
 
 // !HEADS UP! --> SOLs start at '0'
 
-const SOLPicker = ({ handler, sols }) => {
+const SOLPicker = ({ navigation, rover, sols }) => {
+	const handlePickSOLNum = sol => {
+		navigation.navigate("DisplayPhotos", { rover: rover, sol: sol });
+	};
+
 	return (
 		<FlatList
 			data={sols}
@@ -14,7 +18,7 @@ const SOLPicker = ({ handler, sols }) => {
 				<Button
 					buttonStyle={S.btnBtnStyle}
 					containerStyle={S.btnContainerStyle}
-					onPress={() => handler(index)}
+					onPress={() => handlePickSOLNum(item)}
 					title={item}
 				/>
 			)}

@@ -4,7 +4,8 @@ import { CalendarList } from "react-native-calendars";
 import { Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 
-const DatePicker = ({ earthDatesArr }) => {
+const DatePicker = ({ earthDatesArr, rover }) => {
+	const handleEarthDatePick = () => {};
 	return (
 		<CalendarList
 			style={S.style}

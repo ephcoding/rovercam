@@ -15,15 +15,10 @@ const HomeScreen = ({ navigation }) => {
 	let roverCards;
 
 	if (manifests) {
-		// console.log(manifests);
+		console.log(manifests);
 		roverCards = manifests.map(manifest => {
 			const { name, landing_date, launch_date, photos } =
 				manifest.data.photo_manifest;
-			console.log(`>>>> ${name.toUpperCase()} >>>>`);
-			console.log("LAUNCHED: ", launch_date);
-			console.log("LANDED: ", landing_date);
-			console.log("PHOTO COUNT: ", photos.length);
-			console.log("FIRST SOL: ", photos[0].sol);
 			return (
 				<RoverCard
 					key={name}
