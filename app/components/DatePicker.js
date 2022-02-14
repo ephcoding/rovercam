@@ -4,11 +4,24 @@ import { CalendarList } from "react-native-calendars";
 import { Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 
-const DatePicker = () => {
+const DatePicker = ({ earthDatesArr, rover }) => {
+	const startDate = earthDatesArr[0];
+	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
+	// TODO: mark calendar days that have photos & disable calendar days that don't
+	console.log(
+		new Date(earthDatesArr[earthDatesArr.length - 1]) -
+			new Date(earthDatesArr[0])
+	);
+
+	const handleEarthDatePick = () => {};
+
 	return (
 		<CalendarList
-			style={S.style}
 			calendarStyle={S.calendarStyle}
+			current={earthDatesArr[0]}
+			futureScrollRange={20}
+			pastScrollRange={0}
+			style={S.style}
 			theme={RNC_THEME}
 		/>
 	);

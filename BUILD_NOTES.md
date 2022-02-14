@@ -44,73 +44,148 @@
 
 # [ RESOURCES ]
 
-## APIS & SERVICES
+<!-- #region 3RD-PARTY DATA -->
 
-- [AXIOS](https://github.com/axios/axios#axios)
-- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
-- NASA [Mars projects](https://mars.nasa.gov/)
-- NASA [API Portal](https://api.nasa.gov/)
+- [docs](https://github.com/axios/axios#axios)
+- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
+- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
+- Kent Dodds
+  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
+  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
+  - [general colocation](https://kentcdodds.com/blog/colocation)
+  - [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
+- Better Dev | [make a stellar React + NASA API app](https://www.youtube.com/watch?v=UtRNVNkCBq8)
 
-## CODE MANAGEMENT
+CHECK OUT LATER
+( VORTX API ) [NestJS](https://nestjs.com/) | Node.js framework for building server-side apps & apis
+Brad’s NestJS [crash course](https://www.youtube.com/watch?v=wqhNoDE6pb4)
+used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome)
+[`react-native-elements`](https://reactnativeelements.com/docs/overview)
 
-- latest Expo SDK / React Native [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
-- upgrading React Native to [new versions](https://reactnative.dev/docs/upgrading)
-- Expo [docs](https://docs.expo.dev)
-  - [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
-- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+MISC
+[undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
+[WHATWG](https://whatwg.org/) | web hypertext application technology working group
+
+<!-- #endregion /3RD-PARTY DATA -->
+
+<!-- #region CODE MANAGEMENT -->
+
 - [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
-- React: [docs](reactjs.org)
-  - [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-  - [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
-- JavaScript
-  - using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
-- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-  - [react-native-config](https://github.com/luggit/react-native-config)
 
-## DEBUGGING & TESTING
+<!-- #endregion /CODE MANAGEMENT -->
 
-- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+<!-- #region COMPONENT LIBRARIES -->
 
-## IMAGES / UI / VISUALS
-
+- [`react-native-elements`](https://reactnativeelements.com/)
+  - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
 - [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
   - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
   - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
-- Expo [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
-- Expo [vector icons](https://icons.expo.fyi/)
-- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
+
+<!-- #endregion /COMPONENT LIBRARIES -->
+
+<!-- #region DEBUGGING -->
+
+- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+
+<!-- #endregion /DEBUGGING -->
+
+<!-- #region EXPO -->
+
+- [docs](https://docs.expo.dev)
+- [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
+- latest React Native-compatable [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
+- [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
+- [vector icons](https://icons.expo.fyi/)
+
+<!-- #endregion /EXPO -->
+
+<!-- #region GRAPHIC DESIGN -->
+
 - [Inkscape](https://inkscape.org/) - vector graphic tool
-  - [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
-  - [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
-- README
-  - [shields](https://shields.io/)
-- Styling
-  - [`react-native-elements`](https://reactnativeelements.com/)
-    - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+- [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
+- [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
+
+<!-- #endregion /GRAPHIC DESIGN -->
+
+<!-- #region JAVASCRIPT -->
+
+- using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
+
+<!-- #endregion /JAVASCRIPT -->
+
+<!-- #region NASA -->
+
+- [Mars projects](https://mars.nasa.gov/)
+- [API Portal](https://api.nasa.gov/)
+
+<!-- #endregion /NASA -->
+
+<!-- #region REACT -->
+
+- [docs](reactjs.org)
+- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
+
+<!-- #endregion /REACT -->
+
+<!-- #region REACT NATIVE -->
+
+- [docs](reactnative.dev)
+- [bumping versions](https://reactnative.dev/docs/upgrading)
+- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+  - [react-native-config](https://github.com/luggit/react-native-config)
 - [styling](https://reactnative.dev/docs/style)
-  - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
-- React Native: [docs](reactnative.dev)
-  - [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
-  - dynamic [image source paths](https://stackoverflow.com/a/41432660)
-  - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
+- [ImageSource](https://reactnative.dev/docs/image#imagesource)
+- [displaying images with React Native](https://blog.logrocket.com/displaying-images-with-the-react-native-image-component/)
 
-## NAVIGATION
+<!-- #endregion /REACT NATIVE -->
 
-- React Navigation: [docs](https://reactnavigation.org/docs/4.x/getting-started)
-  - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
-  - [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
-  - ['Getting Started'](https://reactnavigation.org/docs/4.x/getting-started) packages (with `expo install`):
-    - [`react-navigation`](https://www.npmjs.com/package/react-navigation)
-    - [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
-    - [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
-    - [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
-  - [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
-  - [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
-  - [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
-- React Navigation | subscribing to navigation events
-  - [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
-  - [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
+<!-- #region REACT NAVIGATION -->
+
+- [docs](https://reactnavigation.org/docs/4.x/getting-started)
+- [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
+- [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
+- ['Getting Started'](https://reactnavigation.org/docs/4.x/getting-started) packages (with `expo install`):
+- [`react-navigation`](https://www.npmjs.com/package/react-navigation)
+- [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
+- [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
+- [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
+- [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
+- [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
+- [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
+- [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
+- [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
+
+<!-- #endregion /REACT NAVIGATION -->
+
+<!-- #region REACT QUERY -->
+
+- [npm package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
+- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
+
+<!-- #endregion /REACT QUERY -->
+
+<!-- #region STATE MANAGEMENT -->
+
+- using `react-query` with [React Native](https://react-query.tanstack.com/react-native)
+
+<!-- #endregion /STATE MANAGEMENT -->
+
+<!-- #region STYLING -->
+
+- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
+- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
+- [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
+- dynamic [image source paths](https://stackoverflow.com/a/41432660)
+- [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
+- [shields](https://shields.io/)
+
+<!-- #endregion /STYLING -->
 
 <h3 id='lessons' align='center'>
 
@@ -135,63 +210,6 @@
 Setting a timer for a long period of time, i.e. multiple minutes, is a performance and correctness issue on Android as it keeps the timer module awake, and timers can only be called when the app is in the foreground. See https://github.com/facebook/react-native/issues/12981 for more info.
 (Saw setTimeout with duration 300000ms)
 ```
-
-## **LESSON:** most Node.js modules aren't natively available in React Native
-
-<details>
-<summary>details >></summary>
-
-```reactnative
-Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
-```
-
-### **Environment**
-
-- `"react-query": "^3.34.14"`
-- `"react-native": "0.64.3"`
-
-### **Attempted**
-
-- checked out these:
-  - [using core node.js modules in react native apps](https://javascript.plainenglish.io/using-core-node-js-modules-in-react-native-apps-e6002a33b6ff)
-  - issue [1871](https://github.com/facebook/react-native/issues/1871?ref=hackernoon.com)
-  - issue [6253](https://github.com/facebook/react-native/issues/6253?ref=hackernoon.com)
-  - `browserify` [handbook](https://github.com/browserify/browserify-handbook?ref=hackernoon.com#builtins)
-
-### **Solution**
-
-- [`browserify`](https://browserify.org/?ref=hackernoon.com) | bundles all of your deps so you can `require` them in the browser
-
-### **Root Cause**
-
-- Node.js is written in C++ so it can't get bundled with React Native's JavaScript bundle
-
-</details>
-
-<hr>
-
-## **LESSON:** (React Query: rendered more hooks than during previous render)
-
-<details>
-<summary>details >></summary>
-
-### **Evironment**
-
-attempting to render latest photos using new `useLatestPhotos` hook
-
-### **Steps**
-
-- S.O. [](https://stackoverflow.com/q/59339287)
-
-### **Solution**
-
-### **Root Cause**
-
-I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display values.
-
-</details>
-
-<hr>
 
 ### **Evironment**
 
@@ -259,6 +277,63 @@ _proto.scheduleGc = function scheduleGc() {
 
 <hr>
 
+## **LESSON:** most Node.js modules aren't natively available in React Native
+
+<details>
+<summary>details >></summary>
+
+```reactnative
+Unable to resolve module fs from <project path>/node_modules/dotenv/lib/main.js: fs could not be found within the project or in these directories: node_modules
+```
+
+### **Environment**
+
+- `"react-query": "^3.34.14"`
+- `"react-native": "0.64.3"`
+
+### **Attempted**
+
+- checked out these:
+  - [using core node.js modules in react native apps](https://javascript.plainenglish.io/using-core-node-js-modules-in-react-native-apps-e6002a33b6ff)
+  - issue [1871](https://github.com/facebook/react-native/issues/1871?ref=hackernoon.com)
+  - issue [6253](https://github.com/facebook/react-native/issues/6253?ref=hackernoon.com)
+  - `browserify` [handbook](https://github.com/browserify/browserify-handbook?ref=hackernoon.com#builtins)
+
+### **Solution**
+
+- [`browserify`](https://browserify.org/?ref=hackernoon.com) | bundles all of your deps so you can `require` them in the browser
+
+### **Root Cause**
+
+- Node.js is written in C++ so it can't get bundled with React Native's JavaScript bundle
+
+</details>
+
+<hr>
+
+## **LESSON:** don't call hooks AFTER `return`s
+
+<details>
+<summary>details >></summary>
+
+### **Evironment**
+
+attempting to render latest photos using new `useLatestPhotos` hook
+
+### **Steps**
+
+- S.O. [](https://stackoverflow.com/q/59339287)
+
+### **Solution**
+
+### **Root Cause**
+
+I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display values.
+
+</details>
+
+<hr>
+
 <h3 id='notes' align='center'>
 
 ![rovercam readme graphic](./assets/readme/notes.png)
@@ -273,37 +348,12 @@ _proto.scheduleGc = function scheduleGc() {
 
 # [ NOTES ]
 
-## **API SERVICE DESIGN PATTERNS**
+## `Promise.allSettled()` was added to React Native in v64
 
-<details>
-<summary>details >></summary>
+- `undefined is not a function (near '...Promise.allSettled...`
+  - [SO answer](https://stackoverflow.com/a/70114114) | RN issue [30236](https://github.com/facebook/react-native/issues/30236)
 
-- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
-- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
-- Kent Dodds
-  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
-  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
-  - [general colocation](https://kentcdodds.com/blog/colocation)
-  - [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
-  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
-- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
-- Better Dev | [make a stellar React + NASA API app](https://www.youtube.com/watch?v=UtRNVNkCBq8)
-
-CHECK OUT LATER
-( VORTX API ) [NestJS](https://nestjs.com/) | Node.js framework for building server-side apps & apis
-Brad’s NestJS [crash course](https://www.youtube.com/watch?v=wqhNoDE6pb4)
-used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome)
-[`react-native-elements`](https://reactnativeelements.com/docs/overview)
-
-MISC
-[undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
-[WHATWG](https://whatwg.org/) | web hypertext application technology working group
-
-</details>
-
-## **CUSTOMIZING `react-native-element` COMPONENTS**
-
-- ## \<ButtonGroup\> buttons
+## how to style `react-native-element` components
 
 ```JavaScript
 // style RNE element that have specific style props
@@ -324,29 +374,10 @@ CardTitle: {
 }
 ```
 
-## **FETCHING & SYNCING DATA W/ `react-query`**
+## Android timer warning when using `react-query`
 
-<details>
-<summary>details >></summary>
-
-- worked through Android timer warning when using `react-query`
-
-</details>
-
-## **REACT NATIVE \<Image\> SOURCES**
-
-<details>
-<summary>details >></summary>
-
-_why is something as simple as using local project images such a PITA.._
-
-> _React Native docs: [ImageSource](https://reactnative.dev/docs/image#imagesource)_
->
-> `number` - opaque type returned by something like `require('./image.jpg')`.
-
-- [displaying images with React Native](https://blog.logrocket.com/>displaying-images-with-the-react-native-image-component/)
-
-</details>
+- [S.O. answer](https://stackoverflow.com/a/70114114)
+- React Native issue [30236](https://github.com/facebook/react-native/issues/30236#issuecomment-939286987)
 
 <h3 id='questions' align='center'>
 
@@ -362,7 +393,8 @@ _why is something as simple as using local project images such a PITA.._
 
 # [ QUESTIONS ]
 
-- `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
+- [x] `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
+  - _forgot to destructure `photos` prop - so it was was getting treating like `props`_
 
 <h3 id='connect' align='center'>
 

@@ -12,16 +12,13 @@ import {
 import { Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
+import { useLatestPhotos } from "../hooks/useLatestPhotos";
 import PhotosList from "../components/PhotosList";
-import { usePhotosbySOL } from "../hooks";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
-const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = usePhotosbySOL(
-		route.params.rover,
-		route.params.sol
-	);
+const DisplayLatestPhotosScreen = ({ navigation, route }) => {
+	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
@@ -38,13 +35,13 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 				source={require("../../assets/img/mars-rover-tracks.jpg")}
 				style={S.imgStyle}
 			>
-				{data && <PhotosList photos={data.photos} />}
+				{data && <PhotosList photos={data.latest_photos} />}
 			</ImageBackground>
 		</SafeAreaView>
 	);
 };
 
-export default DisplayPhotosScreen;
+export default DisplayLatestPhotosScreen;
 
 const S = StyleSheet.create({
 	componentStyle: {

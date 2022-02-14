@@ -8,6 +8,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./app/screens/HomeScreen";
 import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
+import DisplayLatestPhotosScreen from "./app/screens/DisplayLatestPhotosScreen";
 import RoverInfoScreen from "./app/screens/RoverInfoScreen";
 // THEME
 import { ThemeProvider } from "react-native-elements";
@@ -45,6 +46,13 @@ export default App = () => {
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
 									title: route.params.title,
+								})}
+							/>
+							<Stack.Screen
+								name='DisplayLatestPhotos'
+								component={DisplayLatestPhotosScreen}
+								options={({ route }) => ({
+									title: `LATEST ${route.params.rover} PHOTOS`,
 								})}
 							/>
 							<Stack.Screen

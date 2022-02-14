@@ -2,18 +2,22 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS } from "../constants/rovers";
 
-const RoverCard = ({ imgPath, navigation, rover, xTitle }) => {
+const RoverCard = ({ landed, launched, navigation, photos, rover }) => {
+	const imgSource = IMG_PATHS[rover];
+	const capName = rover.toUpperCase();
+
 	const handleOnPress = isLatest => {
 		if (isLatest) {
-			navigation.navigate("DisplayPhotos", {
+			navigation.navigate("DisplayLatestPhotos", {
 				rover: rover,
-				title: `LATEST ${rover.toUpperCase()} PHOTOS`,
+				title: `LATEST ${capName} PHOTOS`,
 			});
 		} else {
 			navigation.navigate("SearchPhotos", {
-				img_url: IMG_PATHS[rover],
+				img_url: IMG_PATHS[rover.toLowerCase()],
+				photos: photos,
 				rover: rover,
-				title: `SEARCH ${rover.toUpperCase()} PHOTOS`,
+				title: `SEARCH ${capName} PHOTOS`,
 			});
 		}
 	};
@@ -24,14 +28,13 @@ const RoverCard = ({ imgPath, navigation, rover, xTitle }) => {
 				imageStyle={S.imgStyle}
 				resizeMode='cover'
 				style={S.squares}
-				source={imgPath}
+				source={imgSource}
 			>
 				<View style={[S.square, S.statsSquare]}>
-					<Card.FeaturedTitle>{xTitle}</Card.FeaturedTitle>
-					<Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle>
-					<Text>Left Earth:</Text>
-					<Text>Landed:</Text>
-					<Text>Photos:</Text>
+					<Card.FeaturedTitle>{capName}</Card.FeaturedTitle>
+					{/* <Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle> */}
+					<Text>Launched: {launched}</Text>
+					<Text>Landed: {landed}</Text>
 				</View>
 				<View style={[S.square, S.btnSquare]}>
 					<Button
