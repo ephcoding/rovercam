@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {usePhotosBySOL} from '../hooks';
+import { usePhotosBySOL } from "../hooks";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import { COLORS, FONTS, SIZES } from "../styles";
 import DatePicker from "../components/DatePicker";
@@ -13,6 +13,7 @@ import SOLPicker from "../components/SOLPicker";
 const SearchPhotosScreen = ({ navigation, route }) => {
 	const [isSwitched, setIsSwitched] = useState(false);
 	const [screen, setScreen] = useState();
+
 	// SOL
 	// 1. get number of SOLs from Rover's manifest
 	// 2. pass SOL count to SOLPicker to display btns
@@ -31,9 +32,9 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 	// 6. when CalendarPicker onPress, pass back date
 	// 7. nav to DisplayPhotosScreen passing rover & date as route.params
 	// 8. on nav - query photos by date via usePhotosByDate
-		
+
 	// nav to DisplayPhotosScreen
-		// send 
+	// send
 	// handle date picked
 
 	const handleSOLPick = () => {};
@@ -49,7 +50,8 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				style={S.imgBgStyle}
 			>
 				<View style={S.pickerView}>
-					{isSwitched ? <DatePicker /> : <SOLPicker handler={handleSOLSelection} sols={}/>}
+					{isSwitched ? <DatePicker /> : <SOLPicker />}
+					{/* {isSwitched ? <DatePicker /> : <SOLPicker handler={handleSOLSelection} sols={}/>} */}
 				</View>
 				<SearchSwitch
 					onChangeHandler={handleSwitchOnChange}

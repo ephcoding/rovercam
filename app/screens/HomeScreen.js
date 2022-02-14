@@ -1,6 +1,7 @@
+import { IMG_PATHS, ROVER_NAMES } from "../constants";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
-import { IMG_PATHS } from "../constants/rovers";
+import { useRoverManifest } from "../hooks";
 
 /**
  * TODO: cleaner way to import imgs
@@ -9,7 +10,14 @@ import { IMG_PATHS } from "../constants/rovers";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const imgs = IMG_PATHS;
+	const { isLoading, error, data } = useRoverManifest("curiosity");
+
+	// const getRoverManifest = async rover => {
+	// 	const res = await Axios.get(`/manifests/${rover}`);
+	// 	console.log(await res.data);
+	// };
+
+	// getRoverManifest("curiosity");
 
 	return (
 		<SafeAreaView style={S.safeAreaView}>
@@ -20,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
 				style={S.imgBg}
 			>
 				<RoverCard
-					imgPath={imgs["curiosity"]}
+					imgPath={IMG_PATHS["curiosity"]}
 					xTitle='Curiosity'
 					navigation={navigation}
 					rover='curiosity'

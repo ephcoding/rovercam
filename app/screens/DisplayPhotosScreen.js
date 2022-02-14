@@ -1,4 +1,4 @@
-import { useEffect, use } from "react";
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 import {
 	FlatList,
