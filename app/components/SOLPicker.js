@@ -4,7 +4,7 @@ import { COLORS, FONTS, SIZES } from "../styles";
 
 // !HEADS UP! --> SOLs start at '0'
 
-const SOLPicker = (handler, sols) => {
+const SOLPicker = ({ handler, sols }) => {
 	return (
 		<FlatList
 			data={sols}

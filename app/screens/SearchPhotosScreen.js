@@ -13,6 +13,8 @@ import SOLPicker from "../components/SOLPicker";
 const SearchPhotosScreen = ({ navigation, route }) => {
 	const [isSwitched, setIsSwitched] = useState(false);
 	const [screen, setScreen] = useState();
+	const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
+	const solsArr = route.params.photos.map(photo => photo.sol);
 
 	// SOL
 	// 1. get number of SOLs from Rover's manifest
@@ -50,7 +52,11 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				style={S.imgBgStyle}
 			>
 				<View style={S.pickerView}>
-					{isSwitched ? <DatePicker /> : <SOLPicker />}
+					{isSwitched ? (
+						<DatePicker earthDatesArr={earthDatesArr} />
+					) : (
+						<SOLPicker handler={handleSOLPick} sols={solsArr} />
+					)}
 					{/* {isSwitched ? <DatePicker /> : <SOLPicker handler={handleSOLSelection} sols={}/>} */}
 				</View>
 				<SearchSwitch

@@ -1,4 +1,4 @@
-import { IMG_PATHS, ROVER_NAMES as ROVERS } from "../constants";
+import { ROVER_NAMES as ROVERS } from "../constants";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
 import { useRoverManifests } from "../hooks";
@@ -15,6 +15,7 @@ const HomeScreen = ({ navigation }) => {
 	let roverCards;
 
 	if (manifests) {
+		// console.log(manifests);
 		roverCards = manifests.map(manifest => {
 			const { name, landing_date, launch_date, photos } =
 				manifest.data.photo_manifest;
@@ -22,15 +23,15 @@ const HomeScreen = ({ navigation }) => {
 			console.log("LAUNCHED: ", launch_date);
 			console.log("LANDED: ", landing_date);
 			console.log("PHOTO COUNT: ", photos.length);
+			console.log("FIRST SOL: ", photos[0].sol);
 			return (
 				<RoverCard
-					imgPath={IMG_PATHS[name.toLowerCase()]}
 					key={name}
 					landed={landing_date}
 					launched={launch_date}
 					navigation={navigation}
 					photos={photos}
-					rover={name}
+					rover={name.toLowerCase()}
 				/>
 			);
 		});
