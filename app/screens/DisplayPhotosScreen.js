@@ -13,14 +13,15 @@ import { Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
-import { usePhotosbySOL } from "../hooks";
+import { useSearchPhotos } from "../hooks";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = usePhotosbySOL(
+	const { isLoading, error, data } = useSearchPhotos(
 		route.params.rover,
-		route.params.sol
+		route.params.paramType,
+		route.params.value
 	);
 
 	useEffect(() => {

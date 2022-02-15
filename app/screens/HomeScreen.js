@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ROVER_NAMES as ROVERS } from "../constants";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
@@ -12,26 +13,6 @@ import { useRoverManifests } from "../hooks";
 const HomeScreen = ({ navigation }) => {
 	const manifests = useRoverManifests();
 
-	let roverCards;
-
-	if (manifests) {
-		console.log(manifests);
-		roverCards = manifests.map(manifest => {
-			const { name, landing_date, launch_date, photos } =
-				manifest.data.photo_manifest;
-			return (
-				<RoverCard
-					key={name}
-					landed={landing_date}
-					launched={launch_date}
-					navigation={navigation}
-					photos={photos}
-					rover={name.toLowerCase()}
-				/>
-			);
-		});
-	}
-
 	return (
 		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
@@ -40,7 +21,22 @@ const HomeScreen = ({ navigation }) => {
 				source={require("../../assets/img/mars-glowing.jpg")}
 				style={S.imgBg}
 			>
-				{roverCards}
+				{manifests &&
+					manifests.map(manifest => {
+						// const { name, landing_date, launch_date, max_date, photos } =
+						// 	manifest.data.photo_manifest;
+						return (
+							<RoverCard
+								key={manifest.data.photo_manifest.name}
+								landed={manifest.data.photo_manifest.landing_date}
+								launched={manifest.data.photo_manifest.launch_date}
+								maxDate={manifest.data.photo_manifest.max_date}
+								navigation={navigation}
+								photos={manifest.data.photo_manifest.photos}
+								rover={manifest.data.photo_manifest.name.toLowerCase()}
+							/>
+						);
+					})}
 			</ImageBackground>
 		</SafeAreaView>
 	);

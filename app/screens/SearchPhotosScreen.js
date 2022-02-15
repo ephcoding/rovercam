@@ -61,7 +61,6 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 					) : (
 						<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
 					)}
-					{/* {isSwitched ? <DatePicker /> : <SOLPicker handler={handleSOLSelection} sols={}/>} */}
 				</View>
 				<SearchSwitch
 					onChangeHandler={handleSwitchOnChange}
