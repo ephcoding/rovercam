@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import { Text } from "react-native-elements";
 import { ROVER_NAMES as ROVERS } from "../constants";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
-import { useRoverManifests } from "../hooks";
+import { useRoverManifest, useRoverManifests } from "../hooks";
 
 /**
  * TODO: cleaner way to import imgs
@@ -12,8 +13,59 @@ import { useRoverManifests } from "../hooks";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const manifests = useRoverManifests();
-	// console.log(manifests);
+	// const [
+	// 	{
+	// 		data: {
+	// 			photo_manifest: {
+	// 				name: cName,
+	// 				landing_date: cLanded,
+	// 				launch_date: cLaunched,
+	// 				max_date: cMax,
+	// 				photos: cPics,
+	// 			},
+	// 		},
+	// 	},
+	// 	{
+	// 		data: {
+	// 			photo_manifest: {
+	// 				name: oName,
+	// 				landing_date: oLanded,
+	// 				launch_date: oLaunched,
+	// 				max_date: oMax,
+	// 				photos: oPics,
+	// 			},
+	// 		},
+	// 	},
+	// 	{
+	// 		data: {
+	// 			photo_manifest: {
+	// 				name: pName,
+	// 				landing_date: pLanded,
+	// 				launch_date: pLaunched,
+	// 				max_date: pMax,
+	// 				photos: pPics,
+	// 			},
+	// 		},
+	// 	},
+	// 	{
+	// 		data: {
+	// 			photo_manifest: {
+	// 				name: sName,
+	// 				landing_date: sLanded,
+	// 				launch_date: sLaunched,
+	// 				max_date: sMax,
+	// 				photos: sPics,
+	// 			},
+	// 		},
+	// 	},
+	// ] = useRoverManifests();
+
+	// const mCuriosity = curiosity.data.photo_manifest;
+	// const mOpportunity = opportunity.data.photo_manifest;
+	// const mPerseverance = perseverance.data.photo_manifest;
+	// const mSpirit = spirit.data.photo_manifest;
+
+	const { data: C } = useRoverManifest(ROVERS.curiosity);
 
 	return (
 		<SafeAreaView style={S.safeAreaView}>
@@ -23,22 +75,20 @@ const HomeScreen = ({ navigation }) => {
 				source={require("../../assets/img/mars-glowing.jpg")}
 				style={S.imgBg}
 			>
-				{manifests &&
-					manifests.map(manifest => {
-						const { name, landing_date, launch_date, max_date, photos } =
-							manifest.data.photo_manifest;
-						return (
-							<RoverCard
-								key={manifest.data.photo_manifest.name}
-								landed={manifest.data.photo_manifest.landing_date}
-								launched={manifest.data.photo_manifest.launch_date}
-								maxDate={manifest.data.photo_manifest.max_date}
-								navigation={navigation}
-								photos={manifest.data.photo_manifest.photos}
-								rover={manifest.data.photo_manifest.name.toLowerCase()}
-							/>
-						);
-					})}
+				{
+					// name && landing_date && launch_date && max_date && photos && (
+					// 	<RoverCard
+					// 		key={name}
+					// 		landed={landing_date}
+					// 		launched={launch_date}
+					// 		maxDate={max_date}
+					// 		navigation={navigation}
+					// 		photos={photos}
+					// 		rover={name.toLowerCase()}
+					// 	/>
+					// )
+				}
+				<Text>{JSON.stringify(C)}</Text>
 			</ImageBackground>
 		</SafeAreaView>
 	);
