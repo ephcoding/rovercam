@@ -4,6 +4,8 @@ import { IMG_PATHS, ROVER_NAMES } from "../constants";
 import { useQuery } from "react-query";
 import { getRoverManifest } from "../api";
 
+// CLEAN: create structured placeholderData to eliminate init screen flicker
+
 const RoverCard = ({ navigation, rover }) => {
 	const { isLoading, error, data } = useQuery(
 		["manifests", rover],
@@ -18,8 +20,6 @@ const RoverCard = ({ navigation, rover }) => {
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>Error: {error.message}</Text>;
-
-	console.log(">> RoverCard >>\n", data.photo_manifest.name);
 
 	const handleOnPress = isLatest => {
 		if (isLatest) {
