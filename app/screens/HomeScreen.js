@@ -12,6 +12,7 @@ import { useRoverManifests } from "../hooks";
 
 const HomeScreen = ({ navigation }) => {
 	const manifests = useRoverManifests();
+	// console.log(manifests);
 
 	return (
 		<SafeAreaView style={S.safeAreaView}>
@@ -23,8 +24,8 @@ const HomeScreen = ({ navigation }) => {
 			>
 				{manifests &&
 					manifests.map(manifest => {
-						// const { name, landing_date, launch_date, max_date, photos } =
-						// 	manifest.data.photo_manifest;
+						const { name, landing_date, launch_date, max_date, photos } =
+							manifest.data.photo_manifest;
 						return (
 							<RoverCard
 								key={manifest.data.photo_manifest.name}
