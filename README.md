@@ -12,20 +12,16 @@
 
 </div>
 
+Thanks to the [Mars Rover Photos API](https://github.com/chrisccerami/mars-photo-api) from [NASA](https://api.nasa.gov/), ROVERCAM gives users the ability to explore the Red Plant through the eyes of the Mars Rovers: [Curiosity](https://mars.nasa.gov/msl/home/), [Opportunity](https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/), [Perseverance](https://mars.nasa.gov/mars-exploration/missions/mars2020/), & [Spirit](https://mars.nasa.gov/mars-exploration/missions/mars-exploration-rovers/).
+
+ROVERCAM lets you:
+
+- see the latest photos from each rover
+- search photos by SOL (martian day)
+- search photos by Earth Date
+- filter photo results by rover camera (coming soon!)
+
 > **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more! :bangbang:_**
-
-## **V1 REQUIREMENTS**
-
-- [x] display rover manifest (mission) information
-- [x] user can see latest photos for each rover
-- [x] user can search rover photos by SOL (Martion day)
-- [x] user can search rover photos by EARTH DATE
-- [ ] user can filter by respective rover's photos by camera
-
-### **_Ideas_**
-
-- [ ] user's can rate/rank their favorite images
-  - _for creating \"fan-favorite\" collections_
 
 <!-- #endregion /INTRO -->
 <!-- #region INSTALL -->
