@@ -8,6 +8,7 @@ import { useRoverManifests } from "../hooks";
  * TODO: cleaner way to import imgs
  * TODO: how to rePOSITION bgImg
  * TODO: create outline logo for each rover for cool camera selection option
+ * TODO: resolve undefined manifest.props on init app load
  */
 
 const HomeScreen = ({ navigation }) => {
