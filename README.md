@@ -12,11 +12,9 @@
 
 </div>
 
-> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
+> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more! :bangbang:_**
 
-## **FEATURES**
-
-### **_Version: MVP_**
+## **V1 REQUIREMENTS**
 
 - [x] display rover manifest (mission) information
 - [x] user can see latest photos for each rover
@@ -28,8 +26,6 @@
 
 - [ ] user's can rate/rank their favorite images
   - _for creating \"fan-favorite\" collections_
-
-> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
 
 <!-- #endregion /INTRO -->
 <!-- #region INSTALL -->
