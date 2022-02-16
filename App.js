@@ -1,24 +1,25 @@
-// NAVIGATION
+// -----
 import { NavigationContainer } from "@react-navigation/native";
 import { Stack } from "./app/navigation/app-stack-navigator";
-// REACT QUERY
+// -----
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-// SCREENS
+// -----
 import HomeScreen from "./app/screens/HomeScreen";
-import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
 import DisplayLatestPhotosScreen from "./app/screens/DisplayLatestPhotosScreen";
 import RoverInfoScreen from "./app/screens/RoverInfoScreen";
-// THEME
-import { ThemeProvider } from "react-native-elements";
+import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
+// -----
 import { RNE_THEME } from "./app/styles/themes";
+import { ThemeProvider } from "react-native-elements";
+// -----
 
-const reactQuery = new QueryClient();
+const queryClient = new QueryClient();
 
 export default App = () => {
 	return (
-		<QueryClientProvider client={reactQuery}>
+		<QueryClientProvider client={queryClient}>
 			<ThemeProvider theme={RNE_THEME}>
 				<SafeAreaProvider>
 					<NavigationContainer>

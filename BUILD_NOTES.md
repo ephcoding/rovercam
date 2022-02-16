@@ -167,6 +167,7 @@ MISC
 
 - [npm package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
 - [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
+- [Placeholder and Initial Data in React Query](https://tkdodo.eu/blog/placeholder-and-initial-data-in-react-query)
 
 <!-- #endregion /REACT QUERY -->
 

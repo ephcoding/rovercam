@@ -12,7 +12,7 @@ import {
 import { Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
-import { useLatestPhotos } from "../hooks/useLatestPhotos";
+import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
 import PhotosList from "../components/PhotosList";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
