@@ -20,11 +20,11 @@
 
 ### **_Version: MVP_**
 
-- [ ] display rover manifest (mission) information
-- [ ] user can see latest photos for each rover
-- [ ] user can search rover photos by SOL (Martion day)
-- [ ] user can search rover photos by EARTH DATE
-- [ ] user can filter by repsective rover's photos by camera
+- [x] display rover manifest (mission) information
+- [x] user can see latest photos for each rover
+- [x] user can search rover photos by SOL (Martion day)
+- [x] user can search rover photos by EARTH DATE
+- [ ] user can filter by respective rover's photos by camera
 
 ### **_Idea's Cookin'_**
 

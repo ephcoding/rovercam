@@ -30,7 +30,7 @@ const RoverCard = ({ navigation, rover }) => {
 		} else {
 			navigation.navigate("SearchPhotos", {
 				img_url: IMG_PATHS[rover.toLowerCase()],
-				photos: photos,
+				photos: data.photo_manifest.photos,
 				rover: rover,
 				title: `SEARCH ${capName} PHOTOS`,
 			});
