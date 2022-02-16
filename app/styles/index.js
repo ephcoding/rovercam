@@ -1,3 +1,3 @@
-export * from "./color-map";
-export * from "./sizing";
-export * from "./typography";
+export * from "./colors";
+export * from "./sizes";
+export * from "./fonts";

@@ -1,4 +1,4 @@
-# info
+# [ TITLE ]
 
 <div align='center'>
 
@@ -12,22 +12,26 @@
 
 </div>
 
-**_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/alstr/blob/prod/BUILD_NOTES.md) for project timeline, progress, resources, notes, issues, & more!_**
+# [ FEATURES ]
 
-## **_FEATURES_**
+> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
 
-### **MVP**
+## **FEATURES**
 
-- [ ] search by SOL
-- [ ] search by EARTH DATE
-- [ ] search by ROVER/CAM
-- [ ] see latest photos for each Rover
+### **_Version: MVP_**
 
-### **Future**
+- [ ] display rover manifest (mission) information
+- [ ] user can see latest photos for each rover
+- [ ] user can search rover photos by SOL (Martion day)
+- [ ] user can search rover photos by EARTH DATE
+- [ ] user can filter by repsective rover's photos by camera
 
-- [ ] rate images (create fan-favorite collections)
+### **_Idea's Cookin'_**
 
-# install
+- [ ] user's can rate/rank their favorite images
+  - _for creating \"fan-favorite\" collections_
+
+> **_:bangbang: Check out [`BUILD_NOTES.md`](https://github.com/ephraimsmithdev/rovercam/blob/prod/BUILD_NOTES.md) for project roadmap, resources, notes & more!_**
 
 <h3 id='install' align='center'>
 
@@ -41,9 +45,9 @@
 
 </div>
 
-**_...just a sec..._**
+# [ INSTALL & RUN ]
 
-# use
+**_...just a sec..._**
 
 <h3 id='use' align='center'>
 
@@ -57,7 +61,7 @@
 
 </div>
 
-# shout-outs
+# [ HOW TO USE ]
 
 <h3 id='shout-outs' align='center'>
 
@@ -70,6 +74,8 @@
 [Install & Run](#install) | [How To Use](#use) | [Shout-Outs](#shout-outs) | [License](#license) | [Contribute](#contribute) | [Connect](#connect)
 
 </div>
+
+# [ SHOUT-OUTS ]
 
 ### **_Chris Cerami_**
 
@@ -84,8 +90,6 @@ _Platform with "tutorials for learning about Open Source design software, such a
 
 ![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCEQXp_fcqwPcqrzNtWJ1w9w?style=social)
 
-# license
-
 <h3 id='license' align='center'>
 
 ![rovercam readme graphic](./assets/readme/license.png)
@@ -98,7 +102,7 @@ _Platform with "tutorials for learning about Open Source design software, such a
 
 </div>
 
-# contribute
+# [ LICENSE ]
 
 <h3 id='contribute' align='center'>
 
@@ -112,7 +116,7 @@ _Platform with "tutorials for learning about Open Source design software, such a
 
 </div>
 
-# connect
+# [ CONTRIBUTE ]
 
 <h3 id='connect' align='center'>
 
@@ -125,6 +129,8 @@ _Platform with "tutorials for learning about Open Source design software, such a
 [Install & Run](#install) | [How To Use](#use) | [Shout-Outs](#shout-outs) | [License](#license) | [Contribute](#contribute) | [Connect](#connect)
 
 </div>
+
+# [ CONNECT ]
 
 - [Email](mailto:github@modevx.com)
 - [ephraimsmith.dev](https://ephraimsmith.dev)

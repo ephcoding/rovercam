@@ -1,4 +1,4 @@
-import { CAMERAS, IMG_PATHS, NAMES } from "../constants";
+import { CAMERAS, IMG_PATHS, NAMES } from "../constants/rovers";
 
 export const RoverReducer = (state, action) => {
 	switch (action.type) {
