@@ -2,7 +2,14 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS } from "../constants/rovers";
 
-const RoverCard = ({ landed, launched, navigation, photos, rover }) => {
+const RoverCard = ({
+	landed,
+	launched,
+	maxDate,
+	navigation,
+	photos,
+	rover,
+}) => {
 	const imgSource = IMG_PATHS[rover];
 	const capName = rover.toUpperCase();
 
@@ -35,6 +42,7 @@ const RoverCard = ({ landed, launched, navigation, photos, rover }) => {
 					{/* <Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle> */}
 					<Text>Launched: {launched}</Text>
 					<Text>Landed: {landed}</Text>
+					<Text>Last Img: {maxDate}</Text>
 				</View>
 				<View style={[S.square, S.btnSquare]}>
 					<Button
