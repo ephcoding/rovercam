@@ -10,21 +10,18 @@
 
 </div>
 
-## **Research**
+## **V1 REQUIREMENTS**
 
-- [ ] Mars Rover Photos API
-- [ ] UX design for image-heavy apps
-- [ ] UI design for image-heavy apps
-- [ ] React Native image optimization best-practices
-- [x] Mars img resources
+- [x] display rover manifest (mission) information
+- [x] user can see latest photos for each rover
+- [x] user can search rover photos by SOL (Martion day)
+- [x] user can search rover photos by EARTH DATE
+- [ ] user can filter by respective rover's photos by camera
 
-## **Development**
+### **_Ideas_**
 
-- [ ] display images for all 4 rovers
-- [ ] fetch images for all 4 rovers
-- [ ] create splash screen
-- [ ] set up [NASA](https://api.nasa.gov/#mars-rover-photos) Mars Rover Photos [API](https://github.com/chrisccerami/mars-photo-api) services
-- [x] set up project using [Ignite](https://github.com/infinitered/ignite)
+- [ ] user's can rate/rank their favorite images
+  - _for creating \"fan-favorite\" collections_
 
 <h3 id='resources' align='center'>
 
