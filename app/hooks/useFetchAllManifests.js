@@ -2,7 +2,7 @@ import { getRoverManifest } from "../api";
 import { useQueries } from "react-query";
 import { ROVER_NAMES as NAMES } from "../constants";
 
-export const useRoverManifests = () => {
+export const useFetchAllManifests = () => {
 	return useQueries([
 		{
 			queryKey: ["manifests", NAMES.curiosity],
