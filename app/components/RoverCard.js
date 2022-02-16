@@ -1,17 +1,25 @@
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
-import { IMG_PATHS } from "../constants/rovers";
+import { IMG_PATHS, ROVER_NAMES } from "../constants";
+import { useQuery } from "react-query";
+import { getRoverManifest } from "../api";
 
-const RoverCard = ({
-	landed,
-	launched,
-	maxDate,
-	navigation,
-	photos,
-	rover,
-}) => {
-	const imgSource = IMG_PATHS[rover];
+const RoverCard = ({ navigation, rover }) => {
+	const { isLoading, error, data } = useQuery(
+		["manifests", rover],
+		() => getRoverManifest(rover),
+		{
+			placeholderData: () => {},
+		}
+	);
+
+	const imgSource = IMG_PATHS[rover.toLowerCase()];
 	const capName = rover.toUpperCase();
+
+	if (isLoading) return <Text>Loading...</Text>;
+	if (error) return <Text>Error: {error.message}</Text>;
+
+	console.log(">> RoverCard >>\n", data.photo_manifest.name);
 
 	const handleOnPress = isLatest => {
 		if (isLatest) {
@@ -39,10 +47,10 @@ const RoverCard = ({
 			>
 				<View style={[S.square, S.statsSquare]}>
 					<Card.FeaturedTitle>{capName}</Card.FeaturedTitle>
-					{/* <Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle> */}
-					<Text>Launched: {launched}</Text>
-					<Text>Landed: {landed}</Text>
-					<Text>Last Img: {maxDate}</Text>
+					<Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle>
+					<Text>Launched: {data.photo_manifest.launch_date}</Text>
+					<Text>Landed: {data.photo_manifest.landing_date}</Text>
+					<Text>Last Img: {data.photo_manifest.max_date}</Text>
 				</View>
 				<View style={[S.square, S.btnSquare]}>
 					<Button

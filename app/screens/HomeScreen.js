@@ -1,8 +1,10 @@
 import { Text } from "react-native-elements";
-import { ROVER_NAMES as ROVERS } from "../constants";
+import { ROVER_NAMES } from "../constants";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
-import { useFetchManifest, useFetchAllManifests } from "../hooks";
+import { useFetchAllManifests } from "../hooks";
+import { useQuery } from "react-query";
+const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
 
 /**
  * TODO: cleaner way to import imgs
@@ -12,32 +14,17 @@ import { useFetchManifest, useFetchAllManifests } from "../hooks";
  */
 
 const HomeScreen = ({ navigation }) => {
-	const {
-		isLoading: cIsLoading,
-		error: cError,
-		data: cData,
-	} = useFetchManifest(ROVERS.curiosity);
-
-	if (cIsLoading) return <Text>Loading...</Text>;
-	if (cError) return <Text>Error: {cError.message}</Text>;
-
 	return (
 		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
 				imageStyle={S.imgStyle}
 				resizeMode='cover'
-				source={require("../../assets/img/mars-glowing.jpg")}
+				source={backgroundImgUri}
 				style={S.imgBg}
 			>
-				<RoverCard
-					key={cData.photo_manifest.name}
-					landed={cData.photo_manifest.landing_date}
-					launched={cData.photo_manifest.launch_date}
-					maxDate={cData.photo_manifest.max_date}
-					navigation={navigation}
-					photos={cData.photo_manifest.photos}
-					rover={cData.photo_manifest.name.toLowerCase()}
-				/>
+				{Object.values(ROVER_NAMES).map(rover => (
+					<RoverCard key={rover} navigation={navigation} rover={rover} />
+				))}
 			</ImageBackground>
 		</SafeAreaView>
 	);

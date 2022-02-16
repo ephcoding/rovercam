@@ -14,13 +14,10 @@ import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
 // -----
-import { usePrefetchAllManifests } from "./app/hooks";
 
 const queryClient = new QueryClient();
 
 export default App = () => {
-	usePrefetchAllManifests();
-
 	return (
 		<QueryClientProvider client={queryClient}>
 			<ThemeProvider theme={RNE_THEME}>

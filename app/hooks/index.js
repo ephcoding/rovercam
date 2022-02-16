@@ -4,4 +4,3 @@ export * from "./useFetchManifest";
 export * from "./useFetchPhotosByDate";
 export * from "./useFetchPhotosBySOL";
 export * from "./useFetchPhotosByParam";
-export * from "./usePrefetchAllManifests";
