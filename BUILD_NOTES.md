@@ -12,16 +12,17 @@
 
 ## **V1 REQUIREMENTS**
 
-- :white_check_mark: display rover manifest (mission) information
-- [x] user can see latest photos for each rover
-- [x] user can search rover photos by SOL (Martion day)
-- [x] user can search rover photos by EARTH DATE
-- :white_large_square: user can filter by respective rover's photos by camera
+:white_check_mark: display rover manifest (mission) information
+:white_check_mark: user can see latest photos for each rover
+:white_check_mark: user can search rover photos by SOL (Martion day)
+:white_check_mark: user can search rover photos by EARTH DATE
+:white_large_square: user can filter by respective rover's photos by camera
 
 ### **_Ideas_**
 
-- [ ] user's can rate/rank their favorite images
-  - _for creating \"fan-favorite\" collections_
+:white_large_square: user's can rate/rank their favorite images
+
+- _for creating \"fan-favorite\" collections_
 
 <h3 id='resources' align='center'>
 
