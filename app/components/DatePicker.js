@@ -7,6 +7,20 @@ import { PARAMS } from "../constants";
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const startDate = earthDatesArr[0];
+	// create markedDates Object
+	const photoDates = {};
+	earthDatesArr.forEach(date => {
+		photoDates[date] = {
+			customStyles: {
+				container: {
+					backgroundColor: COLORS.primary,
+				},
+			},
+		};
+	});
+	console.log(">> photoDates >>\n", photoDates);
+
+	const photosDay = { container: { backgroundColor: COLORS.primary } };
 	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
 	// TODO: mark calendar days that have photos & disable calendar days that don't
 
@@ -23,6 +37,8 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 			calendarStyle={S.calendarStyle}
 			current={earthDatesArr[0]}
 			futureScrollRange={20}
+			markingType={"custom"}
+			markedDates={photoDates}
 			onDayPress={date => handleEarthDatePick(date.dateString)}
 			// onDayPress={date => console.log(date.dateString)}
 			pastScrollRange={0}
