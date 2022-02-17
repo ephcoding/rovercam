@@ -1,3 +1,5 @@
+<!-- #region INTRO -->
+
 <div align='center'>
 
 ![rovercam readme graphic](./assets/readme/build-notes-title.png)
@@ -28,6 +30,9 @@
 
 - _for creating \"fan-favorite\" collections_
 
+<!-- #endregion /INTRO -->
+<!-- #region RESOURCES -->
+
 <h3 id='resources' align='center'>
 
 ![rovercam readme graphic](./assets/readme/resources.png)
@@ -40,108 +45,46 @@
 
 </div>
 
-<!-- #region 3RD-PARTY DATA -->
+<!-- #region APIS -->
 
-- [docs](https://github.com/axios/axios#axios)
-- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
-- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
-- Kent Dodds
-  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
-  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
-  - [general colocation](https://kentcdodds.com/blog/colocation)
-  - [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
-  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
-- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
-- Better Dev | [make a stellar React + NASA API app](https://www.youtube.com/watch?v=UtRNVNkCBq8)
-
-CHECK OUT LATER
-( VORTX API ) [NestJS](https://nestjs.com/) | Node.js framework for building server-side apps & apis
-Brad’s NestJS [crash course](https://www.youtube.com/watch?v=wqhNoDE6pb4)
-used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome)
-[`react-native-elements`](https://reactnativeelements.com/docs/overview)
-
-MISC
-[undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
-[WHATWG](https://whatwg.org/) | web hypertext application technology working group
-
-<!-- #endregion /3RD-PARTY DATA -->
-
-<!-- #region CODE MANAGEMENT -->
-
-- [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
-
-<!-- #endregion /CODE MANAGEMENT -->
-
-<!-- #region COMPONENT LIBRARIES -->
-
-- [`react-native-elements`](https://reactnativeelements.com/)
-  - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
-- [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
-  - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
-  - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
-
-<!-- #endregion /COMPONENT LIBRARIES -->
-
-<!-- #region DEBUGGING -->
-
-- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
-
-<!-- #endregion /DEBUGGING -->
-
-<!-- #region EXPO -->
-
-- [docs](https://docs.expo.dev)
-- [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
-- latest React Native-compatable [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
-- [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
-- [vector icons](https://icons.expo.fyi/)
-
-<!-- #endregion /EXPO -->
-
-<!-- #region GRAPHIC DESIGN -->
-
-- [Inkscape](https://inkscape.org/) - vector graphic tool
-- [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
-- [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
-
-<!-- #endregion /GRAPHIC DESIGN -->
-
-<!-- #region JAVASCRIPT -->
-
-- using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
-
-<!-- #endregion /JAVASCRIPT -->
-
-<!-- #region NASA -->
+<details>
+<summary>APIs</summary>
 
 - [Mars projects](https://mars.nasa.gov/)
 - [API Portal](https://api.nasa.gov/)
 
-<!-- #endregion /NASA -->
+</details>
 
-<!-- #region REACT -->
+<!-- #endregion /APIS -->
 
-- [docs](reactjs.org)
-- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
+<!-- #region DEBUGGING -->
 
-<!-- #endregion /REACT -->
+<details>
+<summary>Debugging</summary>
 
-<!-- #region REACT NATIVE -->
+- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+- [Reactotron]()
+- [Flipper]()
 
-- [docs](reactnative.dev)
-- [bumping versions](https://reactnative.dev/docs/upgrading)
-- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
-- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-  - [react-native-config](https://github.com/luggit/react-native-config)
-- [styling](https://reactnative.dev/docs/style)
-- [ImageSource](https://reactnative.dev/docs/image#imagesource)
-- [displaying images with React Native](https://blog.logrocket.com/displaying-images-with-the-react-native-image-component/)
+</details>
 
-<!-- #endregion /REACT NATIVE -->
+<!-- #endregion /DEBUGGING -->
 
-<!-- #region REACT NAVIGATION -->
+<!-- #region JAVASCRIPT -->
+
+<details>
+<summary>JavaScript</summary>
+
+- using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
+
+</details>
+
+<!-- #endregion /JAVASCRIPT -->
+
+<!-- #region NAVIGATION -->
+
+<details>
+<summary>Navigation</summary>
 
 - [docs](https://reactnavigation.org/docs/4.x/getting-started)
 - [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
@@ -157,23 +100,62 @@ MISC
 - [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
 - [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
 
-<!-- #endregion /REACT NAVIGATION -->
+</details>
 
-<!-- #region REACT QUERY -->
+<!-- #endregion /NAVIGATION -->
 
-- [npm package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
-- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
-- [Placeholder and Initial Data in React Query](https://tkdodo.eu/blog/placeholder-and-initial-data-in-react-query)
+<!-- #region PROJECT SETUP -->
 
-<!-- #endregion /REACT QUERY -->
+<details>
+<summary>Project Setup</summary>
+
+- [docs](reactnative.dev)
+- [bumping versions](https://reactnative.dev/docs/upgrading)
+- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+  - [react-native-config](https://github.com/luggit/react-native-config)
+- [docs](https://docs.expo.dev)
+- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
+- [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
+- latest React Native-compatable [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
+- [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
+- [general colocation](https://kentcdodds.com/blog/colocation)
+
+</details>
+
+<!-- #endregion /PROJECT SETUP -->
 
 <!-- #region STATE MANAGEMENT -->
 
+<details>
+<summary>State Management</summary>
+
+- [docs](reactjs.org)
+- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
+- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
 - using `react-query` with [React Native](https://react-query.tanstack.com/react-native)
+- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
+- [Placeholder and Initial Data in React Query](https://tkdodo.eu/blog/placeholder-and-initial-data-in-react-query)
+
+- [axios docs](https://github.com/axios/axios#axios)
+- [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
+- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
+- Kent Dodds
+  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
+  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
+
+</details>
 
 <!-- #endregion /STATE MANAGEMENT -->
 
-<!-- #region STYLING -->
+<!-- #region UI COMPONENTS -->
+
+<details>
+<summary>UI</summary>
 
 - [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
 - Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
@@ -181,8 +163,46 @@ MISC
 - dynamic [image source paths](https://stackoverflow.com/a/41432660)
 - [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
 - [shields](https://shields.io/)
+- RN | [styling](https://reactnative.dev/docs/style)
+- RN | [`ImageSource`](https://reactnative.dev/docs/image#imagesource)
+- [displaying images with React Native](https://blog.logrocket.com/displaying-images-with-the-react-native-image-component/)
+- [`react-native-elements`](https://reactnativeelements.com/)
+  - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+- [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
+  - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
+  - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
+- [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
+- [vector icons](https://icons.expo.fyi/)
+- [Inkscape](https://inkscape.org/) - vector graphic tool
+- [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
+- [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
 
-<!-- #endregion /STYLING -->
+</details>
+
+<!-- #endregion /UI COMPONENTS -->
+
+<!-- #region CHECK OUT LATER -->
+
+<details>
+<summary><strong><em>CHECK OUT LATER..</em></strong></summary>
+
+CHECK OUT LATER
+( VORTX API ) [NestJS](https://nestjs.com/) | Node.js framework for building server-side apps & apis
+Brad’s NestJS [crash course](https://www.youtube.com/watch?v=wqhNoDE6pb4)
+used in `Ignite` | [Mobx-state-tree](https://mobx-state-tree.js.org/intro/welcome)
+[`react-native-elements`](https://reactnativeelements.com/docs/overview)
+
+MISC
+[undici](https://github.com/nodejs/undici#undici) | Node.js http client ( getting added to Node )
+[WHATWG](https://whatwg.org/) | web hypertext application technology working group
+
+</details>
+
+<!-- #endregion /CHECK OUT LATER -->
+
+<!-- #endregion /RESOURCES -->
+
+<!-- #region LESSONS -->
 
 <h3 id='lessons' align='center'>
 
@@ -329,6 +349,10 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <hr>
 
+<!-- #endregion /LESSONS -->
+
+<!-- #region NOTES -->
+
 <h3 id='notes' align='center'>
 
 ![rovercam readme graphic](./assets/readme/notes.png)
@@ -372,6 +396,10 @@ CardTitle: {
 - [S.O. answer](https://stackoverflow.com/a/70114114)
 - React Native issue [30236](https://github.com/facebook/react-native/issues/30236#issuecomment-939286987)
 
+<!-- #endregion /NOTES -->
+
+<!-- #region QUESTIONS -->
+
 <h3 id='questions' align='center'>
 
 ![rovercam readme graphic](./assets/readme/questions.png)
@@ -386,6 +414,10 @@ CardTitle: {
 
 - [x] `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
   - _forgot to destructure `photos` prop - so it was was getting treating like `props`_
+
+<!-- #endregion /QUESTIONS -->
+
+<!-- #region CONNECT -->
 
 <h3 id='connect' align='center'>
 
@@ -408,3 +440,5 @@ CardTitle: {
     <td style="border: none;"><a alt='icon link to modevx instagram account' href='https://instagram.com/_modevx' target='_blank'><img src="https://cdn.iconscout.com/icon/free/png-256/instagram-2752153-2284970.png" width="90"></a></td>
   </tr>
 </table>
+
+<!-- #endregion /CONNECT -->
