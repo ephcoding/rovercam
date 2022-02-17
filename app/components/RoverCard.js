@@ -47,7 +47,9 @@ const RoverCard = ({ navigation, rover }) => {
 			>
 				<View style={[S.square, S.statsSquare]}>
 					<Card.FeaturedTitle>{capName}</Card.FeaturedTitle>
-					<Card.FeaturedSubtitle>Rover Status</Card.FeaturedSubtitle>
+					<Card.FeaturedSubtitle>
+						{data.photo_manifest.status.toUpperCase()}
+					</Card.FeaturedSubtitle>
 					<Text>Launched: {data.photo_manifest.launch_date}</Text>
 					<Text>Landed: {data.photo_manifest.landing_date}</Text>
 					<Text>Last Img: {data.photo_manifest.max_date}</Text>

@@ -24,7 +24,8 @@ const SOLPicker = ({ navigation, rover, sols }) => {
 					buttonStyle={S.btnBtnStyle}
 					containerStyle={S.btnContainerStyle}
 					onPress={() => handlePickSOLNum(item)}
-					title={item}
+					style={S.btnStyle}
+					title={item || "0"}
 				/>
 			)}
 		/>
@@ -34,13 +35,19 @@ const SOLPicker = ({ navigation, rover, sols }) => {
 export default SOLPicker;
 
 const S = StyleSheet.create({
+	btnStyle: {
+		borderColor: "#fff",
+		borderWidth: 2,
+		paddingHorizontal: 5,
+		paddingVertical: 10,
+	},
 	btnBtnStyle: {
 		backgroundColor: COLORS.backgroundDK,
+		opacity: 0.7,
 	},
 	btnContainerStyle: {
 		flex: 1,
 		margin: SIZES[3],
-		opacity: 0.5,
 	},
 	flColWrapStyle: {},
 });
