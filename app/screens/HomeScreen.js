@@ -22,9 +22,26 @@ const HomeScreen = ({ navigation }) => {
 				source={backgroundImgUri}
 				style={S.imgBg}
 			>
-				{Object.values(ROVER_NAMES).map(rover => (
-					<RoverCard key={rover} navigation={navigation} rover={rover} />
-				))}
+				<View>
+					<Text>
+						Explore the Red Planet through the eyes of NASA's Mars Rovers:
+						Curiosity, Opportunity, Perseverance, and Spirit.
+					</Text>
+
+					<Text>
+						Tap on one of the Rovers below to see mission stats, check out the
+						Rover's latest photos or search all of their photos by SOL (Martian
+						day), earth date, or camera!
+					</Text>
+				</View>
+
+				<Text h3>Now, go explore!</Text>
+
+				<View style={S.roverCards}>
+					{Object.values(ROVER_NAMES).map(rover => (
+						<RoverCard key={rover} navigation={navigation} rover={rover} />
+					))}
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -37,7 +54,15 @@ const S = StyleSheet.create({
 		flex: 1,
 	},
 	imgStyle: {
-		opacity: 0.3,
+		// opacity: 0.7,
+	},
+	roverCards: {
+		// backgroundColor: "#666",
+		flex: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignContent: "space-around",
+		// alignItems: "center",
 	},
 	safeAreaView: {
 		backgroundColor: "#000",
