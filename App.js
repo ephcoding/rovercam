@@ -7,9 +7,9 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
 import HomeScreen from "./app/screens/HomeScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
-import DisplayLatestPhotosScreen from "./app/screens/DisplayLatestPhotosScreen";
+import LatestPhotosScreen from "./app/screens/LatestPhotosScreen";
 import RoverScreen from "./app/screens/RoverScreen";
-import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
+import DatePickerScreen from "./app/screens/SOLPickerScreen";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
@@ -40,32 +40,44 @@ export default App = () => {
 							<Stack.Screen
 								name='Home'
 								component={HomeScreen}
-								options={{ title: "ROVERCAM" }}
+								options={{ title: "HOME" }}
 							/>
 							<Stack.Screen
-								name='DisplayPhotos'
-								component={DisplayPhotosScreen}
-								options={({ route }) => ({
-									title: route.params.title,
-								})}
+								name='Rover'
+								component={RoverScreen}
+								options={{ title: "MISSION CONTROL" }}
 							/>
 							<Stack.Screen
-								name='DisplayLatestPhotos'
-								component={DisplayLatestPhotosScreen}
+								name='LatestPhotos'
+								component={LatestPhotosScreen}
 								options={({ route }) => ({
 									title: `LATEST ${route.params.rover} PHOTOS`,
 								})}
 							/>
 							<Stack.Screen
-								name='SearchPhotos'
-								component={SearchPhotosScreen}
+								name='DatePicker'
+								component={DatePickerScreen}
 								options={({ route }) => ({
-									title: route.params.title,
+									title: "EARTH DATE",
 								})}
 							/>
 							<Stack.Screen
-								name='Rover'
-								component={RoverScreen}
+								name='SOLPicker'
+								component={SOLPickerScreen}
+								options={({ route }) => ({
+									title: "MARTIAN SOL",
+								})}
+							/>
+							<Stack.Screen
+								name='CameraPicker'
+								component={CameraPickerScreen}
+								options={({ route }) => ({
+									title: "MARTIAN SOL",
+								})}
+							/>
+							<Stack.Screen
+								name='DisplayPhotos'
+								component={DisplayPhotosScreen}
 								options={({ route }) => ({
 									title: route.params.title,
 								})}
