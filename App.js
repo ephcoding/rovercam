@@ -7,9 +7,9 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
 import HomeScreen from "./app/screens/HomeScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
-import DisplayLatestPhotosScreen from "./app/screens/DisplayLatestPhotosScreen";
-import RoverInfoScreen from "./app/screens/RoverInfoScreen";
-import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
+import LatestPhotosScreen from "./app/screens/LatestPhotosScreen";
+import RoverScreen from "./app/screens/RoverScreen";
+import DatePickerScreen from "./app/screens/SOLPickerScreen";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
@@ -40,34 +40,46 @@ export default App = () => {
 							<Stack.Screen
 								name='Home'
 								component={HomeScreen}
-								options={{ title: "ROVERCAM" }}
+								options={{ title: "HOME" }}
+							/>
+							<Stack.Screen
+								name='Rover'
+								component={RoverScreen}
+								options={{ title: "MISSION CONTROL" }}
+							/>
+							<Stack.Screen
+								name='LatestPhotos'
+								component={LatestPhotosScreen}
+								options={({ route }) => ({
+									title: `LATEST ${route.params.rover} PHOTOS`,
+								})}
+							/>
+							<Stack.Screen
+								name='DatePicker'
+								component={DatePickerScreen}
+								options={({ route }) => ({
+									title: "EARTH DATE",
+								})}
+							/>
+							<Stack.Screen
+								name='SOLPicker'
+								component={SOLPickerScreen}
+								options={({ route }) => ({
+									title: "MARTIAN SOL",
+								})}
+							/>
+							<Stack.Screen
+								name='CameraPicker'
+								component={CameraPickerScreen}
+								options={({ route }) => ({
+									title: "MARTIAN SOL",
+								})}
 							/>
 							<Stack.Screen
 								name='DisplayPhotos'
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
 									title: route.params.title,
-								})}
-							/>
-							<Stack.Screen
-								name='DisplayLatestPhotos'
-								component={DisplayLatestPhotosScreen}
-								options={({ route }) => ({
-									title: `LATEST ${route.params.rover} PHOTOS`,
-								})}
-							/>
-							<Stack.Screen
-								name='SearchPhotos'
-								component={SearchPhotosScreen}
-								options={({ route }) => ({
-									title: route.params.title,
-								})}
-							/>
-							<Stack.Screen
-								name='RoverInfo'
-								component={RoverInfoScreen}
-								options={({ route }) => ({
-									title: `${route.params.title} SPECS`,
 								})}
 							/>
 						</Stack.Navigator>
