@@ -12,17 +12,9 @@ import SOLPicker from "../components/SOLPicker";
 // Switch onChange => (event)
 // Switch onValueChange => returns (passed value)
 
-const SearchPhotosScreen = ({ navigation, route }) => {
-	const [isSwitched, setIsSwitched] = useState(false);
-	const [isOverlayed, setIsOverlayed] = useState(false);
-	// const [screen, setScreen] = useState();
-
-	const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
+const SOLPickerScreen = ({ navigation, route }) => {
 	const rover = route.params.rover;
 	const solsArr = route.params.photos.map(photo => photo.sol);
-
-	const handleSwitchOnChange = () => setIsSwitched(!isSwitched);
-	const toggleOverlay = () => setIsOverlayed(!isOverlayed);
 
 	return (
 		<SafeAreaView style={S.safeArea}>
@@ -33,15 +25,7 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 				style={S.imgBgStyle}
 			>
 				<View style={S.pickerView}>
-					{isSwitched ? (
-						<DatePicker
-							earthDatesArr={earthDatesArr}
-							navigation={navigation}
-							rover={rover}
-						/>
-					) : (
-						<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
-					)}
+					<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
 				</View>
 				<FAB
 					color={COLORS.primary}
@@ -49,34 +33,12 @@ const SearchPhotosScreen = ({ navigation, route }) => {
 					onPress={toggleOverlay}
 					size='large'
 				/>
-				<Overlay
-					isVisible={isOverlayed}
-					onBackdropPress={toggleOverlay}
-					overlayStyle={S.overlayStyle}
-				>
-					<Text style={S.text}>ROVER CAMERAS</Text>
-					<View style={S.camerasView}>
-						{ROVERS[rover.toLowerCase()].map(cameraArr => (
-							<Button
-								buttonStyle={S.btnStyle}
-								containerStyle={S.containerStyle}
-								key={cameraArr[1]}
-								title={cameraArr[0]}
-								titleStyle={S.btnTitleStyle}
-							/>
-						))}
-					</View>
-				</Overlay>
-				<SearchSwitch
-					onChangeHandler={handleSwitchOnChange}
-					value={isSwitched}
-				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);
 };
 
-export default SearchPhotosScreen;
+export default SOLPickerScreen;
 
 const S = StyleSheet.create({
 	btnStyle: {

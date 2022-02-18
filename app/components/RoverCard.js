@@ -40,15 +40,11 @@ export default RoverCard;
 
 const S = StyleSheet.create({
 	cardContainer: {
-		// backgroundColor: "#ff0",
-		// padding: SIZES[2],
 		height: "30%",
 		minWidth: "40%",
 	},
 	cardWrapper: {
-		// backgroundColor: "#0f0",
 		flex: 1,
-		// padding: SIZES[3],
 	},
 	bgStyle: {
 		flex: 1,
@@ -60,26 +56,8 @@ const S = StyleSheet.create({
 		flex: 1,
 		opacity: 0.5,
 	},
-	btnSquare: {
-		justifyContent: "space-evenly",
-	},
-	btnStyle: {
-		borderColor: COLORS.textLT,
-		borderWidth: SIZES[0],
-		color: COLORS.textLT,
-	},
 	pressable: {
 		flex: 1,
-	},
-	square: {
-		flex: 1,
-	},
-	statsSquare: {
-		paddingHorizontal: 10,
-		paddingVertical: 5,
-	},
-	titleStyle: {
-		color: COLORS.textLT,
 	},
 });
 

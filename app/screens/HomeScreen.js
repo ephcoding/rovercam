@@ -38,19 +38,6 @@ const HomeScreen = ({ navigation }) => {
 				source={backgroundImgUri}
 				style={S.imgBg}
 			>
-				{/* <View style={S.introTextView}>
-					<Text style={S.introText}>
-						Explore the Red Planet through the eyes of NASA's Mars Rovers:
-						Curiosity, Opportunity, Perseverance, and Spirit.
-					</Text>
-
-					<Text style={S.introText}>
-						Tap on one of the Rovers below to see mission stats, check out the
-						Rover's latest photos or search all of their photos by SOL (Martian
-						day), earth date, or camera!
-					</Text>
-				</View> */}
-
 				<Text h3 style={S.introCTA}>
 					Pick a Rover and go explore Mars. Rover style!
 				</Text>
@@ -85,12 +72,10 @@ const S = StyleSheet.create({
 		padding: SIZES[3],
 	},
 	roverCards: {
-		// backgroundColor: "#666",
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
 		alignContent: "space-around",
-		// alignItems: "center",
 	},
 	safeAreaView: {
 		backgroundColor: "#000",

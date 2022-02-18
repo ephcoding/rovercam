@@ -1,3 +1,8 @@
+import tracksUri from "../../assets/img/mars-rover-tracks.jpg";
+import earthUri from "../../assets/img/i-seee-you.jpg";
+import marsUri from "../../assets/img/mars-side-swipe.jpg";
+import perseveranceUri from "../../assets/img/perseverance.jpg";
+
 export const CAMERAS_BY_ROVER = {
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
@@ -54,3 +59,22 @@ export const ROVER_NAMES = {
 	perseverance: "Perseverance",
 	spirit: "Spirit",
 };
+
+export const SEARCH_PARAMS = [
+	{
+		title: "LATEST PHOTOS",
+		screen: "LatestPhotos",
+	},
+	{
+		title: "EARTH DATE",
+		screen: "EarthDate",
+	},
+	{
+		title: "SOL",
+		screen: "MartianSOL",
+	},
+	{
+		title: "CAMERA",
+		screen: "Camera",
+	},
+];
