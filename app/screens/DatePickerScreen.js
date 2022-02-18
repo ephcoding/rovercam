@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import DatePicker from "../components/DatePicker";
 
-const DatePickerScreen = () => {
+const DatePickerScreen = ({ navigation, route }) => {
 	const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
 	const rover = route.params.rover;
 
