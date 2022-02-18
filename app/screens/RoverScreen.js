@@ -12,12 +12,10 @@ import SafeAreaView from "../components/shared/SafeAreaView";
 import Text_Title from "../components/shared/Text_Title";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
-const RoverInfoScreen = ({ navigation }) => {
-	const rover = navigation.getParam("rover");
+const RoverInfoScreen = ({ navigation, route }) => {
+	// TODO:
+	const { rover } = route.params;
 	const roverLC = rover.toLowerCase();
-	// const { manifest } = useFetchRoverManifest(rover);
-
-	if (!manifest) return;
 
 	return (
 		<SafeAreaView>

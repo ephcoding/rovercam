@@ -8,7 +8,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import HomeScreen from "./app/screens/HomeScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
 import DisplayLatestPhotosScreen from "./app/screens/DisplayLatestPhotosScreen";
-import RoverInfoScreen from "./app/screens/RoverInfoScreen";
+import RoverScreen from "./app/screens/RoverScreen";
 import SearchPhotosScreen from "./app/screens/SearchPhotosScreen";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
@@ -64,10 +64,10 @@ export default App = () => {
 								})}
 							/>
 							<Stack.Screen
-								name='RoverInfo'
-								component={RoverInfoScreen}
+								name='Rover'
+								component={RoverScreen}
 								options={({ route }) => ({
-									title: `${route.params.title} SPECS`,
+									title: route.params.title,
 								})}
 							/>
 						</Stack.Navigator>

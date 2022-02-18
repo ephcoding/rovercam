@@ -8,35 +8,17 @@ import { COLORS, SIZES } from "../styles";
 // CLEAN: create structured placeholderData to eliminate init screen flicker
 
 const RoverCard = ({ navigation, rover }) => {
-	const { isLoading, error, data } = useQuery(
-		["manifests", rover],
-		() => getRoverManifest(rover),
-		{
-			placeholderData: () => {},
-		}
-	);
-
 	const imgSource = IMG_PATHS[rover.toLowerCase()];
 	const capName = rover.toUpperCase();
 
-	if (isLoading) return <Text>Loading...</Text>;
-	if (error) return <Text>Error: {error.message}</Text>;
+	// if (isLoading) return <Text>Loading...</Text>;
+	// if (error) return <Text>Error: {error.message}</Text>;
 
-	const handleOnPress = isLatest => {
-		if (isLatest) {
-			navigation.navigate("DisplayLatestPhotos", {
-				rover: rover,
-				title: `LATEST ${capName} PHOTOS`,
-			});
-		} else {
-			navigation.navigate("SearchPhotos", {
-				img_url: IMG_PATHS[rover.toLowerCase()],
-				photos: data.photo_manifest.photos,
-				rover: rover,
-				title: `SEARCH ${capName} PHOTOS`,
-			});
-		}
-	};
+	const handleOnPress = () =>
+		navigation.navigate("Rover", {
+			rover: rover,
+			title: `${rover.toUpperCase()}`,
+		});
 
 	return (
 		<Card containerStyle={S.cardContainer} wrapperStyle={S.cardWrapper}>
@@ -46,10 +28,7 @@ const RoverCard = ({ navigation, rover }) => {
 				style={S.bgStyle}
 				source={imgSource}
 			>
-				<Pressable
-					onPress={() => console.log("RoverCard clicked!")}
-					style={S.pressable}
-				>
+				<Pressable onPress={handleOnPress} style={S.pressable}>
 					<Text>{rover}</Text>
 				</Pressable>
 			</ImageBackground>

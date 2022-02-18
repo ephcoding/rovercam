@@ -4,6 +4,7 @@ import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import RoverCard from "../components/RoverCard";
 import { useFetchAllManifests } from "../hooks";
 import { useQuery } from "react-query";
+import { SIZES } from "../styles";
 const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
 
 /**
@@ -13,7 +14,22 @@ const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
  * TODO: resolve undefined manifest.props on init app load
  */
 
+/**
+ *
+ * TODO: pre-fetch manifest & all images for each Rover separately
+ * (query manifest on nav to RoverScreen)
+ * (query & filter photos on nav to DisplayPhotosScreen from SearchScreen)
+ *
+ */
+
 const HomeScreen = ({ navigation }) => {
+	// const { isLoading, error, data } = useQuery(
+	// 	["manifests", rover],
+	// 	() => getRoverManifest(rover),
+	// 	{
+	// 		placeholderData: () => {},
+	// 	}
+	// );
 	return (
 		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
@@ -22,20 +38,22 @@ const HomeScreen = ({ navigation }) => {
 				source={backgroundImgUri}
 				style={S.imgBg}
 			>
-				<View>
-					<Text>
+				{/* <View style={S.introTextView}>
+					<Text style={S.introText}>
 						Explore the Red Planet through the eyes of NASA's Mars Rovers:
 						Curiosity, Opportunity, Perseverance, and Spirit.
 					</Text>
 
-					<Text>
+					<Text style={S.introText}>
 						Tap on one of the Rovers below to see mission stats, check out the
 						Rover's latest photos or search all of their photos by SOL (Martian
 						day), earth date, or camera!
 					</Text>
-				</View>
+				</View> */}
 
-				<Text h3>Now, go explore!</Text>
+				<Text h3 style={S.introCTA}>
+					Pick a Rover and go explore Mars. Rover style!
+				</Text>
 
 				<View style={S.roverCards}>
 					{Object.values(ROVER_NAMES).map(rover => (
@@ -55,6 +73,16 @@ const S = StyleSheet.create({
 	},
 	imgStyle: {
 		// opacity: 0.7,
+	},
+	introCTA: {
+		textAlign: "center",
+	},
+	introText: {
+		marginVertical: SIZES[2],
+		textAlign: "center",
+	},
+	introTextView: {
+		padding: SIZES[3],
 	},
 	roverCards: {
 		// backgroundColor: "#666",
