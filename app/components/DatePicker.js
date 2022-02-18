@@ -22,10 +22,10 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	});
 
 	// create date array to determine disabledDays
-	const dateArray = (startDate, endDate) => {
-		console.log(startDate.slice(), endDate.slice());
-	};
-	dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
+	// const dateArray = (startDate, endDate) => {
+	// 	console.log(startDate.slice(), endDate.slice());
+	// };
+	// dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
 
 	const photosDay = { container: { backgroundColor: COLORS.primary } };
 	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange

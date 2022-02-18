@@ -8,17 +8,22 @@ import {
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
+import { QueryClient } from "react-query";
 
 const DatePickerScreen = ({ navigation, route }) => {
+	const queryClient = new QueryClient();
 	const imgSource = IMG_PATHS[route.params.rover.toLowerCase()];
 	const { rover } = route.params;
+	const manifests = queryClient.getQueryData("manifests", "curiosity");
+	console.log(">> manifests >>\n", manifests);
+
 	// const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
 	// const rover = route.params.rover;
 	// const { isLoading, error, data } = useFetchManifest(rover);
 
 	// if (isLoading) return <Text>Loading...</Text>;
 	// if (error) return <Text>ERROR >> {error.message}</Text>;
-	console.log(route.params.rover.toLowerCase());
+
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<ImageBackground
