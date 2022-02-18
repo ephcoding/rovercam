@@ -2,21 +2,6 @@ import { Platform } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../styles";
 
 export const RNE_THEME = {
-	Button: {
-		buttonStyle: {
-			borderColor: "#fff",
-			borderWidth: 2,
-			paddingHorizontal: 5,
-			paddingVertical: 10,
-		},
-		containerStyle: {
-			alignSelf: "center",
-			width: "90%",
-		},
-		titleStyle: {
-			color: "#fff",
-		},
-	},
 	Card: {
 		containerStyle: {
 			backgroundColor: "#000",
@@ -27,7 +12,8 @@ export const RNE_THEME = {
 	},
 	CardFeaturedSubtitle: {
 		style: {
-			color: "#f60",
+			color: "#ff0",
+			fontWeight: "bold",
 		},
 	},
 	CardFeaturedTitle: {
