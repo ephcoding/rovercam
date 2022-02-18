@@ -36,9 +36,12 @@ const HomeScreen = ({ navigation }) => {
 				</View>
 
 				<Text h3>Now, go explore!</Text>
-				{Object.values(ROVER_NAMES).map(rover => (
-					<RoverCard key={rover} navigation={navigation} rover={rover} />
-				))}
+
+				<View style={S.roverCards}>
+					{Object.values(ROVER_NAMES).map(rover => (
+						<RoverCard key={rover} navigation={navigation} rover={rover} />
+					))}
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -52,6 +55,14 @@ const S = StyleSheet.create({
 	},
 	imgStyle: {
 		// opacity: 0.7,
+	},
+	roverCards: {
+		// backgroundColor: "#666",
+		flex: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
+		alignContent: "space-around",
+		// alignItems: "center",
 	},
 	safeAreaView: {
 		backgroundColor: "#000",

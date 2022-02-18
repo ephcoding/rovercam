@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS, ROVER_NAMES } from "../constants";
 import { useQuery } from "react-query";
@@ -39,14 +39,73 @@ const RoverCard = ({ navigation, rover }) => {
 	};
 
 	return (
-		<Card>
+		<Card containerStyle={S.cardContainer} wrapperStyle={S.cardWrapper}>
 			<ImageBackground
-				imageStyle={S.imgStyle}
+				imageStyle={S.bgImgStyle}
 				resizeMode='cover'
-				style={S.squares}
+				style={S.bgStyle}
 				source={imgSource}
 			>
-				<View style={[S.square, S.statsSquare]}>
+				<Pressable
+					onPress={() => console.log("RoverCard clicked!")}
+					style={S.pressable}
+				>
+					<Text>{rover}</Text>
+				</Pressable>
+			</ImageBackground>
+		</Card>
+	);
+};
+
+export default RoverCard;
+
+const S = StyleSheet.create({
+	cardContainer: {
+		// backgroundColor: "#ff0",
+		// padding: SIZES[2],
+		height: "30%",
+		minWidth: "40%",
+	},
+	cardWrapper: {
+		// backgroundColor: "#0f0",
+		flex: 1,
+		// padding: SIZES[3],
+	},
+	bgStyle: {
+		flex: 1,
+		flexDirection: "row",
+		height: "100%",
+		width: "100%",
+	},
+	bgImgStyle: {
+		flex: 1,
+		opacity: 0.5,
+	},
+	btnSquare: {
+		justifyContent: "space-evenly",
+	},
+	btnStyle: {
+		borderColor: COLORS.textLT,
+		borderWidth: SIZES[0],
+		color: COLORS.textLT,
+	},
+	pressable: {
+		flex: 1,
+	},
+	square: {
+		flex: 1,
+	},
+	statsSquare: {
+		paddingHorizontal: 10,
+		paddingVertical: 5,
+	},
+	titleStyle: {
+		color: COLORS.textLT,
+	},
+});
+
+{
+	/* <View style={[S.square, S.statsSquare]}>
 					<Card.FeaturedTitle>{capName}</Card.FeaturedTitle>
 					<Card.FeaturedSubtitle>
 						{data.photo_manifest.status.toUpperCase()}
@@ -68,41 +127,7 @@ const RoverCard = ({ navigation, rover }) => {
 						title='search photos'
 						titleStyle={S.titleStyle}
 						type='outline'
-						onPress={() => handleOnPress(false, { rover: rover })}
+						onPress={() => handleOnPress(false)}
 					/>
-				</View>
-			</ImageBackground>
-		</Card>
-	);
-};
-
-export default RoverCard;
-
-const S = StyleSheet.create({
-	btnSquare: {
-		justifyContent: "space-evenly",
-	},
-	btnStyle: {
-		borderColor: COLORS.textLT,
-		borderWidth: SIZES[0],
-		color: COLORS.textLT,
-	},
-	imgStyle: {
-		opacity: 0.5,
-	},
-	square: {
-		flex: 1,
-	},
-	squares: {
-		flexDirection: "row",
-		height: "100%",
-		width: "100%",
-	},
-	statsSquare: {
-		paddingHorizontal: 10,
-		paddingVertical: 5,
-	},
-	titleStyle: {
-		color: COLORS.textLT,
-	},
-});
+				</View> */
+}
