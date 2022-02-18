@@ -23,9 +23,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 
 	// create date array to determine disabledDays
 	const dateArray = (startDate, endDate) => {
-		const start = startDate.slice();
-		const end = endDate.slice();
-		console.log(start, end);
+		console.log(startDate.slice(), endDate.slice());
 	};
 	dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
 
