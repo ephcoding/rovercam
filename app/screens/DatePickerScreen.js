@@ -1,21 +1,36 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+	ImageBackground,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
+import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
+import { IMG_PATHS } from "../constants";
 
 const DatePickerScreen = ({ navigation, route }) => {
-	const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
-	const rover = route.params.rover;
+	const imgSource = IMG_PATHS[route.params.rover.toLowerCase()];
+	const { rover } = route.params;
+	// const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
+	// const rover = route.params.rover;
+	// const { isLoading, error, data } = useFetchManifest(rover);
 
+	// if (isLoading) return <Text>Loading...</Text>;
+	// if (error) return <Text>ERROR >> {error.message}</Text>;
+	console.log(route.params.rover.toLowerCase());
 	return (
 		<SafeAreaView style={S.safeArea}>
 			<ImageBackground
-				imageStyle={S.imgBgImgStyle}
+				imageStyle={S.bgImgStyle}
 				resizeMode='cover'
-				source={route.params.img_url}
-				style={S.imgBgStyle}
+				source={imgSource}
+				style={S.bgStyle}
 			>
 				<View style={S.pickerView}>
 					<DatePicker
-						earthDatesArr={earthDatesArr}
+						earthDatesArr={["2012-08-12", "2012-10-12"]}
+						// earthDatesArr={earthDatesArr}
 						navigation={navigation}
 						rover={rover}
 					/>
@@ -27,4 +42,9 @@ const DatePickerScreen = ({ navigation, route }) => {
 
 export default DatePickerScreen;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({
+	bgImgStyle: { flex: 1, opacity: 0.5 },
+	bgStyle: { flex: 1 },
+	pickerView: { flex: 1 },
+	safeArea: { flex: 1 },
+});

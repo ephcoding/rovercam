@@ -23,8 +23,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
 	const imgSource = IMG_PATHS[rover.toLowerCase()];
 
-	const handleOnPress = () =>
-		navigation.navigate("LatestPhotos", { rover: rover });
+	const handleOnPress = screen => navigation.navigate(screen, { rover: rover });
 
 	return (
 		<SafeAreaView>
@@ -48,7 +47,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 						<Button
 							buttonStyle={S.btnStyle}
 							key={btn.title}
-							onPress={() => handleOnPress()}
+							onPress={() => handleOnPress(btn.screen)}
 							title={btn.title}
 						/>
 					))}

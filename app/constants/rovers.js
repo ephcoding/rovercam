@@ -60,6 +60,11 @@ export const ROVER_NAMES = {
 	spirit: "Spirit",
 };
 
+/**
+ * [screen] prop matches screen name in StackNavigator (App.js)
+ * [title] prop is used for button labels
+ */
+
 export const SEARCH_PARAMS = [
 	{
 		title: "LATEST PHOTOS",
@@ -67,14 +72,14 @@ export const SEARCH_PARAMS = [
 	},
 	{
 		title: "EARTH DATE",
-		screen: "EarthDate",
+		screen: "DatePicker",
 	},
 	{
-		title: "SOL",
-		screen: "MartianSOL",
+		title: "MARTION SOL",
+		screen: "SOLPicker",
 	},
 	{
-		title: "CAMERA",
-		screen: "Camera",
+		title: "ROVER CAMERAS",
+		screen: "CameraPicker",
 	},
 ];

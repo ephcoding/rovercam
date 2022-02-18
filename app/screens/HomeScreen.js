@@ -1,10 +1,18 @@
-import { Text } from "react-native-elements";
+import { useEffect } from "react";
 import { ROVER_NAMES } from "../constants";
-import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
+import {
+	ImageBackground,
+	LogBox,
+	SafeAreaView,
+	StyleSheet,
+	View,
+} from "react-native";
+import { Text } from "react-native-elements";
 import RoverCard from "../components/RoverCard";
 import { useFetchAllManifests } from "../hooks";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
+import { usePrefetchManifest } from "../hooks/usePrefetchManifest";
 const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
 
 /**
@@ -23,13 +31,12 @@ const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
  */
 
 const HomeScreen = ({ navigation }) => {
-	// const { isLoading, error, data } = useQuery(
-	// 	["manifests", rover],
-	// 	() => getRoverManifest(rover),
-	// 	{
-	// 		placeholderData: () => {},
-	// 	}
-	// );
+	const { isLoading, error, data } = usePrefetchManifest("curiosity");
+
+	useEffect(() => {
+		LogBox.ignoreLogs(["Setting a timer"]);
+	});
+
 	return (
 		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
