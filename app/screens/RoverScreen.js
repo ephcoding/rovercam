@@ -1,9 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { COLORS } from "../styles";
-import { CAMERAS, API_QUERY_PARAMS, IMG_PATHS } from "../constants/rovers";
-
-import Img_Background from "../components/shared/Img_Background";
+import {
+	Image,
+	FlatList,
+	ImageBackground,
+	StyleSheet,
+	View,
+} from "react-native";
+import { Button, Card, FAB, Text } from "react-native-elements";
+import { COLORS, SIZES } from "../styles";
+import { SEARCH_PARAMS, IMG_PATHS } from "../constants/rovers";
+import { useFetchManifest } from "../hooks";
 import List_Cameras from "../components/List_Cameras";
 import NavButton from "../components/shared/Btn_Navigation";
 import RoverContext from "../context/rover-context";
@@ -13,41 +19,53 @@ import Text_Title from "../components/shared/Text_Title";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
 const RoverInfoScreen = ({ navigation, route }) => {
-	// TODO:
+	const { data } = useFetchManifest("curiosity");
+	// console.log(">> RoverInfoScreen >>: \n", data);
 	const { rover } = route.params;
-	const roverLC = rover.toLowerCase();
+	const imgSource = IMG_PATHS[rover.toLowerCase()];
+
+	const handleOnPress = screen => navigation.navigate(screen, { rover: rover });
 
 	return (
 		<SafeAreaView>
-			<Img_Background imgSrc={IMG_PATHS[roverLC]} opacity={0.5}>
-				<View_ContentWrapper>
-					{/* <RoverCard manifest={manifest} /> */}
-					{/* <FlatList
-						data={Object.values(CAMERAS[roverLC])}
-						keyExtractor={camera => camera[0]}
-						renderItem={({ item: camera }) => (
-							<NavButton
-								label={camera[0]}
-								navParams={{ abbr: camera[1], name: camera[0], rover }}
-								screen='Photos'
-							/>
-						)}
-						style={S.flatList}
-					/> */}
-					<FlatList
-						data={API_QUERY_PARAMS}
-						keyExtractor={queryType => queryType}
-						renderItem={({ item: queryType }) => (
-							<NavButton
-								label={queryType}
-								navParams={{ rover, type: queryType }}
-								screen={`${queryType.split(" ").join("")}`}
-							/>
-						)}
-						style={S.flatList}
+			<ImageBackground
+				imageStyle={S.bgImgStyle}
+				resizeMode='cover'
+				style={S.bgStyle}
+				source={imgSource}
+			>
+				<Text h1>{rover.toUpperCase()}</Text>
+				<View>
+					<Text>Status:</Text>
+					<Text>Launch Date:</Text>
+					<Text>Landing Date:</Text>
+					<Text>Last Active SOL:</Text>
+					<Text>Last Active Earth Date:</Text>
+					<Text>Photo Count:</Text>
+				</View>
+				<View style={S.searchBtns}>
+					{SEARCH_PARAMS.map(btn => (
+						<Button
+							buttonStyle={S.btnStyle}
+							key={btn.title}
+							onPress={() => handleOnPress(btn.screen)}
+							title={btn.title}
+						/>
+					))}
+				</View>
+				<View>
+					<FAB
+						color={COLORS.secondary}
+						icon={{
+							type: "font-awesome",
+							name: "home",
+							color: "white",
+						}}
+						onPress={() => navigation.navigate("Home")}
+						size='large'
 					/>
-				</View_ContentWrapper>
-			</Img_Background>
+				</View>
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };
@@ -55,7 +73,21 @@ const RoverInfoScreen = ({ navigation, route }) => {
 export default RoverInfoScreen;
 
 const S = StyleSheet.create({
-	flatList: {
+	bgStyle: {
 		flex: 1,
+	},
+	bgImgStyle: {
+		flex: 1,
+		opacity: 0.5,
+	},
+	btnStyle: {
+		minWidth: "40%",
+	},
+	searchBtns: {
+		alignContent: "space-around",
+		flex: 1,
+		flexDirection: "row",
+		flexWrap: "wrap",
+		justifyContent: "space-evenly",
 	},
 });

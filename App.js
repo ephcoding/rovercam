@@ -5,11 +5,13 @@ import { Stack } from "./app/navigation/app-stack-navigator";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
-import HomeScreen from "./app/screens/HomeScreen";
+import CameraPickerScreen from "./app/screens/CameraPickerScreen";
+import DatePickerScreen from "./app/screens/DatePickerScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
+import HomeScreen from "./app/screens/HomeScreen";
 import LatestPhotosScreen from "./app/screens/LatestPhotosScreen";
 import RoverScreen from "./app/screens/RoverScreen";
-import DatePickerScreen from "./app/screens/SOLPickerScreen";
+import SOLPickerScreen from "./app/screens/SOLPickerScreen";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
@@ -51,7 +53,7 @@ export default App = () => {
 								name='LatestPhotos'
 								component={LatestPhotosScreen}
 								options={({ route }) => ({
-									title: `LATEST ${route.params.rover} PHOTOS`,
+									title: `LATEST ${route.params.rover.toUpperCase()} PHOTOS`,
 								})}
 							/>
 							<Stack.Screen
@@ -72,7 +74,7 @@ export default App = () => {
 								name='CameraPicker'
 								component={CameraPickerScreen}
 								options={({ route }) => ({
-									title: "MARTIAN SOL",
+									title: "CAMERAS",
 								})}
 							/>
 							<Stack.Screen
