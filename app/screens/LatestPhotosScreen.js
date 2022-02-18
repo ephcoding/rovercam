@@ -36,18 +36,17 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 				style={S.imgStyle}
 			>
 				{data && <PhotosList photos={data.latest_photos} />}
-				<View>
-					<FAB
-						color={COLORS.primary}
-						icon={{
-							type: "font-awesome",
-							name: "home",
-							color: "white",
-						}}
-						onPress={() => navigation.navigate("Home")}
-						size='large'
-					/>
-				</View>
+
+				<FAB
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);

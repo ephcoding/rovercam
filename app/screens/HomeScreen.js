@@ -9,30 +9,21 @@ import {
 } from "react-native";
 import { Text } from "react-native-elements";
 import RoverCard from "../components/RoverCard";
-import { useFetchAllManifests } from "../hooks";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
-import { usePrefetchManifest } from "../hooks/usePrefetchManifest";
-const backgroundImgUri = require("../../assets/img/mars-glowing.jpg");
+const imgBgSrc = require("../../assets/img/mars-glowing.jpg");
 
 /**
  * TODO: cleaner way to import imgs
  * TODO: how to rePOSITION bgImg
  * TODO: create outline logo for each rover for cool camera selection option
  * TODO: resolve undefined manifest.props on init app load
- */
-
-/**
- *
- * TODO: pre-fetch manifest & all images for each Rover separately
+ * * TODO: pre-fetch manifest & all images for each Rover separately
  * (query manifest on nav to RoverScreen)
  * (query & filter photos on nav to DisplayPhotosScreen from SearchScreen)
- *
  */
 
 const HomeScreen = ({ navigation }) => {
-	const { isLoading, error, data } = usePrefetchManifest("curiosity");
-
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});
@@ -40,10 +31,10 @@ const HomeScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
-				imageStyle={S.imgStyle}
+				imageStyle={S.bgImgStyle}
 				resizeMode='cover'
-				source={backgroundImgUri}
-				style={S.imgBg}
+				source={imgBgSrc}
+				style={S.bgStyle}
 			>
 				<Text h3 style={S.introCTA}>
 					Pick a Rover and go explore Mars. Rover style!
@@ -62,10 +53,10 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
-	imgBg: {
+	bgStyle: {
 		flex: 1,
 	},
-	imgStyle: {
+	bgImgStyle: {
 		// opacity: 0.7,
 	},
 	introCTA: {

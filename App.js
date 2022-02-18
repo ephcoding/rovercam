@@ -74,7 +74,7 @@ export default App = () => {
 								name='CameraPicker'
 								component={CameraPickerScreen}
 								options={({ route }) => ({
-									title: "MARTIAN SOL",
+									title: "CAMERAS",
 								})}
 							/>
 							<Stack.Screen

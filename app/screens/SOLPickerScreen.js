@@ -3,7 +3,7 @@ import { usePhotosBySOL } from "../hooks";
 import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { CAMERAS_BY_ROVER as ROVERS } from "../constants";
+import { ROVER_CAMERAS as ROVERS } from "../constants";
 import DatePicker from "../components/DatePicker";
 import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
@@ -14,7 +14,7 @@ import SOLPicker from "../components/SOLPicker";
 
 const SOLPickerScreen = ({ navigation, route }) => {
 	const rover = route.params.rover;
-	const solsArr = route.params.photos.map(photo => photo.sol);
+	// const solsArr = route.params.photos.map(photo => photo.sol);
 
 	return (
 		<SafeAreaView style={S.safeArea}>
@@ -25,12 +25,17 @@ const SOLPickerScreen = ({ navigation, route }) => {
 				style={S.imgBgStyle}
 			>
 				<View style={S.pickerView}>
-					<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
+					{/* <SOLPicker navigation={navigation} rover={rover} sols={solsArr} /> */}
 				</View>
+
 				<FAB
-					color={COLORS.primary}
-					icon={{ type: "font-awesome", name: "camera", color: "white" }}
-					onPress={toggleOverlay}
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
 					size='large'
 				/>
 			</ImageBackground>

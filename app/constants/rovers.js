@@ -3,7 +3,7 @@ import earthUri from "../../assets/img/i-seee-you.jpg";
 import marsUri from "../../assets/img/mars-side-swipe.jpg";
 import perseveranceUri from "../../assets/img/perseverance.jpg";
 
-export const CAMERAS_BY_ROVER = {
+export const ROVER_CAMERAS = {
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],

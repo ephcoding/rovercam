@@ -5,17 +5,20 @@ import {
 	Text,
 	View,
 } from "react-native";
+import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { QueryClient } from "react-query";
+import { COLORS } from "../styles";
 
 const DatePickerScreen = ({ navigation, route }) => {
 	const queryClient = new QueryClient();
+
+	console.log(">> DatePickerScreen >>\n", queryClient.getQueryData("manifest"));
+
 	const imgSource = IMG_PATHS[route.params.rover.toLowerCase()];
 	const { rover } = route.params;
-	const manifests = queryClient.getQueryData("manifests", "curiosity");
-	console.log(">> manifests >>\n", manifests);
 
 	// const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
 	// const rover = route.params.rover;
@@ -40,6 +43,18 @@ const DatePickerScreen = ({ navigation, route }) => {
 						rover={rover}
 					/>
 				</View>
+				<View>
+					<FAB
+						color={COLORS.secondary}
+						icon={{
+							type: "font-awesome",
+							name: "home",
+							color: "white",
+						}}
+						onPress={() => navigation.navigate("Home")}
+						size='large'
+					/>
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -48,8 +63,18 @@ const DatePickerScreen = ({ navigation, route }) => {
 export default DatePickerScreen;
 
 const S = StyleSheet.create({
-	bgImgStyle: { flex: 1, opacity: 0.5 },
-	bgStyle: { flex: 1 },
-	pickerView: { flex: 1 },
-	safeArea: { flex: 1 },
+	bgImgStyle: {
+		flex: 1,
+		opacity: 0.3,
+	},
+	bgStyle: {
+		flex: 1,
+	},
+	pickerView: {
+		flex: 1,
+	},
+	safeArea: {
+		backgroundColor: COLORS.backgroundDK,
+		flex: 1,
+	},
 });

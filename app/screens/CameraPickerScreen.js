@@ -1,26 +1,47 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {
+	ImageBackground,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
+import { Button, FAB } from "react-native-elements";
+import { ROVER_CAMERAS as CAMERAS, IMG_PATHS } from "../constants";
+import { COLORS, SIZES } from "../styles";
 
-const CameraPickerScreen = () => {
+const CameraPickerScreen = ({ navigation, route }) => {
+	const { rover } = route.params;
+	const imgSrc = IMG_PATHS[rover.toLowerCase()];
+
 	return (
-		<SafeAreaView style={S.safeArea}>
+		<SafeAreaView style={S.safeAreaView}>
 			<ImageBackground
-				imageStyle={S.imgBgImgStyle}
+				imageStyle={S.bgImgStyle}
 				resizeMode='cover'
-				source={route.params.img_url}
-				style={S.imgBgStyle}
+				source={imgSrc}
+				style={S.bgStyle}
 			>
 				<View style={S.camerasView}>
-					{ROVERS[rover.toLowerCase()].map(cameraArr => (
+					{CAMERAS[rover.toLowerCase()].map(cameraArr => (
 						<Button
 							buttonStyle={S.btnStyle}
-							containerStyle={S.containerStyle}
+							containerStyle={S.btnContainer}
 							key={cameraArr[1]}
 							title={cameraArr[0]}
 							titleStyle={S.btnTitleStyle}
 						/>
 					))}
 				</View>
+				<FAB
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -28,4 +49,28 @@ const CameraPickerScreen = () => {
 
 export default CameraPickerScreen;
 
-const styles = StyleSheet.create({});
+const S = StyleSheet.create({
+	safeAreaView: {
+		backgroundColor: "#000",
+		flex: 1,
+	},
+	bgImgStyle: {
+		flex: 1,
+		opacity: 0.6,
+	},
+	bgStyle: {
+		flex: 1,
+	},
+	camerasView: {
+		alignItems: "center",
+		flex: 1,
+		justifyContent: "space-evenly",
+	},
+	btnStyle: {},
+	btnContainer: {
+		width: "80%",
+	},
+	btnTitleStyle: {
+		fontSize: SIZES[3],
+	},
+});
