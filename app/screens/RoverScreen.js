@@ -29,12 +29,13 @@ const RoverInfoScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground
-				imageStyle={S.bgImgStyle}
+				imageStyle={S.ibImageStyle}
 				resizeMode='cover'
-				style={S.bgStyle}
+				style={S.ibStyle}
 				source={imgSource}
 			>
 				<Text h1>{rover.toUpperCase()}</Text>
+
 				<View>
 					<Text>Status:</Text>
 					<Text>Launch Date:</Text>
@@ -43,6 +44,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 					<Text>Last Active Earth Date:</Text>
 					<Text>Photo Count:</Text>
 				</View>
+
 				<View style={S.searchBtns}>
 					{SEARCH_PARAMS.map(btn => (
 						<Button
@@ -53,18 +55,17 @@ const RoverInfoScreen = ({ navigation, route }) => {
 						/>
 					))}
 				</View>
-				<View>
-					<FAB
-						color={COLORS.secondary}
-						icon={{
-							type: "font-awesome",
-							name: "home",
-							color: "white",
-						}}
-						onPress={() => navigation.navigate("Home")}
-						size='large'
-					/>
-				</View>
+
+				<FAB
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -73,10 +74,10 @@ const RoverInfoScreen = ({ navigation, route }) => {
 export default RoverInfoScreen;
 
 const S = StyleSheet.create({
-	bgStyle: {
+	ibStyle: {
 		flex: 1,
 	},
-	bgImgStyle: {
+	ibImageStyle: {
 		flex: 1,
 		opacity: 0.5,
 	},

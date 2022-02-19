@@ -16,7 +16,6 @@ import SOLPickerScreen from "./app/screens/SOLPickerScreen";
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
 // -----
-
 const queryClient = new QueryClient();
 
 export default App = () => {
@@ -42,7 +41,7 @@ export default App = () => {
 							<Stack.Screen
 								name='Home'
 								component={HomeScreen}
-								options={{ title: "HOME" }}
+								options={{ title: "ROVERCAM" }}
 							/>
 							<Stack.Screen
 								name='Rover'

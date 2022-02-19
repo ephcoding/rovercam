@@ -8,11 +8,8 @@ import { COLORS, SIZES } from "../styles";
 // CLEAN: create structured placeholderData to eliminate init screen flicker
 
 const RoverCard = ({ navigation, rover }) => {
-	const imgSource = IMG_PATHS[rover.toLowerCase()];
+	const ib_source = IMG_PATHS[rover.toLowerCase()];
 	const capName = rover.toUpperCase();
-
-	// if (isLoading) return <Text>Loading...</Text>;
-	// if (error) return <Text>Error: {error.message}</Text>;
 
 	const handleOnPress = () =>
 		navigation.navigate("Rover", {
@@ -21,15 +18,18 @@ const RoverCard = ({ navigation, rover }) => {
 		});
 
 	return (
-		<Card containerStyle={S.cardContainer} wrapperStyle={S.cardWrapper}>
+		<Card
+			containerStyle={S.card_containerStyle}
+			wrapperStyle={S.card_wrapperStyle}
+		>
 			<ImageBackground
-				imageStyle={S.bgImgStyle}
+				imageStyle={S.ib_imageStyle}
 				resizeMode='cover'
-				style={S.bgStyle}
-				source={imgSource}
+				style={S.ib_style}
+				source={ib_source}
 			>
-				<Pressable onPress={handleOnPress} style={S.pressable}>
-					<Text>{rover}</Text>
+				<Pressable onPress={handleOnPress} style={S.pr_style}>
+					<Text style={S.txt_style}>{rover}</Text>
 				</Pressable>
 			</ImageBackground>
 		</Card>
@@ -39,25 +39,29 @@ const RoverCard = ({ navigation, rover }) => {
 export default RoverCard;
 
 const S = StyleSheet.create({
-	cardContainer: {
+	card_containerStyle: {
 		height: "30%",
 		minWidth: "40%",
 	},
-	cardWrapper: {
+	card_wrapperStyle: {
 		flex: 1,
 	},
-	bgStyle: {
-		flex: 1,
-		flexDirection: "row",
+	ib_imageStyle: {
+		opacity: 0.5,
+	},
+	ib_style: {
 		height: "100%",
 		width: "100%",
 	},
-	bgImgStyle: {
+	pr_style: {
 		flex: 1,
-		opacity: 0.5,
+		justifyContent: "flex-end",
 	},
-	pressable: {
-		flex: 1,
+	txt_style: {
+		fontWeight: "bold",
+		marginBottom: SIZES[3],
+		textAlign: "center",
+		textTransform: "uppercase",
 	},
 });
 
