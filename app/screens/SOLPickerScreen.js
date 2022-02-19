@@ -1,6 +1,11 @@
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { useState } from "react";
 import { usePhotosBySOL } from "../hooks";
-import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
@@ -17,27 +22,12 @@ const SOLPickerScreen = ({ navigation, route }) => {
 	// const solsArr = route.params.photos.map(photo => photo.sol);
 
 	return (
-		<SafeAreaView style={S.safeArea}>
-			<ImageBackground
-				imageStyle={S.imgBgImgStyle}
-				resizeMode='cover'
-				source={route.params.img_url}
-				style={S.imgBgStyle}
-			>
+		<SafeAreaView>
+			<ImageBackground source={route.params.img_url}>
 				<View style={S.pickerView}>
 					{/* <SOLPicker navigation={navigation} rover={rover} sols={solsArr} /> */}
 				</View>
-
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -60,23 +50,7 @@ const S = StyleSheet.create({
 		marginVertical: SIZES[2],
 		padding: SIZES[2],
 	},
-	imgBgStyle: {
-		flex: 1,
-	},
-	imgBgImgStyle: {
-		flex: 1,
-		opacity: 0.3,
-	},
-	overlayStyle: {
-		height: "50%",
-		// opacity: 0.5,
-		width: "90%",
-	},
 	pickerView: {
-		flex: 1,
-	},
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
 	text: {

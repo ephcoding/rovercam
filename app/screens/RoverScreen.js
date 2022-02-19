@@ -1,20 +1,18 @@
-import { useContext, useEffect, useState } from "react";
 import {
-	Image,
-	FlatList,
 	ImageBackground,
-	StyleSheet,
-	View,
-} from "react-native";
-import { Button, Card, FAB, Text } from "react-native-elements";
-import { COLORS, SIZES } from "../styles";
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { SEARCH_PARAMS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
+import { Image, FlatList, StyleSheet, View } from "react-native";
+import { Button, Card, FAB, Text } from "react-native-elements";
+import { COLORS, SIZES } from "../styles";
+// ----
 import List_Cameras from "../components/List_Cameras";
 import NavButton from "../components/shared/Btn_Navigation";
 import RoverContext from "../context/rover-context";
 import RoverCard from "../components/RoverCard";
-import SafeAreaView from "../components/shared/SafeAreaView";
 import Text_Title from "../components/shared/Text_Title";
 import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
@@ -22,19 +20,15 @@ const RoverInfoScreen = ({ navigation, route }) => {
 	const { data } = useFetchManifest("curiosity");
 	// console.log(">> RoverInfoScreen >>: \n", data);
 	const { rover } = route.params;
-	const imgSource = IMG_PATHS[rover.toLowerCase()];
+	const img_source = IMG_PATHS[rover.toLowerCase()];
 
 	const handleOnPress = screen => navigation.navigate(screen, { rover: rover });
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-				imageStyle={S.bgImgStyle}
-				resizeMode='cover'
-				style={S.bgStyle}
-				source={imgSource}
-			>
+			<ImageBackground source={img_source}>
 				<Text h1>{rover.toUpperCase()}</Text>
+
 				<View>
 					<Text>Status:</Text>
 					<Text>Launch Date:</Text>
@@ -43,7 +37,8 @@ const RoverInfoScreen = ({ navigation, route }) => {
 					<Text>Last Active Earth Date:</Text>
 					<Text>Photo Count:</Text>
 				</View>
-				<View style={S.searchBtns}>
+
+				<View style={S.row_wrap_between}>
 					{SEARCH_PARAMS.map(btn => (
 						<Button
 							buttonStyle={S.btnStyle}
@@ -53,18 +48,8 @@ const RoverInfoScreen = ({ navigation, route }) => {
 						/>
 					))}
 				</View>
-				<View>
-					<FAB
-						color={COLORS.secondary}
-						icon={{
-							type: "font-awesome",
-							name: "home",
-							color: "white",
-						}}
-						onPress={() => navigation.navigate("Home")}
-						size='large'
-					/>
-				</View>
+
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -73,21 +58,14 @@ const RoverInfoScreen = ({ navigation, route }) => {
 export default RoverInfoScreen;
 
 const S = StyleSheet.create({
-	bgStyle: {
-		flex: 1,
-	},
-	bgImgStyle: {
-		flex: 1,
-		opacity: 0.5,
-	},
 	btnStyle: {
 		minWidth: "40%",
 	},
-	searchBtns: {
-		alignContent: "space-around",
+	row_wrap_between: {
+		alignContent: "center",
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
-		justifyContent: "space-evenly",
+		justifyContent: "space-between",
 	},
 });

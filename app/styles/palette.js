@@ -5,7 +5,7 @@
 export const PALETTE = {
 	black: "rgb(0,0,0)",
 	blue: "rgb(0,102,255)",
-	clear: "#0000",
+	clear: "rgba(0,0,0,0)",
 	green: "rgb(0,255,0)",
 	grey: "rgb(102,102,102)",
 	orange: "rgb(255,153,0)",

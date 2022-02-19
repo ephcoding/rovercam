@@ -1,17 +1,13 @@
 import { useEffect } from "react";
+import { ImageBackground, SafeAreaView } from "../components/shared";
 import { ROVER_NAMES } from "../constants";
-import {
-	ImageBackground,
-	LogBox,
-	SafeAreaView,
-	StyleSheet,
-	View,
-} from "react-native";
+import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
-import RoverCard from "../components/RoverCard";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
-const imgBgSrc = require("../../assets/img/mars-glowing.jpg");
+import RoverCard from "../components/RoverCard";
+import TestComponent from "../components/TestComponent";
+const img_source = require("../../assets/img/mars-glowing.jpg");
 
 /**
  * TODO: cleaner way to import imgs
@@ -29,18 +25,15 @@ const HomeScreen = ({ navigation }) => {
 	});
 
 	return (
-		<SafeAreaView style={S.safeAreaView}>
-			<ImageBackground
-				imageStyle={S.bgImgStyle}
-				resizeMode='cover'
-				source={imgBgSrc}
-				style={S.bgStyle}
-			>
-				<Text h3 style={S.introCTA}>
-					Pick a Rover and go explore Mars. Rover style!
+		<SafeAreaView>
+			<ImageBackground source={img_source}>
+				{/* ---- TEST ---- */}
+				<TestComponent />
+				{/* ---- TEST ---- */}
+				<Text h2 style={S.txt_h2_style}>
+					Tap a Rover to start exploring!
 				</Text>
-
-				<View style={S.roverCards}>
+				<View style={S.row_wrap_between}>
 					{Object.values(ROVER_NAMES).map(rover => (
 						<RoverCard key={rover} navigation={navigation} rover={rover} />
 					))}
@@ -53,31 +46,15 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
-	bgStyle: {
-		flex: 1,
-	},
-	bgImgStyle: {
-		// opacity: 0.7,
-	},
-	introCTA: {
+	txt_h2_style: {
 		textAlign: "center",
 	},
-	introText: {
-		marginVertical: SIZES[2],
-		textAlign: "center",
-	},
-	introTextView: {
-		padding: SIZES[3],
-	},
-	roverCards: {
+	row_wrap_between: {
+		alignContent: "center",
+		alignItems: "center",
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",
-		alignContent: "space-around",
-	},
-	safeAreaView: {
-		backgroundColor: "#000",
-		flex: 1,
-		justifyContent: "space-evenly",
+		justifyContent: "space-between",
 	},
 });
