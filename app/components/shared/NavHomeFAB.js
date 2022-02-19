@@ -5,9 +5,13 @@ import { COLORS } from "../../styles";
 export const NavHomeFAB = ({ navigation }) => {
 	const handleOnPress = () => navigation.navigate("Home");
 
+	/**
+	 * TODO: remove FAB background
+	 */
+
 	return (
 		<FAB
-			color={COLORS.secondary}
+			color={COLORS.backgroundDK}
 			icon={{
 				type: "font-awesome",
 				name: "home",
@@ -18,5 +22,3 @@ export const NavHomeFAB = ({ navigation }) => {
 		/>
 	);
 };
-
-const styles = StyleSheet.create({});

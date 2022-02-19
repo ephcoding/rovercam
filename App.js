@@ -46,7 +46,9 @@ export default App = () => {
 							<Stack.Screen
 								name='Rover'
 								component={RoverScreen}
-								options={{ title: "MISSION CONTROL" }}
+								options={({ route }) => ({
+									title: route.params.rover.toUpperCase(),
+								})}
 							/>
 							<Stack.Screen
 								name='LatestPhotos'

@@ -18,7 +18,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		route.params.paramType,
 		route.params.value
 	);
-
+	console.log(">> DisplayPhotosScreen DATA >>", data);
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});

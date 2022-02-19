@@ -9,8 +9,6 @@ const PhotosList = ({ photos }) => {
 			numColumns={2}
 			PlaceholderContext={<Text>FlatList Loading...</Text>}
 			renderItem={({ item, index }) => {
-				// console.log(">> item.img_src >>\n", item.img_src);
-
 				return (
 					<Image
 						resizeMode='cover'
