@@ -75,17 +75,21 @@ const RoverInfoScreen = ({ navigation, route }) => {
 					</View>
 				</View>
 
-				<View style={S.centered}>
+				<View style={S.row_wrap_between}>
 					{SEARCH_PARAMS.map(btn => (
-						<Card key={btn.title}>
+						<View key={btn.title} style={S.row_nowrap}>
+							<Text style={{ flex: 1, textAlign: "center" }}>
+								{btn.description}
+							</Text>
 							<Button
 								buttonStyle={S.btnStyle}
 								containerStyle={S.containerStyle}
+								key={btn.title}
 								onPress={() => handleOnPress(btn.screen)}
 								title={btn.title}
 								titleStyle={{ fontSize: SIZES[4] }}
 							/>
-						</Card>
+						</View>
 					))}
 				</View>
 
@@ -99,9 +103,10 @@ export default RoverInfoScreen;
 
 const S = StyleSheet.create({
 	btnStyle: {
-		backgroundColor: COLORS.clear,
+		backgroundColor: COLORS.secondary,
 		borderColor: COLORS.backgroundLT,
 		borderWidth: SIZES[0],
+		marginLeft: SIZES[3],
 	},
 	centered: {
 		alignItems: "center",
@@ -110,6 +115,10 @@ const S = StyleSheet.create({
 	},
 	containerStyle: {
 		width: 150,
+	},
+	row_nowrap: {
+		flexDirection: "row",
+		maxWidth: "100%",
 	},
 	row_nowrap_between: {
 		flexDirection: "row",

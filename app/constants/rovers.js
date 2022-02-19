@@ -67,18 +67,22 @@ export const ROVER_NAMES = {
 
 export const SEARCH_PARAMS = [
 	{
-		title: "LATEST PHOTOS",
+		description: "Check out the latest photos from each Rover.",
+		title: "LATEST",
 		screen: "LatestPhotos",
 	},
 	{
+		description: "Search photos by date.",
 		title: "EARTH DATE",
 		screen: "DatePicker",
 	},
 	{
-		title: "MARTION SOL",
+		description: "A 'SOL' (sAHL) is 1 Martian day.",
+		title: "MARTIAN SOL",
 		screen: "SOLPicker",
 	},
 	{
+		description: "Rovers have multiple cameras to filter photos by.",
 		title: "CAMERAS",
 		screen: "CameraPicker",
 	},
