@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { LogBox } from "react-native";
+import { LogBox, Text } from "react-native";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useSearchPhotos } from "../hooks";
@@ -21,7 +21,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
-	}, []);
+	});
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;

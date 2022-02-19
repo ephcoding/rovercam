@@ -9,8 +9,6 @@ import { StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
-import DatePicker from "../components/DatePicker";
-import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 
 // NOTES:

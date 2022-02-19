@@ -8,14 +8,9 @@ import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
-import { QueryClient } from "react-query";
 import { COLORS } from "../styles";
 
 const DatePickerScreen = ({ navigation, route }) => {
-	const queryClient = new QueryClient();
-
-	console.log(">> DatePickerScreen >>\n", queryClient.getQueryData("manifest"));
-
 	const img_source = IMG_PATHS[route.params.rover.toLowerCase()];
 	const { rover } = route.params;
 

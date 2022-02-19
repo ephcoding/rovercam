@@ -9,12 +9,8 @@ import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
 import { COLORS, SIZES } from "../styles";
 // ----
-import List_Cameras from "../components/List_Cameras";
-import NavButton from "../components/shared/Btn_Navigation";
-import RoverContext from "../context/rover-context";
+import RoverCamerasList from "../components/RoverCamerasList";
 import RoverCard from "../components/RoverCard";
-import Text_Title from "../components/shared/Text_Title";
-import View_ContentWrapper from "../components/shared/View_ContentWrapper";
 
 const RoverInfoScreen = ({ navigation, route }) => {
 	const { data } = useFetchManifest("curiosity");
