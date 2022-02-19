@@ -1,19 +1,13 @@
 import { useEffect } from "react";
 import { useQuery } from "react-query";
-import {
-	FlatList,
-	ImageBackground,
-	StyleSheet,
-	Text,
-	View,
-	LogBox,
-} from "react-native";
+import { FlatList, StyleSheet, Text, View, LogBox } from "react-native";
 import { FAB, Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
-import { SafeAreaView } from "../components/shared";
+import { ImageBackground, SafeAreaView } from "../components/shared";
 import PhotosList from "../components/PhotosList";
+const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
@@ -29,12 +23,7 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-				imageStyle={S.componentStyle}
-				resizeMode='cover'
-				source={require("../../assets/img/mars-rover-tracks.jpg")}
-				style={S.imgStyle}
-			>
+			<ImageBackground source={img_source}>
 				{data && <PhotosList photos={data.latest_photos} />}
 
 				<FAB
@@ -58,12 +47,5 @@ const S = StyleSheet.create({
 	componentStyle: {
 		flex: 1,
 		opacity: 0.4,
-	},
-	imgStyle: {
-		flex: 1,
-	},
-	safeAreaView: {
-		backgroundColor: COLORS.backgroundDK,
-		flex: 1,
 	},
 });

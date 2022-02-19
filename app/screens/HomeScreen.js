@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { SafeAreaView } from "../components/shared";
+import { ImageBackground, SafeAreaView } from "../components/shared";
 import { ROVER_NAMES } from "../constants";
-import { LogBox, ImageBackground, View, StyleSheet } from "react-native";
+import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
 import RoverCard from "../components/RoverCard";
 import TestComponent from "../components/TEST";
-const ibSource = require("../../assets/img/mars-glowing.jpg");
+const img_source = require("../../assets/img/mars-glowing.jpg");
 
 /**
  * TODO: cleaner way to import imgs
@@ -26,12 +26,7 @@ const HomeScreen = ({ navigation }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-				imageStyle={S.ib_imageStyle}
-				resizeMode='cover'
-				source={ibSource}
-				style={S.ib_style}
-			>
+			<ImageBackground source={img_source}>
 				<TestComponent />
 				<Text h2 style={S.txt_h2_style}>
 					Tap a Rover to start exploring!
@@ -49,17 +44,6 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen;
 
 const S = StyleSheet.create({
-	sav_style: {
-		backgroundColor: "#000",
-		flex: 1,
-	},
-	ib_imageStyle: {
-		opacity: 0.7,
-	},
-	ib_style: {
-		flex: 1,
-		padding: SIZES[3],
-	},
 	txt_h2_style: {
 		textAlign: "center",
 	},

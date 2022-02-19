@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { usePhotosBySOL } from "../hooks";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
 import DatePicker from "../components/DatePicker";
-import { SafeAreaView } from "../components/shared";
+import { ImageBackground, SafeAreaView } from "../components/shared";
 import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 
@@ -19,12 +19,7 @@ const SOLPickerScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-				imageStyle={S.imgBgImgStyle}
-				resizeMode='cover'
-				source={route.params.img_url}
-				style={S.imgBgStyle}
-			>
+			<ImageBackground source={route.params.img_url}>
 				<View style={S.pickerView}>
 					{/* <SOLPicker navigation={navigation} rover={rover} sols={solsArr} /> */}
 				</View>
@@ -61,23 +56,12 @@ const S = StyleSheet.create({
 		marginVertical: SIZES[2],
 		padding: SIZES[2],
 	},
-	imgBgStyle: {
-		flex: 1,
-	},
-	imgBgImgStyle: {
-		flex: 1,
-		opacity: 0.3,
-	},
 	overlayStyle: {
 		height: "50%",
 		// opacity: 0.5,
 		width: "90%",
 	},
 	pickerView: {
-		flex: 1,
-	},
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
 	text: {

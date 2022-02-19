@@ -1,18 +1,18 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { QueryClient } from "react-query";
 import { COLORS } from "../styles";
-import { SafeAreaView } from "../components/shared";
+import { ImageBackground, SafeAreaView } from "../components/shared";
 
 const DatePickerScreen = ({ navigation, route }) => {
 	const queryClient = new QueryClient();
 
 	console.log(">> DatePickerScreen >>\n", queryClient.getQueryData("manifest"));
 
-	const imgSource = IMG_PATHS[route.params.rover.toLowerCase()];
+	const img_source = IMG_PATHS[route.params.rover.toLowerCase()];
 	const { rover } = route.params;
 
 	// const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
@@ -24,12 +24,7 @@ const DatePickerScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-				imageStyle={S.bgImgStyle}
-				resizeMode='cover'
-				source={imgSource}
-				style={S.bgStyle}
-			>
+			<ImageBackground source={img_source}>
 				<View style={S.pickerView}>
 					<DatePicker
 						earthDatesArr={["2012-08-12", "2012-10-12"]}
@@ -38,18 +33,17 @@ const DatePickerScreen = ({ navigation, route }) => {
 						rover={rover}
 					/>
 				</View>
-				<View>
-					<FAB
-						color={COLORS.secondary}
-						icon={{
-							type: "font-awesome",
-							name: "home",
-							color: "white",
-						}}
-						onPress={() => navigation.navigate("Home")}
-						size='large'
-					/>
-				</View>
+
+				<FAB
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -58,18 +52,7 @@ const DatePickerScreen = ({ navigation, route }) => {
 export default DatePickerScreen;
 
 const S = StyleSheet.create({
-	bgImgStyle: {
-		flex: 1,
-		opacity: 0.3,
-	},
-	bgStyle: {
-		flex: 1,
-	},
 	pickerView: {
-		flex: 1,
-	},
-	safeArea: {
-		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
 });
