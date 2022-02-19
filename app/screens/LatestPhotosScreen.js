@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import {
 	FlatList,
 	ImageBackground,
-	SafeAreaView,
 	StyleSheet,
 	Text,
 	View,
@@ -13,6 +12,7 @@ import { FAB, Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
+import { SafeAreaView } from "../components/shared";
 import PhotosList from "../components/PhotosList";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
@@ -28,7 +28,7 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
 	return (
-		<SafeAreaView style={S.safeAreaView}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.componentStyle}
 				resizeMode='cover'

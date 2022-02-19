@@ -1,16 +1,11 @@
-import {
-	ImageBackground,
-	SafeAreaView,
-	StyleSheet,
-	Text,
-	View,
-} from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { QueryClient } from "react-query";
 import { COLORS } from "../styles";
+import { SafeAreaView } from "../components/shared";
 
 const DatePickerScreen = ({ navigation, route }) => {
 	const queryClient = new QueryClient();
@@ -28,7 +23,7 @@ const DatePickerScreen = ({ navigation, route }) => {
 	// if (error) return <Text>ERROR >> {error.message}</Text>;
 
 	return (
-		<SafeAreaView style={S.safeArea}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.bgImgStyle}
 				resizeMode='cover'

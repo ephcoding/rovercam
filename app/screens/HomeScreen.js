@@ -1,12 +1,7 @@
 import { useEffect } from "react";
+import { SafeAreaView } from "../components/shared";
 import { ROVER_NAMES } from "../constants";
-import {
-	LogBox,
-	SafeAreaView,
-	ImageBackground,
-	View,
-	StyleSheet,
-} from "react-native";
+import { LogBox, ImageBackground, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
@@ -30,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
 	});
 
 	return (
-		<SafeAreaView style={S.sav_style}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.ib_imageStyle}
 				resizeMode='cover'
@@ -63,12 +58,14 @@ const S = StyleSheet.create({
 	},
 	ib_style: {
 		flex: 1,
+		padding: SIZES[3],
 	},
 	txt_h2_style: {
 		textAlign: "center",
 	},
 	row_wrap_between: {
 		alignContent: "center",
+		alignItems: "center",
 		flex: 1,
 		flexDirection: "row",
 		flexWrap: "wrap",

@@ -1,20 +1,15 @@
-import {
-	ImageBackground,
-	SafeAreaView,
-	StyleSheet,
-	Text,
-	View,
-} from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import { ROVER_CAMERAS as CAMERAS, IMG_PATHS } from "../constants";
 import { COLORS, SIZES } from "../styles";
+import { SafeAreaView } from "../components/shared";
 
 const CameraPickerScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
 	const imgSrc = IMG_PATHS[rover.toLowerCase()];
 
 	return (
-		<SafeAreaView style={S.safeAreaView}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.bgImgStyle}
 				resizeMode='cover'

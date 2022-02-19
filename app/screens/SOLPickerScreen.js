@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { usePhotosBySOL } from "../hooks";
-import { ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
 import DatePicker from "../components/DatePicker";
+import { SafeAreaView } from "../components/shared";
 import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 
@@ -17,7 +18,7 @@ const SOLPickerScreen = ({ navigation, route }) => {
 	// const solsArr = route.params.photos.map(photo => photo.sol);
 
 	return (
-		<SafeAreaView style={S.safeArea}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.imgBgImgStyle}
 				resizeMode='cover'

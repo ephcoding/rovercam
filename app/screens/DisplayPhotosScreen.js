@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import {
 	FlatList,
 	ImageBackground,
-	SafeAreaView,
 	StyleSheet,
 	Text,
 	View,
@@ -14,6 +13,7 @@ import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useSearchPhotos } from "../hooks";
+import { SafeAreaView } from "../components/shared";
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
 
@@ -32,7 +32,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
 	return (
-		<SafeAreaView style={S.safeAreaView}>
+		<SafeAreaView>
 			<ImageBackground
 				imageStyle={S.componentStyle}
 				resizeMode='cover'
