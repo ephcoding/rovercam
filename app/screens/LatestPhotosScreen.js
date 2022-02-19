@@ -1,3 +1,8 @@
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { FlatList, StyleSheet, Text, View, LogBox } from "react-native";
@@ -5,7 +10,6 @@ import { FAB, Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
-import { ImageBackground, SafeAreaView } from "../components/shared";
 import PhotosList from "../components/PhotosList";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
@@ -25,17 +29,7 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
 				{data && <PhotosList photos={data.latest_photos} />}
-
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);

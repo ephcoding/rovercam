@@ -1,4 +1,8 @@
-import { ImageBackground, SafeAreaView } from "../components/shared";
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { SEARCH_PARAMS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
 import { Image, FlatList, StyleSheet, View } from "react-native";
@@ -45,16 +49,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 					))}
 				</View>
 
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);

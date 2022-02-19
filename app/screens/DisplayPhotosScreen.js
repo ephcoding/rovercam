@@ -3,7 +3,11 @@ import { LogBox } from "react-native";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useSearchPhotos } from "../hooks";
-import { ImageBackground, SafeAreaView } from "../components/shared";
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
@@ -26,6 +30,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
 				{data && <PhotosList photos={data.photos} />}
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);

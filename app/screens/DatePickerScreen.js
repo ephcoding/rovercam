@@ -1,3 +1,8 @@
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
@@ -5,7 +10,6 @@ import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { QueryClient } from "react-query";
 import { COLORS } from "../styles";
-import { ImageBackground, SafeAreaView } from "../components/shared";
 
 const DatePickerScreen = ({ navigation, route }) => {
 	const queryClient = new QueryClient();
@@ -33,17 +37,7 @@ const DatePickerScreen = ({ navigation, route }) => {
 						rover={rover}
 					/>
 				</View>
-
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);

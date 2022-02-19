@@ -2,7 +2,11 @@ import { StyleSheet, Text, View } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import { ROVER_CAMERAS as CAMERAS, IMG_PATHS } from "../constants";
 import { COLORS, SIZES } from "../styles";
-import { ImageBackground, SafeAreaView } from "../components/shared";
+import {
+	NavHomeFAB,
+	ImageBackground,
+	SafeAreaView,
+} from "../components/shared";
 
 const CameraPickerScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
@@ -22,16 +26,7 @@ const CameraPickerScreen = ({ navigation, route }) => {
 						/>
 					))}
 				</View>
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);

@@ -1,3 +1,8 @@
+import {
+	ImageBackground,
+	NavHomeFAB,
+	SafeAreaView,
+} from "../components/shared";
 import { useState } from "react";
 import { usePhotosBySOL } from "../hooks";
 import { StyleSheet, View } from "react-native";
@@ -5,7 +10,6 @@ import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
 import DatePicker from "../components/DatePicker";
-import { ImageBackground, SafeAreaView } from "../components/shared";
 import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 
@@ -23,17 +27,7 @@ const SOLPickerScreen = ({ navigation, route }) => {
 				<View style={S.pickerView}>
 					{/* <SOLPicker navigation={navigation} rover={rover} sols={solsArr} /> */}
 				</View>
-
-				<FAB
-					color={COLORS.secondary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
+				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>
 	);
@@ -55,11 +49,6 @@ const S = StyleSheet.create({
 		backgroundColor: COLORS.primary,
 		marginVertical: SIZES[2],
 		padding: SIZES[2],
-	},
-	overlayStyle: {
-		height: "50%",
-		// opacity: 0.5,
-		width: "90%",
 	},
 	pickerView: {
 		flex: 1,
