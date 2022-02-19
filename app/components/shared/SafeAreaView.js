@@ -1,14 +1,12 @@
-import { SafeAreaView as MDXSafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView as RNSafeAreaView, StyleSheet } from "react-native";
 import { COLORS } from "../../styles";
 
-const SafeAreaView = ({ children }) => {
-	return <MDXSafeAreaView style={S.default}>{children}</MDXSafeAreaView>;
+export const SafeAreaView = ({ children }) => {
+	return <RNSafeAreaView style={S.style}>{children}</RNSafeAreaView>;
 };
 
-export default SafeAreaView;
-
 const S = StyleSheet.create({
-	default: {
+	style: {
 		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
