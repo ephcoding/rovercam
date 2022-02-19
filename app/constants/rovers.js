@@ -79,7 +79,7 @@ export const SEARCH_PARAMS = [
 		screen: "SOLPicker",
 	},
 	{
-		title: "ROVER CAMERAS",
+		title: "CAMERAS",
 		screen: "CameraPicker",
 	},
 ];
