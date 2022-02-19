@@ -9,7 +9,7 @@ import {
 	View,
 	LogBox,
 } from "react-native";
-import { Image } from "react-native-elements";
+import { FAB, Image } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
@@ -36,6 +36,17 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 				style={S.imgStyle}
 			>
 				{data && <PhotosList photos={data.latest_photos} />}
+
+				<FAB
+					color={COLORS.secondary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
 			</ImageBackground>
 		</SafeAreaView>
 	);

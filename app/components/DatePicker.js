@@ -1,7 +1,7 @@
 import { RNC_THEME } from "../styles/themes";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { CalendarList } from "react-native-calendars";
-import { Text } from "react-native-elements";
+import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { PARAMS } from "../constants";
 
@@ -22,12 +22,10 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	});
 
 	// create date array to determine disabledDays
-	const dateArray = (startDate, endDate) => {
-		const start = startDate.slice();
-		const end = endDate.slice();
-		console.log(start, end);
-	};
-	dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
+	// const dateArray = (startDate, endDate) => {
+	// 	console.log(startDate.slice(), endDate.slice());
+	// };
+	// dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
 
 	const photosDay = { container: { backgroundColor: COLORS.primary } };
 	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
@@ -42,18 +40,32 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	};
 
 	return (
-		<CalendarList
-			calendarStyle={S.calendarStyle}
-			current={earthDatesArr[0]}
-			futureScrollRange={20}
-			markingType={"custom"}
-			markedDates={photoDays}
-			onDayPress={date => handleEarthDatePick(date.dateString)}
-			// onDayPress={date => console.log(date.dateString)}
-			pastScrollRange={0}
-			style={S.style}
-			theme={RNC_THEME}
-		/>
+		<>
+			<CalendarList
+				calendarStyle={S.calendarStyle}
+				current={earthDatesArr[0]}
+				futureScrollRange={20}
+				markingType={"custom"}
+				markedDates={photoDays}
+				onDayPress={date => handleEarthDatePick(date.dateString)}
+				// onDayPress={date => console.log(date.dateString)}
+				pastScrollRange={0}
+				style={S.style}
+				theme={RNC_THEME}
+			/>
+			<View>
+				<FAB
+					color={COLORS.primary}
+					icon={{
+						type: "font-awesome",
+						name: "home",
+						color: "white",
+					}}
+					onPress={() => navigation.navigate("Home")}
+					size='large'
+				/>
+			</View>
+		</>
 	);
 };
 

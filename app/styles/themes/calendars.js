@@ -1,6 +1,10 @@
 import { Platform } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../styles";
 
+/**
+ * styles specific to the photos day-search calendar
+ */
+
 export const RNC_THEME = {
 	calendarBackground: COLORS.clear,
 	// -- MONTH

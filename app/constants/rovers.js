@@ -1,4 +1,9 @@
-export const CAMERAS_BY_ROVER = {
+import tracksUri from "../../assets/img/mars-rover-tracks.jpg";
+import earthUri from "../../assets/img/i-seee-you.jpg";
+import marsUri from "../../assets/img/mars-side-swipe.jpg";
+import perseveranceUri from "../../assets/img/perseverance.jpg";
+
+export const ROVER_CAMERAS = {
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
@@ -54,3 +59,27 @@ export const ROVER_NAMES = {
 	perseverance: "Perseverance",
 	spirit: "Spirit",
 };
+
+/**
+ * [screen] prop matches screen name in StackNavigator (App.js)
+ * [title] prop is used for button labels
+ */
+
+export const SEARCH_PARAMS = [
+	{
+		title: "LATEST PHOTOS",
+		screen: "LatestPhotos",
+	},
+	{
+		title: "EARTH DATE",
+		screen: "DatePicker",
+	},
+	{
+		title: "MARTION SOL",
+		screen: "SOLPicker",
+	},
+	{
+		title: "ROVER CAMERAS",
+		screen: "CameraPicker",
+	},
+];
