@@ -365,6 +365,13 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 </div>
 
+<details>
+<summary>Date / Time</summary>
+
+- date / time format [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
+
+</details>
+
 ## `Promise.allSettled()` was added to React Native in v64
 
 - `undefined is not a function (near '...Promise.allSettled...`

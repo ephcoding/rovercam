@@ -17,7 +17,7 @@ export const ImageBackground = ({ children, source }) => {
 const S = StyleSheet.create({
 	imageStyle: {
 		flex: 1,
-		opacity: 0.7,
+		opacity: 0.3,
 	},
 	style: {
 		flex: 1,

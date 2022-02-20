@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { PARAMS } from "../constants";
+import { QUERIES } from "../constants";
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const startDate = earthDatesArr[0];
@@ -34,7 +34,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: PARAMS.earth_date,
+			paramType: QUERIES.earth_date,
 			value: date,
 		});
 	};

@@ -5,8 +5,8 @@ import {
 } from "../components/shared";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
-import { FlatList, StyleSheet, Text, View, LogBox } from "react-native";
-import { FAB, Image } from "react-native-elements";
+import { Text, View, LogBox } from "react-native";
+import { FAB } from "react-native-elements";
 import { NavigationEvents } from "react-navigation";
 import { COLORS } from "../styles";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
@@ -36,10 +36,3 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 };
 
 export default DisplayLatestPhotosScreen;
-
-const S = StyleSheet.create({
-	componentStyle: {
-		flex: 1,
-		opacity: 0.4,
-	},
-});

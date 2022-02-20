@@ -8,37 +8,29 @@ import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
-import { QueryClient } from "react-query";
 import { COLORS } from "../styles";
 
 const DatePickerScreen = ({ navigation, route }) => {
-	const queryClient = new QueryClient();
+	const { photos, rover } = route.params;
+	const earthDatesArr = photos.map(photo => photo.earth_date);
+	// const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	console.log(">> DatePickerScreen >>\n", queryClient.getQueryData("manifest"));
-
-	const img_source = IMG_PATHS[route.params.rover.toLowerCase()];
-	const { rover } = route.params;
-
-	// const earthDatesArr = route.params.photos.map(photo => photo.earth_date);
-	// const rover = route.params.rover;
-	// const { isLoading, error, data } = useFetchManifest(rover);
+	// console.log(">> DatePickerScreen [photos]>>", photos);
 
 	// if (isLoading) return <Text>Loading...</Text>;
 	// if (error) return <Text>ERROR >> {error.message}</Text>;
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={img_source}>
-				<View style={S.pickerView}>
-					<DatePicker
-						earthDatesArr={["2012-08-12", "2012-10-12"]}
-						// earthDatesArr={earthDatesArr}
-						navigation={navigation}
-						rover={rover}
-					/>
-				</View>
-				<NavHomeFAB navigation={navigation} />
-			</ImageBackground>
+			{/* <ImageBackground source={img_source}> */}
+			<DatePicker
+				// earthDatesArr={["2012-08-12", "2012-10-12"]}
+				earthDatesArr={earthDatesArr}
+				navigation={navigation}
+				rover={rover}
+			/>
+			<NavHomeFAB navigation={navigation} />
+			{/* </ImageBackground> */}
 		</SafeAreaView>
 	);
 };
