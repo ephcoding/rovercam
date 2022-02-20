@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { LogBox } from "react-native";
+import { LogBox, Text } from "react-native";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
-import { useSearchPhotos } from "../hooks";
+import { useFetchPhotosByParam } from "../hooks";
 import {
 	ImageBackground,
 	NavHomeFAB,
@@ -10,10 +10,17 @@ import {
 } from "../components/shared";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// TODO: use [manifest] & [photos] to dyno-gen camera labels & names
+/**
+ *
+ * QUERY PARAM TYPES:
+ * sol
+ * earth_date
+ * camera
+ *
+ */
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = useSearchPhotos(
+	const { isLoading, error, data } = useFetchPhotosByParam(
 		route.params.rover,
 		route.params.paramType,
 		route.params.value
@@ -21,10 +28,13 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
-	}, []);
+	});
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
+
+	// console.clear();
+	// console.log(">> DisplayPhotosScreen DATA >>", data.photos);
 
 	return (
 		<SafeAreaView>

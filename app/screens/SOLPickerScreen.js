@@ -9,8 +9,6 @@ import { StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { ROVER_CAMERAS as ROVERS } from "../constants";
-import DatePicker from "../components/DatePicker";
-import SearchSwitch from "../components/SearchSwitch";
 import SOLPicker from "../components/SOLPicker";
 
 // NOTES:
@@ -18,17 +16,17 @@ import SOLPicker from "../components/SOLPicker";
 // Switch onValueChange => returns (passed value)
 
 const SOLPickerScreen = ({ navigation, route }) => {
-	const rover = route.params.rover;
-	// const solsArr = route.params.photos.map(photo => photo.sol);
+	const { photos, rover } = route.params;
+	const solsArr = photos.map(photo => photo.sol);
+
+	console.log(">> SOLPickerScreen [photos]>>", photos);
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={route.params.img_url}>
-				<View style={S.pickerView}>
-					{/* <SOLPicker navigation={navigation} rover={rover} sols={solsArr} /> */}
-				</View>
-				<NavHomeFAB navigation={navigation} />
-			</ImageBackground>
+			{/* <ImageBackground source={route.params.img_url}> */}
+			<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
+			<NavHomeFAB navigation={navigation} />
+			{/* </ImageBackground> */}
 		</SafeAreaView>
 	);
 };
@@ -41,17 +39,6 @@ const S = StyleSheet.create({
 	},
 	btnTitleStyle: {
 		color: COLORS.textLT,
-	},
-	camerasView: {
-		flex: 1,
-	},
-	containerStyle: {
-		backgroundColor: COLORS.primary,
-		marginVertical: SIZES[2],
-		padding: SIZES[2],
-	},
-	pickerView: {
-		flex: 1,
 	},
 	text: {
 		color: COLORS.textDK,

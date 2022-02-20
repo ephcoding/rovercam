@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
 				{/* ---- TEST ---- */}
-				<TestComponent />
+				{/* <TestComponent /> */}
 				{/* ---- TEST ---- */}
 				<Text h2 style={S.txt_h2_style}>
 					Tap a Rover to start exploring!
