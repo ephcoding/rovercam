@@ -18,7 +18,8 @@ const RoverInfoScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useFetchManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	const handleOnPress = screen => navigation.navigate(screen, { rover: rover });
+	const handleOnPress = (screen, param = "") =>
+		navigation.navigate(screen, { rover, photos: data.photo_manifest.photos });
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.message}</Text>;
@@ -76,17 +77,17 @@ const RoverInfoScreen = ({ navigation, route }) => {
 				</View>
 
 				<View style={S.row_wrap_between}>
-					{SEARCH_PARAMS.map(btn => (
-						<View key={btn.title} style={S.row_nowrap}>
+					{SEARCH_PARAMS.map(param => (
+						<View key={param.title} style={S.row_nowrap}>
 							<Text style={{ flex: 1, textAlign: "center" }}>
-								{btn.description}
+								{param.description}
 							</Text>
 							<Button
 								buttonStyle={S.btnStyle}
 								containerStyle={S.containerStyle}
-								key={btn.title}
-								onPress={() => handleOnPress(btn.screen)}
-								title={btn.title}
+								key={param.title}
+								onPress={() => handleOnPress(param.screen, param.query_param)}
+								title={param.title}
 								titleStyle={{ fontSize: SIZES[4] }}
 							/>
 						</View>

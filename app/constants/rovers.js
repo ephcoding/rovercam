@@ -75,15 +75,18 @@ export const SEARCH_PARAMS = [
 		description: "Search photos by date.",
 		title: "EARTH DATE",
 		screen: "DatePicker",
+		query_param: "earth_date",
 	},
 	{
 		description: "A 'SOL' (sAHL) is 1 Martian day.",
 		title: "MARTIAN SOL",
 		screen: "SOLPicker",
-	},
-	{
-		description: "Rovers have multiple cameras to filter photos by.",
-		title: "CAMERAS",
-		screen: "CameraPicker",
+		query_param: "sol",
 	},
 ];
+
+export const QUERIES = {
+	camera: "camera",
+	earth_date: "earth_date",
+	sol: "sol",
+};

@@ -10,7 +10,14 @@ import {
 } from "../components/shared";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// TODO: use [manifest] & [photos] to dyno-gen camera labels & names
+/**
+ *
+ * QUERY PARAM TYPES:
+ * sol
+ * earth_date
+ * camera
+ *
+ */
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useFetchPhotosByParam(
