@@ -15,7 +15,7 @@ const DatePickerScreen = ({ navigation, route }) => {
 	const earthDatesArr = photos.map(photo => photo.earth_date);
 	// const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	console.log(">> DatePickerScreen [photos]>>", photos);
+	// console.log(">> DatePickerScreen [photos]>>", photos);
 
 	// if (isLoading) return <Text>Loading...</Text>;
 	// if (error) return <Text>ERROR >> {error.message}</Text>;

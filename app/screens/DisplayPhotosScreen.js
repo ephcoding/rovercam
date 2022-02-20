@@ -26,14 +26,15 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		route.params.value
 	);
 
-	console.log(">> DisplayPhotosScreen DATA >>", data);
-
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
+
+	// console.clear();
+	// console.log(">> DisplayPhotosScreen DATA >>", data.photos);
 
 	return (
 		<SafeAreaView>
