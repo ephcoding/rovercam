@@ -22,7 +22,7 @@
 
 :white_check_mark: user can search rover photos by EARTH DATE
 
-:white_large_square: user can filter by respective rover's photos by camera
+:white_large_square: user can filter respective rover's photos by camera
 
 ### **_Ideas_**
 

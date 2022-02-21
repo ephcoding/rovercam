@@ -45,21 +45,18 @@ export const ROVER_CAMERAS = {
 		["Miniature Thermal Emission Spectrometer", "MINITES"],
 	],
 };
-
 export const IMG_PATHS = {
 	curiosity: require("../../assets/img/curiosity.jpg"),
 	opportunity: require("../../assets/img/opportunity.jpg"),
 	perseverance: require("../../assets/img/perseverance.jpg"),
 	spirit: require("../../assets/img/spirit.jpg"),
 };
-
 export const ROVER_NAMES = {
 	curiosity: "Curiosity",
 	opportunity: "Opportunity",
 	perseverance: "Perseverance",
 	spirit: "Spirit",
 };
-
 /**
  * [screen] prop matches screen name in StackNavigator (App.js)
  * [title] prop is used for button labels
@@ -84,7 +81,6 @@ export const SEARCH_PARAMS = [
 		query_param: "sol",
 	},
 ];
-
 export const QUERIES = {
 	camera: "camera",
 	earth_date: "earth_date",

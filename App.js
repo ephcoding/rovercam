@@ -82,7 +82,7 @@ export default App = () => {
 								name='DisplayPhotos'
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
-									title: route.params.title,
+									title: route.params.value,
 								})}
 							/>
 						</Stack.Navigator>
