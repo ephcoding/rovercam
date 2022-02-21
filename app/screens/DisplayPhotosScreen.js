@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { LogBox, Text } from "react-native";
+import { LogBox, StyleSheet, Text, View } from "react-native";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
@@ -40,10 +40,20 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
 				{data && <PhotosList photos={data.photos} />}
-				<NavHomeFAB navigation={navigation} />
+				<View style={S.row_between}>
+					<NavHomeFAB navigation={navigation} />
+					<CameraFAB setIsVisible={toggleOverlay} />
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
 };
 
 export default DisplayPhotosScreen;
+
+const S = StyleSheet.create({
+	row_between: {
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+	},
+});
