@@ -21,6 +21,21 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
 	const [isVisible, setIsVisible] = useState(false);
+	const [isFiltered, setIsFiltered] = useState(false);
+	const [filteredPhotos, setFilteredPhotos] = useState([]);
+
+	const handleFilterByCamera = cameraAbbr => {
+		const photos = data.latest_photos.filter(
+			photo => photo.camera.name === cameraAbbr
+		);
+
+		setFilteredPhotos(photos);
+		setIsFiltered(true);
+		toggleOverlay();
+
+		console.log(">> data.latest_photos.length >>\n", data.latest_photos.length);
+		console.log(">> filteredPhotos.length >>\n", photos.length);
+	};
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
 
@@ -34,13 +49,18 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				{data && <PhotosList photos={data.latest_photos} />}
+				{isFiltered
+					? filteredPhotos && <PhotosList photos={filteredPhotos} />
+					: data && <PhotosList photos={data.latest_photos} />}
 				<Overlay
 					isVisible={isVisible}
 					overlayStyle={S.overlayStyle}
 					onBackdropPress={toggleOverlay}
 				>
-					<RoverCamerasList rover={route.params.rover.toLowerCase()} />
+					<RoverCamerasList
+						setFilteredPhotos={handleFilterByCamera}
+						rover={route.params.rover}
+					/>
 				</Overlay>
 				<View style={S.row_between}>
 					<NavHomeFAB navigation={navigation} />

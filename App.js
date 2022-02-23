@@ -44,17 +44,10 @@ export default App = () => {
 								options={{ title: "ROVERCAM" }}
 							/>
 							<Stack.Screen
-								name='Rover'
-								component={RoverScreen}
+								name='CameraPicker'
+								component={CameraPickerScreen}
 								options={({ route }) => ({
-									title: route.params.rover.toUpperCase(),
-								})}
-							/>
-							<Stack.Screen
-								name='LatestPhotos'
-								component={LatestPhotosScreen}
-								options={({ route }) => ({
-									title: `LATEST ${route.params.rover.toUpperCase()} PHOTOS`,
+									title: "CAMERAS",
 								})}
 							/>
 							<Stack.Screen
@@ -65,28 +58,35 @@ export default App = () => {
 								})}
 							/>
 							<Stack.Screen
-								name='SOLPicker'
-								component={SOLPickerScreen}
-								options={({ route }) => ({
-									title: "MARTIAN SOL",
-								})}
-							/>
-							<Stack.Screen
-								name='CameraPicker'
-								component={CameraPickerScreen}
-								options={({ route }) => ({
-									title: "CAMERAS",
-								})}
-							/>
-							<Stack.Screen
 								name='DisplayPhotos'
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
 									// title: "TEST SCREEN TITLE",
 									title:
 										route.params.paramType === "sol"
-											? `SOL ${route.params.value} PHOTOS`
-											: `PHOTOS FROM ${route.params.value}`,
+											? `${route.params.rover} SOL ${route.params.value}`
+											: `${route.params.rover}: ${route.params.value}`,
+								})}
+							/>
+							<Stack.Screen
+								name='LatestPhotos'
+								component={LatestPhotosScreen}
+								options={({ route }) => ({
+									title: `LATEST ${route.params.rover.toUpperCase()} PHOTOS`,
+								})}
+							/>
+							<Stack.Screen
+								name='Rover'
+								component={RoverScreen}
+								options={({ route }) => ({
+									title: route.params.rover.toUpperCase(),
+								})}
+							/>
+							<Stack.Screen
+								name='SOLPicker'
+								component={SOLPickerScreen}
+								options={({ route }) => ({
+									title: "MARTIAN SOL",
 								})}
 							/>
 						</Stack.Navigator>

@@ -41,6 +41,12 @@
 [resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
+<!-- #region PROJECT MANAGEMENT -->
+
+- [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
+  - [customize](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/customizing-your-project-views) project views
+
+<!-- #endregion /PROJECT MANAGEMENT -->
 
 <!-- #region APIS -->
 
@@ -237,7 +243,7 @@ MISC
 
 **_DisplayPhotosScreen dynamic `title` options property's values weren't strings_**
 
-_found by accident when taking passed params out of play (might be TS time)_
+(found by accident when taking passed params out of play (might be TS time))
 
 ```javascript
 // DisplayOptionsScreen Stack.Screen options:

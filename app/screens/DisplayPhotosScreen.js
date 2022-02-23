@@ -29,9 +29,22 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		route.params.value
 	);
 	const [isVisible, setIsVisible] = useState(false);
+	const [isFiltered, setIsFiltered] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
-	const handleCameraSelect = e => console.log(">> SELECTED CAMERA >>", e);
+	const handleFilterByCamera = cameraAbbr => {
+		const photos = data.photos.filter(
+			photo => photo.camera.name === cameraAbbr
+		);
+
+		setFilteredPhotos(photos);
+		setIsFiltered(true);
+		toggleOverlay();
+
+		console.log(">> data.latest_photos.length >>\n", photos.length);
+		console.log(">> filteredPhotos.length >>\n", photos.length);
+	};
+
 	const toggleOverlay = () => setIsVisible(!isVisible);
 
 	useEffect(() => {
@@ -44,14 +57,16 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				{data && <PhotosList photos={data.photos} />}
+				{isFiltered
+					? filteredPhotos && <PhotosList photos={filteredPhotos} />
+					: data && <PhotosList photos={data.photos} />}
 				<Overlay
 					isVisible={isVisible}
 					onBackdropPress={toggleOverlay}
 					overlayStyle={S.overlayStyle}
 				>
 					<RoverCamerasList
-						setFilteredPhotos={handleCameraSelect}
+						setFilteredPhotos={handleFilterByCamera}
 						rover={route.params.rover}
 					/>
 				</Overlay>
