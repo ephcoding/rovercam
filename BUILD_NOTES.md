@@ -214,7 +214,7 @@ MISC
 </div>
 
 <details>
-<summary>Expo crashes when nav-ing picking SOL / Date</summary>
+<summary>Expo crashes when picking SOL / Date ( nav to DisplayPhotosScreen )</summary>
 
 **TRIED:**
 
