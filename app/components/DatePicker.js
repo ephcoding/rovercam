@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { QUERIES } from "../constants";
+import { QUERY_PARAMS } from "../constants";
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const startDate = earthDatesArr[0];
@@ -34,7 +34,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: QUERIES.earth_date,
+			paramType: QUERY_PARAMS.earth_date,
 			value: date,
 		});
 	};
@@ -48,7 +48,6 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 				markingType={"custom"}
 				markedDates={photoDays}
 				onDayPress={date => handleEarthDatePick(date.dateString)}
-				// onDayPress={date => console.log(date.dateString)}
 				pastScrollRange={0}
 				style={S.style}
 				theme={RNC_THEME}

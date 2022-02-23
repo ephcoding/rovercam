@@ -1,29 +1,29 @@
 import { FlatList, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { QUERIES } from "../constants";
+import { QUERY_PARAMS } from "../constants";
 
 // !HEADS UP! --> SOLs start at '0'
 
-const SOLPicker = ({ navigation, rover, sols }) => {
-	const handlePickSOLNum = sol => {
+const SOLPicker = ({ navigation, rover, solsArr }) => {
+	const handleSOLPick = sol => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: QUERIES.sol,
+			paramType: QUERY_PARAMS.sol,
 			value: sol,
 		});
 	};
 
 	return (
 		<FlatList
-			data={sols}
+			data={solsArr}
 			keyExtractor={ke => ke}
 			numColumns={2}
 			renderItem={({ item, index, separators }) => (
 				<Button
 					buttonStyle={S.btnBtnStyle}
 					containerStyle={S.btnContainerStyle}
-					onPress={() => handlePickSOLNum(item)}
+					onPress={() => handleSOLPick(item)}
 					style={S.btnStyle}
 					title={item || "0"}
 				/>

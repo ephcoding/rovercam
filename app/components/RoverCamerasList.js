@@ -1,22 +1,34 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
-import { CAMERAS } from "../constants/rovers";
+import { ROVER_CAMERAS } from "../constants/rovers";
 
-const RoverCamerasList = ({ rover }) => {
+const RoverCamerasList = ({ rover, setFilteredPhotos }) => {
 	return (
-		<>
-			{CAMERAS[rover.toLowerCase()].map(camera => (
+		<ScrollView>
+			{ROVER_CAMERAS[rover.toLowerCase()].map(camera => (
 				<Button
+					buttonStyle={S.buttonStyle}
+					containerStyle={S.containerStyle}
 					key={camera[1]}
-					label={camera[0]}
-					navParams={{ name: camera[0], abbr: camera[1], roverName: rover }}
+					title={camera[0]}
+					// navParams={{
+					// 	name: camera[0],
+					// 	abbr: camera[1],
+					// 	roverName: rover,
+					// }}
+					onPress={() => setFilteredPhotos(camera[1])}
 					screen='CameraPhotos'
 				/>
 			))}
-		</>
+		</ScrollView>
 	);
 };
 
 export default RoverCamerasList;
 
-const S = StyleSheet.create({});
+const S = StyleSheet.create({
+	buttonStyle: {
+		marginVertical: 15,
+	},
+	containerStyle: {},
+});

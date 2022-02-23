@@ -13,6 +13,7 @@ import { StyleSheet, Text, View, LogBox } from "react-native";
 import { NavigationEvents } from "react-navigation";
 import { useLatestPhotos } from "../hooks/useFetchLatestPhotos";
 import { ROVER_CAMERAS } from "../constants";
+import RoverCamerasList from "../components/RoverCamerasList";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 // TODO: use [manifest] & [photos] to dyno-gen camera labels & names
@@ -20,7 +21,6 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
 	const [isVisible, setIsVisible] = useState(false);
-	const lcRover = route.params.rover.toLowerCase();
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
 
@@ -33,18 +33,20 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			{/* <ImageBackground source={img_source}> */}
-			{data && <PhotosList photos={data.latest_photos} />}
-			<Overlay isVisible={isVisible} onBackdropPress={toggleOverlay}>
-				{ROVER_CAMERAS[lcRover].map(camera => (
-					<Text key={camera[0]}>{camera[1]}</Text>
-				))}
-			</Overlay>
-			<View style={S.row_between}>
-				<NavHomeFAB navigation={navigation} />
-				<CameraFAB setIsVisible={toggleOverlay} />
-			</View>
-			{/* </ImageBackground> */}
+			<ImageBackground source={img_source}>
+				{data && <PhotosList photos={data.latest_photos} />}
+				<Overlay
+					isVisible={isVisible}
+					overlayStyle={S.overlayStyle}
+					onBackdropPress={toggleOverlay}
+				>
+					<RoverCamerasList rover={route.params.rover.toLowerCase()} />
+				</Overlay>
+				<View style={S.row_between}>
+					<NavHomeFAB navigation={navigation} />
+					<CameraFAB setIsVisible={toggleOverlay} />
+				</View>
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };
@@ -52,6 +54,10 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 export default DisplayLatestPhotosScreen;
 
 const S = StyleSheet.create({
+	overlayStyle: {
+		height: "80%",
+		width: "80%",
+	},
 	row_between: {
 		flexDirection: "row",
 		justifyContent: "space-evenly",

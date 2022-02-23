@@ -8,7 +8,6 @@ import { usePhotosBySOL } from "../hooks";
 import { StyleSheet, View } from "react-native";
 import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { ROVER_CAMERAS as ROVERS } from "../constants";
 import SOLPicker from "../components/SOLPicker";
 
 // NOTES:
@@ -16,15 +15,15 @@ import SOLPicker from "../components/SOLPicker";
 // Switch onValueChange => returns (passed value)
 
 const SOLPickerScreen = ({ navigation, route }) => {
-	const { photos, rover } = route.params;
-	const solsArr = photos.map(photo => photo.sol);
+	const { photos: sols, rover } = route.params;
+	const solsArr = sols.map(sol => sol.sol);
 
 	return (
 		<SafeAreaView>
-			{/* <ImageBackground source={route.params.img_url}> */}
-			<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
-			<NavHomeFAB navigation={navigation} />
-			{/* </ImageBackground> */}
+			<ImageBackground source={route.params.img_url}>
+				<SOLPicker navigation={navigation} rover={rover} solsArr={solsArr} />
+				<NavHomeFAB navigation={navigation} />
+			</ImageBackground>
 		</SafeAreaView>
 	);
 };

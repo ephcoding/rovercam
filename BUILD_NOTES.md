@@ -8,11 +8,9 @@
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
-
-## **V1 REQUIREMENTS**
 
 :white_check_mark: display rover manifest (mission) information
 
@@ -24,13 +22,12 @@
 
 :white_large_square: user can filter respective rover's photos by camera
 
-### **_Ideas_**
+**Ideas:**
 
-:white_large_square: user's can rate/rank their favorite images
-
-- _for creating \"fan-favorite\" collections_
+:white_large_square: user can rate/rank their favorite images
 
 <!-- #endregion /INTRO -->
+
 <!-- #region RESOURCES -->
 
 <h3 id='resources' align='center'>
@@ -41,7 +38,7 @@
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
 
@@ -202,19 +199,57 @@ MISC
 
 <!-- #endregion /RESOURCES -->
 
-<!-- #region LESSONS -->
+<!-- #region ISSUES -->
 
-<h3 id='lessons' align='center'>
+<h3 id='issues' align='center'>
 
-![rovercam readme graphic](./assets/readme/lessons.png)
+![rovercam readme graphic](./assets/readme/issues.png)
 
 </h3>
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
+
+<details>
+<summary>Expo crashes when picking SOL / Date ( nav to DisplayPhotosScreen )</summary>
+
+**TRIED:**
+
+:white_check_mark: verify route param vals passed to
+'Picker' screens (photos, rover)
+
+:white_check_mark: verify navigation object passed to 'Picker' screens
+
+:white_check_mark: disable 'Picker'Screen nav & log passed handler args (date, sol)
+
+:white_check_mark: attempt nav-ing w/out params & PhotosList
+
+\* _nav works when params, PhotosList comp, & RoverCamerasList comp not used_
+
+:white_check_mark: display PhotosList
+
+:white_check_mark: display RoverCamerasList
+
+**CAUSE:**
+
+**_DisplayPhotosScreen dynamic `title` options property's values weren't strings_**
+
+_found by accident when taking passed params out of play (might be TS time)_
+
+```javascript
+// DisplayOptionsScreen Stack.Screen options:
+
+<Stack.Screen
+	name='DisplayPhotos'
+	component={DisplayPhotosScreen}
+	options={({ route }) => (title: route.params.value)} // <-- * gremlin
+/>
+```
+
+</details>
 
 ## **LESSON:** Android natively manages JavaScript timers
 
@@ -349,7 +384,7 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <hr>
 
-<!-- #endregion /LESSONS -->
+<!-- #endregion /ISSUES -->
 
 <!-- #region NOTES -->
 
@@ -361,7 +396,7 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
 
@@ -415,9 +450,11 @@ CardTitle: {
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
+
+:white_large_square: what is the `number` img source type & how does it work / what does it do?
 
 - [x] `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
   - _forgot to destructure `photos` prop - so it was was getting treating like `props`_
@@ -434,7 +471,7 @@ CardTitle: {
 
 <div align='center'>
 
-[Resources](#resources) | [Notes](#notes) | [Issues](#issues) | [Lessons Learned](#lessons) | [Questions](#questions) | [Connect](#connect)
+[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
 
