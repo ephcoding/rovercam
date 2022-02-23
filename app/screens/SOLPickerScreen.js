@@ -18,8 +18,6 @@ const SOLPickerScreen = ({ navigation, route }) => {
 	const { photos: sols, rover } = route.params;
 	const solsArr = sols.map(sol => sol.sol);
 
-	console.log(">> solsArr >>\n", solsArr);
-
 	return (
 		<SafeAreaView>
 			<ImageBackground source={route.params.img_url}>

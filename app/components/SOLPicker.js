@@ -7,11 +7,12 @@ import { QUERIES } from "../constants";
 
 const SOLPicker = ({ navigation, rover, solsArr }) => {
 	const handleSOLPick = sol => {
-		navigation.navigate("DisplayPhotos", {
-			rover: rover,
-			paramType: QUERIES.sol,
-			value: sol,
-		});
+		// navigation.navigate("DisplayPhotos", {
+		// 	rover: rover,
+		// 	paramType: QUERIES.sol,
+		// 	value: sol,
+		// });
+		console.log(sol);
 	};
 
 	return (

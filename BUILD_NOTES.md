@@ -218,14 +218,14 @@ MISC
 
 **TRIED:**
 
-:white_large_square: verify route param vals passed to
-'Picker' screens (rover, paramType, value)
+:white_check_mark: verify route param vals passed to
+'Picker' screens (photos, rover)
 
-:white_large_square: verify navigation object passed to 'Picker' screens
+:white_check_mark: verify navigation object passed to 'Picker' screens
 
-:white_large_square: disable 'Picker'Screen nav & log passed handler args (date, sol)
+:white_check_mark: disable 'Picker'Screen nav & log passed handler args (date, sol)
 
-:white_large_square: log navigation stack coming into 'Picker'Screens
+:white_large_square:
 
 </details>
 

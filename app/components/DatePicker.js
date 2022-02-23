@@ -32,11 +32,12 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	// TODO: mark calendar days that have photos & disable calendar days that don't
 
 	const handleEarthDatePick = date => {
-		navigation.navigate("DisplayPhotos", {
-			rover: rover,
-			paramType: QUERIES.earth_date,
-			value: date,
-		});
+		// navigation.navigate("DisplayPhotos", {
+		// 	rover: rover,
+		// 	paramType: QUERIES.earth_date,
+		// 	value: date,
+		// });
+		console.log(date);
 	};
 
 	return (
