@@ -6,7 +6,7 @@ import { QUERIES } from "../constants";
 // !HEADS UP! --> SOLs start at '0'
 
 const SOLPicker = ({ navigation, rover, sols }) => {
-	const handlePickSOLNum = sol => {
+	const handleSOLPick = sol => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
 			paramType: QUERIES.sol,
@@ -23,7 +23,7 @@ const SOLPicker = ({ navigation, rover, sols }) => {
 				<Button
 					buttonStyle={S.btnBtnStyle}
 					containerStyle={S.btnContainerStyle}
-					onPress={() => handlePickSOLNum(item)}
+					onPress={() => handleSOLPick(item)}
 					style={S.btnStyle}
 					title={item || "0"}
 				/>

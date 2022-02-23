@@ -14,12 +14,16 @@ import RoverCamerasList from "../components/RoverCamerasList";
 import RoverCard from "../components/RoverCard";
 
 const RoverInfoScreen = ({ navigation, route }) => {
+	// TODO: instead of passing photos as route.param, just call useFetchManifest() at <Picker>Screen
 	const { rover } = route.params;
 	const { isLoading, error, data } = useFetchManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
 	const handleOnPress = (screen, param = "") =>
-		navigation.navigate(screen, { rover, photos: data.photo_manifest.photos });
+		navigation.navigate(screen, {
+			rover,
+			photos: data.photo_manifest.photos,
+		});
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.message}</Text>;

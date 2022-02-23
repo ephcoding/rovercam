@@ -15,8 +15,10 @@ import SOLPicker from "../components/SOLPicker";
 // Switch onValueChange => returns (passed value)
 
 const SOLPickerScreen = ({ navigation, route }) => {
-	const { photos, rover } = route.params;
-	const solsArr = photos.map(photo => photo.sol);
+	const { photos: sols, rover } = route.params;
+	const solsArr = sols.map(sol => sol.sol);
+
+	console.log(">> solsArr >>\n", solsArr);
 
 	return (
 		<SafeAreaView>

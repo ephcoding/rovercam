@@ -23,23 +23,23 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
  */
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = useFetchPhotosByParam(
-		route.params.rover,
-		route.params.paramType,
-		route.params.value
-	);
+	// const { isLoading, error, data } = useFetchPhotosByParam(
+	// 	route.params.rover,
+	// 	route.params.paramType,
+	// 	route.params.value
+	// );
 	const [isVisible, setIsVisible] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
 	const handleCameraSelect = e => console.log(">> SELECTED CAMERA >>", e);
 	const toggleOverlay = () => setIsVisible(!isVisible);
 
-	useEffect(() => {
-		LogBox.ignoreLogs(["Setting a timer"]);
-	});
+	// useEffect(() => {
+	// 	LogBox.ignoreLogs(["Setting a timer"]);
+	// });
 
-	if (isLoading) return <Text>Loading...</Text>;
-	if (error) return <Text>ERROR: {error.messge}</Text>;
+	// if (isLoading) return <Text>Loading...</Text>;
+	// if (error) return <Text>ERROR: {error.messge}</Text>;
 
 	// console.clear();
 	// console.log(">> DisplayPhotosScreen DATA >>", data.photos);
@@ -47,7 +47,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				{data && <PhotosList photos={data.photos} />}
+				{/* {data && <PhotosList photos={data.photos} />} */}
 				<Overlay isVisible={isVisible} onBackdropPress={toggleOverlay}>
 					<RoverCamerasList
 						setFilteredPhotos={handleCameraSelect}
