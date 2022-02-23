@@ -235,7 +235,9 @@ MISC
 
 **CAUSE:**
 
-found by accident when taking passed params out of play (might be TS time)
+**_DisplayPhotosScreen dynamic `title` options property's values weren't strings_**
+
+_found by accident when taking passed params out of play (might be TS time)_
 
 ```javascript
 // DisplayOptionsScreen Stack.Screen options:
@@ -243,8 +245,7 @@ found by accident when taking passed params out of play (might be TS time)
 <Stack.Screen
 	name='DisplayPhotos'
 	component={DisplayPhotosScreen}
-	// >> wasn't changing title values from route.params SOL & DATE to strings <<
-	options={({ route }) => (title: route.params.value)}
+	options={({ route }) => (title: route.params.value)} // <-- * gremlin
 />
 ```
 
