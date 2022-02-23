@@ -24,7 +24,7 @@
 
 **Ideas:**
 
-:white_large_square: user's can rate/rank their favorite images
+:white_large_square: user can rate/rank their favorite images
 
 <!-- #endregion /INTRO -->
 
@@ -218,7 +218,10 @@ MISC
 
 **TRIED:**
 
-:white_large_square: verify route param vals passed to 'Picker' screens (rover, paramType, value)
+:white_large_square: verify route param vals passed to
+'Picker' screens (rover, paramType, value)
+
+:white_large_square: verify navigation object passed to 'Picker' screens
 
 :white_large_square: disable 'Picker'Screen nav & log passed handler args (date, sol)
 

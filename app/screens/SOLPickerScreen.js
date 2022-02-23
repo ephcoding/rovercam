@@ -23,7 +23,7 @@ const SOLPickerScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={route.params.img_url}>
-				<SOLPicker navigation={navigation} rover={rover} sols={solsArr} />
+				<SOLPicker navigation={navigation} rover={rover} solsArr={solsArr} />
 				<NavHomeFAB navigation={navigation} />
 			</ImageBackground>
 		</SafeAreaView>

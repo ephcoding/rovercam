@@ -5,7 +5,7 @@ import { QUERIES } from "../constants";
 
 // !HEADS UP! --> SOLs start at '0'
 
-const SOLPicker = ({ navigation, rover, sols }) => {
+const SOLPicker = ({ navigation, rover, solsArr }) => {
 	const handleSOLPick = sol => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
@@ -16,7 +16,7 @@ const SOLPicker = ({ navigation, rover, sols }) => {
 
 	return (
 		<FlatList
-			data={sols}
+			data={solsArr}
 			keyExtractor={ke => ke}
 			numColumns={2}
 			renderItem={({ item, index, separators }) => (
