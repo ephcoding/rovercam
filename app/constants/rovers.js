@@ -61,8 +61,7 @@ export const ROVER_NAMES = {
  * [screen] prop matches screen name in StackNavigator (App.js)
  * [title] prop is used for button labels
  */
-
-export const SEARCH_PARAMS = [
+export const SEARCH_TYPE_BTNS = [
 	{
 		description: "Check out the latest photos from each Rover.",
 		title: "LATEST",
@@ -81,7 +80,7 @@ export const SEARCH_PARAMS = [
 		query_param: "sol",
 	},
 ];
-export const QUERIES = {
+export const QUERY_PARAMS = {
 	camera: "camera",
 	earth_date: "earth_date",
 	sol: "sol",

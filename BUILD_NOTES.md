@@ -225,7 +225,28 @@ MISC
 
 :white_check_mark: disable 'Picker'Screen nav & log passed handler args (date, sol)
 
-:white_large_square:
+:white_check_mark: attempt nav-ing w/out params & PhotosList
+
+\* _nav works when params, PhotosList comp, & RoverCamerasList comp not used_
+
+:white_check_mark: display PhotosList
+
+:white_check_mark: display RoverCamerasList
+
+**CAUSE:**
+
+found by accident when taking passed params out of play (might be TS time)
+
+```javascript
+// DisplayOptionsScreen Stack.Screen options:
+
+<Stack.Screen
+	name='DisplayPhotos'
+	component={DisplayPhotosScreen}
+	// >> wasn't changing title values from route.params SOL & DATE to strings <<
+	options={({ route }) => (title: route.params.value)}
+/>
+```
 
 </details>
 

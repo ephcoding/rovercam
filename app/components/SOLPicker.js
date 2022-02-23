@@ -1,18 +1,17 @@
 import { FlatList, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
-import { QUERIES } from "../constants";
+import { QUERY_PARAMS } from "../constants";
 
 // !HEADS UP! --> SOLs start at '0'
 
 const SOLPicker = ({ navigation, rover, solsArr }) => {
 	const handleSOLPick = sol => {
-		// navigation.navigate("DisplayPhotos", {
-		// 	rover: rover,
-		// 	paramType: QUERIES.sol,
-		// 	value: sol,
-		// });
-		console.log(sol);
+		navigation.navigate("DisplayPhotos", {
+			rover: rover,
+			paramType: QUERY_PARAMS.sol,
+			value: sol,
+		});
 	};
 
 	return (

@@ -82,7 +82,11 @@ export default App = () => {
 								name='DisplayPhotos'
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
-									title: route.params.value,
+									// title: "TEST SCREEN TITLE",
+									title:
+										route.params.paramType === "sol"
+											? `SOL ${route.params.value} PHOTOS`
+											: `PHOTOS FROM ${route.params.value}`,
 								})}
 							/>
 						</Stack.Navigator>
