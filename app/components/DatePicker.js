@@ -27,7 +27,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	};
 	const markedDates = createMarkedDatesObj(earthDatesArr, markedDatesStyles);
 
-	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
+	// TODO: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
 
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
@@ -72,11 +72,11 @@ export default DatePicker;
 
 const S = StyleSheet.create({
 	style: {
-		backgroundColor: "#0000",
+		backgroundColor: "#000",
 		marginVertical: 10,
 	},
 	calendarStyle: {
-		backgroundColor: "#0000",
+		backgroundColor: "#000",
 		color: "#fff",
 	},
 	// columnWrapperStyle: {

@@ -1,5 +1,3 @@
-import React from "react";
-
 const PhotosListItem = ({ photo }) => {
 	const { imgSrc } = photo;
 	return (

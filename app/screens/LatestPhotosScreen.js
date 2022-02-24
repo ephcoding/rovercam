@@ -16,8 +16,6 @@ import { ROVER_CAMERAS } from "../constants";
 import RoverCamerasList from "../components/RoverCamerasList";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// TODO: use [manifest] & [photos] to dyno-gen camera labels & names
-
 const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useLatestPhotos(route.params.rover);
 	const [isVisible, setIsVisible] = useState(false);
@@ -32,9 +30,6 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 		setFilteredPhotos(photos);
 		setIsFiltered(true);
 		toggleOverlay();
-
-		console.log(">> data.latest_photos.length >>\n", data.latest_photos.length);
-		console.log(">> filteredPhotos.length >>\n", photos.length);
 	};
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
