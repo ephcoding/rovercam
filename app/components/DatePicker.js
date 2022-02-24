@@ -15,29 +15,18 @@ import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const startDate = earthDatesArr[0];
 	const lastDate = earthDatesArr.slice(-1)[0];
-
 	const markedDatesStyles = {
 		customStyles: {
 			container: {
 				backgroundColor: COLORS.primary,
 			},
+			text: {
+				color: COLORS.textDK,
+			},
 		},
 	};
-
 	const markedDates = createMarkedDatesObj(earthDatesArr, markedDatesStyles);
 
-	console.log(markedDates);
-	// earthDatesArr.forEach(date => {
-	// 	photoDays[date] = { ...photoDayStyles };
-	// });
-
-	// create date array to determine disabledDays
-	// const dateArray = (startDate, endDate) => {
-	// 	console.log(startDate.slice(), endDate.slice());
-	// };
-	// dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
-
-	const photosDay = { container: { backgroundColor: COLORS.primary } };
 	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
 
 	const handleEarthDatePick = date => {
@@ -88,17 +77,13 @@ const S = StyleSheet.create({
 	},
 	calendarStyle: {
 		backgroundColor: "#0000",
-		// margin: 10,
+		color: "#fff",
 	},
 	// columnWrapperStyle: {
 	// 	backgroundColor: "#0000",
 	// 	margin: 20,
 	// },
 	// contentContainerStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
-	// headerStyle: {
 	// 	backgroundColor: "#0000",
 	// 	margin: 20,
 	// },

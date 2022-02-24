@@ -8,7 +8,7 @@ import { COLORS, FONTS, SIZES } from "../../styles";
 export const RNC_THEME = {
 	calendarBackground: COLORS.clear,
 	// -- MONTH
-	monthTextColor: COLORS.primary,
+	monthTextColor: COLORS.textLT,
 	textMonthFontWeight: "bold",
 	textMonthFontSize: 26,
 	// -- DAY OF WEEK
