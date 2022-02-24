@@ -33,8 +33,10 @@ const RoverInfoScreen = ({ navigation, route }) => {
 			<ImageBackground
 			// source={img_source}
 			>
-				<View>
-					<View style={S.row_nowrap_between}>
+				<ImageBackground source={img_source}></ImageBackground>
+
+				<View style={S.roverStats_view_style}>
+					<View style={S.roverStat_view_style}>
 						<Text h3 style={{ color: COLORS.primary }}>
 							Mission Status:
 						</Text>
@@ -48,7 +50,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 							{data && data.photo_manifest.status}
 						</Text>
 					</View>
-					<View style={S.row_nowrap_between}>
+					<View style={S.roverStat_view_style}>
 						<Text h3 style={{ color: COLORS.primary }}>
 							Launched:
 						</Text>
@@ -56,7 +58,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 							{data && data.photo_manifest.launch_date}
 						</Text>
 					</View>
-					<View style={S.row_nowrap_between}>
+					<View style={S.roverStat_view_style}>
 						<Text h3 style={{ color: COLORS.primary }}>
 							Landed:
 						</Text>
@@ -64,7 +66,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 							{data && data.photo_manifest.landing_date}
 						</Text>
 					</View>
-					<View style={S.row_nowrap_between}>
+					<View style={S.roverStat_view_style}>
 						<Text h3 style={{ color: COLORS.primary }}>
 							Last Photo:
 						</Text>
@@ -72,7 +74,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 							{data && data.photo_manifest.max_date}
 						</Text>
 					</View>
-					<View style={S.row_nowrap_between}>
+					<View style={S.roverStat_view_style}>
 						<Text h3 style={{ color: COLORS.primary }}>
 							Photos:
 						</Text>
@@ -82,13 +84,12 @@ const RoverInfoScreen = ({ navigation, route }) => {
 					</View>
 				</View>
 
-				<View style={S.row_wrap_between}>
+				<View style={S.searchBtns_view_style}>
 					{SEARCH_TYPE_BTNS.map(param => (
-						<View key={param.title} style={S.row_nowrap}>
+						<View key={param.title} style={S.searchBtnWrapper_view_style}>
 							<Button
-								buttonStyle={S.btnStyle}
-								containerStyle={S.containerStyle}
-								key={param.title}
+								buttonStyle={S.searchBtn_btn_btnStyle}
+								containerStyle={S.searchBtn_btn_containerStyle}
 								onPress={() => handleOnPress(param.screen, param.query_param)}
 								title={param.title}
 								titleStyle={{ fontSize: SIZES[4] }}
@@ -96,7 +97,8 @@ const RoverInfoScreen = ({ navigation, route }) => {
 						</View>
 					))}
 				</View>
-				<View>
+
+				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
 				</View>
 			</ImageBackground>
@@ -107,34 +109,33 @@ const RoverInfoScreen = ({ navigation, route }) => {
 export default RoverInfoScreen;
 
 const S = StyleSheet.create({
-	btnStyle: {
+	roverStats_view_style: {
+		flex: 1,
+	},
+	roverStat_view_style: {
+		// flex: 1,
+		flexDirection: "row",
+		justifyContent: "space-between",
+	},
+	searchBtns_view_style: {
+		flex: 1,
+		justifyContent: "space-around",
+	},
+	searchBtnWrapper_view_style: {
+		flexDirection: "row",
+		justifyContent: "center",
+		width: "100%",
+	},
+	searchBtn_btn_btnStyle: {
 		backgroundColor: COLORS.secondary,
 		borderColor: COLORS.backgroundLT,
 		borderWidth: SIZES[0],
 		marginLeft: SIZES[3],
 	},
-	centered: {
-		alignItems: "center",
-		flex: 1,
-		justifyContent: "center",
+	searchBtn_btn_containerStyle: {
+		width: "50%",
 	},
-	containerStyle: {
-		width: 150,
-	},
-	row_nowrap: {
-		flexDirection: "row",
-		maxWidth: "100%",
-	},
-	row_nowrap_between: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-	},
-	row_wrap_between: {
-		alignItems: "center",
-		alignContent: "space-around",
-		flex: 1,
-		flexDirection: "row",
-		flexWrap: "wrap",
-		justifyContent: "space-between",
+	fabWrapper_view_style: {
+		paddingVertical: SIZES[4],
 	},
 });
