@@ -85,9 +85,6 @@ const RoverInfoScreen = ({ navigation, route }) => {
 				<View style={S.row_wrap_between}>
 					{SEARCH_TYPE_BTNS.map(param => (
 						<View key={param.title} style={S.row_nowrap}>
-							<Text style={{ flex: 1, textAlign: "center" }}>
-								{param.description}
-							</Text>
 							<Button
 								buttonStyle={S.btnStyle}
 								containerStyle={S.containerStyle}
@@ -99,8 +96,9 @@ const RoverInfoScreen = ({ navigation, route }) => {
 						</View>
 					))}
 				</View>
-
-				<NavHomeFAB navigation={navigation} />
+				<View>
+					<NavHomeFAB navigation={navigation} />
+				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);

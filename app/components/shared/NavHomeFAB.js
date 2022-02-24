@@ -11,7 +11,7 @@ export const NavHomeFAB = ({ navigation }) => {
 
 	return (
 		<FAB
-			color={COLORS.backgroundDK}
+			color={COLORS.primary}
 			icon={{
 				type: "font-awesome",
 				name: "home",
