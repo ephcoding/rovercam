@@ -48,7 +48,9 @@ const DisplayLatestPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={img_source}>
+			<ImageBackground
+			// source={img_source}
+			>
 				{isFiltered
 					? filteredPhotos && <PhotosList photos={filteredPhotos} />
 					: data && <PhotosList photos={data.latest_photos} />}

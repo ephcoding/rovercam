@@ -6,7 +6,6 @@ import { Text } from "react-native-elements";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
 import RoverCard from "../components/RoverCard";
-import TestComponent from "../components/TestComponent";
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 /**
@@ -27,9 +26,6 @@ const HomeScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				{/* ---- TEST ---- */}
-				{/* <TestComponent /> */}
-				{/* ---- TEST ---- */}
 				<Text h2 style={S.txt_h2_style}>
 					Tap a Rover to start exploring!
 				</Text>

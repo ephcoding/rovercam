@@ -30,7 +30,9 @@ const RoverInfoScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={img_source}>
+			<ImageBackground
+			// source={img_source}
+			>
 				<View>
 					<View style={S.row_nowrap_between}>
 						<Text h3 style={{ color: COLORS.primary }}>
