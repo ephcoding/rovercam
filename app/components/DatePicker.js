@@ -4,22 +4,32 @@ import { CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
+import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
+
+/**
+ * Calendar days are disabledByDefault={true}
+ * days are then disabled: false when creating markedDates
+ * this avoids having to create another 'disabledDates' func
+ */
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const startDate = earthDatesArr[0];
-	// create styled photoDays Object
-	// TODO: make this a func
-	const photoDays = {};
-	const photoDayStyles = {
+	const lastDate = earthDatesArr.slice(-1)[0];
+
+	const markedDatesStyles = {
 		customStyles: {
 			container: {
 				backgroundColor: COLORS.primary,
 			},
 		},
 	};
-	earthDatesArr.forEach(date => {
-		photoDays[date] = { ...photoDayStyles };
-	});
+
+	const markedDates = createMarkedDatesObj(earthDatesArr, markedDatesStyles);
+
+	console.log(markedDates);
+	// earthDatesArr.forEach(date => {
+	// 	photoDays[date] = { ...photoDayStyles };
+	// });
 
 	// create date array to determine disabledDays
 	// const dateArray = (startDate, endDate) => {
@@ -29,7 +39,6 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 
 	const photosDay = { container: { backgroundColor: COLORS.primary } };
 	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
-	// TODO: mark calendar days that have photos & disable calendar days that don't
 
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
@@ -44,9 +53,11 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 			<CalendarList
 				calendarStyle={S.calendarStyle}
 				current={earthDatesArr[0]}
+				disableAllTouchEventsForDisabledDays={true}
+				disabledByDefault
 				futureScrollRange={20}
 				markingType={"custom"}
-				markedDates={photoDays}
+				markedDates={markedDates}
 				onDayPress={date => handleEarthDatePick(date.dateString)}
 				pastScrollRange={0}
 				style={S.style}
