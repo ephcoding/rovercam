@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Button, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
+import { COLORS } from "../styles";
 
 const PhotosList = ({ photos }) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +37,7 @@ const PhotosList = ({ photos }) => {
 							<Image
 								resizeMode='cover'
 								source={{ uri: item.img_src }}
-								style={S.thumbImgStyle}
+								style={S.photoList_image_style}
 							/>
 							{/* <Text>{item.img_src}</Text> */}
 						</Pressable>
@@ -44,8 +45,14 @@ const PhotosList = ({ photos }) => {
 				}}
 				style={S.flatListStyle}
 			/>
-			<Overlay isVisible={isVisible} overlayStyle={S.overlayStyle}>
+			<Overlay
+				backdropStyle={S.overlay_backdropStyle}
+				fullScreen
+				isVisible={isVisible}
+				overlayStyle={S.overlay_overlayStyle}
+			>
 				<Button
+					containerStyle={S.overlay_btn_containerStyle}
 					icon={{
 						type: "font-awesome",
 						name: "home",
@@ -56,7 +63,7 @@ const PhotosList = ({ photos }) => {
 				<Image
 					resizeMode='cover'
 					source={{ uri: overlayImgSrc }}
-					style={S.overlayImgStyle}
+					style={S.overlayImage_image_style}
 				/>
 			</Overlay>
 		</View>
@@ -67,21 +74,33 @@ export default PhotosList;
 
 const S = StyleSheet.create({
 	flatListStyle: {
-		// backgroundColor: "#0f0",
 		flex: 1,
 	},
-	overlayStyle: {
-		height: "100%",
-		justifyContent: "center",
-		width: "100%",
+	overlay_btn_containerStyle: {
+		height: 56,
+		position: "absolute",
+		top: 0,
+		right: 0,
+		width: 56,
 	},
-	overlayImgStyle: {
-		aspectRatio: 1,
+	overlay_backdropStyle: {
+		backgroundColor: "blue",
+	},
+	overlay_overlayStyle: {
+		backgroundColor: "red",
+		justifyContent: "center",
+		position: "relative",
+	},
+	overlayImage_image_style: {
+		// aspectRatio: 1,
+		height: 150,
+		width: 150,
+		padding: 10,
 	},
 	pressable: {
 		flex: 1,
 	},
-	thumbImgStyle: {
+	photoList_image_style: {
 		aspectRatio: 1,
 		borderRadius: 50,
 		flex: 1,

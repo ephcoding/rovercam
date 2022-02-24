@@ -63,16 +63,17 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 					? filteredPhotos && <PhotosList photos={filteredPhotos} />
 					: data && <PhotosList photos={data.photos} />}
 				<Overlay
+					backdropStyle={S.overlay_backdropStyle}
 					isVisible={isVisible}
 					onBackdropPress={toggleOverlay}
-					overlayStyle={S.overlayStyle}
+					overlayStyle={S.overlay_overlayStyle}
 				>
 					<RoverCamerasList
 						setFilteredPhotos={handleFilterByCamera}
 						rover={route.params.rover}
 					/>
 				</Overlay>
-				<View style={S.row_between}>
+				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
 					<CameraFAB setIsVisible={toggleOverlay} />
 				</View>
@@ -84,11 +85,15 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
-	overlayStyle: {
+	overlay_backdropStyle: {
+		backgroundColor: COLORS.backgroundDK,
+	},
+	overlay_overlayStyle: {
+		backgroundColor: "red",
 		height: "80%",
 		width: "80%",
 	},
-	row_between: {
+	fabWrapper_view_style: {
 		flexDirection: "row",
 		justifyContent: "space-evenly",
 	},
