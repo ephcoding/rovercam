@@ -17,13 +17,13 @@ import Photo from "./Photo";
 
 const PhotosList = ({ photos }) => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [overlayImgSrc, setOverlayImgSrc] = useState("");
+	const [modalImgBgSrc, setModalImgBgSrc] = useState("");
 
-	const displayOverlay = imgSrc => {
-		setOverlayImgSrc(imgSrc);
+	const displayZoomModal = imgSrc => {
 		setIsVisible(true);
+		setModalImgBgSrc(imgSrc);
 	};
-	const toggleOverlayIsVisible = () => setIsVisible(!isVisible);
+	const toggleModal = () => setIsVisible(!isVisible);
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -36,22 +36,37 @@ const PhotosList = ({ photos }) => {
 				renderItem={({ item, index }) => {
 					return (
 						<Photo
-							displayOverlay={() => displayOverlay(item.img_src)}
+							displayZoomModal={() => displayZoomModal({ uri: item.img_src })}
+							key={item.id}
 							photoURI={{ uri: item.img_src }}
 						/>
 					);
 				}}
 			/>
-			<Overlay
+			<Modal visible={isVisible}>
+				<ImageBackground
+					resizeMode='cover'
+					source={modalImgBgSrc}
+					style={S.modal_imgBg_style}
+				>
+					<Icon.Button
+						color='#f60'
+						name='compress'
+						onPress={toggleModal}
+						size={50}
+					/>
+				</ImageBackground>
+			</Modal>
+			{/* <Overlay
 				backdropStyle={S.overlay_backdropStyle}
 				// fullScreen
 				isVisible={isVisible}
-				onBackdropPress={toggleOverlayIsVisible}
+				onBackdropPress={toggleModal}
 				overlayStyle={S.overlay_overlayStyle}
 			>
 				<ImageBackground
 					resizeMode='cover'
-					source={{ uri: overlayImgSrc }}
+					source={{ uri: zoomedPhotoSource }}
 					style={S.overlayImage_image_style}
 				>
 					<Button
@@ -61,10 +76,10 @@ const PhotosList = ({ photos }) => {
 							name: "home",
 							color: "white",
 						}}
-						onPress={toggleOverlayIsVisible}
+						onPress={toggleModal}
 					/>
 				</ImageBackground>
-			</Overlay>
+			</Overlay> */}
 		</View>
 	);
 };
@@ -113,10 +128,13 @@ const S = StyleSheet.create({
 		backgroundColor: "yellow",
 	},
 
-	// -- EXPANDED PHOTO OVERLAY --
+	// -- EXPANDED PHOTO MODAL --
 
-	overlay_overlayStyle: {
-		height: "50%",
-		width: "80%",
+	modal_imgBg_style: {
+		alignItems: "center",
+		aspectRatio: 1,
+		justifyContent: "center",
+		// height: "100%",
+		// width: "100%",
 	},
 });

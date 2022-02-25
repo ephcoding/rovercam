@@ -1,8 +1,8 @@
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 
-const Photo = ({ displayOverlay, photoURI }) => {
+const Photo = ({ displayZoomModal, photoURI }) => {
 	return (
-		<Pressable onPress={displayOverlay} style={S.pressable_style}>
+		<Pressable onPress={displayZoomModal} style={S.pressable_style}>
 			<ImageBackground source={photoURI} style={S.photo_imgBg_style} />
 		</Pressable>
 	);
