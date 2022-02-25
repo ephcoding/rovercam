@@ -1,14 +1,14 @@
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 
-const Photo = ({ displayZoomModal, photoURI }) => {
+const PhotosListItem = ({ expandPhoto, photoURI }) => {
 	return (
-		<Pressable onPress={displayZoomModal} style={S.pressable_style}>
+		<Pressable onPress={expandPhoto} style={S.pressable_style}>
 			<ImageBackground source={photoURI} style={S.photo_imgBg_style} />
 		</Pressable>
 	);
 };
 
-export default Photo;
+export default PhotosListItem;
 
 const S = StyleSheet.create({
 	pressable_style: {

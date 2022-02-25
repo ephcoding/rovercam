@@ -4,6 +4,7 @@ import {
 	Image,
 	ImageBackground,
 	Modal,
+	Platform,
 	Pressable,
 	StyleSheet,
 	Text,
@@ -13,17 +14,17 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { Button, Tile, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
 import { COLORS, SIZES } from "../styles";
-import Photo from "./Photo";
+import PhotosListItem from "./PhotosListItem";
 
 const PhotosList = ({ photos }) => {
-	const [isVisible, setIsVisible] = useState(false);
-	const [modalImgBgSrc, setModalImgBgSrc] = useState("");
+	const [isVisible, setModalIsVisible] = useState(false);
+	const [modalImageSource, setModalImageBackgroundSource] = useState("");
 
-	const displayZoomModal = imgSrc => {
-		setIsVisible(true);
-		setModalImgBgSrc(imgSrc);
+	const handlePhotoTap = imgSrc => {
+		setModalIsVisible(true);
+		setModalImageBackgroundSource(imgSrc);
 	};
-	const toggleModal = () => setIsVisible(!isVisible);
+	const toggleModal = () => setModalIsVisible(!isVisible);
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -32,54 +33,33 @@ const PhotosList = ({ photos }) => {
 				keyExtractor={photo => photo.id}
 				numColumns={2}
 				PlaceholderContext={<Text>FlatList Loading...</Text>}
-				style={S.flatListStyle}
+				style={S.flatList_style}
 				renderItem={({ item, index }) => {
+					const imgSrc = { uri: item.img_src };
+
 					return (
-						<Photo
-							displayZoomModal={() => displayZoomModal({ uri: item.img_src })}
+						<PhotosListItem
+							expandPhoto={() => handlePhotoTap(imgSrc)}
 							key={item.id}
-							photoURI={{ uri: item.img_src }}
+							photoURI={imgSrc}
 						/>
 					);
 				}}
 			/>
-			<Modal visible={isVisible}>
-				<ImageBackground
-					resizeMode='cover'
-					source={modalImgBgSrc}
-					style={S.modal_imgBg_style}
-				>
-					<Icon.Button
-						color='#f60'
-						name='compress'
-						onPress={toggleModal}
-						size={50}
-					/>
-				</ImageBackground>
+			<Modal transparent={true} visible={isVisible}>
+				<View style={S.modal_imageBackground_container}>
+					<ImageBackground
+						source={modalImageSource}
+						style={S.modal_imageBackground_style}
+						imageStyle={S.modal_imageBackground_imageStyle}
+						resizeMode='cover'
+					>
+						<Pressable onPress={toggleModal} style={S.modal_pressable_style}>
+							<Icon color='#fff' name='compress' size={50} />
+						</Pressable>
+					</ImageBackground>
+				</View>
 			</Modal>
-			{/* <Overlay
-				backdropStyle={S.overlay_backdropStyle}
-				// fullScreen
-				isVisible={isVisible}
-				onBackdropPress={toggleModal}
-				overlayStyle={S.overlay_overlayStyle}
-			>
-				<ImageBackground
-					resizeMode='cover'
-					source={{ uri: zoomedPhotoSource }}
-					style={S.overlayImage_image_style}
-				>
-					<Button
-						containerStyle={S.overlayClostBtn_btn_containerStyle}
-						icon={{
-							type: "font-awesome",
-							name: "home",
-							color: "white",
-						}}
-						onPress={toggleModal}
-					/>
-				</ImageBackground>
-			</Overlay> */}
 		</View>
 	);
 };
@@ -87,54 +67,43 @@ const PhotosList = ({ photos }) => {
 export default PhotosList;
 
 const S = StyleSheet.create({
-	// -- FLATLIST --
-
-	flatListStyle: {
+	// ----------------------------
+	// -- FLATLIST
+	// ----------------------------
+	flatList_style: {
 		flex: 1,
 		backgroundColor: "#222",
 	},
 
-	// -- PHOTO TILE --
-
-	photo_tile_containerStyle: {
-		borderColor: "red",
-		backgroundColor: "red",
-		borderWidth: SIZES[0],
-		flex: 1,
-		marginHorizontal: SIZES[2],
-		marginVertical: SIZES[2],
-		height: 150,
-		padding: 5,
-	},
-	photo_tile_imageContainerStyle: {
-		aspectRatio: 1,
-		borderColor: "blue",
-		// backgroundColor: "blue",
-		borderWidth: SIZES[0],
-		height: "100%",
-		width: "100%",
-	},
-	photo_tile_overlayContainerStyle: {
-		borderWidth: SIZES[0],
-		borderColor: "limegreen",
-		// backgroundColor: "limegreen",
-		padding: 0,
-		// height: "100%",
-		// width: "100%",
-	},
-	photo_tile_iconContainerStyle: {
-		borderWidth: SIZES[0],
-		borderColor: "yellow",
-		backgroundColor: "yellow",
-	},
-
-	// -- EXPANDED PHOTO MODAL --
-
-	modal_imgBg_style: {
+	// ----------------------------
+	// -- MODAL
+	// ----------------------------
+	modal_imageBackground_container: {
 		alignItems: "center",
-		aspectRatio: 1,
+		backgroundColor: "#000a",
+		flex: 1,
+		flexDirection: "row",
 		justifyContent: "center",
-		// height: "100%",
-		// width: "100%",
+	},
+	modal_imageBackground_style: {
+		borderColor: COLORS.backgroundLT,
+		borderRadius: SIZES[5],
+		borderWidth: 5,
+		flex: 1,
+		aspectRatio: 1,
+	},
+	modal_imageBackground_imageStyle: {
+		borderRadius: SIZES[4],
+		width: "100%",
+		height: "100%",
+	},
+	modal_pressable_style: {
+		position: "absolute",
+		right: SIZES[5],
+		bottom: SIZES[5],
+		backgroundColor: COLORS.primary,
+		borderRadius: 10,
+		padding: 10,
+		zIndex: 10,
 	},
 });
