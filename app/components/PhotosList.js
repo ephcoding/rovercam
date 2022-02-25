@@ -2,15 +2,17 @@ import { useState } from "react";
 import {
 	FlatList,
 	Image,
+	ImageBackground,
 	Pressable,
 	StyleSheet,
 	Text,
 	View,
 } from "react-native";
-import { Button, Overlay } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { Button, Tile, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
 import { COLORS, SIZES } from "../styles";
-import { ImageBackground } from "./shared/ImageBackground";
+import Photo from "./Photo";
 
 const PhotosList = ({ photos }) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -29,24 +31,14 @@ const PhotosList = ({ photos }) => {
 				keyExtractor={photo => photo.id}
 				numColumns={2}
 				PlaceholderContext={<Text>FlatList Loading...</Text>}
+				style={S.flatListStyle}
 				renderItem={({ item, index }) => {
 					return (
-						<Pressable
-							onPress={() => displayOverlay(item.img_src)}
-							style={S.photo_pressable_style}
-						>
-							<Image
-								resizeMode='cover'
-								source={{ uri: item.img_src }}
-								style={S.photoList_image_style}
-							/>
-							{/* <Text>{item.img_src}</Text> */}
-						</Pressable>
+						<Photo onPress={displayOverlay} photoURI={{ uri: item.img_src }} />
 					);
 				}}
-				style={S.flatListStyle}
 			/>
-			<Overlay
+			{/* <Overlay
 				backdropStyle={S.overlay_backdropStyle}
 				// fullScreen
 				isVisible={isVisible}
@@ -62,13 +54,13 @@ const PhotosList = ({ photos }) => {
 					}}
 					onPress={toggleOverlayIsVisible}
 				/>
-				{/* <Image
+				<Image
 					resizeMode='cover'
 					source={{ uri: overlayImgSrc }}
 					style={S.overlayImage_image_style}
-				/> */}
+				/>
 				<ImageBackground resizeMode='cover' source={{ uri: overlayImgSrc }} />
-			</Overlay>
+			</Overlay> */}
 		</View>
 	);
 };
@@ -76,36 +68,44 @@ const PhotosList = ({ photos }) => {
 export default PhotosList;
 
 const S = StyleSheet.create({
+	// -- FLATLIST --
+
 	flatListStyle: {
 		flex: 1,
-	},
-	overlay_backdropStyle: {
-		backgroundColor: "blue",
-	},
-	overlay_overlayStyle: {
 		backgroundColor: "red",
-		height: "50%",
-		// justifyContent: "center",
+	},
+
+	// -- PHOTO TILE --
+
+	photo_tile_containerStyle: {
+		borderColor: "red",
+		backgroundColor: "red",
+		borderWidth: SIZES[0],
+		flex: 1,
+		marginHorizontal: SIZES[2],
+		marginVertical: SIZES[2],
+		height: 150,
+		padding: 5,
+	},
+	photo_tile_imageContainerStyle: {
+		aspectRatio: 1,
+		borderColor: "blue",
+		// backgroundColor: "blue",
+		borderWidth: SIZES[0],
+		height: "100%",
 		width: "100%",
 	},
-	overlayImage_image_style: {
-		aspectRatio: 1,
+	photo_tile_overlayContainerStyle: {
+		borderWidth: SIZES[0],
+		borderColor: "limegreen",
+		// backgroundColor: "limegreen",
+		padding: 0,
+		// height: "100%",
 		// width: "100%",
 	},
-	overlayClostBtn_btn_containerStyle: {
-		height: 56,
-		position: "absolute",
-		top: 0,
-		right: 0,
-		width: 56,
-	},
-	photo_pressable_style: {
-		flex: 1,
-	},
-	photoList_image_style: {
-		aspectRatio: 1,
-		borderRadius: 50,
-		flex: 1,
-		margin: SIZES[3],
+	photo_tile_iconContainerStyle: {
+		borderWidth: SIZES[0],
+		borderColor: "yellow",
+		backgroundColor: "yellow",
 	},
 });
