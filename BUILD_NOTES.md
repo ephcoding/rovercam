@@ -413,6 +413,12 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 </details>
 
+## Optimizing Virtualized Lists
+
+```javascript
+VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
+```
+
 ## `Promise.allSettled()` was added to React Native in v64
 
 - `undefined is not a function (near '...Promise.allSettled...`

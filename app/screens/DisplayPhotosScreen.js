@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LogBox, StyleSheet, Text, View } from "react-native";
+import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
 import { COLORS } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
@@ -11,6 +11,7 @@ import {
 } from "../components/shared";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
 import RoverCamerasList from "../components/RoverCamerasList";
+import FullScreenModal from "../components/shared/FullScreenModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 /**
@@ -62,17 +63,20 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 				{isFiltered
 					? filteredPhotos && <PhotosList photos={filteredPhotos} />
 					: data && <PhotosList photos={data.photos} />}
-				<Overlay
+				<FullScreenModal isVisible={isVisible}>
+					<RoverCamerasList
+						setFilteredPhotos={handleFilterByCamera}
+						rover={route.params.rover}
+					/>
+				</FullScreenModal>
+				{/* <Overlay
 					backdropStyle={S.overlay_backdropStyle}
 					isVisible={isVisible}
 					onBackdropPress={toggleOverlay}
 					overlayStyle={S.overlay_overlayStyle}
 				>
-					<RoverCamerasList
-						setFilteredPhotos={handleFilterByCamera}
-						rover={route.params.rover}
-					/>
-				</Overlay>
+					
+				</Overlay> */}
 				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
 					<CameraFAB setIsVisible={toggleOverlay} />
@@ -85,16 +89,30 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
-	overlay_backdropStyle: {
-		backgroundColor: COLORS.backgroundDK,
+	// ----------------------------
+	// -- CAMERA LIST MODAL
+	// ----------------------------
+	modal_imageBackground_container: {
+		alignItems: "center",
+		backgroundColor: "#000a",
+		flex: 1,
+		flexDirection: "row",
+		justifyContent: "center",
 	},
+	fabWrapper_view_style: {
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+	},
+
+	// ----------------------------
+	// -- OG OVERLAY
+	// ----------------------------
 	overlay_overlayStyle: {
 		backgroundColor: "red",
 		height: "80%",
 		width: "80%",
 	},
-	fabWrapper_view_style: {
-		flexDirection: "row",
-		justifyContent: "space-evenly",
+	overlay_backdropStyle: {
+		backgroundColor: COLORS.backgroundDK,
 	},
 });
