@@ -3,6 +3,7 @@ import {
 	FlatList,
 	Image,
 	ImageBackground,
+	Modal,
 	Pressable,
 	StyleSheet,
 	Text,
@@ -34,33 +35,36 @@ const PhotosList = ({ photos }) => {
 				style={S.flatListStyle}
 				renderItem={({ item, index }) => {
 					return (
-						<Photo onPress={displayOverlay} photoURI={{ uri: item.img_src }} />
+						<Photo
+							displayOverlay={() => displayOverlay(item.img_src)}
+							photoURI={{ uri: item.img_src }}
+						/>
 					);
 				}}
 			/>
-			{/* <Overlay
+			<Overlay
 				backdropStyle={S.overlay_backdropStyle}
 				// fullScreen
 				isVisible={isVisible}
 				onBackdropPress={toggleOverlayIsVisible}
 				overlayStyle={S.overlay_overlayStyle}
 			>
-				<Button
-					containerStyle={S.overlayClostBtn_btn_containerStyle}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={toggleOverlayIsVisible}
-				/>
-				<Image
+				<ImageBackground
 					resizeMode='cover'
 					source={{ uri: overlayImgSrc }}
 					style={S.overlayImage_image_style}
-				/>
-				<ImageBackground resizeMode='cover' source={{ uri: overlayImgSrc }} />
-			</Overlay> */}
+				>
+					<Button
+						containerStyle={S.overlayClostBtn_btn_containerStyle}
+						icon={{
+							type: "font-awesome",
+							name: "home",
+							color: "white",
+						}}
+						onPress={toggleOverlayIsVisible}
+					/>
+				</ImageBackground>
+			</Overlay>
 		</View>
 	);
 };
@@ -72,7 +76,7 @@ const S = StyleSheet.create({
 
 	flatListStyle: {
 		flex: 1,
-		backgroundColor: "red",
+		backgroundColor: "#222",
 	},
 
 	// -- PHOTO TILE --
@@ -107,5 +111,12 @@ const S = StyleSheet.create({
 		borderWidth: SIZES[0],
 		borderColor: "yellow",
 		backgroundColor: "yellow",
+	},
+
+	// -- EXPANDED PHOTO OVERLAY --
+
+	overlay_overlayStyle: {
+		height: "50%",
+		width: "80%",
 	},
 });
