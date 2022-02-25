@@ -19,14 +19,14 @@ import PhotosListItem from "./PhotosListItem";
 import ExpandedPhotoModal from "./shared/ExpandedPhotoModal";
 
 const PhotosList = ({ photos }) => {
-	const [isVisible, setModalIsVisible] = useState(false);
-	const [modalImageSource, setModalImageBackgroundSource] = useState("");
+	const [isVisible, setIsVisible] = useState(false);
+	const [imgSource, setModalImageSource] = useState("");
 
 	const handlePhotoTap = imgSrc => {
-		setModalIsVisible(true);
-		setModalImageBackgroundSource(imgSrc);
+		setModalImageSource(imgSrc);
+		setIsVisible(true);
 	};
-	const toggleModal = () => setModalIsVisible(!isVisible);
+	const toggleModal = () => setIsVisible(!isVisible);
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -37,19 +37,20 @@ const PhotosList = ({ photos }) => {
 				PlaceholderContext={<Text>FlatList Loading...</Text>}
 				style={S.flatList_style}
 				renderItem={({ item, index }) => {
-					const imgSrc = { uri: item.img_src };
+					const photoURI = { uri: item.img_src };
 
 					return (
 						<PhotosListItem
-							expandPhoto={() => handlePhotoTap(imgSrc)}
+							expandPhoto={() => handlePhotoTap(photoURI)}
 							key={item.id}
-							photoURI={imgSrc}
+							photoURI={photoURI}
 						/>
 					);
 				}}
 			/>
+
 			<ExpandedPhotoModal
-				imgSource={modalImageSource}
+				imgSource={imgSource}
 				isVisible={isVisible}
 				toggleModal={toggleModal}
 			/>

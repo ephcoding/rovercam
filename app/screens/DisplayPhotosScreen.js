@@ -63,6 +63,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 				{isFiltered
 					? filteredPhotos && <PhotosList photos={filteredPhotos} />
 					: data && <PhotosList photos={data.photos} />}
+
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
 						setFilteredPhotos={handleFilterByCamera}

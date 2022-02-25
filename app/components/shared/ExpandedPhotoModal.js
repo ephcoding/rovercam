@@ -5,9 +5,9 @@ import {
 	Text,
 	View,
 } from "react-native";
+import { COLORS, SIZES } from "../../styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import FullScreenModal from "./FullScreenModal";
-import { COLORS, SIZES } from "../../styles";
 
 const ExpandedPhotoModal = ({ imgSource, isVisible, toggleModal }) => {
 	return (
