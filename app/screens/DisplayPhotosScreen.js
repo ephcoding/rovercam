@@ -36,13 +36,19 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
-	const handleCameraPicked = cameraAbbr => {
+
+	const filterPhotosByCamera = cameraAbbr => {
 		const photos = data.photos.filter(
 			photo => photo.camera.name === cameraAbbr
 		);
 
 		setFilteredPhotos(photos);
 		setIsFiltered(true);
+		toggleOverlay();
+	};
+
+	const removeCameraFilter = () => {
+		setIsFiltered(false);
 		toggleOverlay();
 	};
 
@@ -58,7 +64,6 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	// I'm using this to only display cameras with photos
 
 	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
-	console.log(cameras);
 
 	return (
 		<SafeAreaView>
@@ -72,7 +77,8 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
 						cameraObjArr={cameras}
-						setFilteredPhotos={handleCameraPicked}
+						setFilteredPhotos={filterPhotosByCamera}
+						removeCameraFilter={removeCameraFilter}
 					/>
 				</FullScreenModal>
 
