@@ -11,10 +11,9 @@ import { Button, Card, FAB, Text } from "react-native-elements";
 import { COLORS, SIZES } from "../styles";
 // ----
 import RoverCamerasList from "../components/RoverCamerasList";
-import RoverCard from "../components/RoverCard";
+import RoverStats from "../components/RoverStats";
 
 const RoverInfoScreen = ({ navigation, route }) => {
-	// TODO: instead of passing photos as route.param, just call useFetchManifest() at <Picker>Screen
 	const { rover } = route.params;
 	const { isLoading, error, data } = useFetchManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
@@ -30,60 +29,13 @@ const RoverInfoScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-			// source={img_source}
-			>
+			<ImageBackground>
 				<ImageBackground source={img_source}></ImageBackground>
 
-				<View style={S.roverStats_view_style}>
-					<View style={S.roverStat_view_style}>
-						<Text h3 style={{ color: COLORS.primary }}>
-							Mission Status:
-						</Text>
-						<Text
-							h3
-							style={{
-								color:
-									data.photo_manifest.status === "active" ? "#0f0" : "#888",
-							}}
-						>
-							{data && data.photo_manifest.status}
-						</Text>
-					</View>
-					<View style={S.roverStat_view_style}>
-						<Text h3 style={{ color: COLORS.primary }}>
-							Launched:
-						</Text>
-						<Text style={{ fontSize: SIZES[5] }}>
-							{data && data.photo_manifest.launch_date}
-						</Text>
-					</View>
-					<View style={S.roverStat_view_style}>
-						<Text h3 style={{ color: COLORS.primary }}>
-							Landed:
-						</Text>
-						<Text style={{ fontSize: SIZES[5] }}>
-							{data && data.photo_manifest.landing_date}
-						</Text>
-					</View>
-					<View style={S.roverStat_view_style}>
-						<Text h3 style={{ color: COLORS.primary }}>
-							Last Photo:
-						</Text>
-						<Text style={{ fontSize: SIZES[5] }}>
-							{data && data.photo_manifest.max_date}
-						</Text>
-					</View>
-					<View style={S.roverStat_view_style}>
-						<Text h3 style={{ color: COLORS.primary }}>
-							Photos:
-						</Text>
-						<Text style={{ fontSize: SIZES[5] }}>
-							{data && data.photo_manifest.total_photos}
-						</Text>
-					</View>
-				</View>
+				<RoverStats data={data} />
 
+				{/* TODO: create OptionButtonsList component
+						USE FOR: RoverPhotoSearchBtn & RoverCameraList */}
 				<View style={S.searchBtns_view_style}>
 					{SEARCH_TYPE_BTNS.map(param => (
 						<View key={param.title} style={S.searchBtnWrapper_view_style}>

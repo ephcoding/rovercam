@@ -26,6 +26,11 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
  */
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
+	/**
+	 * @param {string} rover - rover to fetch photos for
+	 * @param {string} paramType - photo query param
+	 * @param {string} value - photo query param value
+	 */
 	const { isLoading, error, data } = useFetchPhotosByParam(
 		route.params.rover,
 		route.params.paramType,
@@ -58,10 +63,6 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
-
-	// creates unique cameraObj[]
-	// instead of displaying all cameras in the camera filter modal
-	// I'm using this to only display cameras with photos
 
 	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
 
