@@ -53,12 +53,20 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
 	const getCamerasWithPhotos = photos => {
-		// create camera object array
-		// make set using camera name as obj key
-		const cameras = new Set();
-		const rawCameraArr = photos.map(photo => photo.camera.name);
-		rawCameraArr.forEach(value => cameras.add(value));
-		return Array.from(cameras);
+		const camCheckerArr = [];
+		const camObjArr = [];
+		// generate <photoCamObj>[]
+		const rawCameraObjArr = photos.map(photo => photo.camera);
+		// use camChecker[] to create unique camObj[]
+		rawCameraObjArr.forEach(camObj => {
+			if (!camCheckerArr.includes(camObj.name)) {
+				// push cam abbr to camCheckerArr to check for subsequent dups
+				camCheckerArr.push(camObj.name);
+				// push camObj to camObjArr
+				camObjArr.push(camObj);
+			}
+		});
+		return camObjArr;
 	};
 
 	const cameras = getCamerasWithPhotos(data.photos);
