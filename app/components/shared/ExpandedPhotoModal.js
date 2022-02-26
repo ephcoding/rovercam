@@ -28,7 +28,7 @@ const ExpandedPhotoModal = ({ imgSource, isVisible, toggleModal }) => {
 
 export default ExpandedPhotoModal;
 
-const styles = StyleSheet.create({
+const S = StyleSheet.create({
 	imgBg_style: {
 		borderColor: COLORS.backgroundLT,
 		borderRadius: SIZES[5],

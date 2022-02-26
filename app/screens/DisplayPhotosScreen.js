@@ -10,6 +10,7 @@ import {
 	SafeAreaView,
 } from "../components/shared";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
+import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
@@ -33,7 +34,8 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	const [isFiltered, setIsFiltered] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
-	const handleFilterByCamera = cameraAbbr => {
+	const toggleOverlay = () => setIsVisible(!isVisible);
+	const handleCameraPicked = cameraAbbr => {
 		const photos = data.photos.filter(
 			photo => photo.camera.name === cameraAbbr
 		);
@@ -41,12 +43,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		setFilteredPhotos(photos);
 		setIsFiltered(true);
 		toggleOverlay();
-
-		console.log(">> data.latest_photos.length >>\n", photos.length);
-		console.log(">> filteredPhotos.length >>\n", photos.length);
 	};
-
-	const toggleOverlay = () => setIsVisible(!isVisible);
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
@@ -54,6 +51,18 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
+
+	const getCamerasWithPhotos = photos => {
+		// create camera object array
+		// make set using camera name as obj key
+		const cameras = new Set();
+		const rawCameraArr = photos.map(photo => photo.camera.name);
+		rawCameraArr.forEach(value => cameras.add(value));
+		return Array.from(cameras);
+	};
+
+	const cameras = getCamerasWithPhotos(data.photos);
+	console.log(cameras);
 
 	return (
 		<SafeAreaView>
@@ -66,18 +75,11 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
-						setFilteredPhotos={handleFilterByCamera}
-						rover={route.params.rover}
+						setFilteredPhotos={handleCameraPicked}
+						cameras={cameras}
 					/>
 				</FullScreenModal>
-				{/* <Overlay
-					backdropStyle={S.overlay_backdropStyle}
-					isVisible={isVisible}
-					onBackdropPress={toggleOverlay}
-					overlayStyle={S.overlay_overlayStyle}
-				>
-					
-				</Overlay> */}
+
 				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
 					<CameraFAB setIsVisible={toggleOverlay} />

@@ -2,13 +2,10 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
 import { ROVER_CAMERAS } from "../constants/rovers";
 
-const RoverCamerasList = ({ rover, setFilteredPhotos }) => {
+const RoverCamerasList = ({ cameras, setFilteredPhotos }) => {
 	return (
 		<ScrollView>
-			{ROVER_CAMERAS[rover.toLowerCase()].map(camera => {
-				const fullCamName = camera[0];
-				const cameraAbbr = camera[1];
-
+			{cameras.map(camera => {
 				return (
 					<Button
 						buttonStyle={S.buttonStyle}
