@@ -49,7 +49,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 				markedDates={markedDates}
 				onDayPress={date => handleEarthDatePick(date.dateString)}
 				pastScrollRange={0}
-				style={S.style}
+				style={S.calendarList_style}
 				theme={RNC_THEME}
 			/>
 			<View>
@@ -71,7 +71,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 export default DatePicker;
 
 const S = StyleSheet.create({
-	style: {
+	calendarList_style: {
 		backgroundColor: "#000",
 		marginVertical: 10,
 	},

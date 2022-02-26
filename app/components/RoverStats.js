@@ -22,7 +22,7 @@ const RoverStats = ({ data }) => {
 			</View>
 			<View style={S.statView_style}>
 				<Text h3 style={{ color: COLORS.primary }}>
-					Launched:
+					Left Earth:
 				</Text>
 				<Text style={{ fontSize: SIZES[5] }}>
 					{data && data.photo_manifest.launch_date}
@@ -30,7 +30,7 @@ const RoverStats = ({ data }) => {
 			</View>
 			<View style={S.statView_style}>
 				<Text h3 style={{ color: COLORS.primary }}>
-					Landed:
+					Landed On Mars:
 				</Text>
 				<Text style={{ fontSize: SIZES[5] }}>
 					{data && data.photo_manifest.landing_date}

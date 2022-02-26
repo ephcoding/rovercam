@@ -13,24 +13,15 @@ import { COLORS } from "../styles";
 const DatePickerScreen = ({ navigation, route }) => {
 	const { photos, rover } = route.params;
 	const earthDatesArr = photos.map(photo => photo.earth_date);
-	// const img_source = IMG_PATHS[rover.toLowerCase()];
-
-	// console.log(">> DatePickerScreen [photos]>>", photos);
-
-	// if (isLoading) return <Text>Loading...</Text>;
-	// if (error) return <Text>ERROR >> {error.message}</Text>;
 
 	return (
 		<SafeAreaView>
-			{/* <ImageBackground source={img_source}> */}
 			<DatePicker
-				// earthDatesArr={["2012-08-12", "2012-10-12"]}
 				earthDatesArr={earthDatesArr}
 				navigation={navigation}
 				rover={rover}
 			/>
 			<NavHomeFAB navigation={navigation} />
-			{/* </ImageBackground> */}
 		</SafeAreaView>
 	);
 };

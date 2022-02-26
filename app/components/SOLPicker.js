@@ -16,6 +16,7 @@ const SOLPicker = ({ navigation, rover, solsArr }) => {
 
 	return (
 		<FlatList
+			columnWrapperStyle={S.columnWrapperStyle}
 			data={solsArr}
 			keyExtractor={ke => ke}
 			numColumns={2}
@@ -49,5 +50,7 @@ const S = StyleSheet.create({
 		flex: 1,
 		margin: SIZES[3],
 	},
-	flColWrapStyle: {},
+	columnWrapperStyle: {
+		backgroundColor: COLORS.backgroundDK,
+	},
 });

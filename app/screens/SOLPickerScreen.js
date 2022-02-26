@@ -10,20 +10,14 @@ import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import SOLPicker from "../components/SOLPicker";
 
-// NOTES:
-// Switch onChange => (event)
-// Switch onValueChange => returns (passed value)
-
 const SOLPickerScreen = ({ navigation, route }) => {
 	const { photos: sols, rover } = route.params;
 	const solsArr = sols.map(sol => sol.sol);
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={route.params.img_url}>
-				<SOLPicker navigation={navigation} rover={rover} solsArr={solsArr} />
-				<NavHomeFAB navigation={navigation} />
-			</ImageBackground>
+			<SOLPicker navigation={navigation} rover={rover} solsArr={solsArr} />
+			<NavHomeFAB navigation={navigation} />
 		</SafeAreaView>
 	);
 };
