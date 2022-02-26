@@ -43,7 +43,7 @@ const PhotosList = ({ photos }) => {
 						<PhotosListItem
 							expandPhoto={() => handlePhotoTap(photoURI)}
 							key={item.id}
-							photoURI={photoURI}
+							photoObj={item}
 						/>
 					);
 				}}

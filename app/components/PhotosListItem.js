@@ -1,9 +1,22 @@
-import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
+import {
+	ImageBackground,
+	Pressable,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
+import { COLORS, SIZES } from "../styles";
 
-const PhotosListItem = ({ expandPhoto, photoURI }) => {
+const PhotosListItem = ({ expandPhoto, photoObj }) => {
+	const { camera, img_src } = photoObj;
+
 	return (
 		<Pressable onPress={expandPhoto} style={S.pressable_style}>
-			<ImageBackground source={photoURI} style={S.photo_imgBg_style} />
+			<ImageBackground source={{ uri: img_src }} style={S.photo_imgBg_style}>
+				<View style={S.label_view}>
+					<Text style={S.label_text}>{camera.name}</Text>
+				</View>
+			</ImageBackground>
 		</Pressable>
 	);
 };
@@ -19,6 +32,22 @@ const S = StyleSheet.create({
 	},
 	photo_imgBg_style: {
 		height: "100%",
+		justifyContent: "flex-end",
 		width: "100%",
+	},
+	label_text: {
+		color: COLORS.textLT,
+		fontSize: SIZES[3],
+		fontWeight: "bold",
+		textAlign: "center",
+	},
+	label_view: {
+		// alignSelf: "flex-start",
+		backgroundColor: "#0009",
+		// borderTopRightRadius: SIZES[2],
+		// borderBottomRightRadius: SIZES[2],
+		// marginBottom: SIZES[2],
+		paddingHorizontal: SIZES[2],
+		paddingVertical: SIZES[1],
 	},
 });

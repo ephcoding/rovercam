@@ -71,7 +71,7 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
-						cameras={cameras}
+						cameraObjArr={cameras}
 						setFilteredPhotos={handleCameraPicked}
 					/>
 				</FullScreenModal>
