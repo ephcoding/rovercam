@@ -10,6 +10,7 @@ import {
 	SafeAreaView,
 } from "../components/shared";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
+import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
 import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
@@ -47,29 +48,16 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
-	});
+	}, []);
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
-	const getCamerasWithPhotos = photos => {
-		const camCheckerArr = [];
-		const camObjArr = [];
-		// generate <photoCamObj>[]
-		const rawCameraObjArr = photos.map(photo => photo.camera);
-		// use camChecker[] to create unique camObj[]
-		rawCameraObjArr.forEach(camObj => {
-			if (!camCheckerArr.includes(camObj.name)) {
-				// push cam abbr to camCheckerArr to check for subsequent dups
-				camCheckerArr.push(camObj.name);
-				// push camObj to camObjArr
-				camObjArr.push(camObj);
-			}
-		});
-		return camObjArr;
-	};
+	// creates unique cameraObj[]
+	// instead of displaying all cameras in the camera filter modal
+	// I'm using this to only display cameras with photos
 
-	const cameras = getCamerasWithPhotos(data.photos);
+	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
 	console.log(cameras);
 
 	return (
@@ -83,8 +71,8 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
-						setFilteredPhotos={handleCameraPicked}
 						cameras={cameras}
+						setFilteredPhotos={handleCameraPicked}
 					/>
 				</FullScreenModal>
 

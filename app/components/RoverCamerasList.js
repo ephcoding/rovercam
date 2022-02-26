@@ -10,9 +10,9 @@ const RoverCamerasList = ({ cameras, setFilteredPhotos }) => {
 					<Button
 						buttonStyle={S.buttonStyle}
 						containerStyle={S.containerStyle}
-						key={cameraAbbr}
-						title={fullCamName}
-						onPress={() => setFilteredPhotos(cameraAbbr)}
+						key={camera.name}
+						title={camera.full_name}
+						onPress={() => setFilteredPhotos(camera.name)}
 						screen='CameraPhotos'
 					/>
 				);
