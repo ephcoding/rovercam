@@ -36,6 +36,10 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		route.params.paramType,
 		route.params.value
 	);
+
+	const navState = navigation;
+	console.log(navState);
+
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
