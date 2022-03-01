@@ -10,9 +10,9 @@ import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import SOLPicker from "../components/SOLPicker";
 
-const SOLPickerScreen = ({ navigation, route }) => {
-	const { photos: sols, rover } = route.params;
-	const solsArr = sols.map(sol => sol.sol);
+export default SOLPickerScreen = ({ navigation, route }) => {
+	const { rover, manifest_photos } = route.params;
+	const solsArr = manifest_photos.map(sol => sol.sol);
 
 	return (
 		<SafeAreaView>
@@ -21,20 +21,3 @@ const SOLPickerScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default SOLPickerScreen;
-
-const S = StyleSheet.create({
-	btnStyle: {
-		backgroundColor: COLORS.secondary,
-	},
-	btnTitleStyle: {
-		color: COLORS.textLT,
-	},
-	text: {
-		color: COLORS.textDK,
-		fontSize: SIZES[5],
-		fontWeight: "bold",
-		textAlign: "center",
-	},
-});

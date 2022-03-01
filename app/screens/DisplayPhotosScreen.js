@@ -14,24 +14,33 @@ import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
 import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
+import { useFetchPhotos } from "../hooks/useFetchPhotos";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// --------------------------------------
-// TODO:
+// TODO: ------------------------------
 // refactor DisplayScreen to only DISPLAY photos
 
 // (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
+// p.s.s. - gotta dig into react-query docs
 // --------------------------------------
 
-const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = useFetchPhotosByParam(
-		route.params.rover,
-		route.params.paramType,
-		route.params.value
-	);
+export default DisplayPhotosScreen = ({ navigation, route }) => {
+	/**
+	 * @param {string} rover lowercase Rover name
+	 * @param {string} query_param latest, sol, earth_date
+	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
+	 */
+	const { rover, query_param, param_value, manifest_photos } = route.params;
 
-	const navState = navigation;
-	console.log(navState);
+	const { isLoading, error, data } = useFetchPhotos(
+		rover,
+		query_param,
+		param_value
+	);
+	// latest photos object[] prop name: "latest_photos"
+	// prop name for photos returned from search query: "photos"
+	// IF param_value THEN photos being displayed are NOT latest_photos
+	let photos_prop = param_value ? "photos" : "latest_photos";
 
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);
@@ -61,16 +70,15 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
-	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
+	const cameras = createUniqueObjectsArray(data[photos_prop], "camera", "name");
 
 	return (
 		<SafeAreaView>
 			<ImageBackground
 			// source={img_source}
 			>
-				{isFiltered
-					? filteredPhotos && <PhotosList photos={filteredPhotos} />
-					: data && <PhotosList photos={data.photos} />}
+				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
+				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
 				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
@@ -88,8 +96,6 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
 	// ----------------------------

@@ -9,8 +9,8 @@ const SOLPicker = ({ navigation, rover, solsArr }) => {
 	const handleSOLPick = sol => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: QUERY_PARAMS.sol,
-			value: sol,
+			query_param: QUERY_PARAMS.sol,
+			param_value: sol,
 		});
 	};
 

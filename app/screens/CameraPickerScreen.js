@@ -8,7 +8,7 @@ import {
 	SafeAreaView,
 } from "../components/shared";
 
-const CameraPickerScreen = ({ navigation, route }) => {
+export default CameraPickerScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
@@ -31,8 +31,6 @@ const CameraPickerScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default CameraPickerScreen;
 
 const S = StyleSheet.create({
 	camerasView: {

@@ -5,12 +5,13 @@ export const createUniqueObjectsArray = (
 ) => {
 	const uniqueKeyArray = [];
 	const uniqueObjectArray = [];
+	// returns camera object[]
 	const rawObjectArray = objectArray.map(object => object[rootProp]);
 
-	rawObjectArray.forEach(valObject => {
-		if (!uniqueKeyArray.includes(valObject[filterValueProp])) {
-			uniqueKeyArray.push(valObject[filterValueProp]);
-			uniqueObjectArray.push(valObject);
+	rawObjectArray.forEach(object => {
+		if (!uniqueKeyArray.includes(object[filterValueProp])) {
+			uniqueKeyArray.push(object[filterValueProp]);
+			uniqueObjectArray.push(object);
 		}
 	});
 

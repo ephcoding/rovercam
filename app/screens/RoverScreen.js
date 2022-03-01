@@ -3,8 +3,8 @@ import {
 	NavHomeFAB,
 	SafeAreaView,
 } from "../components/shared";
-import { SEARCH_TYPE_BTNS, IMG_PATHS } from "../constants/rovers";
-import { useFetchManifest } from "../hooks";
+import { PHOTO_SEARCH_BTNS as BTNS, IMG_PATHS } from "../constants/rovers";
+import { useFetchRoverManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
@@ -13,16 +13,28 @@ import { COLORS, SIZES } from "../styles";
 import RoverCamerasList from "../components/RoverCamerasList";
 import RoverStats from "../components/RoverStats";
 
-const RoverInfoScreen = ({ navigation, route }) => {
+export default RoverInfoScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
-	const { isLoading, error, data } = useFetchManifest(rover);
+	const { isLoading, error, data } = useFetchRoverManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	const handleOnPress = (screen, param = "") =>
-		navigation.navigate(screen, {
-			rover,
-			photos: data.photo_manifest.photos,
-		});
+	const handleOnPress = (screen, query_param = "") => {
+		if (screen === "DisplayPhotos") {
+			navigation.navigate("DisplayPhotos", {
+				rover,
+				query_param,
+				param_value: undefined,
+				manifest_photos: data.photo_manifest.photos,
+			});
+		} else if (screen === "DatePicker" || screen === "SOLPicker") {
+			navigation.navigate(screen, {
+				rover,
+				manifest_photos: data.photo_manifest.photos,
+			});
+		} else {
+			throw new Error("[ RoverScreen.js ] >> invalid navigation screen.");
+		}
+	};
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.message}</Text>;
@@ -37,13 +49,13 @@ const RoverInfoScreen = ({ navigation, route }) => {
 				{/* TODO: create OptionButtonsList component
 						USE FOR: RoverPhotoSearchBtn & RoverCameraList */}
 				<View style={S.searchBtns_view_style}>
-					{SEARCH_TYPE_BTNS.map(param => (
-						<View key={param.title} style={S.searchBtnWrapper_view_style}>
+					{BTNS.map(button => (
+						<View key={button.title} style={S.searchBtnWrapper_view_style}>
 							<Button
 								buttonStyle={S.searchBtn_btn_btnStyle}
 								containerStyle={S.searchBtn_btn_containerStyle}
-								onPress={() => handleOnPress(param.screen, param.query_param)}
-								title={param.title}
+								onPress={() => handleOnPress(button.screen, button.query_param)}
+								title={button.title}
 								titleStyle={{ fontSize: SIZES[4] }}
 							/>
 						</View>
@@ -57,8 +69,6 @@ const RoverInfoScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default RoverInfoScreen;
 
 const S = StyleSheet.create({
 	roverStats_view_style: {
