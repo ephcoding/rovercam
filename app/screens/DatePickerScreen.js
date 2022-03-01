@@ -11,8 +11,8 @@ import { IMG_PATHS } from "../constants";
 import { COLORS } from "../styles";
 
 const DatePickerScreen = ({ navigation, route }) => {
-	const { photos, rover } = route.params;
-	const earthDatesArr = photos.map(photo => photo.earth_date);
+	const { rover, manifest_photos } = route.params;
+	const earthDatesArr = manifest_photos.map(photo => photo.earth_date);
 
 	return (
 		<SafeAreaView>
@@ -27,9 +27,3 @@ const DatePickerScreen = ({ navigation, route }) => {
 };
 
 export default DatePickerScreen;
-
-const S = StyleSheet.create({
-	pickerView: {
-		flex: 1,
-	},
-});

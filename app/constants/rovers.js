@@ -1,8 +1,3 @@
-import tracksUri from "../../assets/img/mars-rover-tracks.jpg";
-import earthUri from "../../assets/img/i-seee-you.jpg";
-import marsUri from "../../assets/img/mars-side-swipe.jpg";
-import perseveranceUri from "../../assets/img/perseverance.jpg";
-
 export const ROVER_CAMERAS = {
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
@@ -52,34 +47,35 @@ export const IMG_PATHS = {
 	spirit: require("../../assets/img/spirit.jpg"),
 };
 export const ROVER_NAMES = {
-	curiosity: "Curiosity",
-	opportunity: "Opportunity",
-	perseverance: "Perseverance",
-	spirit: "Spirit",
+	curiosity: "curiosity",
+	opportunity: "opportunity",
+	perseverance: "perseverance",
+	spirit: "spirit",
 };
 /**
  * [screen] prop matches screen name in StackNavigator (App.js)
- * [title] prop is used for button labels
+ * [title] prop is used for button titles
  */
-export const ROVER_SCREEN_BTNS = [
+export const PHOTO_SEARCH_BTNS = [
 	{
-		label: "LATEST",
-		path: "",
-		screen: "LatestPhotos",
+		title: "LATEST",
+		screen: "DisplayPhotos",
+		query_param: "latest_photos",
 	},
 	{
-		label: "EARTH DATE",
+		title: "EARTH DATE",
 		screen: "DatePicker",
 		query_param: "earth_date",
 	},
 	{
-		label: "MARTIAN SOL",
+		title: "MARTIAN SOL",
 		screen: "SOLPicker",
 		query_param: "sol",
 	},
 ];
 export const QUERY_PARAMS = {
 	camera: "camera",
-	earth_date: "earth_date",
+	date: "earth_date",
+	latest: "latest_photos",
 	sol: "sol",
 };

@@ -1,7 +1,7 @@
-import Axios from "./config";
+import { HEROKU_CONFIG as API } from "./config";
 
 export const fetchPhotosByParam = async (rover, param, value) => {
-	const res = await Axios.get(`/rovers/${rover}/photos?${param}=${value}`);
+	const res = await API.get(`/rovers/${rover}/photos?${param}=${value}`);
 	return res.data;
 };
 

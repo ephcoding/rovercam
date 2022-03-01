@@ -61,20 +61,16 @@ export default App = () => {
 								name='DisplayPhotos'
 								component={DisplayPhotosScreen}
 								options={({ route }) => ({
-									// title: "TEST SCREEN TITLE",
-									title:
-										route.params.paramType === "sol"
-											? `${route.params.rover} SOL ${route.params.value}`
-											: `${route.params.rover}: ${route.params.value}`,
+									title: route.params.paramType,
 								})}
 							/>
-							<Stack.Screen
+							{/* <Stack.Screen
 								name='LatestPhotos'
 								component={LatestPhotosScreen}
 								options={({ route }) => ({
 									title: `LATEST ${route.params.rover.toUpperCase()} PHOTOS`,
 								})}
-							/>
+							/> */}
 							<Stack.Screen
 								name='Rover'
 								component={RoverScreen}

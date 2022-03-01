@@ -17,8 +17,7 @@ import FullScreenModal from "../components/shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// --------------------------------------
-// TODO:
+// TODO: ------------------------------
 // refactor DisplayScreen to only DISPLAY photos
 
 // (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
@@ -27,24 +26,15 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 const DisplayPhotosScreen = ({ navigation, route }) => {
 	/**
 	 * @param {string} rover lowercase Rover name
-	 * @param {string} queryType latest, sol, earth_date
+	 * @param {string} queryParam latest, sol, earth_date
 	 * @param {string} paramValue null (latest photos), sol #, yyyy-mm-dd
 	 */
-	const { rover, queryType, paramValue } = route.params;
+	const { rover, queryParam, paramValue } = route.params;
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
-		queryType,
+		queryParam,
 		paramValue
 	);
-
-	const { isLoading, error, data } = useFetchPhotosByParam(
-		route.params.rover,
-		route.params.paramType,
-		route.params.value
-	);
-
-	const navState = navigation;
-	console.log(navState);
 
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);

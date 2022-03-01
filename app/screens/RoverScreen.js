@@ -3,7 +3,7 @@ import {
 	NavHomeFAB,
 	SafeAreaView,
 } from "../components/shared";
-import { ROVER_SCREEN_BTNS, IMG_PATHS } from "../constants/rovers";
+import { PHOTO_SEARCH_BTNS as BTNS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
@@ -18,11 +18,22 @@ const RoverInfoScreen = ({ navigation, route }) => {
 	const { isLoading, error, data } = useFetchManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	const handleOnPress = (screen, param = "") =>
-		navigation.navigate(screen, {
-			rover,
-			photos: data.photo_manifest.photos,
-		});
+	const handleOnPress = (screen, queryParam = "") => {
+		if (screen === "DisplayPhotos") {
+			navigation.navigate("DisplayPhotos", {
+				rover,
+				queryParam,
+				paramValue: undefined,
+			});
+		} else if (screen === "DatePicker" || screen === "SOLPicker") {
+			navigation.navigate(screen, {
+				rover,
+				manifest_photos: data.photo_manifest.photos,
+			});
+		} else {
+			throw new Error("[ RoverScreen.js ] >> invalid navigation screen.");
+		}
+	};
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.message}</Text>;
@@ -37,13 +48,13 @@ const RoverInfoScreen = ({ navigation, route }) => {
 				{/* TODO: create OptionButtonsList component
 						USE FOR: RoverPhotoSearchBtn & RoverCameraList */}
 				<View style={S.searchBtns_view_style}>
-					{ROVER_SCREEN_BTNS.map(param => (
-						<View key={param.title} style={S.searchBtnWrapper_view_style}>
+					{BTNS.map(button => (
+						<View key={button.title} style={S.searchBtnWrapper_view_style}>
 							<Button
 								buttonStyle={S.searchBtn_btn_btnStyle}
 								containerStyle={S.searchBtn_btn_containerStyle}
-								onPress={() => handleOnPress(param.screen, param.query_param)}
-								title={param.title}
+								onPress={() => handleOnPress(button.screen, button.query_param)}
+								title={button.title}
 								titleStyle={{ fontSize: SIZES[4] }}
 							/>
 						</View>
