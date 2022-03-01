@@ -12,7 +12,7 @@ import SOLPicker from "../components/SOLPicker";
 
 export default SOLPickerScreen = ({ navigation, route }) => {
 	const { rover, manifest_photos } = route.params;
-	const solsArr = sols.map(sol => sol.sol);
+	const solsArr = manifest_photos.map(sol => sol.sol);
 
 	return (
 		<SafeAreaView>
