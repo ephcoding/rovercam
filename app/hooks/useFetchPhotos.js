@@ -12,7 +12,6 @@ import { QUERY_PARAMS as PARAM } from "../constants";
 
 export const useFetchPhotos = (rover, query_param, param_value = undefined) => {
 	if (param_value) {
-		console.log("useFetchPhotos.js\n", query_param);
 		return useQuery(`photos_by_${query_param}`, () =>
 			fetchPhotosByParam(rover, query_param, param_value)
 		);

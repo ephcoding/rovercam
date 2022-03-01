@@ -32,8 +32,6 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	 */
 	const { rover, query_param, param_value, manifest_photos } = route.params;
 
-	console.log(route.params);
-
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
 		query_param,
@@ -72,7 +70,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
-	// const cameras = createUniqueObjectsArray(data.photos, "cameras", "name");
+	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
 
 	return (
 		<SafeAreaView>
@@ -82,13 +80,13 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
 				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
-				{/* <FullScreenModal isVisible={isVisible}>
+				<FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
 						cameraObjArr={cameras}
 						setFilteredPhotos={filterPhotosByCamera}
 						removeCameraFilter={removeCameraFilter}
 					/>
-				</FullScreenModal> */}
+				</FullScreenModal>
 
 				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
