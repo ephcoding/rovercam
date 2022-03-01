@@ -63,8 +63,8 @@ export const ROVER_NAMES = {
  */
 export const SEARCH_TYPE_BTNS = [
 	{
-		description: "Check out the latest photos from each Rover.",
-		title: "LATEST",
+		label: "LATEST",
+		path: "",
 		screen: "LatestPhotos",
 	},
 	{
