@@ -17,13 +17,6 @@ import FullScreenModal from "../components/shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-// TODO: ------------------------------
-// refactor DisplayScreen to only DISPLAY photos
-
-// (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
-// p.s.s. - gotta dig into react-query docs
-// --------------------------------------
-
 export default DisplayPhotosScreen = ({ navigation, route }) => {
 	/**
 	 * @param {string} rover lowercase Rover name
@@ -37,9 +30,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 		query_param,
 		param_value
 	);
-	// latest photos object[] prop name: "latest_photos"
-	// prop name for photos returned from search query: "photos"
-	// IF param_value THEN photos being displayed are NOT latest_photos
+
 	let photos_prop = param_value ? "photos" : "latest_photos";
 
 	const [isVisible, setIsVisible] = useState(false);
@@ -47,9 +38,8 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
-
 	const filterPhotosByCamera = cameraAbbr => {
-		const photos = data.photos.filter(
+		const photos = data[photos_prop].filter(
 			photo => photo.camera.name === cameraAbbr
 		);
 
@@ -57,7 +47,6 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 		setIsFiltered(true);
 		toggleOverlay();
 	};
-
 	const removeCameraFilter = () => {
 		setIsFiltered(false);
 		toggleOverlay();
@@ -74,9 +63,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-			// source={img_source}
-			>
+			<ImageBackground>
 				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
 				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
@@ -98,9 +85,6 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 };
 
 const S = StyleSheet.create({
-	// ----------------------------
-	// -- CAMERA LIST MODAL
-	// ----------------------------
 	modal_imageBackground_container: {
 		alignItems: "center",
 		backgroundColor: "#000a",
@@ -111,17 +95,5 @@ const S = StyleSheet.create({
 	fabWrapper_view_style: {
 		flexDirection: "row",
 		justifyContent: "space-evenly",
-	},
-
-	// ----------------------------
-	// -- OG OVERLAY
-	// ----------------------------
-	overlay_overlayStyle: {
-		backgroundColor: "red",
-		height: "80%",
-		width: "80%",
-	},
-	overlay_backdropStyle: {
-		backgroundColor: COLORS.backgroundDK,
 	},
 });

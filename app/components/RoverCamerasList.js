@@ -30,8 +30,6 @@ const RoverCamerasList = ({
 		/>
 	);
 
-	console.log(">> camOptions >>\n", camOptions);
-
 	return <ScrollView>{camOptions}</ScrollView>;
 };
 
