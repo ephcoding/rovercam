@@ -70,7 +70,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
-	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
+	const cameras = createUniqueObjectsArray(data[photos_prop], "camera", "name");
 
 	return (
 		<SafeAreaView>
