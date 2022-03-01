@@ -35,6 +35,10 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 		query_param,
 		param_value
 	);
+	// latest photos object[] prop name: "latest_photos"
+	// prop name for photos returned from search query: "photos"
+	// IF param_value THEN photos being displayed are NOT latest_photos
+	let photos_prop = param_value ? "photos" : "latest_photos";
 
 	console.log(data);
 
@@ -73,11 +77,8 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 			<ImageBackground
 			// source={img_source}
 			>
-				{isFiltered ? (
-					filteredPhotos && <PhotosList photos={filteredPhotos} />
-				) : (
-					<PhotosList photos={data.photos} />
-				)}
+				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
+				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
 				{/* <FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
