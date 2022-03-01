@@ -5,12 +5,12 @@ import {
 } from "../components/shared";
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
-import { useFetchManifest } from "../hooks";
+import { useFetchRoverManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { COLORS } from "../styles";
 
-const DatePickerScreen = ({ navigation, route }) => {
+export default DatePickerScreen = ({ navigation, route }) => {
 	const { rover, manifest_photos } = route.params;
 	const earthDatesArr = manifest_photos.map(photo => photo.earth_date);
 
@@ -25,5 +25,3 @@ const DatePickerScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default DatePickerScreen;

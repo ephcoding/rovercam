@@ -18,7 +18,7 @@ const img_source = require("../../assets/img/mars-glowing.jpg");
  * (query & filter photos on nav to DisplayPhotosScreen from SearchScreen)
  */
 
-const HomeScreen = ({ navigation }) => {
+export default HomeScreen = ({ navigation }) => {
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});
@@ -38,8 +38,6 @@ const HomeScreen = ({ navigation }) => {
 		</SafeAreaView>
 	);
 };
-
-export default HomeScreen;
 
 const S = StyleSheet.create({
 	txt_h2_style: {

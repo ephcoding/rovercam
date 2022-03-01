@@ -32,8 +32,8 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			queryParam: QUERY_PARAMS.earth_date,
-			paramValue: date,
+			query_param: QUERY_PARAMS.earth_date,
+			param_value: date,
 		});
 	};
 

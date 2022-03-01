@@ -10,7 +10,7 @@ import { Button, FAB, Overlay, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import SOLPicker from "../components/SOLPicker";
 
-const SOLPickerScreen = ({ navigation, route }) => {
+export default SOLPickerScreen = ({ navigation, route }) => {
 	const { rover, manifest_photos } = route.params;
 	const solsArr = sols.map(sol => sol.sol);
 
@@ -21,5 +21,3 @@ const SOLPickerScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default SOLPickerScreen;

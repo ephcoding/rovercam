@@ -4,7 +4,7 @@ import {
 	SafeAreaView,
 } from "../components/shared";
 import { PHOTO_SEARCH_BTNS as BTNS, IMG_PATHS } from "../constants/rovers";
-import { useFetchManifest } from "../hooks";
+import { useFetchRoverManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
@@ -13,17 +13,18 @@ import { COLORS, SIZES } from "../styles";
 import RoverCamerasList from "../components/RoverCamerasList";
 import RoverStats from "../components/RoverStats";
 
-const RoverInfoScreen = ({ navigation, route }) => {
+export default RoverInfoScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
-	const { isLoading, error, data } = useFetchManifest(rover);
+	const { isLoading, error, data } = useFetchRoverManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
-	const handleOnPress = (screen, queryParam = "") => {
+	const handleOnPress = (screen, query_param = "") => {
 		if (screen === "DisplayPhotos") {
 			navigation.navigate("DisplayPhotos", {
 				rover,
-				queryParam,
-				paramValue: undefined,
+				query_param,
+				param_value: undefined,
+				manifest_photos: data.photo_manifest.photos,
 			});
 		} else if (screen === "DatePicker" || screen === "SOLPicker") {
 			navigation.navigate(screen, {
@@ -68,8 +69,6 @@ const RoverInfoScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default RoverInfoScreen;
 
 const S = StyleSheet.create({
 	roverStats_view_style: {

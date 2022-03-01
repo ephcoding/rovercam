@@ -9,7 +9,6 @@ import CameraPickerScreen from "./app/screens/CameraPickerScreen";
 import DatePickerScreen from "./app/screens/DatePickerScreen";
 import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
 import HomeScreen from "./app/screens/HomeScreen";
-import LatestPhotosScreen from "./app/screens/LatestPhotosScreen";
 import RoverScreen from "./app/screens/RoverScreen";
 import SOLPickerScreen from "./app/screens/SOLPickerScreen";
 // -----

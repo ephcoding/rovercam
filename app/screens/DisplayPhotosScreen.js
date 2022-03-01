@@ -23,18 +23,20 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 // (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
 // --------------------------------------
 
-const DisplayPhotosScreen = ({ navigation, route }) => {
+export default DisplayPhotosScreen = ({ navigation, route }) => {
 	/**
 	 * @param {string} rover lowercase Rover name
-	 * @param {string} queryParam latest, sol, earth_date
-	 * @param {string} paramValue null (latest photos), sol #, yyyy-mm-dd
+	 * @param {string} query_param latest, sol, earth_date
+	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
 	 */
-	const { rover, queryParam, paramValue } = route.params;
+	const { rover, query_param, param_value, manifest_photos } = route.params;
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
-		queryParam,
-		paramValue
+		query_param,
+		param_value
 	);
+
+	console.log(data);
 
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);
@@ -64,24 +66,26 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
-	const cameras = createUniqueObjectsArray(data.photos, "camera", "name");
+	// const cameras = createUniqueObjectsArray(data.photos, "cameras", "name");
 
 	return (
 		<SafeAreaView>
 			<ImageBackground
 			// source={img_source}
 			>
-				{isFiltered
-					? filteredPhotos && <PhotosList photos={filteredPhotos} />
-					: data && <PhotosList photos={data.photos} />}
+				{isFiltered ? (
+					filteredPhotos && <PhotosList photos={filteredPhotos} />
+				) : (
+					<PhotosList photos={data.photos} />
+				)}
 
-				<FullScreenModal isVisible={isVisible}>
+				{/* <FullScreenModal isVisible={isVisible}>
 					<RoverCamerasList
 						cameraObjArr={cameras}
 						setFilteredPhotos={filterPhotosByCamera}
 						removeCameraFilter={removeCameraFilter}
 					/>
-				</FullScreenModal>
+				</FullScreenModal> */}
 
 				<View style={S.fabWrapper_view_style}>
 					<NavHomeFAB navigation={navigation} />
@@ -91,8 +95,6 @@ const DisplayPhotosScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
-
-export default DisplayPhotosScreen;
 
 const S = StyleSheet.create({
 	// ----------------------------
