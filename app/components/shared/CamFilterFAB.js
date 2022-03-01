@@ -7,7 +7,7 @@ export const CameraFAB = ({ setIsVisible }) => {
 			color={COLORS.backgroundLT}
 			icon={{
 				type: "font-awesome",
-				name: "camera",
+				name: "filter",
 				color: "black",
 			}}
 			onPress={setIsVisible}
