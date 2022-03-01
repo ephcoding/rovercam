@@ -16,9 +16,9 @@ export const NavHomeFAB = ({ navigation }) => {
 				type: "font-awesome",
 				name: "home",
 				color: "white",
+				size: 26,
 			}}
 			onPress={handleOnPress}
-			size='large'
 		/>
 	);
 };

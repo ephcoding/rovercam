@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
-import { COLORS } from "../styles";
+import { COLORS, SIZES } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
 import {
-	CameraFAB,
+	CamFilterFAB,
 	ImageBackground,
 	NavHomeFAB,
 	SafeAreaView,
@@ -24,13 +24,12 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
 	 */
 	const { rover, query_param, param_value, manifest_photos } = route.params;
-
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
 		query_param,
 		param_value
 	);
-
+	// dynamically sets data param based on fetching latest photos or by query param (sol, earth_date)
 	let photos_prop = param_value ? "photos" : "latest_photos";
 
 	const [isVisible, setIsVisible] = useState(false);
@@ -75,9 +74,9 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 					/>
 				</FullScreenModal>
 
-				<View style={S.fabWrapper_view_style}>
-					<NavHomeFAB navigation={navigation} />
-					<CameraFAB setIsVisible={toggleOverlay} />
+				<View style={S.fab_container_style}>
+					{/* <NavHomeFAB navigation={navigation} /> */}
+					<CamFilterFAB setIsVisible={toggleOverlay} />
 				</View>
 			</ImageBackground>
 		</SafeAreaView>
@@ -85,15 +84,15 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 };
 
 const S = StyleSheet.create({
-	modal_imageBackground_container: {
-		alignItems: "center",
-		backgroundColor: "#000a",
-		flex: 1,
-		flexDirection: "row",
-		justifyContent: "center",
-	},
-	fabWrapper_view_style: {
+	fab_container_style: {
+		height: 60,
+		backgroundColor: "#fff0",
 		flexDirection: "row",
 		justifyContent: "space-evenly",
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[6],
 	},
 });

@@ -1,16 +1,18 @@
 import { FAB } from "react-native-elements";
 import { COLORS } from "../../styles";
 
-export const CameraFAB = ({ setIsVisible }) => {
+export const CamFilterFAB = ({ setIsVisible }) => {
 	return (
 		<FAB
-			color={COLORS.backgroundLT}
+			color={COLORS.secondary}
 			icon={{
 				type: "font-awesome",
 				name: "filter",
-				color: "black",
+				color: "white",
 			}}
+			size='large'
 			onPress={setIsVisible}
+			title='Camera Filter'
 		/>
 	);
 };
