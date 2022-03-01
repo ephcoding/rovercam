@@ -3,7 +3,7 @@ import {
 	NavHomeFAB,
 	SafeAreaView,
 } from "../components/shared";
-import { SEARCH_TYPE_BTNS, IMG_PATHS } from "../constants/rovers";
+import { ROVER_SCREEN_BTNS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
@@ -37,7 +37,7 @@ const RoverInfoScreen = ({ navigation, route }) => {
 				{/* TODO: create OptionButtonsList component
 						USE FOR: RoverPhotoSearchBtn & RoverCameraList */}
 				<View style={S.searchBtns_view_style}>
-					{SEARCH_TYPE_BTNS.map(param => (
+					{ROVER_SCREEN_BTNS.map(param => (
 						<View key={param.title} style={S.searchBtnWrapper_view_style}>
 							<Button
 								buttonStyle={S.searchBtn_btn_btnStyle}

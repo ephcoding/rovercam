@@ -14,6 +14,7 @@ import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
 import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
+import { useFetchPhotos } from "../hooks/useFetchPhotos";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 // --------------------------------------
@@ -24,6 +25,18 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 // --------------------------------------
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
+	/**
+	 * @param {string} rover lowercase Rover name
+	 * @param {string} queryType latest, sol, earth_date
+	 * @param {string} paramValue null (latest photos), sol #, yyyy-mm-dd
+	 */
+	const { rover, queryType, paramValue } = route.params;
+	const { isLoading, error, data } = useFetchPhotos(
+		rover,
+		queryType,
+		paramValue
+	);
+
 	const { isLoading, error, data } = useFetchPhotosByParam(
 		route.params.rover,
 		route.params.paramType,
