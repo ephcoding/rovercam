@@ -75,7 +75,7 @@ export const PHOTO_SEARCH_BTNS = [
 ];
 export const QUERY_PARAMS = {
 	camera: "camera",
-	date: "earth_date",
-	latest: "latest_photos",
+	earth_date: "earth_date",
+	latest_photos: "latest_photos",
 	sol: "sol",
 };

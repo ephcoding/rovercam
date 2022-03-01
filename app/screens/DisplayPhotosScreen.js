@@ -21,6 +21,7 @@ const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 // refactor DisplayScreen to only DISPLAY photos
 
 // (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
+// p.s.s. - gotta dig into react-query docs
 // --------------------------------------
 
 export default DisplayPhotosScreen = ({ navigation, route }) => {
@@ -30,6 +31,9 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
 	 */
 	const { rover, query_param, param_value, manifest_photos } = route.params;
+
+	console.log(route.params);
+
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
 		query_param,
@@ -39,8 +43,6 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	// prop name for photos returned from search query: "photos"
 	// IF param_value THEN photos being displayed are NOT latest_photos
 	let photos_prop = param_value ? "photos" : "latest_photos";
-
-	console.log(data);
 
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);
