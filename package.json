@@ -35,7 +35,13 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
+		"eslint-plugin-react-hooks": "^4.3.0",
 		"react-devtools": "^4.23.0"
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:react-hooks/recommended"
+		]
 	},
 	"private": true
 }

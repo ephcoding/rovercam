@@ -16,21 +16,14 @@ import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-/**
- *
- * QUERY PARAM TYPES:
- * sol
- * earth_date
- * camera
- *
- */
+// --------------------------------------
+// TODO:
+// refactor DisplayScreen to only DISPLAY photos
+
+// (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
+// --------------------------------------
 
 const DisplayPhotosScreen = ({ navigation, route }) => {
-	/**
-	 * @param {string} rover - rover to fetch photos for
-	 * @param {string} paramType - photo query param
-	 * @param {string} value - photo query param value
-	 */
 	const { isLoading, error, data } = useFetchPhotosByParam(
 		route.params.rover,
 		route.params.paramType,
