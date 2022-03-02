@@ -15,6 +15,7 @@ import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
+import CameraFilterModal from "../components/shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 export default DisplayPhotosScreen = ({ navigation, route }) => {
@@ -66,13 +67,12 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
 				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
-				<FullScreenModal isVisible={isVisible}>
-					<RoverCamerasList
-						cameraObjArr={cameras}
-						setFilteredPhotos={filterPhotosByCamera}
-						removeCameraFilter={removeCameraFilter}
-					/>
-				</FullScreenModal>
+				<CameraFilterModal
+					cameras={cameras}
+					isVisible={isVisible}
+					removeFilter={removeCameraFilter}
+					setFilter={filterPhotosByCamera}
+				/>
 
 				<View style={S.fab_view_style}>
 					{/* <NavHomeFAB navigation={navigation} /> */}

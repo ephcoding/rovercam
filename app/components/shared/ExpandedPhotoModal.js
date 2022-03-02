@@ -19,7 +19,7 @@ const ExpandedPhotoModal = ({ imgSource, isVisible, toggleModal }) => {
 				resizeMode='cover'
 			>
 				<Pressable onPress={toggleModal} style={S.pressable_style}>
-					<Icon color='#fff' name='compress' size={50} />
+					<Icon color='#fff' name='close' size={30} />
 				</Pressable>
 			</ImageBackground>
 		</FullScreenModal>
@@ -45,7 +45,7 @@ const S = StyleSheet.create({
 		position: "absolute",
 		right: SIZES[5],
 		bottom: SIZES[5],
-		backgroundColor: COLORS.primary,
+		backgroundColor: COLORS.msgDanger,
 		borderRadius: 10,
 		padding: 10,
 		zIndex: 10,
