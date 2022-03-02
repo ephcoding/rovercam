@@ -10,7 +10,7 @@ export const RNC_THEME = {
 	// -- MONTH
 	monthTextColor: COLORS.textLT,
 	textMonthFontWeight: "bold",
-	textMonthFontSize: 26,
+	textMonthFontSize: SIZES[5],
 	// -- DAY OF WEEK
 	textSectionTitleColor: COLORS.textLT,
 	textDayHeaderFontWeight: "bold",

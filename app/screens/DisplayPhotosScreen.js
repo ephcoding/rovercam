@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
-import { COLORS } from "../styles";
+import { COLORS, SIZES } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
 import {
-	CameraFAB,
+	CamFilterFAB,
 	ImageBackground,
 	NavHomeFAB,
 	SafeAreaView,
@@ -15,14 +15,8 @@ import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
+import CameraFilterModal from "../components/shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
-
-// TODO: ------------------------------
-// refactor DisplayScreen to only DISPLAY photos
-
-// (ie. photos are prefetched in previous screen and then passed to DisplayPhotos screen)
-// p.s.s. - gotta dig into react-query docs
-// --------------------------------------
 
 export default DisplayPhotosScreen = ({ navigation, route }) => {
 	/**
@@ -31,15 +25,12 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
 	 */
 	const { rover, query_param, param_value, manifest_photos } = route.params;
-
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
 		query_param,
 		param_value
 	);
-	// latest photos object[] prop name: "latest_photos"
-	// prop name for photos returned from search query: "photos"
-	// IF param_value THEN photos being displayed are NOT latest_photos
+	// dynamically sets data param based on fetching latest photos or by query param (sol, earth_date)
 	let photos_prop = param_value ? "photos" : "latest_photos";
 
 	const [isVisible, setIsVisible] = useState(false);
@@ -47,17 +38,19 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
-
 	const filterPhotosByCamera = cameraAbbr => {
-		const photos = data.photos.filter(
+		const photos = data[photos_prop].filter(
 			photo => photo.camera.name === cameraAbbr
 		);
+
+		navigation.setOptions({
+			title: cameraAbbr,
+		});
 
 		setFilteredPhotos(photos);
 		setIsFiltered(true);
 		toggleOverlay();
 	};
-
 	const removeCameraFilter = () => {
 		setIsFiltered(false);
 		toggleOverlay();
@@ -74,23 +67,20 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground
-			// source={img_source}
-			>
+			<ImageBackground>
 				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
 				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
 
-				<FullScreenModal isVisible={isVisible}>
-					<RoverCamerasList
-						cameraObjArr={cameras}
-						setFilteredPhotos={filterPhotosByCamera}
-						removeCameraFilter={removeCameraFilter}
-					/>
-				</FullScreenModal>
+				<CameraFilterModal
+					cameras={cameras}
+					isVisible={isVisible}
+					removeFilter={removeCameraFilter}
+					setFilter={filterPhotosByCamera}
+				/>
 
-				<View style={S.fabWrapper_view_style}>
-					<NavHomeFAB navigation={navigation} />
-					<CameraFAB setIsVisible={toggleOverlay} />
+				<View style={S.fab_view_style}>
+					{/* <NavHomeFAB navigation={navigation} /> */}
+					<CamFilterFAB setIsVisible={toggleOverlay} />
 				</View>
 			</ImageBackground>
 		</SafeAreaView>
@@ -98,30 +88,14 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 };
 
 const S = StyleSheet.create({
-	// ----------------------------
-	// -- CAMERA LIST MODAL
-	// ----------------------------
-	modal_imageBackground_container: {
-		alignItems: "center",
-		backgroundColor: "#000a",
-		flex: 1,
-		flexDirection: "row",
-		justifyContent: "center",
-	},
-	fabWrapper_view_style: {
+	fab_view_style: {
+		backgroundColor: "#fff0",
 		flexDirection: "row",
 		justifyContent: "space-evenly",
-	},
-
-	// ----------------------------
-	// -- OG OVERLAY
-	// ----------------------------
-	overlay_overlayStyle: {
-		backgroundColor: "red",
-		height: "80%",
-		width: "80%",
-	},
-	overlay_backdropStyle: {
-		backgroundColor: COLORS.backgroundDK,
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[6],
 	},
 });

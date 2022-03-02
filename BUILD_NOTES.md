@@ -220,6 +220,11 @@ MISC
 </div>
 
 <details>
+<summary><code>DatePicker.js</code>: <code>lastDate.diff() is not a function</code> when tring to use <code>getRangeDatesMonthDiff()</code> util func</summary>
+
+</details>
+
+<details>
 <summary>Expo crashes when picking SOL / Date ( nav to DisplayPhotosScreen )</summary>
 
 **TRIED:**
