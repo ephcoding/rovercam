@@ -17,7 +17,22 @@ export default SOLPickerScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<SOLPicker navigation={navigation} rover={rover} solsArr={solsArr} />
-			<NavHomeFAB navigation={navigation} />
+			<View style={S.fab_view_style}>
+				<NavHomeFAB navigation={navigation} />
+			</View>
 		</SafeAreaView>
 	);
 };
+
+const S = StyleSheet.create({
+	fab_view_style: {
+		backgroundColor: "#fff0",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[6],
+	},
+});

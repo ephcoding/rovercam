@@ -18,7 +18,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 	const markedDatesStyles = {
 		customStyles: {
 			container: {
-				backgroundColor: COLORS.primary,
+				backgroundColor: COLORS.secondary,
 			},
 			text: {
 				color: COLORS.textDK,
@@ -52,18 +52,6 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 				style={S.calendarList_style}
 				theme={RNC_THEME}
 			/>
-			<View>
-				<FAB
-					color={COLORS.primary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
-			</View>
 		</>
 	);
 };
@@ -79,12 +67,4 @@ const S = StyleSheet.create({
 		backgroundColor: "#000",
 		color: "#fff",
 	},
-	// columnWrapperStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
-	// contentContainerStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
 });

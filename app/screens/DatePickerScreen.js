@@ -8,7 +8,7 @@ import { FAB } from "react-native-elements";
 import { useFetchRoverManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
-import { COLORS } from "../styles";
+import { COLORS, SIZES } from "../styles";
 
 export default DatePickerScreen = ({ navigation, route }) => {
 	const { rover, manifest_photos } = route.params;
@@ -21,7 +21,22 @@ export default DatePickerScreen = ({ navigation, route }) => {
 				navigation={navigation}
 				rover={rover}
 			/>
-			<NavHomeFAB navigation={navigation} />
+			<View style={S.fab_view_style}>
+				<NavHomeFAB navigation={navigation} />
+			</View>
 		</SafeAreaView>
 	);
 };
+
+const S = StyleSheet.create({
+	fab_view_style: {
+		backgroundColor: "#fff0",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[6],
+	},
+});

@@ -74,7 +74,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 					/>
 				</FullScreenModal>
 
-				<View style={S.fab_container_style}>
+				<View style={S.fab_view_style}>
 					{/* <NavHomeFAB navigation={navigation} /> */}
 					<CamFilterFAB setIsVisible={toggleOverlay} />
 				</View>
@@ -84,8 +84,7 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 };
 
 const S = StyleSheet.create({
-	fab_container_style: {
-		height: 60,
+	fab_view_style: {
 		backgroundColor: "#fff0",
 		flexDirection: "row",
 		justifyContent: "space-evenly",
