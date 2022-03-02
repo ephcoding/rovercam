@@ -5,20 +5,21 @@ import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
 import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
-
-/**
- * Calendar days are disabledByDefault={true}
- * days are then disabled: false when creating markedDates
- * this avoids having to create another 'disabledDates' func
- */
+import { getRangeDatesMonthDiff } from "./utils/getRangeDatesMonthDiff";
+import dayjs from "dayjs";
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
-	const startDate = earthDatesArr[0];
-	const lastDate = earthDatesArr.slice(-1)[0];
+	const startDate = dayjs(earthDatesArr[0]);
+	const lastDate = dayjs(earthDatesArr.slice(-1)[0]);
+	const diffMonths = lastDate.diff(startDate, "month");
+
 	const markedDatesStyles = {
 		customStyles: {
 			container: {
+				justifyContent: "center",
 				backgroundColor: COLORS.secondary,
+				height: SIZES[7],
+				width: SIZES[7],
 			},
 			text: {
 				color: COLORS.textDK,
@@ -26,8 +27,6 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 		},
 	};
 	const markedDates = createMarkedDatesObj(earthDatesArr, markedDatesStyles);
-
-	// TODO: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
 
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
@@ -41,15 +40,15 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 		<>
 			<CalendarList
 				calendarStyle={S.calendarStyle}
-				current={earthDatesArr[0]}
-				disableAllTouchEventsForDisabledDays={true}
-				disabledByDefault
-				futureScrollRange={20}
+				style={S.style}
 				markingType={"custom"}
 				markedDates={markedDates}
-				onDayPress={date => handleEarthDatePick(date.dateString)}
+				current={earthDatesArr[0]}
+				disabledByDefault
+				disableAllTouchEventsForDisabledDays={true}
 				pastScrollRange={0}
-				style={S.calendarList_style}
+				futureScrollRange={diffMonths}
+				onDayPress={date => handleEarthDatePick(date.dateString)}
 				theme={RNC_THEME}
 			/>
 		</>
@@ -59,9 +58,8 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 export default DatePicker;
 
 const S = StyleSheet.create({
-	calendarList_style: {
+	style: {
 		backgroundColor: "#000",
-		marginVertical: 10,
 	},
 	calendarStyle: {
 		backgroundColor: "#000",
