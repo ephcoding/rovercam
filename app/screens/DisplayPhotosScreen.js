@@ -43,6 +43,10 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 			photo => photo.camera.name === cameraAbbr
 		);
 
+		navigation.setOptions({
+			title: cameraAbbr,
+		});
+
 		setFilteredPhotos(photos);
 		setIsFiltered(true);
 		toggleOverlay();

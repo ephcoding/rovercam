@@ -16,6 +16,7 @@ export default DatePickerScreen = ({ navigation, route }) => {
 	const { rover, manifest_photos } = route.params;
 	const earthDatesArr = manifest_photos.map(photo => photo.earth_date);
 
+	// TODO: make this a custom hook
 	useEffect(() => {
 		navigation.setOptions({
 			title:

@@ -62,7 +62,6 @@ export default PhotosList;
 
 const S = StyleSheet.create({
 	flatList_style: {
-		// height: "100%",
 		flex: 1,
 		backgroundColor: "#222",
 	},

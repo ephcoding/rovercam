@@ -1,6 +1,6 @@
 import { RNC_THEME } from "../styles/themes";
 import { StyleSheet, View } from "react-native";
-import { CalendarList } from "react-native-calendars";
+import { Calendar, CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
@@ -40,15 +40,15 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 		<>
 			<CalendarList
 				calendarStyle={S.calendarStyle}
-				style={S.style}
-				markingType={"custom"}
-				markedDates={markedDates}
 				current={earthDatesArr[0]}
-				disabledByDefault
 				disableAllTouchEventsForDisabledDays={true}
-				pastScrollRange={0}
+				disabledByDefault
 				futureScrollRange={diffMonths}
+				markedDates={markedDates}
+				markingType={"custom"}
 				onDayPress={date => handleEarthDatePick(date.dateString)}
+				pastScrollRange={0}
+				style={S.style}
 				theme={RNC_THEME}
 			/>
 		</>
