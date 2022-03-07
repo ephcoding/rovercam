@@ -1,78 +1,101 @@
 import { useEffect, useState } from "react";
-import { LogBox, StyleSheet, Text, View } from "react-native";
-import { COLORS } from "../styles";
+import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
+import { COLORS, SIZES } from "../styles";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
 import {
-	CameraFAB,
+	CamFilterFAB,
 	ImageBackground,
 	NavHomeFAB,
 	SafeAreaView,
 } from "../components/shared";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
+import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
+import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
+import FullScreenModal from "../components/shared/FullScreenModal";
+import { useFetchPhotos } from "../hooks/useFetchPhotos";
+import CameraFilterModal from "../components/shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-/**
- *
- * QUERY PARAM TYPES:
- * sol
- * earth_date
- * camera
- *
- */
-
-const DisplayPhotosScreen = ({ navigation, route }) => {
-	const { isLoading, error, data } = useFetchPhotosByParam(
-		route.params.rover,
-		route.params.paramType,
-		route.params.value
+export default DisplayPhotosScreen = ({ navigation, route }) => {
+	/**
+	 * @param {string} rover lowercase Rover name
+	 * @param {string} query_param latest, sol, earth_date
+	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
+	 */
+	const { rover, query_param, param_value, manifest_photos } = route.params;
+	const { isLoading, error, data } = useFetchPhotos(
+		rover,
+		query_param,
+		param_value
 	);
+	// dynamically sets data param based on fetching latest photos or by query param (sol, earth_date)
+	let photos_prop = param_value ? "photos" : "latest_photos";
+
 	const [isVisible, setIsVisible] = useState(false);
+	const [isFiltered, setIsFiltered] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
 
-	const handleCameraSelect = e => console.log(">> SELECTED CAMERA >>", e);
 	const toggleOverlay = () => setIsVisible(!isVisible);
+	const filterPhotosByCamera = cameraAbbr => {
+		const photos = data[photos_prop].filter(
+			photo => photo.camera.name === cameraAbbr
+		);
+
+		navigation.setOptions({
+			title: cameraAbbr,
+		});
+
+		setFilteredPhotos(photos);
+		setIsFiltered(true);
+		toggleOverlay();
+	};
+	const removeCameraFilter = () => {
+		setIsFiltered(false);
+		toggleOverlay();
+	};
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
-	});
+	}, []);
 
 	if (isLoading) return <Text>Loading...</Text>;
 	if (error) return <Text>ERROR: {error.messge}</Text>;
 
+	const cameras = createUniqueObjectsArray(data[photos_prop], "camera", "name");
+
 	return (
 		<SafeAreaView>
-			<ImageBackground source={img_source}>
-				{data && <PhotosList photos={data.photos} />}
-				<Overlay
+			<ImageBackground>
+				{isFiltered && filteredPhotos && <PhotosList photos={filteredPhotos} />}
+				{data && !isFiltered && <PhotosList photos={data[photos_prop]} />}
+
+				<CameraFilterModal
+					cameras={cameras}
 					isVisible={isVisible}
-					onBackdropPress={toggleOverlay}
-					overlayStyle={S.overlayStyle}
-				>
-					<RoverCamerasList
-						setFilteredPhotos={handleCameraSelect}
-						rover={route.params.rover}
-					/>
-				</Overlay>
-				<View style={S.row_between}>
-					<NavHomeFAB navigation={navigation} />
-					<CameraFAB setIsVisible={toggleOverlay} />
+					removeFilter={removeCameraFilter}
+					setFilter={filterPhotosByCamera}
+				/>
+
+				<View style={S.fab_view_style}>
+					{/* <NavHomeFAB navigation={navigation} /> */}
+					<CamFilterFAB setIsVisible={toggleOverlay} />
 				</View>
 			</ImageBackground>
 		</SafeAreaView>
 	);
 };
 
-export default DisplayPhotosScreen;
-
 const S = StyleSheet.create({
-	overlayStyle: {
-		height: "80%",
-		width: "80%",
-	},
-	row_between: {
+	fab_view_style: {
+		backgroundColor: "#fff0",
 		flexDirection: "row",
 		justifyContent: "space-evenly",
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[6],
 	},
 });

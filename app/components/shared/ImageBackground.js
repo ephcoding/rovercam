@@ -1,13 +1,13 @@
 import { ImageBackground as RNImageBackground, StyleSheet } from "react-native";
-import { SIZES } from "../../styles";
+import { COLORS, SIZES } from "../../styles";
 
 export const ImageBackground = ({ children, source }) => {
 	return (
 		<RNImageBackground
-			imageStyle={S.imageStyle}
+			imageStyle={S.imgBg_imageStyle}
 			resizeMode='cover'
 			source={source}
-			style={S.style}
+			style={S.imgBg_style}
 		>
 			{children}
 		</RNImageBackground>
@@ -15,11 +15,11 @@ export const ImageBackground = ({ children, source }) => {
 };
 
 const S = StyleSheet.create({
-	imageStyle: {
+	imgBg_imageStyle: {
 		flex: 1,
-		opacity: 0.3,
 	},
-	style: {
+	imgBg_style: {
+		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 		padding: SIZES[3],
 	},

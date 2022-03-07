@@ -20,7 +20,7 @@
 
 :white_check_mark: user can search rover photos by EARTH DATE
 
-:white_large_square: user can filter respective rover's photos by camera
+:white_check_mark: user can filter respective rover's photos by camera
 
 **Ideas:**
 
@@ -41,6 +41,12 @@
 [resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
 
 </div>
+<!-- #region PROJECT MANAGEMENT -->
+
+- [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
+  - [customize](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/customizing-your-project-views) project views
+
+<!-- #endregion /PROJECT MANAGEMENT -->
 
 <!-- #region APIS -->
 
@@ -214,6 +220,11 @@ MISC
 </div>
 
 <details>
+<summary><code>DatePicker.js</code>: <code>lastDate.diff() is not a function</code> when tring to use <code>getRangeDatesMonthDiff()</code> util func</summary>
+
+</details>
+
+<details>
 <summary>Expo crashes when picking SOL / Date ( nav to DisplayPhotosScreen )</summary>
 
 **TRIED:**
@@ -237,7 +248,7 @@ MISC
 
 **_DisplayPhotosScreen dynamic `title` options property's values weren't strings_**
 
-_found by accident when taking passed params out of play (might be TS time)_
+(found by accident when taking passed params out of play (might be TS time))
 
 ```javascript
 // DisplayOptionsScreen Stack.Screen options:
@@ -406,6 +417,12 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 - date / time format [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
 
 </details>
+
+## Optimizing Virtualized Lists
+
+```javascript
+VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
+```
 
 ## `Promise.allSettled()` was added to React Native in v64
 

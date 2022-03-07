@@ -1,41 +1,38 @@
 import { RNC_THEME } from "../styles/themes";
 import { StyleSheet, View } from "react-native";
-import { CalendarList } from "react-native-calendars";
+import { Calendar, CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
+import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
+import { getRangeDatesMonthDiff } from "./utils/getRangeDatesMonthDiff";
+import dayjs from "dayjs";
 
 const DatePicker = ({ earthDatesArr, navigation, rover }) => {
-	const startDate = earthDatesArr[0];
-	// create styled photoDays Object
-	// TODO: make this a func
-	const photoDays = {};
-	const photoDayStyles = {
+	const startDate = dayjs(earthDatesArr[0]);
+	const lastDate = dayjs(earthDatesArr.slice(-1)[0]);
+	const diffMonths = lastDate.diff(startDate, "month");
+
+	const markedDatesStyles = {
 		customStyles: {
 			container: {
-				backgroundColor: COLORS.primary,
+				justifyContent: "center",
+				backgroundColor: COLORS.secondary,
+				height: SIZES[7],
+				width: SIZES[7],
+			},
+			text: {
+				color: COLORS.textDK,
 			},
 		},
 	};
-	earthDatesArr.forEach(date => {
-		photoDays[date] = { ...photoDayStyles };
-	});
-
-	// create date array to determine disabledDays
-	// const dateArray = (startDate, endDate) => {
-	// 	console.log(startDate.slice(), endDate.slice());
-	// };
-	// dateArray(earthDatesArr[0], earthDatesArr[earthDatesArr.length - 1]);
-
-	const photosDay = { container: { backgroundColor: COLORS.primary } };
-	// LEFT OFF: calculate # of months between 1st & last photo day to set Calendar pastScrollRange
-	// TODO: mark calendar days that have photos & disable calendar days that don't
+	const markedDates = createMarkedDatesObj(earthDatesArr, markedDatesStyles);
 
 	const handleEarthDatePick = date => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: QUERY_PARAMS.earth_date,
-			value: date,
+			query_param: QUERY_PARAMS.earth_date,
+			param_value: date,
 		});
 	};
 
@@ -44,26 +41,16 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 			<CalendarList
 				calendarStyle={S.calendarStyle}
 				current={earthDatesArr[0]}
-				futureScrollRange={20}
+				disableAllTouchEventsForDisabledDays={true}
+				disabledByDefault
+				futureScrollRange={diffMonths}
+				markedDates={markedDates}
 				markingType={"custom"}
-				markedDates={photoDays}
 				onDayPress={date => handleEarthDatePick(date.dateString)}
 				pastScrollRange={0}
 				style={S.style}
 				theme={RNC_THEME}
 			/>
-			<View>
-				<FAB
-					color={COLORS.primary}
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={() => navigation.navigate("Home")}
-					size='large'
-				/>
-			</View>
 		</>
 	);
 };
@@ -72,23 +59,10 @@ export default DatePicker;
 
 const S = StyleSheet.create({
 	style: {
-		backgroundColor: "#0000",
-		marginVertical: 10,
+		backgroundColor: "#000",
 	},
 	calendarStyle: {
-		backgroundColor: "#0000",
-		// margin: 10,
+		backgroundColor: "#000",
+		color: "#fff",
 	},
-	// columnWrapperStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
-	// contentContainerStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
-	// headerStyle: {
-	// 	backgroundColor: "#0000",
-	// 	margin: 20,
-	// },
 });

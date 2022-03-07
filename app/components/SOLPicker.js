@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, Platform, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
@@ -9,16 +9,17 @@ const SOLPicker = ({ navigation, rover, solsArr }) => {
 	const handleSOLPick = sol => {
 		navigation.navigate("DisplayPhotos", {
 			rover: rover,
-			paramType: QUERY_PARAMS.sol,
-			value: sol,
+			query_param: QUERY_PARAMS.sol,
+			param_value: sol,
 		});
 	};
 
 	return (
 		<FlatList
+			columnWrapperStyle={S.columnWrapperStyle}
 			data={solsArr}
-			keyExtractor={ke => ke}
-			numColumns={2}
+			keyExtractor={solNum => solNum}
+			numColumns={3}
 			renderItem={({ item, index, separators }) => (
 				<Button
 					buttonStyle={S.btnBtnStyle}
@@ -36,12 +37,12 @@ export default SOLPicker;
 
 const S = StyleSheet.create({
 	btnStyle: {
-		borderColor: "#fff",
-		borderWidth: 2,
 		paddingHorizontal: 5,
 		paddingVertical: 10,
 	},
 	btnBtnStyle: {
+		borderColor: "#fff",
+		borderWidth: 2,
 		backgroundColor: COLORS.backgroundDK,
 		opacity: 0.7,
 	},
@@ -49,5 +50,7 @@ const S = StyleSheet.create({
 		flex: 1,
 		margin: SIZES[3],
 	},
-	flColWrapStyle: {},
+	columnWrapperStyle: {
+		backgroundColor: COLORS.backgroundDK,
+	},
 });

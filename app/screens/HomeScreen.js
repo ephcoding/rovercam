@@ -6,7 +6,6 @@ import { Text } from "react-native-elements";
 import { useQuery } from "react-query";
 import { SIZES } from "../styles";
 import RoverCard from "../components/RoverCard";
-import TestComponent from "../components/TestComponent";
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 /**
@@ -19,7 +18,7 @@ const img_source = require("../../assets/img/mars-glowing.jpg");
  * (query & filter photos on nav to DisplayPhotosScreen from SearchScreen)
  */
 
-const HomeScreen = ({ navigation }) => {
+export default HomeScreen = ({ navigation }) => {
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});
@@ -27,9 +26,6 @@ const HomeScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				{/* ---- TEST ---- */}
-				{/* <TestComponent /> */}
-				{/* ---- TEST ---- */}
 				<Text h2 style={S.txt_h2_style}>
 					Tap a Rover to start exploring!
 				</Text>
@@ -42,8 +38,6 @@ const HomeScreen = ({ navigation }) => {
 		</SafeAreaView>
 	);
 };
-
-export default HomeScreen;
 
 const S = StyleSheet.create({
 	txt_h2_style: {

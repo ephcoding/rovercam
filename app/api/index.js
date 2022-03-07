@@ -1,4 +1,3 @@
-export * from "./getLatestPhotos";
-export * from "./getPhotosByDate";
-export * from "./getPhotosBySOL";
-export * from "./getRoverManifest";
+export * from "./fetchLatestPhotos";
+export * from "./fetchPhotosByParam";
+export * from "./fetchRoverManifest";

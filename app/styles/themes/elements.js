@@ -21,14 +21,6 @@ export const RNE_THEME = {
 			color: "#fff",
 		},
 	},
-	Switch: {
-		ios_backgroundColor: "#777",
-		thumbColor: COLORS.backgroundLT,
-		trackColor: {
-			false: "#777",
-			true: COLORS.secondary,
-		},
-	},
 	Text: {
 		style: {
 			color: "#fff",

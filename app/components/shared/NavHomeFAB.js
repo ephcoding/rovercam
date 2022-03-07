@@ -11,14 +11,14 @@ export const NavHomeFAB = ({ navigation }) => {
 
 	return (
 		<FAB
-			color={COLORS.backgroundDK}
+			color={COLORS.primary}
 			icon={{
 				type: "font-awesome",
 				name: "home",
 				color: "white",
+				size: 26,
 			}}
 			onPress={handleOnPress}
-			size='large'
 		/>
 	);
 };

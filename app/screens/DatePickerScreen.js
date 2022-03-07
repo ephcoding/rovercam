@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
 	ImageBackground,
 	NavHomeFAB,
@@ -5,40 +6,49 @@ import {
 } from "../components/shared";
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
-import { useFetchManifest } from "../hooks";
+import { useFetchRoverManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
-import { COLORS } from "../styles";
+import { COLORS, SIZES } from "../styles";
+import dayjs from "dayjs";
 
-const DatePickerScreen = ({ navigation, route }) => {
-	const { photos, rover } = route.params;
-	const earthDatesArr = photos.map(photo => photo.earth_date);
-	// const img_source = IMG_PATHS[rover.toLowerCase()];
+export default DatePickerScreen = ({ navigation, route }) => {
+	const { rover, manifest_photos } = route.params;
+	const earthDatesArr = manifest_photos.map(photo => photo.earth_date);
 
-	// console.log(">> DatePickerScreen [photos]>>", photos);
-
-	// if (isLoading) return <Text>Loading...</Text>;
-	// if (error) return <Text>ERROR >> {error.message}</Text>;
+	// TODO: make this a custom hook
+	useEffect(() => {
+		navigation.setOptions({
+			title:
+				dayjs(earthDatesArr[0]).format("MMM 'YY") +
+				" - " +
+				dayjs(earthDatesArr.slice(-1)[0]).format("MMM 'YY"),
+		});
+	}, []);
 
 	return (
 		<SafeAreaView>
-			{/* <ImageBackground source={img_source}> */}
 			<DatePicker
-				// earthDatesArr={["2012-08-12", "2012-10-12"]}
 				earthDatesArr={earthDatesArr}
 				navigation={navigation}
 				rover={rover}
 			/>
-			<NavHomeFAB navigation={navigation} />
-			{/* </ImageBackground> */}
+			<View style={S.fab_view_style}>
+				<NavHomeFAB navigation={navigation} />
+			</View>
 		</SafeAreaView>
 	);
 };
 
-export default DatePickerScreen;
-
 const S = StyleSheet.create({
-	pickerView: {
-		flex: 1,
+	fab_view_style: {
+		backgroundColor: "#fff0",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+		position: "absolute",
+		left: 0,
+		bottom: 0,
+		right: 0,
+		marginBottom: SIZES[8],
 	},
 });

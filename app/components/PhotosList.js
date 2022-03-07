@@ -2,23 +2,31 @@ import { useState } from "react";
 import {
 	FlatList,
 	Image,
+	ImageBackground,
+	Modal,
+	Platform,
 	Pressable,
 	StyleSheet,
 	Text,
 	View,
 } from "react-native";
-import { Button, Overlay } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { Button, Tile, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
+import { COLORS, SIZES } from "../styles";
+import FullScreenModal from "./shared/FullScreenModal";
+import PhotosListItem from "./PhotosListItem";
+import ExpandedPhotoModal from "./shared/ExpandedPhotoModal";
 
 const PhotosList = ({ photos }) => {
 	const [isVisible, setIsVisible] = useState(false);
-	const [overlayImgSrc, setOverlayImgSrc] = useState("");
+	const [imgSource, setModalImageSource] = useState("");
 
-	const displayOverlay = imgSrc => {
-		setOverlayImgSrc(imgSrc);
+	const handlePhotoTap = imgSrc => {
+		setModalImageSource(imgSrc);
 		setIsVisible(true);
 	};
-	const closeOverlay = () => setIsVisible(false);
+	const toggleModal = () => setIsVisible(!isVisible);
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -27,38 +35,25 @@ const PhotosList = ({ photos }) => {
 				keyExtractor={photo => photo.id}
 				numColumns={2}
 				PlaceholderContext={<Text>FlatList Loading...</Text>}
+				style={S.flatList_style}
 				renderItem={({ item, index }) => {
+					const photoURI = { uri: item.img_src };
+
 					return (
-						<Pressable
-							onPress={() => displayOverlay(item.img_src)}
-							style={S.pressable}
-						>
-							<Image
-								resizeMode='cover'
-								source={{ uri: item.img_src }}
-								style={S.thumbImgStyle}
-							/>
-							{/* <Text>{item.img_src}</Text> */}
-						</Pressable>
+						<PhotosListItem
+							expandPhoto={() => handlePhotoTap(photoURI)}
+							key={item.id}
+							photoObj={item}
+						/>
 					);
 				}}
-				style={S.flatListStyle}
 			/>
-			<Overlay isVisible={isVisible} overlayStyle={S.overlayStyle}>
-				<Button
-					icon={{
-						type: "font-awesome",
-						name: "home",
-						color: "white",
-					}}
-					onPress={closeOverlay}
-				/>
-				<Image
-					resizeMode='cover'
-					source={{ uri: overlayImgSrc }}
-					style={S.overlayImgStyle}
-				/>
-			</Overlay>
+
+			<ExpandedPhotoModal
+				imgSource={imgSource}
+				isVisible={isVisible}
+				toggleModal={toggleModal}
+			/>
 		</View>
 	);
 };
@@ -66,25 +61,8 @@ const PhotosList = ({ photos }) => {
 export default PhotosList;
 
 const S = StyleSheet.create({
-	flatListStyle: {
-		// backgroundColor: "#0f0",
+	flatList_style: {
 		flex: 1,
-	},
-	overlayStyle: {
-		height: "100%",
-		justifyContent: "center",
-		width: "100%",
-	},
-	overlayImgStyle: {
-		aspectRatio: 1,
-	},
-	pressable: {
-		flex: 1,
-	},
-	thumbImgStyle: {
-		aspectRatio: 1,
-		borderRadius: 50,
-		flex: 1,
-		margin: 10,
+		backgroundColor: "#222",
 	},
 });

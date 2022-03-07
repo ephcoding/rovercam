@@ -6,11 +6,11 @@ import { COLORS, FONTS, SIZES } from "../../styles";
  */
 
 export const RNC_THEME = {
-	calendarBackground: COLORS.clear,
+	calendarBackground: COLORS.backgroundDK,
 	// -- MONTH
-	monthTextColor: COLORS.primary,
+	monthTextColor: COLORS.textLT,
 	textMonthFontWeight: "bold",
-	textMonthFontSize: 26,
+	textMonthFontSize: SIZES[5],
 	// -- DAY OF WEEK
 	textSectionTitleColor: COLORS.textLT,
 	textDayHeaderFontWeight: "bold",

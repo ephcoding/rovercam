@@ -7,7 +7,6 @@ export const SafeAreaView = ({ children }) => {
 
 const S = StyleSheet.create({
 	style: {
-		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
 	},
 });
