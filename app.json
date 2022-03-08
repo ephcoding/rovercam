@@ -2,12 +2,13 @@
 	"expo": {
 		"android": {
 			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
+				"foregroundImage": "./assets/rovercam-badge.png",
+				"backgroundColor": "#ff6600"
+			},
+			"package": "com.modevx.rovercam"
 		},
 		"assetBundlePatterns": ["**/*"],
-		"icon": "./assets/icon.png",
+		"icon": "./assets/rovercam-badge.png",
 		"ios": {
 			"supportsTablet": true
 		},
@@ -16,9 +17,9 @@
 		"owner": "modevx",
 		"slug": "rovercam",
 		"splash": {
-			"image": "./assets/splash.png",
+			"image": "./assets/icon-512.png",
 			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
+			"backgroundColor": "#ff6600"
 		},
 		"updates": {
 			"fallbackToCacheTimeout": 0
