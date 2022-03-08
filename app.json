@@ -1,11 +1,20 @@
 {
 	"expo": {
-		"name": "ROVERCAM",
-		"slug": "rovercam",
-		"owner": "modevx",
-		"version": "1.0.0",
-		"orientation": "portrait",
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#FFFFFF"
+			}
+		},
+		"assetBundlePatterns": ["**/*"],
 		"icon": "./assets/icon.png",
+		"ios": {
+			"supportsTablet": true
+		},
+		"name": "ROVERCAM",
+		"orientation": "portrait",
+		"owner": "modevx",
+		"slug": "rovercam",
 		"splash": {
 			"image": "./assets/splash.png",
 			"resizeMode": "contain",
@@ -14,16 +23,7 @@
 		"updates": {
 			"fallbackToCacheTimeout": 0
 		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
-		},
+		"version": "1.0.0",
 		"web": {
 			"favicon": "./assets/favicon.png"
 		}
