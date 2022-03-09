@@ -1,7 +1,7 @@
 export const createUniqueObjectsArray = (
-	objectArray,
-	rootProp,
-	filterValueProp
+	objectArray: object[],
+	rootProp: string,
+	filterValueProp: string
 ) => {
 	const uniqueKeyArray = [];
 	const uniqueObjectArray = [];

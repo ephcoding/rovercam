@@ -1,5 +1,8 @@
 import { useQuery } from "react-query";
-import { fetchLatestPhotos, fetchPhotosByParam } from "../api";
+import {
+	fetchLatestPhotos,
+	fetchPhotosByParam,
+} from "../services/mars_rover_photos";
 import { QUERY_PARAMS as PARAM } from "../constants";
 
 /**
@@ -11,7 +14,9 @@ import { QUERY_PARAMS as PARAM } from "../constants";
  */
 
 export const useFetchPhotos = (rover, query_param, param_value = undefined) => {
-	if (param_value) {
+	console.log(typeof param_value);
+
+	if (param_value || param_value === 0) {
 		return useQuery(`photos_by_${query_param}`, () =>
 			fetchPhotosByParam(rover, query_param, param_value)
 		);

@@ -1,8 +1,6 @@
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS, ROVER_NAMES } from "../constants";
-import { useQuery } from "react-query";
-import { getRoverManifest } from "../api";
 import { COLORS, SIZES } from "../styles";
 
 // CLEAN: create structured placeholderData to eliminate init screen flicker
