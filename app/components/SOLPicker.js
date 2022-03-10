@@ -21,15 +21,13 @@ const SOLPicker = ({ navigation, rover, solsArr }) => {
 			keyExtractor={solNum => solNum}
 			numColumns={3}
 			renderItem={({ item, index, separators }) => (
-				return (
-					<Button
-						buttonStyle={S.btnBtnStyle}
-						containerStyle={S.btnContainerStyle}
-						onPress={() => handleSOLPick(item)}
-						style={S.btnStyle}
-						title={item}
-					/>
-				)
+				<Button
+					buttonStyle={S.btnBtnStyle}
+					containerStyle={S.btnContainerStyle}
+					onPress={() => handleSOLPick(item)}
+					style={S.btnStyle}
+					title={item}
+				/>
 			)}
 		/>
 	);
