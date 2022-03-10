@@ -3,7 +3,7 @@ import {
 	NavHomeFAB,
 	SafeAreaView,
 } from "../components/shared";
-import { PHOTO_SEARCH_BTNS as BTNS, IMG_PATHS } from "../constants/rovers";
+import { PHOTO_SEARCH_BTNS, IMG_PATHS } from "../constants/rovers";
 import { useFetchRoverManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
@@ -22,17 +22,16 @@ export default RoverInfoScreen = ({ navigation, route }) => {
 		if (screen === "DisplayPhotos") {
 			navigation.navigate("DisplayPhotos", {
 				rover,
+				manifest_photos: data.photo_manifest.photos,
 				query_param,
 				param_value: undefined,
-				manifest_photos: data.photo_manifest.photos,
 			});
-		} else if (screen === "DatePicker" || screen === "SOLPicker") {
+		}
+		if (screen === "DatePicker" || screen === "SOLPicker") {
 			navigation.navigate(screen, {
 				rover,
 				manifest_photos: data.photo_manifest.photos,
 			});
-		} else {
-			throw new Error("[ RoverScreen.js ] >> invalid navigation screen.");
 		}
 	};
 
@@ -42,14 +41,14 @@ export default RoverInfoScreen = ({ navigation, route }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground>
-				<ImageBackground source={img_source}></ImageBackground>
+				{/* <ImageBackground source={img_source}></ImageBackground> */}
 
 				<RoverStats data={data} />
 
 				{/* TODO: create OptionButtonsList component
 						USE FOR: RoverPhotoSearchBtn & RoverCameraList */}
 				<View style={S.searchBtns_view_style}>
-					{BTNS.map(button => (
+					{PHOTO_SEARCH_BTNS.map(button => (
 						<View key={button.title} style={S.searchBtnWrapper_view_style}>
 							<Button
 								buttonStyle={S.searchBtn_btn_btnStyle}

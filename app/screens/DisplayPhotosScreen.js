@@ -19,23 +19,19 @@ import CameraFilterModal from "../components/shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 export default DisplayPhotosScreen = ({ navigation, route }) => {
-	/**
-	 * @param {string} rover lowercase Rover name
-	 * @param {string} query_param latest, sol, earth_date
-	 * @param {string} param_value null (latest photos), sol #, yyyy-mm-dd
-	 */
+	const [isVisible, setIsVisible] = useState(false);
+	const [isFiltered, setIsFiltered] = useState(false);
+	const [filteredPhotos, setFilteredPhotos] = useState([]);
 	const { rover, query_param, param_value, manifest_photos } = route.params;
 	const { isLoading, error, data } = useFetchPhotos(
 		rover,
 		query_param,
 		param_value
 	);
-	// dynamically sets data param based on fetching latest photos or by query param (sol, earth_date)
-	let photos_prop = param_value ? "photos" : "latest_photos";
-
-	const [isVisible, setIsVisible] = useState(false);
-	const [isFiltered, setIsFiltered] = useState(false);
-	const [filteredPhotos, setFilteredPhotos] = useState([]);
+	let photos_prop = param_value === undefined ? "photos" : "latest_photos";
+	if (isLoading) return <Text>Loading...</Text>;
+	if (error) return <Text>ERROR: {error.messge}</Text>;
+	const cameras = createUniqueObjectsArray(data[photos_prop], "camera", "name");
 
 	const toggleOverlay = () => setIsVisible(!isVisible);
 	const filterPhotosByCamera = cameraAbbr => {
@@ -59,11 +55,6 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	}, []);
-
-	if (isLoading) return <Text>Loading...</Text>;
-	if (error) return <Text>ERROR: {error.messge}</Text>;
-
-	const cameras = createUniqueObjectsArray(data[photos_prop], "camera", "name");
 
 	return (
 		<SafeAreaView>

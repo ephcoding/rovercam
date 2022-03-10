@@ -8,16 +8,6 @@ import { SIZES } from "../styles";
 import RoverCard from "../components/RoverCard";
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
-/**
- * TODO: cleaner way to import imgs
- * TODO: how to rePOSITION bgImg
- * TODO: create outline logo for each rover for cool camera selection option
- * TODO: resolve undefined manifest.props on init app load
- * * TODO: pre-fetch manifest & all images for each Rover separately
- * (query manifest on nav to RoverScreen)
- * (query & filter photos on nav to DisplayPhotosScreen from SearchScreen)
- */
-
 export default HomeScreen = ({ navigation }) => {
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
