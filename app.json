@@ -1,35 +1,33 @@
 {
-  "expo": {
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/rovercam-badge.png",
-        "backgroundColor": "#ff6600"
-      },
-      "package": "com.modevx.rovercam"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "icon": "./assets/rovercam-badge.png",
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.modevx.rovercam"
-    },
-    "name": "ROVERCAM",
-    "orientation": "portrait",
-    "owner": "modevx",
-    "slug": "rovercam",
-    "splash": {
-      "image": "./assets/icon-512.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ff6600"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "version": "1.0.0",
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
+	"expo": {
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/badge-512.png",
+				"backgroundColor": "#ff6600"
+			},
+			"package": "com.modevx.rovercam"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"icon": "./assets/badge-512.png",
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.modevx.rovercam"
+		},
+		"name": "ROVERCAM",
+		"orientation": "portrait",
+		"owner": "modevx",
+		"slug": "rovercam",
+		"splash": {
+			"image": "./assets/icon-512.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ff6600"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"version": "1.0.0",
+		"web": {
+			"favicon": "./assets/favicon.png"
+		}
+	}
 }

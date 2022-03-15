@@ -14,6 +14,7 @@ import SOLPickerScreen from "./app/screens/SOLPickerScreen";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
+import { NativeBaseProvider } from "native-base";
 // -----
 const queryClient = new QueryClient();
 
