@@ -1,16 +1,12 @@
-// -----
-import { NavigationContainer } from "@react-navigation/native";
-import { Stack } from "./app/navigation/app-stack-navigator";
+import { AppNavigator } from "./app/navigation/app-stack-navigator";
 // -----
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
-import CameraPickerScreen from "./app/screens/CameraPickerScreen";
-import DatePickerScreen from "./app/screens/DatePickerScreen";
-import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
 import HomeScreen from "./app/screens/HomeScreen";
-import RoverScreen from "./app/screens/RoverScreen";
-import SOLPickerScreen from "./app/screens/SOLPickerScreen";
+import DisplayPhotosScreen from "./app/screens/DisplayPhotosScreen";
+import DayPickerScreen from "./app/screens/DayPickerScreen";
+
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
@@ -23,7 +19,8 @@ export default App = () => {
 		<QueryClientProvider client={queryClient}>
 			<ThemeProvider theme={RNE_THEME}>
 				<SafeAreaProvider>
-					<NavigationContainer>
+					<AppNavigator />
+					{/* <NavigationContainer>
 						<Stack.Navigator
 							initialRouteName='Home'
 							screenOptions={{
@@ -52,7 +49,7 @@ export default App = () => {
 							/>
 							<Stack.Screen
 								name='DatePicker'
-								component={DatePickerScreen}
+								component={DayPickerScreen}
 								options={({ route }) => ({
 									title: "EARTH DATE",
 								})}
@@ -64,13 +61,13 @@ export default App = () => {
 									title: route.params.paramType,
 								})}
 							/>
-							{/* <Stack.Screen
+							<Stack.Screen
 								name='LatestPhotos'
 								component={LatestPhotosScreen}
 								options={({ route }) => ({
 									title: `LATEST ${route.params.rover.toUpperCase()} PHOTOS`,
 								})}
-							/> */}
+							/>
 							<Stack.Screen
 								name='Rover'
 								component={RoverScreen}
@@ -86,7 +83,7 @@ export default App = () => {
 								})}
 							/>
 						</Stack.Navigator>
-					</NavigationContainer>
+					</NavigationContainer> */}
 				</SafeAreaProvider>
 			</ThemeProvider>
 		</QueryClientProvider>

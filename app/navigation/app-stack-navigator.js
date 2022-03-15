@@ -1,33 +1,23 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "../screens/HomeScreen";
+import DisplayPhotosScreen from "../screens/DisplayPhotosScreen";
+// import PickerScreen from '../screens/PickerScreen';
 
-export const Stack = createNativeStackNavigator();
-// 	{
-// 		Home: { screen: HomeScreen },
-// 		SearchPhotos: {
-// 			screen: SearchPhotosScreen,
-// 			navigationOptions: {
-// 				title: "SEARCH PHOTOS",
-// 			},
-// 		},
-// 		DisplayPhotos: {
-// 			screen: DisplayPhotosScreen,
-// 			navigationOptions: ({ navigation }) => {
-// 				title: `${navigation.state.params.title}`;
-// 			},
-// 		},
-// 		RoverInfo: {
-// 			screen: RoverInfoScreen,
-// 			navigationOptions: {
-// 				title: "ROVER INFO",
-// 			},
-// 		},
-// 	},
-// 	{
-// 		initialRouteName: "Home",
-// 		defaultNavigationOptions: {
-// 			title: "ROVERCAM",
-// 		},
-// 	}
-// );
+const Stack = createNativeStackNavigator();
 
-// export default AppStackNavigatorContainer = createAppContainer(stackNavigator);
+const AppStack = () => {
+	return (
+		<Stack.Navigator initialRouteName='Home'>
+			<Stack.Screen name='Home' component={HomeScreen} />
+			<Stack.Screen name='DisplayPhotos' component={DisplayPhotosScreen} />
+			{/* <Stack.Screen name="Picker" component={PickerScreen}/> */}
+		</Stack.Navigator>
+	);
+};
+
+export const AppNavigator = () => {
+	<NavigationContainer>
+		<AppStack />
+	</NavigationContainer>;
+};

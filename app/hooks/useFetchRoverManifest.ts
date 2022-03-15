@@ -1,4 +1,4 @@
-import { fetchRoverManifest } from "../services/mars_rover_photos";
+import { fetchRoverManifest } from "../services/mars-rover-api";
 import { useQuery } from "react-query";
 
 export const useFetchRoverManifest = rover => {
