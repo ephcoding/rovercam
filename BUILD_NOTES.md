@@ -12,21 +12,51 @@
 
 </div>
 
-# **Sprint 1**
+## **SPRINT 2**
 
-:white_check_mark: display rover manifest (mission) information
+### **Bugs**
 
-:white_check_mark: user can see latest photos for each rover
+- [ ] FlatList optimization: photos take crazy-long to display on certain phones
+- [ ] picking SOL "0" crashes app
+- [ ] RoverScreen layout collapses on smaller phones
 
-:white_check_mark: user can search rover photos by SOL (Martion day)
+### **Refactor**
 
-:white_check_mark: user can search rover photos by EARTH DATE
+[ HomeScreen ]
 
-:white_check_mark: user can filter respective rover's photos by camera
+- [ ] swipe between Rovers
+- [ ] rover bg img / title @ top 1/2
+- [ ] stats section moved over from RoverScreen @ bottom 1/2
+
+[ SearchScreen ]
+
+- [ ] rover selection dropdown
+- [ ] year-month-day Earth Date picker
+- [ ] 4-digit SOL number picker
+- [ ] "Latest Photos" action button
+
+[ PhotosScreen ]
+
+- [ ] photos FlatList
+  - [ ] FlatList optimization
+  - [ ] tap to expand photo
+    - [ ] "x" icon to close
+  - [ ] zoomable photos
+- [ ] cam filter drawer menu
+  - [ ] filter icon to open
+  - [ ] "x" icon to close
+
+## **SPRINT 1**
+
+- [x] display rover manifest (mission) information
+- [x] user can see latest photos for each rover
+- [x] user can search rover photos by SOL (Martion day)
+- [x] user can search rover photos by EARTH DATE
+- [x] user can filter respective rover's photos by camera
 
 **Ideas:**
 
-:white_large_square: user can rate/rank their favorite images
+- [ ] user can rate/rank their favorite images
 
 <!-- #endregion /INTRO -->
 
