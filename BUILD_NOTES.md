@@ -111,23 +111,20 @@ There have been a LOT of versions. Wireframe pics coming soon..
 
 </div>
 
-## **Project Management**
+## **| PROJECT MANAGEMENT**
 
 Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
 
-## **UI / Components**
+## **| UI / COMPONENTS**
 
 ### _Dynamic Components_
 
-[ SearchScreen ]
-
-- Rover selection dropdown
-- Earth Date picker
-- SOL picker
-
-[ PhotosScreen ]
-
-- cam filter drawer menu
+- SearchScreen
+  - Rover selection dropdown
+  - Earth Date picker
+  - SOL picker
+- PhotosScreen
+  - cam filter drawer menu
 
 ### _Optimizing Virtualized Lists_
 
