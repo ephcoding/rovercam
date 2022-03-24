@@ -6,20 +6,35 @@ import DisplayPhotosScreen from "../screens/DisplayPhotosScreen";
 
 const Stack = createNativeStackNavigator();
 
-const AppStack = () => {
+const Navigator = () => {
 	return (
-		<Stack.Navigator initialRouteName='Home'>
+		<Stack.Navigator
+			initialRouteName='Home'
+			screenOptions={{
+				headerStyle: {
+					backgroundColor: "#222",
+				},
+				headerTintColor: "#fff",
+				headerTitleStyle: {
+					color: "#fff",
+					fontSize: 20,
+					fontWeight: "bold",
+				},
+			}}
+		>
 			<Stack.Screen name='Home' component={HomeScreen} />
-			<Stack.Screen name='DisplayPhotos' component={DisplayPhotosScreen} />
-			{/* <Stack.Screen name="Picker" component={PickerScreen}/> */}
+			{/* <Stack.Screen name='Search' component={SearchScreen} /> */}
+			{/* <Stack.Screen name='Photos' component={PhotosScreen} /> */}
 		</Stack.Navigator>
 	);
 };
 
-export const AppNavigator = () => {
+const StackNavigator = () => {
 	return (
 		<NavigationContainer>
-			<AppStack />
+			<Navigator />
 		</NavigationContainer>
 	);
 };
+
+export default StackNavigator;

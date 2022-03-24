@@ -69,13 +69,15 @@
 
 </div>
 
+<!-- #endregion /DISCOVER -->
+
+# DISCOVER
+
 ## **IDEATION**
 
 ROVERCAM was the first app applying my 6-step mobile app process. Want to keep the concept simple so I could focus on the process and tech.
 
 Fetch-and-display was the high-level objective and NASA has a solid selection of free & easy-to-use REST APIs. Yahtzee.
-
-<!-- #endregion /DISCOVER -->
 
 <!-- #region VISUALIZE -->
 
@@ -91,11 +93,13 @@ Fetch-and-display was the high-level objective and NASA has a solid selection of
 
 </div>
 
+<!-- #endregion /VISUALIZE -->
+
+# VISUALIZE
+
 ## **UI / UX**
 
 There have been a LOT of versions. Wireframe pics coming soon..
-
-<!-- #endregion /VISUALIZE -->
 
 <!-- #region BUILD -->
 
@@ -111,11 +115,19 @@ There have been a LOT of versions. Wireframe pics coming soon..
 
 </div>
 
+<!-- #endregion /BUILD -->
+
+# BUILD
+
+## **| Top Tab Navigation**
+
 ## **| PROJECT MANAGEMENT**
 
 Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
 
 ## **| UI / COMPONENTS**
+
+- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
 
 ### _Dynamic Components_
 
@@ -132,8 +144,6 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
 VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
 ```
 
-<!-- #endregion /BUILD -->
-
 <!-- #region MARKET -->
 
 <div id='market' align='center'>
@@ -148,11 +158,13 @@ VirtualizedList: You have a large list that is slow to update - make sure your r
 
 </div>
 
+<!-- #endregion /MARKET -->
+
+# MARKET
+
 ## **Product Page**
 
 Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( _soon to become my boilerplate for every build_ )
-
-<!-- #endregion /MARKET -->
 
 <!-- #region DEPLOY -->
 
@@ -170,6 +182,8 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 <!-- #endregion /DEPLOY -->
 
+# DEPLOY
+
 <!-- #region EVALUATE -->
 
 <div id='evaluate' align='center'>
@@ -186,6 +200,8 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 <!-- #endregion /EVALUATE -->
 
+# EVALUATE
+
 <!-- #region RESOURCES -->
 
 <div id='resources' align='center'>
@@ -199,6 +215,11 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 [discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /RESOURCES -->
+
+# RESOURCES
+
 <!-- #region PROJECT MANAGEMENT -->
 
 - [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
@@ -361,8 +382,6 @@ MISC
 
 <!-- #endregion /CHECK OUT LATER -->
 
-<!-- #endregion /RESOURCES -->
-
 <!-- #region ISSUES -->
 
 <div id='issues' align='center'>
@@ -376,6 +395,10 @@ MISC
 [discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /ISSUES -->
+
+# ISSUES
 
 <details>
 <summary><code>DatePicker.js</code>: <code>lastDate.diff() is not a function</code> when tring to use <code>getRangeDatesMonthDiff()</code> util func</summary>
@@ -553,8 +576,6 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <hr>
 
-<!-- #endregion /ISSUES -->
-
 <!-- #region NOTES -->
 
 <div id='notes' align='center'>
@@ -568,6 +589,10 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 [discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /NOTES -->
+
+# NOTES
 
 <details>
 <summary>Date / Time</summary>
@@ -607,8 +632,6 @@ CardTitle: {
 - [S.O. answer](https://stackoverflow.com/a/70114114)
 - React Native issue [30236](https://github.com/facebook/react-native/issues/30236#issuecomment-939286987)
 
-<!-- #endregion /NOTES -->
-
 <!-- #region QUESTIONS -->
 
 <div id='questions' align='center'>
@@ -623,12 +646,14 @@ CardTitle: {
 
 </div>
 
+<!-- #endregion /QUESTIONS -->
+
+# QUESTIONS
+
 :white_large_square: what is the `number` img source type & how does it work / what does it do?
 
 - [x] `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
   - _forgot to destructure `photos` prop - so it was was getting treating like `props`_
-
-<!-- #endregion /QUESTIONS -->
 
 <!-- #region CONNECT -->
 
@@ -644,6 +669,10 @@ CardTitle: {
 
 </div>
 
+<!-- #endregion /CONNECT -->
+
+# CONNECT
+
 <table align='center'>
   <tr >
     <td style="border: none;"><a alt='icon link to modevx github account' href='https://github.com/modevx' target='_blank'><img src="https://cdn.iconscout.com/icon/free/png-256/github-157-675821.png" width="90"></a></td> 
@@ -653,7 +682,3 @@ CardTitle: {
     <td style="border: none;"><a alt='icon link to modevx instagram account' href='https://instagram.com/_modevx' target='_blank'><img src="https://cdn.iconscout.com/icon/free/png-256/instagram-2752153-2284970.png" width="90"></a></td>
   </tr>
 </table>
-
-<!-- #endregion /CONNECT -->
-
-- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
