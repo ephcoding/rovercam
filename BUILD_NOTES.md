@@ -12,7 +12,7 @@
 
 </div>
 
-## **SPRINT 2**
+## **SPRINT 2 requirements**
 
 ### **Bugs**
 
@@ -38,15 +38,10 @@
 [ PhotosScreen ]
 
 - [ ] photos FlatList
-  - [ ] FlatList optimization
-  - [ ] tap to expand photo
-    - [ ] "x" icon to close
-  - [ ] zoomable photos
+- [ ] zoomable photo functionality
 - [ ] cam filter drawer menu
-  - [ ] filter icon to open
-  - [ ] "x" icon to close
 
-## **SPRINT 1**
+## **SPRINT 1 requirements**
 
 - [x] display rover manifest (mission) information
 - [x] user can see latest photos for each rover
