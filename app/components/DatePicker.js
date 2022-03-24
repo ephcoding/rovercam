@@ -1,6 +1,6 @@
 import { RNC_THEME } from "../styles/themes";
 import { StyleSheet, View } from "react-native";
-import { Calendar, CalendarList } from "react-native-calendars";
+// import { Calendar, CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
 import { COLORS, FONTS, SIZES } from "../styles";
 import { QUERY_PARAMS } from "../constants";
@@ -38,7 +38,8 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 
 	return (
 		<>
-			<CalendarList
+			<Text>DatPicker Screen</Text>
+			{/* <CalendarList
 				calendarStyle={S.calendarStyle}
 				current={earthDatesArr[0]}
 				disableAllTouchEventsForDisabledDays={true}
@@ -50,7 +51,7 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 				pastScrollRange={0}
 				style={S.style}
 				theme={RNC_THEME}
-			/>
+			/> */}
 		</>
 	);
 };

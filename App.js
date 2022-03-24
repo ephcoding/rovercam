@@ -20,27 +20,27 @@ export default App = () => {
 			<ThemeProvider theme={RNE_THEME}>
 				<SafeAreaProvider>
 					<AppNavigator />
-					{/* <NavigationContainer>
-						<Stack.Navigator
-							initialRouteName='Home'
-							screenOptions={{
-								headerStyle: {
-									backgroundColor: "#000",
-								},
-								headerTintColor: "#fff",
-								headerTitleStyle: {
-									color: "#fff",
-									fontSize: 20,
-									fontWeight: "bold",
-								},
-							}}
-						>
-							<Stack.Screen
-								name='Home'
-								component={HomeScreen}
-								options={{ title: "ROVERCAM" }}
-							/>
-							<Stack.Screen
+					{/* <NavigationContainer> */}
+					<Stack.Navigator
+						initialRouteName='Home'
+						screenOptions={{
+							headerStyle: {
+								backgroundColor: "#000",
+							},
+							headerTintColor: "#fff",
+							headerTitleStyle: {
+								color: "#fff",
+								fontSize: 20,
+								fontWeight: "bold",
+							},
+						}}
+					>
+						<Stack.Screen
+							name='Home'
+							component={HomeScreen}
+							options={{ title: "ROVERCAM" }}
+						/>
+						{/* <Stack.Screen
 								name='CameraPicker'
 								component={CameraPickerScreen}
 								options={({ route }) => ({
@@ -81,9 +81,9 @@ export default App = () => {
 								options={({ route }) => ({
 									title: "MARTIAN SOL",
 								})}
-							/>
-						</Stack.Navigator>
-					</NavigationContainer> */}
+							/> */}
+					</Stack.Navigator>
+					{/* </NavigationContainer> */}
 				</SafeAreaProvider>
 			</ThemeProvider>
 		</QueryClientProvider>
