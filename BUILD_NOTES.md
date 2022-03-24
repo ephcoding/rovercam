@@ -76,6 +76,7 @@ ROVERCAM was the first app applying my 6-step mobile app process. Want to keep t
 Fetch-and-display was the high-level objective and NASA has a solid selection of free & easy-to-use REST APIs. Yahtzee.
 
 <!-- #endregion /DISCOVER -->
+
 <!-- #region VISUALIZE -->
 
 <div id='visualize' align='center'>
@@ -95,6 +96,7 @@ Fetch-and-display was the high-level objective and NASA has a solid selection of
 There have been a LOT of versions. Wireframe pics coming soon..
 
 <!-- #endregion /VISUALIZE -->
+
 <!-- #region BUILD -->
 
 <div id='build' align='center'>
@@ -113,7 +115,28 @@ There have been a LOT of versions. Wireframe pics coming soon..
 
 Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
 
+## **UI / Components**
+
+### _Dynamic Components_
+
+[ SearchScreen ]
+
+- Rover selection dropdown
+- Earth Date picker
+- SOL picker
+
+[ PhotosScreen ]
+
+- cam filter drawer menu
+
+### _Optimizing Virtualized Lists_
+
+```javascript
+VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
+```
+
 <!-- #endregion /BUILD -->
+
 <!-- #region MARKET -->
 
 <div id='market' align='center'>
@@ -133,6 +156,7 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
 Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( _soon to become my boilerplate for every build_ )
 
 <!-- #endregion /MARKET -->
+
 <!-- #region DEPLOY -->
 
 <div id='deploy' align='center'>
@@ -148,6 +172,7 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 </div>
 
 <!-- #endregion /DEPLOY -->
+
 <!-- #region EVALUATE -->
 
 <div id='evaluate' align='center'>
@@ -553,12 +578,6 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 - date / time format [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
 
 </details>
-
-## Optimizing Virtualized Lists
-
-```javascript
-VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
-```
 
 ## `Promise.allSettled()` was added to React Native in v64
 
