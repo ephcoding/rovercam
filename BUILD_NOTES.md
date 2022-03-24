@@ -63,6 +63,12 @@
 
 </div>
 
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
 ## **IDEATION**
 
 ROVERCAM was the first app applying my 6-step mobile app process. Want to keep the concept simple so I could focus on the process and tech.
@@ -75,6 +81,12 @@ Fetch-and-display was the high-level objective and NASA has a solid selection of
 <div id='visualize' align='center'>
 
 ![rovercam readme graphic](./assets/readme/visualize.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
@@ -91,6 +103,12 @@ There have been a LOT of versions. Wireframe pics coming soon..
 
 </div>
 
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
 ## **Project Management**
 
 Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
@@ -101,6 +119,12 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
 <div id='market' align='center'>
 
 ![rovercam readme graphic](./assets/readme/market.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
@@ -117,12 +141,24 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 </div>
 
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
 <!-- #endregion /DEPLOY -->
 <!-- #region EVALUATE -->
 
 <div id='evaluate' align='center'>
 
 ![rovercam readme graphic](./assets/readme/evaluate.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
