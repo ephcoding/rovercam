@@ -8,9 +8,11 @@
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+# **Sprint 1**
 
 :white_check_mark: display rover manifest (mission) information
 
@@ -38,7 +40,7 @@
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 <!-- #region PROJECT MANAGEMENT -->
@@ -215,7 +217,7 @@ MISC
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
@@ -407,7 +409,7 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
@@ -467,7 +469,7 @@ CardTitle: {
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
@@ -488,7 +490,7 @@ CardTitle: {
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
