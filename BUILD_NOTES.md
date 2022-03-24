@@ -55,13 +55,86 @@
 
 <!-- #endregion /INTRO -->
 
+<!-- #region DISCOVER -->
+
+<div id='discover' align='center'>
+
+![rovercam readme graphic](./assets/readme/discover.png)
+
+</div>
+
+## **IDEATION**
+
+ROVERCAM was the first app applying my 6-step mobile app process. Want to keep the concept simple so I could focus on the process and tech.
+
+Fetch-and-display was the high-level objective and NASA has a solid selection of free & easy-to-use REST APIs. Yahtzee.
+
+<!-- #endregion /DISCOVER -->
+<!-- #region VISUALIZE -->
+
+<div id='visualize' align='center'>
+
+![rovercam readme graphic](./assets/readme/visualize.png)
+
+</div>
+
+## **UI / UX**
+
+There have been a LOT of versions. Wireframe pics coming soon..
+
+<!-- #endregion /VISUALIZE -->
+<!-- #region BUILD -->
+
+<div id='build' align='center'>
+
+![rovercam readme graphic](./assets/readme/build.png)
+
+</div>
+
+## **Project Management**
+
+Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
+
+<!-- #endregion /BUILD -->
+<!-- #region MARKET -->
+
+<div id='market' align='center'>
+
+![rovercam readme graphic](./assets/readme/market.png)
+
+</div>
+
+## **Product Page**
+
+Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( _soon to become my boilerplate for every build_ )
+
+<!-- #endregion /MARKET -->
+<!-- #region DEPLOY -->
+
+<div id='deploy' align='center'>
+
+![rovercam readme graphic](./assets/readme/deploy.png)
+
+</div>
+
+<!-- #endregion /DEPLOY -->
+<!-- #region EVALUATE -->
+
+<div id='evaluate' align='center'>
+
+![rovercam readme graphic](./assets/readme/evaluate.png)
+
+</div>
+
+<!-- #endregion /EVALUATE -->
+
 <!-- #region RESOURCES -->
 
-<h3 id='resources' align='center'>
+<div id='resources' align='center'>
 
 ![rovercam readme graphic](./assets/readme/resources.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
@@ -234,11 +307,11 @@ MISC
 
 <!-- #region ISSUES -->
 
-<h3 id='issues' align='center'>
+<div id='issues' align='center'>
 
 ![rovercam readme graphic](./assets/readme/issues.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
@@ -426,11 +499,11 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <!-- #region NOTES -->
 
-<h3 id='notes' align='center'>
+<div id='notes' align='center'>
 
 ![rovercam readme graphic](./assets/readme/notes.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
@@ -486,11 +559,11 @@ CardTitle: {
 
 <!-- #region QUESTIONS -->
 
-<h3 id='questions' align='center'>
+<div id='questions' align='center'>
 
 ![rovercam readme graphic](./assets/readme/questions.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
@@ -507,11 +580,11 @@ CardTitle: {
 
 <!-- #region CONNECT -->
 
-<h3 id='connect' align='center'>
+<div id='connect' align='center'>
 
 ![rovercam readme graphic](./assets/readme/connect.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
