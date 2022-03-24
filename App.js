@@ -1,4 +1,5 @@
 import { AppNavigator } from "./app/navigation/app-stack-navigator";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // -----
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -20,7 +21,7 @@ export default App = () => {
 			<ThemeProvider theme={RNE_THEME}>
 				<SafeAreaProvider>
 					<AppNavigator />
-					{/* <NavigationContainer> */}
+					{/* <NavigationContainer>
 					<Stack.Navigator
 						initialRouteName='Home'
 						screenOptions={{
@@ -40,7 +41,7 @@ export default App = () => {
 							component={HomeScreen}
 							options={{ title: "ROVERCAM" }}
 						/>
-						{/* <Stack.Screen
+						<Stack.Screen
 								name='CameraPicker'
 								component={CameraPickerScreen}
 								options={({ route }) => ({
@@ -81,9 +82,9 @@ export default App = () => {
 								options={({ route }) => ({
 									title: "MARTIAN SOL",
 								})}
-							/> */}
+							/>
 					</Stack.Navigator>
-					{/* </NavigationContainer> */}
+					</NavigationContainer> */}
 				</SafeAreaProvider>
 			</ThemeProvider>
 		</QueryClientProvider>

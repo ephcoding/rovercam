@@ -17,7 +17,9 @@ const AppStack = () => {
 };
 
 export const AppNavigator = () => {
-	<NavigationContainer>
-		<AppStack />
-	</NavigationContainer>;
+	return (
+		<NavigationContainer>
+			<AppStack />
+		</NavigationContainer>
+	);
 };
