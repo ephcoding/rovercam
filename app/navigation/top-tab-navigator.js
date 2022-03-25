@@ -8,7 +8,7 @@ const Tab = createMaterialTopTabNavigator();
 const Navigator = () => {
 	return (
 		<Tab.Navigator>
-			<Tab.Screen name='Home' component={HomeScreen} />
+			<Tab.Screen name='Rovers' component={HomeScreen} />
 			<Tab.Screen name='Search' component={SearchScreen} />
 			{/* <Tab.Screen name='Photos' component={PhotosScreen} /> */}
 		</Tab.Navigator>
