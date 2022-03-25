@@ -16,9 +16,6 @@ export default HomeScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
-				<Text h2 style={S.txt_h2_style}>
-					Tap a Rover to start exploring!
-				</Text>
 				<View style={S.row_wrap_between}>
 					{Object.values(ROVER_NAMES).map(rover => (
 						<RoverCard key={rover} navigation={navigation} rover={rover} />
@@ -30,9 +27,6 @@ export default HomeScreen = ({ navigation }) => {
 };
 
 const S = StyleSheet.create({
-	txt_h2_style: {
-		textAlign: "center",
-	},
 	row_wrap_between: {
 		alignContent: "center",
 		alignItems: "center",

@@ -8,7 +8,7 @@ const Tab = createMaterialTopTabNavigator();
 
 const Navigator = () => {
 	return (
-		<Tab.Navigator>
+		<Tab.Navigator screenOptions={{ swipeEnabled: false }}>
 			<Tab.Screen name='Rovers' component={HomeScreen} />
 			<Tab.Screen name='Search' component={NewSearchScreen} />
 			<Tab.Screen name='Photos' component={NewPhotosScreen} />
