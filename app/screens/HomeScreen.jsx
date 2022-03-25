@@ -3,12 +3,22 @@ import { ImageBackground, SafeAreaView } from "../components/shared";
 import { ROVER_NAMES } from "../constants";
 import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
-import { useQuery } from "react-query";
+import { useQuery, QueryClient } from "react-query";
 import { SIZES } from "../styles";
+import {
+	fetchAllManifests,
+	fetchRoverManifest,
+} from "../services/mars-rover-api";
 import RoverCard from "../components/RoverCard";
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 export default HomeScreen = ({ navigation }) => {
+	// const { isLoading, error, data } = useQuery("curiosity");
+
+	// console.log("isLoading", isLoading);
+	// console.log("error", error);
+	// console.log(data);
+
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
 	});
