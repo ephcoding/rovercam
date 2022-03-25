@@ -22,6 +22,10 @@
 
 ### **Refactor**
 
+[ General ]
+
+- [ ] add SQLite db for persisting manifests & fetched photos to local storage
+
 [ HomeScreen ]
 
 - [ ] swipe between Rovers
