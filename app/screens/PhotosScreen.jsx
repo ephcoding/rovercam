@@ -18,7 +18,7 @@ import { useFetchPhotos } from "../hooks/useFetchPhotos";
 import CameraFilterModal from "../components/shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
-export default DisplayPhotosScreen = ({ navigation, route }) => {
+const PhotosScreen = ({ navigation, route }) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isFiltered, setIsFiltered] = useState(false);
 	const [filteredPhotos, setFilteredPhotos] = useState([]);
@@ -77,6 +77,8 @@ export default DisplayPhotosScreen = ({ navigation, route }) => {
 		</SafeAreaView>
 	);
 };
+
+export default PhotosScreen;
 
 const S = StyleSheet.create({
 	fab_view_style: {

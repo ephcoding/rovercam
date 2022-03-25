@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-const SearchScreen = () => {
+const NewSearchScreen = () => {
 	return (
 		<View style={S.view}>
 			<Text>Search Screen</Text>
@@ -15,4 +15,4 @@ const S = StyleSheet.create({
 	},
 });
 
-export default SearchScreen;
+export default NewSearchScreen;

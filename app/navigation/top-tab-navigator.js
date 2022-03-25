@@ -1,7 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import HomeScreen from "../screens/HomeScreen";
-import SearchScreen from "../screens/SearchScreen";
+import NewSearchScreen from "../screens/NewSearchScreen";
+import NewPhotosScreen from "../screens/NewPhotosScreen";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -9,8 +10,8 @@ const Navigator = () => {
 	return (
 		<Tab.Navigator>
 			<Tab.Screen name='Rovers' component={HomeScreen} />
-			<Tab.Screen name='Search' component={SearchScreen} />
-			{/* <Tab.Screen name='Photos' component={PhotosScreen} /> */}
+			<Tab.Screen name='Search' component={NewSearchScreen} />
+			<Tab.Screen name='Photos' component={NewPhotosScreen} />
 		</Tab.Navigator>
 	);
 };

@@ -1,8 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
-import DisplayPhotosScreen from "../screens/DisplayPhotosScreen";
-// import PickerScreen from '../screens/PickerScreen';
+import DisplayPhotosScreen from "../screens/PhotosScreen";
 
 const Stack = createNativeStackNavigator();
 
