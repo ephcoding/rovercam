@@ -6,7 +6,7 @@ import { Text } from "react-native-elements";
 import { useQuery, QueryClient } from "react-query";
 import { SIZES } from "../styles";
 import {
-	fetchAllManifests,
+	fetchManifestAll,
 	fetchRoverManifest,
 } from "../services/mars-rover-api";
 import RoverCard from "../components/RoverCard";

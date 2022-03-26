@@ -1,7 +1,12 @@
-import { HEROKU_CONFIG as MarsAPI } from "./config";
-import { fetchRoverManifest } from "./fetchRoverManifest";
+import { fetchRoverManifest } from "./fetchManifest";
 
-export const fetchAllManifests = async rover => {
+/**
+ *
+ * @param {string} rover - rover name
+ * @returns {Array.<Promise>} - resolved Rover photo_manifest
+ */
+
+export const fetchManifestAll = async rover => {
 	try {
 		const res = await Promise.all([
 			fetchRoverManifest("curiosity"),

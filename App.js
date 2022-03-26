@@ -8,36 +8,20 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
 import { RNE_THEME } from "./app/styles/themes";
 import { ThemeProvider } from "react-native-elements";
-import { NativeBaseProvider } from "native-base";
 // -----
 import {
-	fetchAllManifests,
-	fetchRoverManifest,
+	prefetchLatestPhotosAll,
+	prefetchManifestAll,
 } from "./app/services/mars-rover-api";
 const queryClient = new QueryClient();
-import axios from "axios";
 
 // TODO:
 // [ ] prefetch all Rover manifests
 // [ ] prefetch Latest Photos for all Rovers
 
 export default App = () => {
-	useEffect(() => {
-		const test = async () => {
-			const res = await fetchAllManifests();
-
-			console.log(
-				res[0].photo_manifest.name,
-				res[1].photo_manifest.name,
-				res[2].photo_manifest.name,
-				res[3].photo_manifest.name
-			);
-
-			// await queryClient.prefetchQuery('manifests', fetchAllManifests)
-		};
-
-		test();
-	}, []);
+	prefetchLatestPhotosAll();
+	prefetchManifestAll();
 
 	return (
 		<QueryClientProvider client={queryClient}>

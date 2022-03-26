@@ -1,6 +1,6 @@
-import { HEROKU_CONFIG as API } from "./config";
+import { HEROKU_CONFIG as MarsAPI } from "./config";
 
 export const fetchLatestPhotos = async rover => {
-	const res = await API.get(`/rovers/${rover}/latest_photos`);
+	const res = await MarsAPI.get(`/rovers/${rover}/latest_photos`);
 	return res.data;
 };
