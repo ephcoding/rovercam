@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-// -----
 import StackNavigator from "./app/navigation/stack-navigator";
 import TabNavigator from "./app/navigation/top-tab-navigator";
 // -----

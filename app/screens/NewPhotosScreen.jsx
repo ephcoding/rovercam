@@ -1,5 +1,3 @@
-import React from "react";
-import { useFocusEffect } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 import { useQuery, useQueryClient } from "react-query";
 import { fetchManifestAll } from "../services/mars-rover-api";
@@ -9,20 +7,8 @@ import { fetchManifestAll } from "../services/mars-rover-api";
 // - do I need make a func that calls getQueryData() when the screen is focused?
 
 const NewPhotosScreen = () => {
-	const qc = useQueryClient();
-	// const { data: manifests } = useQuery("manifests", fetchAllManifests);
-	const manifests = qc.getQueryData("manifests");
-	// let manifests;
-
-	// React.useEffect(() => {
-	// 	const test = async () => {
-	// 		manifests = await qc.getQueryData("manifests");
-
-	// 		console.log(manifests[0].photo_manifest.name);
-	// 	};
-
-	// 	test();
-	// });
+	const { data: manifests } = useQuery("manifests", fetchManifestAll);
+	console.log(manifests[0]);
 
 	return (
 		<View style={S.view}>

@@ -4,7 +4,7 @@ import {
 	SafeAreaView,
 } from "../components/shared";
 import { PHOTO_SEARCH_BTNS, IMG_PATHS } from "../constants/rovers";
-import { useFetchRoverManifest } from "../hooks";
+import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
@@ -15,7 +15,7 @@ import RoverStats from "../components/RoverStats";
 
 export default RoverInfoScreen = ({ navigation, route }) => {
 	const { rover } = route.params;
-	const { isLoading, error, data } = useFetchRoverManifest(rover);
+	const { isLoading, error, data } = useFetchManifest(rover);
 	const img_source = IMG_PATHS[rover.toLowerCase()];
 
 	const handleOnPress = (screen, query_param = "") => {

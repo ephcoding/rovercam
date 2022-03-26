@@ -1,4 +1,4 @@
-import { fetchRoverManifest } from "./fetchManifest";
+import { fetchManifest } from "./fetchManifest";
 
 /**
  *
@@ -9,13 +9,13 @@ import { fetchRoverManifest } from "./fetchManifest";
 export const fetchManifestAll = async rover => {
 	try {
 		const res = await Promise.all([
-			fetchRoverManifest("curiosity"),
-			fetchRoverManifest("opportunity"),
-			fetchRoverManifest("perseverance"),
-			fetchRoverManifest("spirit"),
+			fetchManifest("curiosity"),
+			fetchManifest("opportunity"),
+			fetchManifest("perseverance"),
+			fetchManifest("spirit"),
 		]);
 		return res;
 	} catch (error) {
-		throw new Error(">> [ fetchAllManifests.js ] >>\n", error);
+		throw new Error(">> [ fetchManifestAll.js ] >>\n", error);
 	}
 };

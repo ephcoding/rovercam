@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { Text } from "react-native-elements";
 import { COLORS, SIZES } from "../styles";
-import { useFetchRoverManifest } from "../hooks";
+import { useFetchManifest } from "../hooks";
 import { IMG_PATHS } from "../constants";
 
 const RoverStats = ({ data }) => {

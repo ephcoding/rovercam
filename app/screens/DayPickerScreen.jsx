@@ -6,7 +6,7 @@ import {
 } from "../components/shared";
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
-import { useFetchRoverManifest } from "../hooks";
+import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
 import { COLORS, SIZES } from "../styles";
