@@ -151,7 +151,10 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 ## **[ DESIGN SYSTEM ]**
 
-- ## **_SETUP_**
+- RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
+- RN | [`PlatformColor`](https://reactnative.dev/docs/platformcolor): platform's color system
+- RN | [`useColorScheme`](https://reactnative.dev/docs/usecolorscheme): get `Appearance` module settings/updates
+- `react-navigation` [Themes](https://reactnavigation.org/docs/themes/)
 
 ## **[ NAVIGATION ]**
 
@@ -163,6 +166,8 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
 
 - Expo | [Testing with Jest](https://docs.expo.dev/guides/testing-with-jest/)
 - Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
+- React Native | [Testing](https://reactnative.dev/docs/testing-overview)
+- React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
 
 ## **[ UI / COMPONENTS ]**
 
