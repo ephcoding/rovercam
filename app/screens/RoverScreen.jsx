@@ -2,7 +2,7 @@ import {
 	ImageBackground,
 	NavHomeFAB,
 	SafeAreaView,
-} from "../components/shared";
+} from "../components/_shared";
 import { PHOTO_SEARCH_BTNS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";

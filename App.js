@@ -10,12 +10,8 @@ import { ThemeProvider } from "react-native-elements";
 import {
 	prefetchLatestPhotosAll,
 	prefetchManifestAll,
-} from "./app/services/mars-rover-api";
+} from "./app/mars-photos-api/mars-rover-api";
 const queryClient = new QueryClient();
-
-// TODO:
-// [ ] prefetch all Rover manifests
-// [ ] prefetch Latest Photos for all Rovers
 
 export default App = () => {
 	prefetchLatestPhotosAll();

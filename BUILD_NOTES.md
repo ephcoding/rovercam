@@ -43,7 +43,7 @@
 
 - [ ] cam filter drawer menu
 - [ ] optimized photos FlatList
-- [ ] zoomable photo functionality ([GestureHandler](https://docs.expo.dev/versions/v44.0.0/sdk/gesture-handler/))
+- [ ] zoomable photo functionality ([Animated.ValueXY](https://reactnative.dev/docs/animatedvaluexy), [GestureHandler](https://docs.expo.dev/versions/v44.0.0/sdk/gesture-handler/), [PanResponder](https://reactnative.dev/docs/panresponder), [Transforms](https://reactnative.dev/docs/transforms))
 
 ## **SPRINT 1 requirements**
 
@@ -75,7 +75,7 @@
 
 <!-- #endregion /DISCOVER -->
 
-# DISCOVER
+# **DISCOVER**
 
 ## **IDEATION**
 
@@ -99,54 +99,11 @@ Fetch-and-display was the high-level objective and NASA has a solid selection of
 
 <!-- #endregion /VISUALIZE -->
 
-# VISUALIZE
+# **DEFINE**
 
 ## **UI / UX**
 
 There have been a LOT of versions. Wireframe pics coming soon..
-
-<!-- #region BUILD -->
-
-<div id='build' align='center'>
-
-![rovercam readme graphic](./assets/readme/build.png)
-
-</div>
-
-<div align='center'>
-
-[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
-
-</div>
-
-<!-- #endregion /BUILD -->
-
-# BUILD
-
-## **| Top Tab Navigation**
-
-## **| PROJECT MANAGEMENT**
-
-Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
-
-## **| UI / COMPONENTS**
-
-- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
-
-### _Dynamic Components_
-
-- SearchScreen
-  - Rover selection dropdown
-  - Earth Date picker
-  - SOL picker
-- PhotosScreen
-  - cam filter drawer menu
-
-### _Optimizing Virtualized Lists_
-
-```javascript
-VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
-```
 
 <!-- #region MARKET -->
 
@@ -164,17 +121,17 @@ VirtualizedList: You have a large list that is slow to update - make sure your r
 
 <!-- #endregion /MARKET -->
 
-# MARKET
+# **MARKET**
 
 ## **Product Page**
 
 Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( _soon to become my boilerplate for every build_ )
 
-<!-- #region DEPLOY -->
+<!-- #region BUILD -->
 
-<div id='deploy' align='center'>
+<div id='build' align='center'>
 
-![rovercam readme graphic](./assets/readme/deploy.png)
+![rovercam readme graphic](./assets/readme/build.png)
 
 </div>
 
@@ -184,9 +141,45 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 </div>
 
-<!-- #endregion /DEPLOY -->
+<!-- #endregion /BUILD -->
 
-# DEPLOY
+# **DELIVER**
+
+## **[ ANIMATIONS ]**
+
+- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
+
+## **[ DESIGN SYSTEM ]**
+
+- ## **_SETUP_**
+
+## **[ NAVIGATION ]**
+
+## **[ PROJECT MANAGEMENT ]**
+
+Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
+
+## **[ TESTING ]**
+
+- Expo | [Testing with Jest](https://docs.expo.dev/guides/testing-with-jest/)
+- Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
+
+## **[ UI / COMPONENTS ]**
+
+### _Dynamic Components_
+
+- SearchScreen
+  - Rover selection dropdown
+  - Earth Date picker
+  - SOL picker
+- PhotosScreen
+  - cam filter drawer menu
+
+### _Optimizing Virtualized Lists_
+
+```javascript
+VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
+```
 
 <!-- #region EVALUATE -->
 
@@ -204,7 +197,7 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 <!-- #endregion /EVALUATE -->
 
-# EVALUATE
+# **EVALUATE**
 
 <!-- #region RESOURCES -->
 

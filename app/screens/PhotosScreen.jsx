@@ -8,14 +8,14 @@ import {
 	ImageBackground,
 	NavHomeFAB,
 	SafeAreaView,
-} from "../components/shared";
+} from "../components/_shared";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
 import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
-import ExpandedPhotoModal from "../components/shared/ExpandedPhotoModal";
+import ExpandedPhotoModal from "../components/_shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
-import FullScreenModal from "../components/shared/FullScreenModal";
+import FullScreenModal from "../components/_shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
-import CameraFilterModal from "../components/shared/CameraFilterModal";
+import CameraFilterModal from "../components/_shared/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 const PhotosScreen = ({ navigation, route }) => {

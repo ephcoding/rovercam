@@ -14,9 +14,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { Button, Tile, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
 import { COLORS, SIZES } from "../styles";
-import FullScreenModal from "./shared/FullScreenModal";
+import FullScreenModal from "./_shared/FullScreenModal";
 import PhotosListItem from "./PhotosListItem";
-import ExpandedPhotoModal from "./shared/ExpandedPhotoModal";
+import ExpandedPhotoModal from "./_shared/ExpandedPhotoModal";
 
 const PhotosList = ({ photos }) => {
 	const [isVisible, setIsVisible] = useState(false);

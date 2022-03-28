@@ -3,7 +3,7 @@ import { useQuery, useQueryClient } from "react-query";
 import {
 	fetchLatestPhotosAll,
 	fetchManifestAll,
-} from "../services/mars-rover-api";
+} from "../mars-photos-api/mars-rover-api";
 
 // QUESTION
 // is RN navigation screen lifecycle screwing up getting pre-fetched react-query data?

@@ -1,11 +1,14 @@
 import { useEffect } from "react";
-import { ImageBackground, SafeAreaView } from "../components/shared";
+import { ImageBackground, SafeAreaView } from "../components/_shared";
 import { ROVER_NAMES } from "../constants";
 import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { useQuery, QueryClient } from "react-query";
 import { SIZES } from "../styles";
-import { fetchManifestAll, fetchManifest } from "../services/mars-rover-api";
+import {
+	fetchManifestAll,
+	fetchManifest,
+} from "../mars-photos-api/mars-rover-api";
 import RoverCard from "../components/RoverCard";
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
