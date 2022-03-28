@@ -1,3 +1,4 @@
 export * from "./colors";
-export * from "./sizes";
 export * from "./fonts";
+export * from "./sizing";
+export * from "./typography";
