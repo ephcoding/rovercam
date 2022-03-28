@@ -5,7 +5,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import { COLORS, SIZES } from "../../styles";
+import { COLORS, SIZES } from "../../theme";
 import Icon from "react-native-vector-icons/FontAwesome";
 import FullScreenModal from "./FullScreenModal";
 

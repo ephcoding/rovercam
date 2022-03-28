@@ -1,6 +1,6 @@
 import { FlatList, Platform, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
-import { COLORS, FONTS, SIZES } from "../styles";
+import { COLORS, FONTS, SIZES } from "../theme";
 import { QUERY_PARAMS } from "../constants";
 
 // !HEADS UP! --> SOLs start at '0'

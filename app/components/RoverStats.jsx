@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { Text } from "react-native-elements";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 import { useFetchManifest } from "../hooks";
 import { IMG_PATHS } from "../constants";
 

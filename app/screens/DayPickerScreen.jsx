@@ -9,7 +9,7 @@ import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";
 import DatePicker from "../components/DatePicker";
 import { IMG_PATHS } from "../constants";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 import dayjs from "dayjs";
 
 export default DatePickerScreen = ({ navigation, route }) => {

@@ -4,7 +4,7 @@ import TabNavigator from "./app/navigation/top-tab-navigator";
 import { prefetchQuery, QueryClient, QueryClientProvider } from "react-query";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 // -----
-import { RNE_THEME } from "./app/styles/themes";
+import { RNE_THEME } from "./app/theme/themes";
 import { ThemeProvider } from "react-native-elements";
 // -----
 import {

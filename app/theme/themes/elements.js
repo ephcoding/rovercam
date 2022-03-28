@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { COLORS, FONTS, SIZES } from "../../styles";
+import { COLORS, FONTS, SIZES } from "..";
 
 export const RNE_THEME = {
 	Card: {

@@ -1,5 +1,5 @@
 import { ImageBackground as RNImageBackground, StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../styles";
+import { COLORS, SIZES } from "../../theme";
 
 export const ImageBackground = ({ children, source }) => {
 	return (

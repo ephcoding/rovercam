@@ -13,7 +13,7 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Button, Tile, Overlay } from "react-native-elements";
 import { QueryCache } from "react-query";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 import FullScreenModal from "./_shared/FullScreenModal";
 import PhotosListItem from "./PhotosListItem";
 import ExpandedPhotoModal from "./_shared/ExpandedPhotoModal";

@@ -4,7 +4,7 @@ import { ROVER_NAMES } from "../constants";
 import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { useQuery, QueryClient } from "react-query";
-import { SIZES } from "../styles";
+import { SIZES } from "../theme";
 import {
 	fetchManifestAll,
 	fetchManifest,

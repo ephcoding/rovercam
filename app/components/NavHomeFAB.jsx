@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
-import { COLORS } from "../../styles";
+import { COLORS } from "../../theme";
 
 export const NavHomeFAB = ({ navigation }) => {
 	const handleOnPress = () => navigation.navigate("Home");

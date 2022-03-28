@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
 import {
@@ -15,7 +15,7 @@ import ExpandedPhotoModal from "../components/_shared/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
 import FullScreenModal from "../components/_shared/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
-import CameraFilterModal from "../components/_shared/CameraFilterModal";
+import CameraFilterModal from "../components/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");
 
 const PhotosScreen = ({ navigation, route }) => {

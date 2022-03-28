@@ -1,5 +1,5 @@
 import { FAB } from "react-native-elements";
-import { COLORS } from "../../styles";
+import { COLORS } from "../../theme";
 
 export const CamFilterFAB = ({ setIsVisible }) => {
 	return (

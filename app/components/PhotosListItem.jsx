@@ -5,7 +5,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 
 const PhotosListItem = ({ expandPhoto, photoObj }) => {
 	const { camera, img_src } = photoObj;

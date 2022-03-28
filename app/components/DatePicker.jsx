@@ -1,8 +1,8 @@
-import { RNC_THEME } from "../styles/themes";
+import { RNC_THEME } from "../theme/themes";
 import { StyleSheet, View } from "react-native";
 // import { Calendar, CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
-import { COLORS, FONTS, SIZES } from "../styles";
+import { COLORS, FONTS, SIZES } from "../theme";
 import { QUERY_PARAMS } from "../constants";
 import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
 import { getRangeDatesMonthDiff } from "./utils/getRangeDatesMonthDiff";

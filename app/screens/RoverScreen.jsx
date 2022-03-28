@@ -8,7 +8,7 @@ import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
-import { COLORS, SIZES } from "../styles";
+import { COLORS, SIZES } from "../theme";
 // ----
 import RoverCamerasList from "../components/RoverCamerasList";
 import RoverStats from "../components/RoverStats";
