@@ -1,7 +1,7 @@
 import { ImageBackground as RNImageBackground, StyleSheet } from "react-native";
 import { COLORS, SIZE } from "../theme";
 
-export const ImageBackground = ({ children, source }) => {
+const ImageBackground = ({ children, source }) => {
 	return (
 		<RNImageBackground
 			imageStyle={S.imgBg_imageStyle}
@@ -24,3 +24,5 @@ const S = StyleSheet.create({
 		padding: SIZE[3],
 	},
 });
+
+export default ImageBackground;

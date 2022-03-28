@@ -11,7 +11,7 @@ import ImageBackground from "../components/ImageBackground";
 // -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
-export default HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
 	// const { isLoading, error, data } = useQuery("curiosity");
 
 	// console.log("isLoading", isLoading);
@@ -45,3 +45,5 @@ const S = StyleSheet.create({
 		justifyContent: "space-between",
 	},
 });
+
+export default HomeScreen;

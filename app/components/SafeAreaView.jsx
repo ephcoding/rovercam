@@ -1,7 +1,7 @@
 import { SafeAreaView as RNSafeAreaView, StyleSheet } from "react-native";
 import { COLORS } from "../theme";
 
-export const SafeAreaView = ({ children }) => {
+const SafeAreaView = ({ children }) => {
 	return <RNSafeAreaView style={S.style}>{children}</RNSafeAreaView>;
 };
 
@@ -10,3 +10,5 @@ const S = StyleSheet.create({
 		flex: 1,
 	},
 });
+
+export default SafeAreaView;
