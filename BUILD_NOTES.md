@@ -16,7 +16,7 @@
 
 ### **Bugs**
 
-- [ ] FlatList optimization: photos take crazy-long to display on certain phones
+- [ ] photos take crazy-long to display on certain phones
 - [ ] picking SOL "0" crashes app
 - [ ] RoverScreen layout collapses on smaller phones
 
@@ -24,26 +24,26 @@
 
 [ General ]
 
-- [ ] add SQLite db for persisting manifests & fetched photos to local storage
+- [ ] persist manifests & fetched photos to take load off react-query caching ([AsyncStorage](https://docs.expo.dev/versions/v44.0.0/sdk/async-storage/), [SecureStore](https://docs.expo.dev/versions/v44.0.0/sdk/securestore/), [SQLite](https://docs.expo.dev/versions/v44.0.0/sdk/sqlite/))
 
 [ HomeScreen ]
 
-- [ ] swipe between Rovers
 - [ ] rover bg img / title @ top 1/2
 - [ ] stats section moved over from RoverScreen @ bottom 1/2
+- [ ] swipe between Rovers ([ViewPager](https://docs.expo.dev/versions/v44.0.0/sdk/view-pager/))
 
 [ SearchScreen ]
 
 - [ ] rover selection dropdown
-- [ ] year-month-day Earth Date picker
-- [ ] 4-digit SOL number picker
+- [ ] year-month-day Earth Date picker ([Calendar](https://docs.expo.dev/versions/v44.0.0/sdk/calendar/), [DateTimePicker](https://docs.expo.dev/versions/v44.0.0/sdk/date-time-picker/))
+- [ ] 4-digit SOL number picker ([Picker](https://docs.expo.dev/versions/v44.0.0/sdk/picker/))
 - [ ] "Latest Photos" action button
 
 [ PhotosScreen ]
 
-- [ ] photos FlatList
-- [ ] zoomable photo functionality
 - [ ] cam filter drawer menu
+- [ ] optimized photos FlatList
+- [ ] zoomable photo functionality ([GestureHandler](https://docs.expo.dev/versions/v44.0.0/sdk/gesture-handler/))
 
 ## **SPRINT 1 requirements**
 
