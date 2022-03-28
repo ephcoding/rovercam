@@ -1,18 +1,30 @@
 import { useEffect } from "react";
 import { Text } from "react-native-elements";
-import { useQuery, QueryClient } from "react-query";
+import { useQueries, QueryClient } from "react-query";
 import { LogBox, View, StyleSheet } from "react-native";
 // -----
 import { SIZE } from "../theme";
 import { NAMES } from "../constants";
-import RoverCard from "../components/RoverCard";
+import RoverView from "../components/RoverView";
 import SafeAreaView from "../components/SafeAreaView";
 import ImageBackground from "../components/ImageBackground";
+import { fetchManifest } from "../api";
 // -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 const HomeScreen = ({ navigation }) => {
-	// const { isLoading, error, data } = useQuery("curiosity");
+	const {
+		isLoading,
+		error,
+		data: rovers,
+	} = useQueries(
+		Object.values(NAMES).map(rover => {
+			return {
+				queryKey: ["manifest", rover],
+				queryFn: () => fetchManifest(rover),
+			};
+		})
+	);
 
 	// console.log("isLoading", isLoading);
 	// console.log("error", error);
@@ -27,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
 			<ImageBackground source={img_source}>
 				<View style={S.row_wrap_between}>
 					{Object.values(NAMES).map(rover => (
-						<RoverCard key={rover} navigation={navigation} rover={rover} />
+						<RoverView key={rover} navigation={navigation} rover={rover} />
 					))}
 				</View>
 			</ImageBackground>
