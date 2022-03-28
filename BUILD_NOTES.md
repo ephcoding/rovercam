@@ -149,6 +149,10 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 - image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
 
+## **[ DATA FETCHING ]**
+
+- React Query | [React Native](https://react-query.tanstack.com/react-native)
+
 ## **[ DESIGN SYSTEM ]**
 
 - RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
@@ -169,6 +173,7 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
 - Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
 - React Native | [Testing](https://reactnative.dev/docs/testing-overview)
 - React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
+- React Query | [Testing](https://react-query.tanstack.com/guides/testing)
 
 ## **[ UI / COMPONENTS ]**
 
