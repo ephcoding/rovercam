@@ -8,39 +8,221 @@
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
 
-:white_check_mark: display rover manifest (mission) information
+## **SPRINT 2 requirements**
 
-:white_check_mark: user can see latest photos for each rover
+### **Bugs**
 
-:white_check_mark: user can search rover photos by SOL (Martion day)
+- [ ] photos take crazy-long to display on certain phones
+- [ ] picking SOL "0" crashes app
+- [ ] RoverScreen layout collapses on smaller phones
 
-:white_check_mark: user can search rover photos by EARTH DATE
+### **Refactor**
 
-:white_check_mark: user can filter respective rover's photos by camera
+[ General ]
+
+- [ ] persist manifests & fetched photos to take load off react-query caching ([AsyncStorage](https://docs.expo.dev/versions/v44.0.0/sdk/async-storage/), [SecureStore](https://docs.expo.dev/versions/v44.0.0/sdk/securestore/), [SQLite](https://docs.expo.dev/versions/v44.0.0/sdk/sqlite/))
+
+[ HomeScreen ]
+
+- [ ] rover bg img / title @ top 1/2
+- [ ] stats section moved over from RoverScreen @ bottom 1/2
+- [ ] swipe between Rovers ([ViewPager](https://docs.expo.dev/versions/v44.0.0/sdk/view-pager/))
+
+[ SearchScreen ]
+
+- [ ] rover selection dropdown
+- [ ] year-month-day Earth Date picker ([Calendar](https://docs.expo.dev/versions/v44.0.0/sdk/calendar/), [DateTimePicker](https://docs.expo.dev/versions/v44.0.0/sdk/date-time-picker/))
+- [ ] 4-digit SOL number picker ([Picker](https://docs.expo.dev/versions/v44.0.0/sdk/picker/))
+- [ ] "Latest Photos" action button
+
+[ PhotosScreen ]
+
+- [ ] cam filter drawer menu
+- [ ] optimized photos FlatList
+- [ ] zoomable photo functionality ([Animated.ValueXY](https://reactnative.dev/docs/animatedvaluexy), [GestureHandler](https://docs.expo.dev/versions/v44.0.0/sdk/gesture-handler/), [PanResponder](https://reactnative.dev/docs/panresponder), [Transforms](https://reactnative.dev/docs/transforms))
+
+## **SPRINT 1 requirements**
+
+- [x] display rover manifest (mission) information
+- [x] user can see latest photos for each rover
+- [x] user can search rover photos by SOL (Martion day)
+- [x] user can search rover photos by EARTH DATE
+- [x] user can filter respective rover's photos by camera
 
 **Ideas:**
 
-:white_large_square: user can rate/rank their favorite images
+- [ ] user can rate/rank their favorite images
 
 <!-- #endregion /INTRO -->
 
-<!-- #region RESOURCES -->
+<!-- #region DISCOVER -->
 
-<h3 id='resources' align='center'>
+<div id='discover' align='center'>
 
-![rovercam readme graphic](./assets/readme/resources.png)
+![rovercam readme graphic](./assets/readme/discover.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /DISCOVER -->
+
+# **DISCOVER**
+
+## **IDEATION**
+
+ROVERCAM was the first app applying my 6-step mobile app process. Want to keep the concept simple so I could focus on the process and tech.
+
+Fetch-and-display was the high-level objective and NASA has a solid selection of free & easy-to-use REST APIs. Yahtzee.
+
+<!-- #region VISUALIZE -->
+
+<div id='visualize' align='center'>
+
+![rovercam readme graphic](./assets/readme/visualize.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
+<!-- #endregion /VISUALIZE -->
+
+# **DEFINE**
+
+## **UI / UX**
+
+There have been a LOT of versions. Wireframe pics coming soon..
+
+<!-- #region MARKET -->
+
+<div id='market' align='center'>
+
+![rovercam readme graphic](./assets/readme/market.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
+<!-- #endregion /MARKET -->
+
+# **MARKET**
+
+## **Product Page**
+
+Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( _soon to become my boilerplate for every build_ )
+
+<!-- #region BUILD -->
+
+<div id='build' align='center'>
+
+![rovercam readme graphic](./assets/readme/build.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
+<!-- #endregion /BUILD -->
+
+# **DELIVER**
+
+## **[ ANIMATIONS ]**
+
+- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
+
+## **[ DESIGN SYSTEM ]**
+
+- RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
+- RN | [`PlatformColor`](https://reactnative.dev/docs/platformcolor): platform's color system
+- RN | [`StyleSheet`](https://reactnative.dev/docs/stylesheet)
+- RN | [`useColorScheme`](https://reactnative.dev/docs/usecolorscheme): get `Appearance` module settings/updates
+- `react-navigation` [Themes](https://reactnavigation.org/docs/themes/)
+
+## **[ NAVIGATION ]**
+
+## **[ PROJECT MANAGEMENT ]**
+
+Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
+
+## **[ TESTING ]**
+
+- Expo | [Testing with Jest](https://docs.expo.dev/guides/testing-with-jest/)
+- Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
+- React Native | [Testing](https://reactnative.dev/docs/testing-overview)
+- React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
+
+## **[ UI / COMPONENTS ]**
+
+### _Dynamic Components_
+
+- SearchScreen
+  - Rover selection dropdown
+  - Earth Date picker
+  - SOL picker
+- PhotosScreen
+  - cam filter drawer menu
+
+### _Optimizing Virtualized Lists_
+
+```javascript
+VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
+```
+
+<!-- #region EVALUATE -->
+
+<div id='evaluate' align='center'>
+
+![rovercam readme graphic](./assets/readme/evaluate.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
+<!-- #endregion /EVALUATE -->
+
+# **EVALUATE**
+
+<!-- #region RESOURCES -->
+
+<div id='resources' align='center'>
+
+![rovercam readme graphic](./assets/readme/resources.png)
+
+</div>
+
+<div align='center'>
+
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
+
+</div>
+
+<!-- #endregion /RESOURCES -->
+
+# RESOURCES
+
 <!-- #region PROJECT MANAGEMENT -->
 
 - [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
@@ -203,21 +385,23 @@ MISC
 
 <!-- #endregion /CHECK OUT LATER -->
 
-<!-- #endregion /RESOURCES -->
-
 <!-- #region ISSUES -->
 
-<h3 id='issues' align='center'>
+<div id='issues' align='center'>
 
 ![rovercam readme graphic](./assets/readme/issues.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /ISSUES -->
+
+# ISSUES
 
 <details>
 <summary><code>DatePicker.js</code>: <code>lastDate.diff() is not a function</code> when tring to use <code>getRangeDatesMonthDiff()</code> util func</summary>
@@ -395,21 +579,23 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 
 <hr>
 
-<!-- #endregion /ISSUES -->
-
 <!-- #region NOTES -->
 
-<h3 id='notes' align='center'>
+<div id='notes' align='center'>
 
 ![rovercam readme graphic](./assets/readme/notes.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /NOTES -->
+
+# NOTES
 
 <details>
 <summary>Date / Time</summary>
@@ -417,12 +603,6 @@ I was running `LogBox.ignoreLogs(["Setting a timer"])` below returned display va
 - date / time format [options](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
 
 </details>
-
-## Optimizing Virtualized Lists
-
-```javascript
-VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
-```
 
 ## `Promise.allSettled()` was added to React Native in v64
 
@@ -455,42 +635,46 @@ CardTitle: {
 - [S.O. answer](https://stackoverflow.com/a/70114114)
 - React Native issue [30236](https://github.com/facebook/react-native/issues/30236#issuecomment-939286987)
 
-<!-- #endregion /NOTES -->
-
 <!-- #region QUESTIONS -->
 
-<h3 id='questions' align='center'>
+<div id='questions' align='center'>
 
 ![rovercam readme graphic](./assets/readme/questions.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /QUESTIONS -->
+
+# QUESTIONS
 
 :white_large_square: what is the `number` img source type & how does it work / what does it do?
 
 - [x] `DisplayPhotosScreen` is passing `latest_photos[]` to `<PhotosList photos={data.latest_photos}>`. but in `<PhotosList>`, `latest_photos` is an object with a `photos` property??
   - _forgot to destructure `photos` prop - so it was was getting treating like `props`_
 
-<!-- #endregion /QUESTIONS -->
-
 <!-- #region CONNECT -->
 
-<h3 id='connect' align='center'>
+<div id='connect' align='center'>
 
 ![rovercam readme graphic](./assets/readme/connect.png)
 
-</h3>
+</div>
 
 <div align='center'>
 
-[resources](#resources) | [notes](#notes) | [issues](#issues) | [questions](#questions) | [connect](#connect)
+[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
 
 </div>
+
+<!-- #endregion /CONNECT -->
+
+# CONNECT
 
 <table align='center'>
   <tr >
@@ -501,7 +685,3 @@ CardTitle: {
     <td style="border: none;"><a alt='icon link to modevx instagram account' href='https://instagram.com/_modevx' target='_blank'><img src="https://cdn.iconscout.com/icon/free/png-256/instagram-2752153-2284970.png" width="90"></a></td>
   </tr>
 </table>
-
-<!-- #endregion /CONNECT -->
-
-- image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
