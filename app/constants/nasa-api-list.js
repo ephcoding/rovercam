@@ -1,4 +1,4 @@
-const API_LIST = [
+export const API_LIST = [
 	{
 		label: "APOD",
 		description: "Astronomy Picture of the Day",
