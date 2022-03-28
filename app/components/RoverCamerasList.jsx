@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
-import { ROVER_CAMERAS } from "../constants/rovers";
+import { CAMERAS } from "../constants";
 
 const RoverCamerasList = ({
 	cameraObjArr,

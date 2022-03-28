@@ -1,9 +1,5 @@
 import { useEffect } from "react";
-import {
-	ImageBackground,
-	NavHomeFAB,
-	SafeAreaView,
-} from "../components/_shared";
+import { ImageBackground, NavHomeFAB, SafeAreaView } from "../components/";
 import { StyleSheet, Text, View } from "react-native";
 import { FAB } from "react-native-elements";
 import { useFetchManifest } from "../hooks";

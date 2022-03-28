@@ -1,9 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { useQuery, useQueryClient } from "react-query";
-import {
-	fetchLatestPhotosAll,
-	fetchManifestAll,
-} from "../mars-photos-api/mars-rover-api";
+import { fetchLatestPhotosAll, fetchManifestAll } from "../mars-photos-api";
 
 // QUESTION
 // is RN navigation screen lifecycle screwing up getting pre-fetched react-query data?

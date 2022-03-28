@@ -1,8 +1,4 @@
-import {
-	ImageBackground,
-	NavHomeFAB,
-	SafeAreaView,
-} from "../components/_shared";
+import { ImageBackground, NavHomeFAB, SafeAreaView } from "../components/";
 import { PHOTO_SEARCH_BTNS, IMG_PATHS } from "../constants/rovers";
 import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";

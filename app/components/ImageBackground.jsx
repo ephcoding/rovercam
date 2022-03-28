@@ -1,5 +1,5 @@
 import { ImageBackground as RNImageBackground, StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../theme";
+import { COLORS, SIZE } from "../theme";
 
 export const ImageBackground = ({ children, source }) => {
 	return (
@@ -21,6 +21,6 @@ const S = StyleSheet.create({
 	imgBg_style: {
 		backgroundColor: COLORS.backgroundDK,
 		flex: 1,
-		padding: SIZES[3],
+		padding: SIZE[3],
 	},
 });

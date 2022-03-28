@@ -13,7 +13,7 @@ const TEXT = StyleSheet.create({
 		fontSize: SIZE[5],
 	},
 	body_dim: {
-		colors: COLORS.text.dim,
+		color: COLORS.text.dim,
 		fontSize: SIZE[4],
 	},
 	heading_sm: {

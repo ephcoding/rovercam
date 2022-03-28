@@ -44,9 +44,9 @@ const S = StyleSheet.create({
 	label_view: {
 		// alignSelf: "flex-start",
 		backgroundColor: "#0009",
-		// borderTopRightRadius: SIZES[2],
-		// borderBottomRightRadius: SIZES[2],
-		// marginBottom: SIZES[2],
+		// borderTopRightRadius: SIZE[2],
+		// borderBottomRightRadius: SIZE[2],
+		// marginBottom: SIZE[2],
 		paddingHorizontal: SIZE[2],
 		paddingVertical: SIZE[1],
 	},

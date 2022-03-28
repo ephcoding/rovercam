@@ -1,15 +1,14 @@
 import { useEffect } from "react";
-import { ImageBackground, SafeAreaView } from "../components/_shared";
-import { ROVER_NAMES } from "../constants";
-import { LogBox, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { useQuery, QueryClient } from "react-query";
+import { LogBox, View, StyleSheet } from "react-native";
+// -----
 import { SIZE } from "../theme";
-import {
-	fetchManifestAll,
-	fetchManifest,
-} from "../mars-photos-api/mars-rover-api";
+import { NAMES } from "../constants";
 import RoverCard from "../components/RoverCard";
+import SafeAreaView from "../components/SafeAreaView";
+import ImageBackground from "../components/ImageBackground";
+// -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 export default HomeScreen = ({ navigation }) => {
@@ -27,7 +26,7 @@ export default HomeScreen = ({ navigation }) => {
 		<SafeAreaView>
 			<ImageBackground source={img_source}>
 				<View style={S.row_wrap_between}>
-					{Object.values(ROVER_NAMES).map(rover => (
+					{Object.values(NAMES).map(rover => (
 						<RoverCard key={rover} navigation={navigation} rover={rover} />
 					))}
 				</View>

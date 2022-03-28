@@ -3,17 +3,15 @@ import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
 import { COLORS, SIZE } from "../theme";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
-import {
-	CamFilterFAB,
-	ImageBackground,
-	NavHomeFAB,
-	SafeAreaView,
-} from "../components/_shared";
+import CamFilterFAB from "../components/CamFilterFAB";
+import ImageBackground from "../components/ImageBackground";
+import SafeAreaView from "../components/SafeAreaView";
+import NavHomeFAB from "../components/NavHomeFAB";
 import { Overlay } from "react-native-elements/dist/overlay/Overlay";
 import { createUniqueObjectsArray } from "./utils/createUniqueObjectsArray";
-import ExpandedPhotoModal from "../components/_shared/ExpandedPhotoModal";
+import ExpandedPhotoModal from "../components/ExpandedPhotoModal";
 import RoverCamerasList from "../components/RoverCamerasList";
-import FullScreenModal from "../components/_shared/FullScreenModal";
+import FullScreenModal from "../components/FullScreenModal";
 import { useFetchPhotos } from "../hooks/useFetchPhotos";
 import CameraFilterModal from "../components/CameraFilterModal";
 const img_source = require("../../assets/img/mars-rover-tracks.jpg");

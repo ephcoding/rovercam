@@ -5,7 +5,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import { COLORS, SIZES } from "../../theme";
+import { COLORS, SIZE } from "../theme";
 import Icon from "react-native-vector-icons/FontAwesome";
 import FullScreenModal from "./FullScreenModal";
 
@@ -31,20 +31,20 @@ export default ExpandedPhotoModal;
 const S = StyleSheet.create({
 	imgBg_style: {
 		borderColor: COLORS.backgroundLT,
-		borderRadius: SIZES[5],
+		borderRadius: SIZE[5],
 		borderWidth: 5,
 		flex: 1,
 		aspectRatio: 1,
 	},
 	imgBg_imageStyle: {
-		borderRadius: SIZES[4],
+		borderRadius: SIZE[4],
 		width: "100%",
 		height: "100%",
 	},
 	pressable_style: {
 		position: "absolute",
-		right: SIZES[5],
-		bottom: SIZES[5],
+		right: SIZE[5],
+		bottom: SIZE[5],
 		backgroundColor: COLORS.msgDanger,
 		borderRadius: 10,
 		padding: 10,
