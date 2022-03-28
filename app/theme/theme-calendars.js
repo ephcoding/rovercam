@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { COLORS, FONTS, SIZES } from ".";
+import { COLORS, FONTS, SIZE } from ".";
 
 /**
  * styles specific to the photos day-search calendar
@@ -10,7 +10,7 @@ export const RNC_THEME = {
 	// -- MONTH
 	monthTextColor: COLORS.textLT,
 	textMonthFontWeight: "bold",
-	textMonthFontSize: SIZES[5],
+	textMonthFontSize: SIZE[5],
 	// -- DAY OF WEEK
 	textSectionTitleColor: COLORS.textLT,
 	textDayHeaderFontWeight: "bold",

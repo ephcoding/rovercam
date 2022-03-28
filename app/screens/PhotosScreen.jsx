@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { LogBox, Modal, StyleSheet, Text, View } from "react-native";
-import { COLORS, SIZES } from "../theme";
+import { COLORS, SIZE } from "../theme";
 import PhotosList from "../components/PhotosList";
 import { useFetchPhotosByParam } from "../hooks";
 import {
@@ -89,6 +89,6 @@ const S = StyleSheet.create({
 		left: 0,
 		bottom: 0,
 		right: 0,
-		marginBottom: SIZES[6],
+		marginBottom: SIZE[6],
 	},
 });

@@ -1,6 +1,6 @@
 import { FlatList, Platform, StyleSheet } from "react-native";
 import { Button } from "react-native-elements";
-import { COLORS, FONTS, SIZES } from "../theme";
+import { COLORS, FONTS, SIZE } from "../theme";
 import { QUERY_PARAMS } from "../constants";
 
 // !HEADS UP! --> SOLs start at '0'
@@ -48,7 +48,7 @@ const S = StyleSheet.create({
 	},
 	btnContainerStyle: {
 		flex: 1,
-		margin: SIZES[3],
+		margin: SIZE[3],
 	},
 	columnWrapperStyle: {
 		backgroundColor: COLORS.backgroundDK,

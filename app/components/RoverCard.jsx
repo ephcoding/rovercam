@@ -1,7 +1,7 @@
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS, ROVER_NAMES } from "../constants";
-import { COLORS, SIZES } from "../theme";
+import { COLORS, SIZE } from "../theme";
 
 // CLEAN: create structured placeholderData to eliminate init screen flicker
 
@@ -57,7 +57,7 @@ const S = StyleSheet.create({
 	},
 	txt_style: {
 		fontWeight: "bold",
-		marginBottom: SIZES[3],
+		marginBottom: SIZE[3],
 		textAlign: "center",
 		textTransform: "uppercase",
 	},

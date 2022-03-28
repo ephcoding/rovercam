@@ -5,7 +5,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import { COLORS, SIZES } from "../theme";
+import { COLORS, SIZE } from "../theme";
 
 const PhotosListItem = ({ expandPhoto, photoObj }) => {
 	const { camera, img_src } = photoObj;
@@ -37,7 +37,7 @@ const S = StyleSheet.create({
 	},
 	label_text: {
 		color: COLORS.textLT,
-		fontSize: SIZES[3],
+		fontSize: SIZE[3],
 		fontWeight: "bold",
 		textAlign: "center",
 	},
@@ -47,7 +47,7 @@ const S = StyleSheet.create({
 		// borderTopRightRadius: SIZES[2],
 		// borderBottomRightRadius: SIZES[2],
 		// marginBottom: SIZES[2],
-		paddingHorizontal: SIZES[2],
-		paddingVertical: SIZES[1],
+		paddingHorizontal: SIZE[2],
+		paddingVertical: SIZE[1],
 	},
 });

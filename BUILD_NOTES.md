@@ -153,6 +153,7 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 - RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
 - RN | [`PlatformColor`](https://reactnative.dev/docs/platformcolor): platform's color system
+- RN | [`StyleSheet`](https://reactnative.dev/docs/stylesheet)
 - RN | [`useColorScheme`](https://reactnative.dev/docs/usecolorscheme): get `Appearance` module settings/updates
 - `react-navigation` [Themes](https://reactnavigation.org/docs/themes/)
 

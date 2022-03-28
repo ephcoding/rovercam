@@ -2,7 +2,7 @@ import { RNC_THEME } from "../theme/themes";
 import { StyleSheet, View } from "react-native";
 // import { Calendar, CalendarList } from "react-native-calendars";
 import { FAB, Text } from "react-native-elements";
-import { COLORS, FONTS, SIZES } from "../theme";
+import { COLORS, FONTS, SIZE } from "../theme";
 import { QUERY_PARAMS } from "../constants";
 import { createMarkedDatesObj } from "./utils/createMarkedDatesObj";
 import { getRangeDatesMonthDiff } from "./utils/getRangeDatesMonthDiff";
@@ -18,8 +18,8 @@ const DatePicker = ({ earthDatesArr, navigation, rover }) => {
 			container: {
 				justifyContent: "center",
 				backgroundColor: COLORS.secondary,
-				height: SIZES[7],
-				width: SIZES[7],
+				height: SIZE[7],
+				width: SIZE[7],
 			},
 			text: {
 				color: COLORS.textDK,

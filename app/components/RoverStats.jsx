@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { Text } from "react-native-elements";
-import { COLORS, SIZES } from "../theme";
+import { COLORS, SIZE } from "../theme";
 import { useFetchManifest } from "../hooks";
 import { IMG_PATHS } from "../constants";
 
@@ -24,7 +24,7 @@ const RoverStats = ({ data }) => {
 				<Text h3 style={{ color: COLORS.primary }}>
 					Left Earth:
 				</Text>
-				<Text style={{ fontSize: SIZES[5] }}>
+				<Text style={{ fontSize: SIZE[5] }}>
 					{data && data.photo_manifest.launch_date}
 				</Text>
 			</View>
@@ -32,7 +32,7 @@ const RoverStats = ({ data }) => {
 				<Text h3 style={{ color: COLORS.primary }}>
 					Landed On Mars:
 				</Text>
-				<Text style={{ fontSize: SIZES[5] }}>
+				<Text style={{ fontSize: SIZE[5] }}>
 					{data && data.photo_manifest.landing_date}
 				</Text>
 			</View>
@@ -40,7 +40,7 @@ const RoverStats = ({ data }) => {
 				<Text h3 style={{ color: COLORS.primary }}>
 					Last Photo:
 				</Text>
-				<Text style={{ fontSize: SIZES[5] }}>
+				<Text style={{ fontSize: SIZE[5] }}>
 					{data && data.photo_manifest.max_date}
 				</Text>
 			</View>
@@ -48,7 +48,7 @@ const RoverStats = ({ data }) => {
 				<Text h3 style={{ color: COLORS.primary }}>
 					Photos:
 				</Text>
-				<Text style={{ fontSize: SIZES[5] }}>
+				<Text style={{ fontSize: SIZE[5] }}>
 					{data && data.photo_manifest.total_photos}
 				</Text>
 			</View>

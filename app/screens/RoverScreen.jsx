@@ -8,7 +8,7 @@ import { useFetchManifest } from "../hooks";
 import { useEffect } from "react";
 import { Image, FlatList, StyleSheet, View } from "react-native";
 import { Button, Card, FAB, Text } from "react-native-elements";
-import { COLORS, SIZES } from "../theme";
+import { COLORS, SIZE } from "../theme";
 // ----
 import RoverCamerasList from "../components/RoverCamerasList";
 import RoverStats from "../components/RoverStats";
@@ -55,7 +55,7 @@ export default RoverInfoScreen = ({ navigation, route }) => {
 								containerStyle={S.searchBtn_btn_containerStyle}
 								onPress={() => handleOnPress(button.screen, button.query_param)}
 								title={button.title}
-								titleStyle={{ fontSize: SIZES[4] }}
+								titleStyle={{ fontSize: SIZE[4] }}
 							/>
 						</View>
 					))}
@@ -90,13 +90,13 @@ const S = StyleSheet.create({
 	searchBtn_btn_btnStyle: {
 		backgroundColor: COLORS.secondary,
 		borderColor: COLORS.backgroundLT,
-		borderWidth: SIZES[0],
-		marginLeft: SIZES[3],
+		borderWidth: SIZE[0],
+		marginLeft: SIZE[3],
 	},
 	searchBtn_btn_containerStyle: {
 		width: "50%",
 	},
 	fabWrapper_view_style: {
-		paddingVertical: SIZES[4],
+		paddingVertical: SIZE[4],
 	},
 });
