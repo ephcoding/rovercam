@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { COLORS, FONTS, SIZES } from "..";
+import { COLORS, FONTS, SIZES } from ".";
 
 /**
  * styles specific to the photos day-search calendar
