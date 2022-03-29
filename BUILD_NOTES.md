@@ -235,6 +235,7 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
   - React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
   - React Query | [Testing Network Calls](https://react-query.tanstack.com/guides/testing#testing-network-calls), [Testing React Query](https://tkdodo.eu/blog/testing-react-query)
     - [`nock`](https://github.com/nock/nock#readme), [`react-hooks-testing-library`](https://react-hooks-testing-library.com/)
+    - [testing-react-query](https://github.com/TkDodo/testing-react-query) repo
 
 ## **[ UI / COMPONENTS ]**
 

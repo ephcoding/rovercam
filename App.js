@@ -1,13 +1,12 @@
 import React from "react";
 import { Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
-import SafeAreaView from "./app/components/SafeAreaView";
-import { ThemeProvider } from "react-native-elements";
+import { NativeBaseProvider } from "native-base";
 import { QueryClient, QueryClientProvider } from "react-query";
 // -----
+import SafeAreaView from "./app/components/SafeAreaView";
 import StackNavigator from "./app/navigation/stack-navigator";
 import TabNavigator from "./app/navigation/top-tab-navigator";
-import { RNE_THEME } from "./app/theme";
 import {
 	fetchManifest,
 	fetchLatestPhotos,
@@ -78,10 +77,12 @@ export default App = () => {
 	return (
 		<SafeAreaView onLayout={onLayoutRootView}>
 			<QueryClientProvider client={queryClient}>
-				<ThemeProvider theme={RNE_THEME}>
+				<NativeBaseProvider>
+					{/* <ThemeProvider theme={RNE_THEME}> */}
 					{/* <StackNavigator /> */}
 					<TabNavigator />
-				</ThemeProvider>
+					{/* </ThemeProvider> */}
+				</NativeBaseProvider>
 			</QueryClientProvider>
 		</SafeAreaView>
 	);

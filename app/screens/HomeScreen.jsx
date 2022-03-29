@@ -11,6 +11,7 @@ import ImageBackground from "../components/ImageBackground";
 import { fetchManifest, fetchLatestPhotos } from "../mars-photos-api/requests";
 // -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
+import NB_Button from "../components/NBButton";
 
 const HomeScreen = ({ navigation }) => {
 	const rovers = useQueries(

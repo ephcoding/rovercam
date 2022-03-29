@@ -2,10 +2,11 @@ import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 import { Button, Card, Text } from "react-native-elements";
 import { IMG_PATHS, NAMES } from "../constants";
 import { COLORS, SIZE } from "../theme";
+import NB_Button from "./NBButton";
 
 // CLEAN: create structured placeholderData to eliminate init screen flicker
 
-const RoverCard = ({ navigation, rover }) => {
+const RoverView = ({ navigation, rover }) => {
 	const ib_source = IMG_PATHS[rover.toLowerCase()];
 	const capName = rover.toUpperCase();
 
@@ -30,11 +31,12 @@ const RoverCard = ({ navigation, rover }) => {
 					<Text style={S.txt_style}>{rover}</Text>
 				</Pressable>
 			</ImageBackground>
+			<NB_Button label='Search' navigation={navigation} />
 		</Card>
 	);
 };
 
-export default RoverCard;
+export default RoverView;
 
 const S = StyleSheet.create({
 	card_containerStyle: {
