@@ -153,35 +153,110 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 ## **[ CODE DESIGN ]**
 
 - API configs / instances using JS [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
 
 ## **[ DATA FETCHING ]**
+
+- [Mars projects](https://mars.nasa.gov/)
+- [API Portal](https://api.nasa.gov/)
 
 - default API config using [jsonplaceholder](https://jsonplaceholder.typicode.com/)
 - React Query | [React Native](https://react-query.tanstack.com/react-native)
 
-## **[ DESIGN SYSTEM ]**
-
-- RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
-- RN | [`PlatformColor`](https://reactnative.dev/docs/platformcolor): platform's color system
-- RN | [`StyleSheet`](https://reactnative.dev/docs/stylesheet)
-- RN | [`useColorScheme`](https://reactnative.dev/docs/usecolorscheme): get `Appearance` module settings/updates
-- `react-navigation` [Themes](https://reactnavigation.org/docs/themes/)
-
 ## **[ NAVIGATION ]**
+
+- [docs](https://reactnavigation.org/docs/4.x/getting-started)
+- [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
+- [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
+- ['Getting Started'](https://reactnavigation.org/docs/4.x/getting-started) packages (with `expo install`):
+- [`react-navigation`](https://www.npmjs.com/package/react-navigation)
+- [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
+- [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
+- [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
+- [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
+- [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
+- [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
+- [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
+- [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
 
 ## **[ PROJECT MANAGEMENT ]**
 
 Combination of using GitHub Projects, old-fashioned notes, and figuring it out on the fly.
 
-## **[ TESTING ]**
+- [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
+  - [customize](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/customizing-your-project-views) project views
 
-- Expo | [Testing with Jest](https://docs.expo.dev/guides/testing-with-jest/)
-- Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
-- React Native | [Testing](https://reactnative.dev/docs/testing-overview)
-- React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
-- React Query | [Testing](https://react-query.tanstack.com/guides/testing)
+## **[ SETUP / TOOLING ]**
+
+- [docs](reactnative.dev)
+- [bumping versions](https://reactnative.dev/docs/upgrading)
+- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
+- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
+  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
+  - [react-native-config](https://github.com/luggit/react-native-config)
+- [docs](https://docs.expo.dev)
+- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
+- [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
+- latest React Native-compatable [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
+- [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
+- [general colocation](https://kentcdodds.com/blog/colocation)
+
+## **[ STATE MANAGEMENT ]**
+
+- [docs](reactjs.org)
+- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
+- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
+- using `react-query` with [React Native](https://react-query.tanstack.com/react-native)
+- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
+- [Placeholder and Initial Data in React Query](https://tkdodo.eu/blog/placeholder-and-initial-data-in-react-query)
+
+- [axios docs](https://github.com/axios/axios#axios)
+- [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
+- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
+- Kent Dodds
+  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
+  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
+
+## **[ TESTING / DEBUGGING ]**
+
+- **_DEBUGGING_**
+
+  - debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
+  - [Reactotron]()
+  - [Flipper]()
+
+- **_TESTING_**
+  - Expo | [Testing with Jest](https://docs.expo.dev/guides/testing-with-jest/)
+  - Jest | [Testing React Native Apps](https://jestjs.io/docs/tutorial-react-native)
+  - React Native | [Testing](https://reactnative.dev/docs/testing-overview)
+  - React Navigation | [Testing with Jest](https://reactnavigation.org/docs/testing/)
+  - React Query | [Testing Network Calls](https://react-query.tanstack.com/guides/testing#testing-network-calls), [Testing React Query](https://tkdodo.eu/blog/testing-react-query)
+    - [`nock`](https://github.com/nock/nock#readme), [`react-hooks-testing-library`](https://react-hooks-testing-library.com/)
 
 ## **[ UI / COMPONENTS ]**
+
+- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
+- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
+- [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
+- dynamic [image source paths](https://stackoverflow.com/a/41432660)
+- [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
+- [shields](https://shields.io/)
+- RN | [styling](https://reactnative.dev/docs/style)
+- RN | [`ImageSource`](https://reactnative.dev/docs/image#imagesource)
+- [displaying images with React Native](https://blog.logrocket.com/displaying-images-with-the-react-native-image-component/)
+- [`react-native-elements`](https://reactnativeelements.com/)
+  - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
+- [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
+  - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
+  - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
+- [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
+- [vector icons](https://icons.expo.fyi/)
+- [Inkscape](https://inkscape.org/) - vector graphic tool
+- [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
+- [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
 
 ### _Dynamic Components_
 
@@ -193,6 +268,12 @@ Combination of using GitHub Projects, old-fashioned notes, and figuring it out o
   - cam filter drawer menu
 
 ### _Optimizing Virtualized Lists_
+
+- RN | [`DynamicColorIOS`](https://reactnative.dev/docs/dynamiccolorios): dictate iOS light/dark mode colors
+- RN | [`PlatformColor`](https://reactnative.dev/docs/platformcolor): platform's color system
+- RN | [`StyleSheet`](https://reactnative.dev/docs/stylesheet)
+- RN | [`useColorScheme`](https://reactnative.dev/docs/usecolorscheme): get `Appearance` module settings/updates
+- `react-navigation` [Themes](https://reactnavigation.org/docs/themes/)
 
 ```javascript
 VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc.
@@ -216,167 +297,6 @@ VirtualizedList: You have a large list that is slow to update - make sure your r
 
 # **EVALUATE**
 
-<!-- #region RESOURCES -->
-
-<div id='resources' align='center'>
-
-![rovercam readme graphic](./assets/readme/resources.png)
-
-</div>
-
-<div align='center'>
-
-[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
-
-</div>
-
-<!-- #endregion /RESOURCES -->
-
-# RESOURCES
-
-<!-- #region PROJECT MANAGEMENT -->
-
-- [GitHub projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects#about-projects)
-  - [customize](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/customizing-your-project-views) project views
-
-<!-- #endregion /PROJECT MANAGEMENT -->
-
-<!-- #region APIS -->
-
-<details>
-<summary>APIs</summary>
-
-- [Mars projects](https://mars.nasa.gov/)
-- [API Portal](https://api.nasa.gov/)
-
-</details>
-
-<!-- #endregion /APIS -->
-
-<!-- #region DEBUGGING -->
-
-<details>
-<summary>Debugging</summary>
-
-- debugging with [`react-devtools`](https://www.npmjs.com/package/react-devtools)
-- [Reactotron]()
-- [Flipper]()
-
-</details>
-
-<!-- #endregion /DEBUGGING -->
-
-<!-- #region JAVASCRIPT -->
-
-<details>
-<summary>JavaScript</summary>
-
-- using `?`: [optional chaining `?` & nullish coalescing `??`](https://www.freecodecamp.org/news/how-the-question-mark-works-in-javascript/)
-
-</details>
-
-<!-- #endregion /JAVASCRIPT -->
-
-<!-- #region NAVIGATION -->
-
-<details>
-<summary>Navigation</summary>
-
-- [docs](https://reactnavigation.org/docs/4.x/getting-started)
-- [`createStackNavigator`](https://reactnavigation.org/docs/4.x/stack-navigator/)
-- [`createAppContainer`](https://reactnavigation.org/docs/4.x/app-containers#props-of-createappcontainer-on-react-native)
-- ['Getting Started'](https://reactnavigation.org/docs/4.x/getting-started) packages (with `expo install`):
-- [`react-navigation`](https://www.npmjs.com/package/react-navigation)
-- [`react-native-gesture-handler`](https://www.npmjs.com/package/react-native-gesture-handler)
-- [`react-native-reanimated`](https://www.npmjs.com/package/react-native-reanimated)
-- [`react-native-screens`](https://www.npmjs.com/package/react-native-screens)
-- [navigating to a new screen](https://reactnavigation.org/docs/4.x/navigating#navigating-to-a-new-screen)
-- [route configs](https://reactnavigation.org/docs/4.x/stack-navigator#routeconfigs)
-- [`withNavigation`](https://reactnavigation.org/docs/4.x/with-navigation/)
-- [`addEventListener`](https://reactnavigation.org/docs/4.x/navigation-prop#addlistener---subscribe-to-updates-to-navigation-lifecycle)
-- [`<NavigationEvents>`](https://reactnavigation.org/docs/4.x/navigation-events)
-
-</details>
-
-<!-- #endregion /NAVIGATION -->
-
-<!-- #region PROJECT SETUP -->
-
-<details>
-<summary>Project Setup</summary>
-
-- [docs](reactnative.dev)
-- [bumping versions](https://reactnative.dev/docs/upgrading)
-- [Ignite](https://github.com/infinitered/ignite) React Native boilerplate by [Infinite Red](infinite.red)
-- [Storing Sensitive Info](https://reactnative.dev/docs/security#storing-sensitive-info)
-  - [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv)
-  - [react-native-config](https://github.com/luggit/react-native-config)
-- [docs](https://docs.expo.dev)
-- Infinite Red’s “Ignite” React Native boilerplate [services/api setup](https://github.com/infinitered/ignite/tree/master/boilerplate/app/services/api)
-- [`expo install`](https://docs.expo.dev/guides/config-plugins/#expo-install)
-- latest React Native-compatable [versions](https://docs.expo.dev/versions/latest/?redirected#each-expo-sdk-version-depends-on-a)
-- [npm / yarn comparison](https://classic.yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison)
-- [general colocation](https://kentcdodds.com/blog/colocation)
-
-</details>
-
-<!-- #endregion /PROJECT SETUP -->
-
-<!-- #region STATE MANAGEMENT -->
-
-<details>
-<summary>State Management</summary>
-
-- [docs](reactjs.org)
-- [component lifecycles](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
-- [mastering useEffect](https://www.youtube.com/watch?v=dH6i3GurZW8)
-- [`react-query` package](https://www.npmjs.com/package/react-query) | [docs](https://react-query.tanstack.com/)
-- using `react-query` with [React Native](https://react-query.tanstack.com/react-native)
-- [dynamic parallel queries](https://www.youtube.com/watch?v=yOjHT-oTFww) (`useQueries`)
-- [Placeholder and Initial Data in React Query](https://tkdodo.eu/blog/placeholder-and-initial-data-in-react-query)
-
-- [axios docs](https://github.com/axios/axios#axios)
-- [use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
-  - [fixing slow renders](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
-- Net Ninja | [React Query tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpi7Ptjl5b50p9gLjOFani)
-- Tommy Groshong | [reduce state mgmt footprint](https://blog.testdouble.com/posts/2021-05-03-reduce-state-management-with-react-query/) with [React Query](https://react-query.tanstack.com/) ( [Tanner Linsley](https://twitter.com/tannerlinsley) )
-- Kent Dodds
-  - [app state mgmt with React](https://kentcdodds.com/blog/application-state-management-with-react)
-  - faster React apps with [state colocation](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster)
-
-</details>
-
-<!-- #endregion /STATE MANAGEMENT -->
-
-<!-- #region UI COMPONENTS -->
-
-<details>
-<summary>UI</summary>
-
-- [using native Android/iOS Platform colors](https://reactnativeelements.com/docs/customization#using-the-respective-platforms-native-colors) in `react-native-elements` theme
-- Shopify's React Native [styling workflow](https://shopify.engineering/5-ways-to-improve-your-react-native-styling-workflow)
-- [custom background img component](https://www.sitereq.com/post/two-easy-ways-to-add-react-native-background-image)
-- dynamic [image source paths](https://stackoverflow.com/a/41432660)
-- [fonts: x-platform](https://github.com/react-native-training/react-native-fonts)
-- [shields](https://shields.io/)
-- RN | [styling](https://reactnative.dev/docs/style)
-- RN | [`ImageSource`](https://reactnative.dev/docs/image#imagesource)
-- [displaying images with React Native](https://blog.logrocket.com/displaying-images-with-the-react-native-image-component/)
-- [`react-native-elements`](https://reactnativeelements.com/)
-  - [`ThemeProvider`](https://reactnativeelements.com/docs/customization#using-themeprovider)
-- [`react-native-calendars`](https://wix.github.io/react-native-calendars/docs/intro)
-  - [overriding defaults](https://github.com/wix/react-native-calendars#advanced-styling)
-  - [theme customization](https://github.com/wix/react-native-calendars#customizing-look--feel)
-- [fonts](https://docs.expo.dev/versions/latest/sdk/font/)
-- [vector icons](https://icons.expo.fyi/)
-- [Inkscape](https://inkscape.org/) - vector graphic tool
-- [create vector silhouettes from images](https://www.youtube.com/watch?v=PRvqcfLToqY)
-- [remove background from photo](https://logosbynick.com/inkscape-how-to-remove-background/)
-
-</details>
-
-<!-- #endregion /UI COMPONENTS -->
-
 <!-- #region CHECK OUT LATER -->
 
 <details>
@@ -395,22 +315,6 @@ MISC
 </details>
 
 <!-- #endregion /CHECK OUT LATER -->
-
-<!-- #region ISSUES -->
-
-<div id='issues' align='center'>
-
-![rovercam readme graphic](./assets/readme/issues.png)
-
-</div>
-
-<div align='center'>
-
-[discover](#discover) | [visualize](#visualize) | [build](#build) | [market](#market) | [deploy](#deploy) | [evaluate](#evaluate)
-
-</div>
-
-<!-- #endregion /ISSUES -->
 
 # ISSUES
 
