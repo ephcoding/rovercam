@@ -1,23 +1,19 @@
 import { useEffect } from "react";
-import { Text } from "react-native-elements";
 import { useQueries, QueryClient } from "react-query";
-import { LogBox, View, StyleSheet } from "react-native";
+import { Image, LogBox, Text, View, StyleSheet } from "react-native";
+import PagerView from "react-native-pager-view";
 // -----
 import { SIZE } from "../theme";
 import { NAMES } from "../constants";
 import RoverView from "../components/RoverView";
 import SafeAreaView from "../components/SafeAreaView";
 import ImageBackground from "../components/ImageBackground";
-import { fetchManifest } from "../api";
+import { fetchManifest, fetchLatestPhotos } from "../api";
 // -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
 
 const HomeScreen = ({ navigation }) => {
-	const {
-		isLoading,
-		error,
-		data: rovers,
-	} = useQueries(
+	const rovers = useQueries(
 		Object.values(NAMES).map(rover => {
 			return {
 				queryKey: ["manifest", rover],
@@ -25,10 +21,14 @@ const HomeScreen = ({ navigation }) => {
 			};
 		})
 	);
-
-	// console.log("isLoading", isLoading);
-	// console.log("error", error);
-	// console.log(data);
+	const latestPhotos = useQueries(
+		Object.values(NAMES).map(rover => {
+			return {
+				queryKey: ["latestPhotos", rover],
+				queryFn: () => fetchLatestPhotos(rover),
+			};
+		})
+	);
 
 	useEffect(() => {
 		LogBox.ignoreLogs(["Setting a timer"]);
@@ -36,13 +36,16 @@ const HomeScreen = ({ navigation }) => {
 
 	return (
 		<SafeAreaView>
-			<ImageBackground source={img_source}>
-				<View style={S.row_wrap_between}>
-					{Object.values(NAMES).map(rover => (
-						<RoverView key={rover} navigation={navigation} rover={rover} />
-					))}
-				</View>
-			</ImageBackground>
+			{/* <ImageBackground source={img_source}> */}
+			{/* <View style={S.row_wrap_between}> */}
+			<PagerView>
+				{Object.values(NAMES).map(rover => (
+					<RoverView key={rover} navigation={navigation} rover={rover} />
+				))}
+			</PagerView>
+
+			{/* </View> */}
+			{/* </ImageBackground> */}
 		</SafeAreaView>
 	);
 };

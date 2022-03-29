@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import StackNavigator from "./app/navigation/stack-navigator";
 import TabNavigator from "./app/navigation/top-tab-navigator";
 import { RNE_THEME } from "./app/theme";
-import { fetchManifest } from "./app/api";
+import { fetchManifest, fetchLatestPhotos } from "./app/api";
 // -----
 import { NAMES } from "./app/constants";
 
@@ -31,15 +31,29 @@ export default App = () => {
 			fetchManifest(NAMES.spirit)
 		);
 	};
+	const prefetchLatestPhotosForAllRovers = async () => {
+		await queryClient.prefetchQuery(["latestPhotos", NAMES.curiosity], () =>
+			fetchLatestPhotos(NAMES.curiosity)
+		);
+		await queryClient.prefetchQuery(["latestPhotos", NAMES.opportunity], () =>
+			fetchLatestPhotos(NAMES.opportunity)
+		);
+		await queryClient.prefetchQuery(["latestPhotos", NAMES.perseverance], () =>
+			fetchLatestPhotos(NAMES.perseverance)
+		);
+		await queryClient.prefetchQuery(["latestPhotos", NAMES.spirit], () =>
+			fetchLatestPhotos(NAMES.spirit)
+		);
+	};
 
 	prefetchManifests();
+	prefetchLatestPhotosForAllRovers();
 
 	React.useEffect(() => {
 		const preFetchManifestsAndLatestPhotos = async () => {
 			try {
 				await SplashScreen.preventAutoHideAsync();
 				// prefetch rover manifests & latest photos here
-				await new Promise(resolve => setTimeout(resolve, 3000));
 			} catch (err) {
 				console.log("APP LOAD ERROR:\n", err);
 			} finally {
