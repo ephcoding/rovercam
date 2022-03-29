@@ -147,6 +147,7 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 
 ## **[ ANIMATIONS ]**
 
+- HomeScreen Rover swipe | [`react-native-pager-view`](https://github.com/callstack/react-native-pager-view)
 - image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
 
 ## **[ DATA FETCHING ]**
