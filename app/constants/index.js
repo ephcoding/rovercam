@@ -1,4 +1,11 @@
-export const CAMERAS = {
+export const API_URLS = Object.freeze({
+	jsonplaceholder: "https://jsonplaceholder.typicode.com",
+	MarsRoverPhotos: {
+		heroku: "https://mars-photos.herokuapp.com/api/v1",
+		nasa: "https://api.nasa.gov/api/v1",
+	},
+});
+export const CAMERAS = Object.freeze({
 	curiosity: [
 		["Front Hazard Avoidance Camera", "FHAZ"],
 		["Rear Hazard Avoidance Camera", "RHAZ"],
@@ -39,25 +46,25 @@ export const CAMERAS = {
 		["Panoramic Camera", "PANCAM"],
 		["Miniature Thermal Emission Spectrometer", "MINITES"],
 	],
-};
-export const IMG_PATHS = {
+});
+export const IMG_PATHS = Object.freeze({
 	curiosity: require("../../assets/img/curiosity.jpg"),
 	opportunity: require("../../assets/img/opportunity.jpg"),
 	perseverance: require("../../assets/img/perseverance.jpg"),
 	spirit: require("../../assets/img/spirit.jpg"),
-};
-export const QUERY_PARAMS = {
+});
+export const QUERY_PARAMS = Object.freeze({
 	camera: "camera",
 	earth_date: "earth_date",
 	latest_photos: "latest_photos",
 	sol: "sol",
-};
-export const NAMES = {
+});
+export const NAMES = Object.freeze({
 	curiosity: "curiosity",
 	opportunity: "opportunity",
 	perseverance: "perseverance",
 	spirit: "spirit",
-};
+});
 /**
  * [screen] prop matches screen name in StackNavigator (App.js)
  * [title] prop is used for button titles

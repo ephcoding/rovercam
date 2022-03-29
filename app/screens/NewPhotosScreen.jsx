@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { useQuery, useQueryClient } from "react-query";
 // -----
-import { fetchManifest } from "../api";
+import { fetchManifest } from "../services";
 import { NAMES } from "../constants";
 
 const NewPhotosScreen = () => {

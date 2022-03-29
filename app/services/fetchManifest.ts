@@ -1,4 +1,4 @@
-import { HEROKU_CONFIG as MarsAPI } from "./config";
+import { MARS_PHOTOS_HEROKU as MarsAPI } from "./api";
 
 export const fetchManifest = async rover => {
 	try {

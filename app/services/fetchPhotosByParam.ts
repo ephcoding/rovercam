@@ -1,4 +1,4 @@
-import { HEROKU_CONFIG as API } from "./config";
+import { MARS_PHOTOS_HEROKU as API } from "./api";
 
 export const fetchPhotosByParam = async (rover, query_param, param_value) => {
 	const res = await API.get(

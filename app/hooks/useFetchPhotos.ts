@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { fetchLatestPhotos, fetchPhotosByParam } from "../api";
+import { fetchLatestPhotos, fetchPhotosByParam } from "../services";
 import { QUERY_PARAMS as PARAM } from "../constants";
 
 /**

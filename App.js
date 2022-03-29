@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import StackNavigator from "./app/navigation/stack-navigator";
 import TabNavigator from "./app/navigation/top-tab-navigator";
 import { RNE_THEME } from "./app/theme";
-import { fetchManifest, fetchLatestPhotos } from "./app/api";
+import { fetchManifest, fetchLatestPhotos } from "./app/services";
 // -----
 import { NAMES } from "./app/constants";
 

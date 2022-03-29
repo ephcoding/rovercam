@@ -150,8 +150,13 @@ Heavily modified template I found on [startbootstrap.com](startbootstrap.com) ( 
 - HomeScreen Rover swipe | [`react-native-pager-view`](https://github.com/callstack/react-native-pager-view)
 - image zooming with [`react-native-image-zoom-viewer`](https://www.npmjs.com/package/react-native-image-zoom-viewer)
 
+## **[ CODE DESIGN ]**
+
+- API configs / instances using JS [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
 ## **[ DATA FETCHING ]**
 
+- default API config using [jsonplaceholder](https://jsonplaceholder.typicode.com/)
 - React Query | [React Native](https://react-query.tanstack.com/react-native)
 
 ## **[ DESIGN SYSTEM ]**
