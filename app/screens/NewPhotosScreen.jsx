@@ -1,13 +1,13 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { useQuery, useQueryClient } from "react-query";
 // -----
-import { fetchManifest } from "../mars-photos-api";
+import * as api from "../mars-photos-api/requests";
 import { NAMES } from "../constants";
 
 const NewPhotosScreen = () => {
-	const { data: curiosity } = useQuery(["manifest", NAMES.curiosity], () =>
-		fetchManifest(NAMES.curiosity)
-	);
+	// const { data: curiosity } = useQuery(["manifest", NAMES.curiosity], () =>
+	// 	fetchManifest(NAMES.curiosity)
+	// );
 	// const { data: latestPhotos } = useQuery(
 	// 	"latestPhotos",
 	// 	fetchLatestPhotosAll,

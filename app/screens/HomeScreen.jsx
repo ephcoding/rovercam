@@ -8,7 +8,7 @@ import { NAMES } from "../constants";
 import RoverView from "../components/RoverView";
 import SafeAreaView from "../components/SafeAreaView";
 import ImageBackground from "../components/ImageBackground";
-import { fetchManifest, fetchLatestPhotos } from "../mars-photos-api";
+import { fetchManifest, fetchLatestPhotos } from "../mars-photos-api/requests";
 // -----
 const img_source = require("../../assets/img/mars-glowing.jpg");
 

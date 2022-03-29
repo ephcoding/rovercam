@@ -8,7 +8,10 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import StackNavigator from "./app/navigation/stack-navigator";
 import TabNavigator from "./app/navigation/top-tab-navigator";
 import { RNE_THEME } from "./app/theme";
-import { fetchManifest, fetchLatestPhotos } from "./app/mars-photos-api";
+import {
+	fetchManifest,
+	fetchLatestPhotos,
+} from "./app/mars-photos-api/requests";
 // -----
 import { NAMES } from "./app/constants";
 const queryClient = new QueryClient();
@@ -60,10 +63,6 @@ export default App = () => {
 		};
 
 		preFetchManifestsAndLatestPhotos();
-	}, []);
-
-	React.useEffect(() => {
-		testApiConfigs();
 	}, []);
 
 	const onLayoutRootView = React.useCallback(async () => {
